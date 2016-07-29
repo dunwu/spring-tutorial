@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+  http://www.springframework.org/schema/context 
+  http://www.springframework.org/schema/context/spring-context-3.0.xsd
+  http://www.springframework.org/schema/mvc
+  http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+  
+  <!-- 启用注解，默认是关闭的 -->
+  <mvc:annotation-driven />
+  
+  <!-- 设置后，将查找使用@Component(@Controller是它的一种具体化)注解的类并将其注册为Bean -->
+  <context:component-scan base-package="org.zp.notes.spring.helloworld" />
+  
+  <!-- 如果当前请求为“/”时，则转发到“/login/index” -->
+  <mvc:view-controller path="/" view-name="forward:/hello/say" />
+  
+  <!-- 配置视图解析器 (该配置的是jstl解析器的一个扩展解析类) -->
+  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="prefix" value="/WEB-INF/views/" />
+    <property name="suffix" value=".jsp" />
+  </bean>
+</beans>
