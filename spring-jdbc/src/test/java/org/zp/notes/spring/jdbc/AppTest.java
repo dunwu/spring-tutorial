@@ -1,4 +1,4 @@
-package org.zp.notes.spring.inject;
+package org.zp.notes.spring.jdbc;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -25,7 +25,7 @@ public class AppTest
      */
     public static Test suite()
     {
-        return new TestSuite( Test.class );
+        return new TestSuite( AppTest.class );
     }
 
     /**

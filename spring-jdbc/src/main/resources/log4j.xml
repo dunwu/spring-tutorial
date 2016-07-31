@@ -12,7 +12,7 @@
 
   <!-- Default Appender -->
   <appender name="ALL-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
-    <param name="file" value="${catalina.home}/logs/spring-beans/all.log" />
+    <param name="file" value="${catalina.home}/logs/spring-jdbc/all.log" />
     <param name="append" value="true" />
     <param name="encoding" value="UTF-8" />
     <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
@@ -27,7 +27,7 @@
 
   <!-- Debug Appender -->
   <appender name="DEBUG-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
-    <param name="file" value="${catalina.home}/logs/spring-beans/debug.log" />
+    <param name="file" value="${catalina.home}/logs/spring-jdbc/debug.log" />
     <param name="append" value="true" />
     <param name="encoding" value="UTF-8" />
     <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
@@ -42,7 +42,7 @@
 
   <!-- info Appender -->
   <appender name="INFO-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
-    <param name="file" value="${catalina.home}/logs/spring-beans/info.log" />
+    <param name="file" value="${catalina.home}/logs/spring-jdbc/info.log" />
     <param name="append" value="true" />
     <param name="encoding" value="UTF-8" />
     <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
@@ -57,7 +57,7 @@
 
   <!-- warn Appender -->
   <appender name="WARN-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
-    <param name="file" value="${catalina.home}/logs/spring-beans/warn.log" />
+    <param name="file" value="${catalina.home}/logs/spring-jdbc/warn.log" />
     <param name="append" value="true" />
     <param name="encoding" value="UTF-8" />
     <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
@@ -72,7 +72,7 @@
 
   <!-- error Appender -->
   <appender name="ERROR-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
-    <param name="file" value="${catalina.home}/logs/spring-beans/error.log" />
+    <param name="file" value="${catalina.home}/logs/spring-jdbc/error.log" />
     <param name="append" value="true" />
     <param name="encoding" value="UTF-8" />
     <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
@@ -87,7 +87,7 @@
 
   <!-- spring Appender -->
   <appender name="SPRING-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
-    <param name="file" value="${catalina.home}/logs/spring-beans/spring.log" />
+    <param name="file" value="${catalina.home}/logs/spring-jdbc/spring.log" />
     <param name="append" value="true" />
     <param name="encoding" value="UTF-8" />
     <layout class="org.apache.log4j.PatternLayout">

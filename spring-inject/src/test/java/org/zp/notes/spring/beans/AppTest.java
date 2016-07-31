@@ -1,10 +1,16 @@
-package org.zp.notes.spring.inject;
+package org.zp.notes.spring.beans;
 
+import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.zp.notes.spring.beans.xml.Musician;
+import org.zp.notes.spring.beans.xml.Poet;
 
-public class Test {
-    public static void main(String[] args) throws Exception {
+import junit.framework.TestCase;
+
+public class AppTest extends TestCase {
+    @Test
+    public void testAdd() throws Exception {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("/spring/spring-servlet.xml");
 
         // 构造注入

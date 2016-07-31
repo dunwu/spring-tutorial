@@ -1,4 +1,4 @@
-package org.zp.notes.spring.inject;
+package org.zp.notes.spring.beans.inject;
 
 public class Poetry {
     String name;
