@@ -1,6 +1,6 @@
-package org.zp.notes.spring.beans.inject;
+package org.zp.notes.spring.beans.autowire;
 
-import org.zp.notes.spring.beans.inject.instrument.Instrument;
+import org.zp.notes.spring.beans.autowire.instrument.Instrument;
 
 public class Musician implements Performer {
     private String name;

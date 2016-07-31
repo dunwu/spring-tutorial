@@ -1,11 +1,17 @@
-package org.zp.notes.spring.inject;
+package org.zp.notes.spring.beans.inject;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class Test {
+/**
+ * @title App
+ * @description 使用xml方式来实现依赖注入
+ * @author victor
+ * @date 2016年7月31日
+ */
+public class App {
     public static void main(String[] args) throws Exception {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("/spring/spring-servlet.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("/spring/spring-beans.xml");
 
         // 构造注入
         Poet libai = (Poet) ctx.getBean("libai");

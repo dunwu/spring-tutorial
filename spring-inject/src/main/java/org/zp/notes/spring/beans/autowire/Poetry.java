@@ -1,4 +1,4 @@
-package org.zp.notes.spring.beans.inject;
+package org.zp.notes.spring.beans.autowire;
 
 public class Poetry {
     String name;

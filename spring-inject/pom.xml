@@ -7,8 +7,8 @@
     <artifactId>SpringNotes</artifactId>
     <version>${project.parent.version}</version>
   </parent>
-  <artifactId>spring-inject</artifactId>
-  <name>spring-inject</name>
+  <artifactId>spring-beans</artifactId>
+  <name>spring-beans</name>
   <url>http://maven.apache.org</url>
   <packaging>war</packaging>
 
@@ -30,7 +30,7 @@
     <spring.version>4.1.4.RELEASE</spring.version>
 
     <!-- Tets -->
-    <junit.version>3.8.1</junit.version>
+    <junit.version>4.12</junit.version>
 
     <!-- Plugin -->
     <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>

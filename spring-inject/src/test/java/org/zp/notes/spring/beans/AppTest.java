@@ -1,38 +1,27 @@
-package org.zp.notes.spring.inject;
+package org.zp.notes.spring.beans;
 
-import junit.framework.Test;
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.zp.notes.spring.beans.xml.Musician;
+import org.zp.notes.spring.beans.xml.Poet;
+
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+public class AppTest extends TestCase {
+    @Test
+    public void testAdd() throws Exception {
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("/spring/spring-servlet.xml");
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( Test.class );
-    }
+        // 构造注入
+        Poet libai = (Poet) ctx.getBean("libai");
+        libai.perform();
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+        // Getter/Setter注入
+        Musician chopin = (Musician) ctx.getBean("chopin");
+        chopin.perform();
+
+        // 关闭应用上下文容器，不要忘记这句话
+        ((ClassPathXmlApplicationContext) ctx).close();
     }
 }

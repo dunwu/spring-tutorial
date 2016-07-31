@@ -1,4 +1,4 @@
-package org.zp.notes.spring.beans.inject;
+package org.zp.notes.spring.beans.autowire;
 
 public class Poet implements Performer {
     private String name;

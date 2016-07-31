@@ -1,4 +1,4 @@
-package org.zp.notes.spring.beans.inject.instrument;
+package org.zp.notes.spring.beans.autowire.instrument;
 
 public class Piano implements Instrument {
     public Piano() {}
