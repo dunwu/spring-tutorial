@@ -25,10 +25,6 @@ public class App {
         Poet libai = (Poet) ctx.getBean("libai");
         libai.perform();
 
-        // 自动装配：constructor
-        Poet libai2 = (Poet) ctx.getBean("libai2");
-        libai2.perform();
-
         // 关闭应用上下文容器，不要忘记这句话
         ((ClassPathXmlApplicationContext) ctx).close();
     }
