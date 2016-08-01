@@ -15,7 +15,7 @@
 
    <modules>
     <module>spring-helloworld</module>
-	<module>spring-inject</module>
+	<module>spring-beans</module>
 	<module>spring-aop</module>
     <module>spring-jdbc</module>
   </modules>
