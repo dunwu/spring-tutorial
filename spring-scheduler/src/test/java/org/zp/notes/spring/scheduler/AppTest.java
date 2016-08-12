@@ -1,4 +1,4 @@
-package org.spring.helloworld;
+package org.zp.notes.spring.scheduler;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
