@@ -73,7 +73,7 @@
     </dependency>
     <!-- [End]Servlet & Jsp -->
 
-    <!-- [Begin]Log -->
+    <!-- [Begin]Spring -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>

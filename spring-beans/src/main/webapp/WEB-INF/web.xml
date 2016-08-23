@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
   <display-name>spring-beans</display-name>
   <context-param>
-    <param-name>spring-inject.log4j</param-name>
+    <param-name>log4jConfigLocation</param-name>
     <param-value>classpath:log4j.xml</param-value>
   </context-param>
   <listener>

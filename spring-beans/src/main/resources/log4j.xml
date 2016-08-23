@@ -6,7 +6,7 @@
   <appender name="STDOUT-APPENDER" class="org.apache.log4j.ConsoleAppender">
     <param name="encoding" value="UTF-8" />
     <layout class="org.apache.log4j.PatternLayout">
-      <param name="ConversionPattern" value="[%-5p %d{HH:mm:ss}] %c - %m%n" />
+      <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p] [%l] - %m%n" />
     </layout>
   </appender>
 
@@ -17,7 +17,7 @@
     <param name="encoding" value="UTF-8" />
     <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
     <layout class="org.apache.log4j.PatternLayout">
-      <param name="ConversionPattern" value="[%-5p %d{HH:mm:ss}] %c - %m%n" />
+      <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p] [%l] - %m%n" />
     </layout>
     <filter class="org.apache.log4j.varia.LevelRangeFilter">
       <param name="LevelMin" value="DEBUG" />
@@ -32,7 +32,7 @@
     <param name="encoding" value="UTF-8" />
     <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
     <layout class="org.apache.log4j.PatternLayout">
-      <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss,SSS\}][%p][%t] %d{HH:mm:ss,SSS\} method:%l %m%n" />
+      <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p] [%l] - %m%n" />
     </layout>
     <filter class="org.apache.log4j.varia.LevelRangeFilter">
       <param name="LevelMin" value="debug" />
@@ -47,7 +47,7 @@
     <param name="encoding" value="UTF-8" />
     <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
     <layout class="org.apache.log4j.PatternLayout">
-      <param name="ConversionPattern" value="[%-5p %d{HH:mm:ss}] %c - %m%n" />
+      <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p] [%l] - %m%n" />
     </layout>
     <filter class="org.apache.log4j.varia.LevelRangeFilter">
       <param name="LevelMin" value="info" />
@@ -62,7 +62,7 @@
     <param name="encoding" value="UTF-8" />
     <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
     <layout class="org.apache.log4j.PatternLayout">
-      <param name="ConversionPattern" value="[%-5p %d{HH:mm:ss}] %c - %m%n" />
+      <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p] [%l] - %m%n" />
     </layout>
     <filter class="org.apache.log4j.varia.LevelRangeFilter">
       <param name="LevelMin" value="warn" />
@@ -77,7 +77,7 @@
     <param name="encoding" value="UTF-8" />
     <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
     <layout class="org.apache.log4j.PatternLayout">
-      <param name="ConversionPattern" value="[%-5p %d{HH:mm:ss}] %c - %m%n" />
+      <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p] [%l] - %m%n" />
     </layout>
     <filter class="org.apache.log4j.varia.LevelRangeFilter">
       <param name="LevelMin" value="error" />
@@ -91,7 +91,7 @@
     <param name="append" value="true" />
     <param name="encoding" value="UTF-8" />
     <layout class="org.apache.log4j.PatternLayout">
-      <param name="ConversionPattern" value="[%-5p %d{HH:mm:ss}] %c - %m%n" />
+      <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p] [%l] - %m%n" />
     </layout>
   </appender>
 
