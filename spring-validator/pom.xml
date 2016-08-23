@@ -35,7 +35,7 @@
     <spring.version>4.1.4.RELEASE</spring.version>
 
     <!-- Tets -->
-    <junit.version>3.8.1</junit.version>
+    <junit.version>4.12</junit.version>
 
     <!-- Plugin -->
     <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
