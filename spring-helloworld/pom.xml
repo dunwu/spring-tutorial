@@ -9,33 +9,34 @@
   </parent>
   <artifactId>spring-helloworld</artifactId>
   <name>spring-helloworld</name>
-  <url>http://maven.apache.org</url>
   <packaging>war</packaging>
 
-  <properties>
-    <jdk.version>1.8</jdk.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <dependencies>
+    <!-- Jetty -->
+    <dependency>
+      <groupId>org.eclipse.jetty.aggregate</groupId>
+      <artifactId>jetty-webapp</artifactId>
+      <version>7.6.16.v20140903</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-jsp</artifactId>
+      <version>7.6.16.v20140903</version>
+      <scope>provided</scope>
+    </dependency>
 
     <!-- Spring -->
-    <spring.version>4.1.4.RELEASE</spring.version>
-
-    <!-- Plugin -->
-    <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
-  </properties>
-
-  <dependencies>
-    <!-- [Begin]Spring -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context-support</artifactId>
-      <version>${spring.version}</version>
+      <version>4.1.4.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>${spring.version}</version>
+      <version>4.1.4.RELEASE</version>
     </dependency>
-    <!-- [End]Spring -->
   </dependencies>
 
   <build>
@@ -48,9 +49,9 @@
           <fork>true</fork>
           <meminitial>128m</meminitial>
           <maxmem>512m</maxmem>
-          <source>${jdk.version}</source>
-          <target>${jdk.version}</target>
-          <encoding>${project.build.sourceEncoding}</encoding>
+          <source>1.8</source>
+          <target>1.8</target>
+          <encoding>UTF-8</encoding>
           <showWarnings>true</showWarnings>
         </configuration>
       </plugin>
