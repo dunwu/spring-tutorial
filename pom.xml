@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.zp.notes.spring</groupId>
@@ -7,19 +8,47 @@
   <version>0.0.1</version>
   <packaging>pom</packaging>
   <name>SpringNotes</name>
-  <url>http://maven.apache.org</url>
+  <url>https://github.com/atlantis1024/SpringNotes</url>
+  <description>Spring学习笔记</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-   <modules>
+  <modules>
     <module>spring-helloworld</module>
-	<module>spring-beans</module>
-	<module>spring-aop</module>
+    <module>spring-beans</module>
+    <module>spring-aop</module>
     <module>spring-jdbc</module>
     <module>spring-validator</module>
     <module>spring-scheduler</module>
     <module>spring-rmi</module>
+    <module>spring-security</module>
   </modules>
+
+  <developers>
+    <developer>
+      <name>Victor Zhang</name>
+      <email>atlantis1024@163.com</email>
+    </developer>
+  </developers>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <fork>true</fork>
+          <meminitial>128m</meminitial>
+          <maxmem>512m</maxmem>
+          <source>1.8</source>
+          <target>1.8</target>
+          <encoding>${project.build.sourceEncoding}</encoding>
+          <showWarnings>true</showWarnings>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

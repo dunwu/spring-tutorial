@@ -26,9 +26,8 @@ public class DateValidatorRule extends AbastractValidatorRule {
             SimpleDateFormat sdf = new SimpleDateFormat(pattern);
             return sdf.parse(property);
         } catch (ParseException e) {
-            // do noting
+            e.printStackTrace();
         } catch (java.text.ParseException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return null;

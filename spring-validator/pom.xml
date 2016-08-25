@@ -9,7 +9,6 @@
   </parent>
   <artifactId>spring-validator</artifactId>
   <name>spring-validator</name>
-  <url>http://maven.apache.org</url>
   <packaging>war</packaging>
 
   <properties>

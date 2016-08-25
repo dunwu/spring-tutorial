@@ -9,7 +9,6 @@
   </parent>
   <artifactId>spring-rmi-server</artifactId>
   <name>spring-rmi-server</name>
-  <url>http://maven.apache.org</url>
   <packaging>war</packaging>
 
   <properties>

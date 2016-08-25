@@ -9,7 +9,6 @@
   </parent>
   <artifactId>spring-jdbc</artifactId>
   <name>spring-jdbc</name>
-  <url>http://maven.apache.org</url>
   <packaging>war</packaging>
 
   <properties>
