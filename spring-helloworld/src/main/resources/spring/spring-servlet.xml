@@ -9,8 +9,6 @@
   http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
   <mvc:annotation-driven />
-  <mvc:view-controller path="/" view-name="forward:/hello/say" />
-
   <context:component-scan base-package="org.zp.notes.spring.helloworld" />
 
   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

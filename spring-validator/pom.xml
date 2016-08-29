@@ -5,11 +5,10 @@
   <parent>
     <groupId>org.zp.notes.spring</groupId>
     <artifactId>SpringNotes</artifactId>
-    <version>${project.parent.version}</version>
+    <version>0.0.1</version>
   </parent>
   <artifactId>spring-validator</artifactId>
   <name>spring-validator</name>
-  <url>http://maven.apache.org</url>
   <packaging>war</packaging>
 
   <properties>

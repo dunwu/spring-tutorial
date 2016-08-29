@@ -9,7 +9,6 @@
   </parent>
   <artifactId>spring-rmi-client</artifactId>
   <name>spring-rmi-client</name>
-  <url>http://maven.apache.org</url>
 
   <properties>
     <jdk.version>1.8</jdk.version>

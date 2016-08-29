@@ -9,7 +9,6 @@
   </parent>
   <artifactId>spring-scheduler</artifactId>
   <name>spring-scheduler</name>
-  <url>http://maven.apache.org</url>
   <packaging>war</packaging>
 
   <properties>
