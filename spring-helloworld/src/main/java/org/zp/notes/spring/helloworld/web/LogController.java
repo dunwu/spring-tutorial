@@ -13,14 +13,14 @@ public class LogController {
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @ResponseBody
-    @RequestMapping(value = "/say", method = RequestMethod.GET)
+    @RequestMapping(value = "/print", method = RequestMethod.GET)
     public String print() {
         String msg = "尝试打印日志";
+        log.trace(msg);
         log.debug(msg);
-        // log.info(msg);
-        // log.warn(msg);
-        // log.error(msg);
-        // log.trace(msg);
+        log.info(msg);
+        log.warn(msg);
+        log.error(msg);
         return msg;
     }
 }

@@ -17,5 +17,5 @@ classes
 *.iml
 *.eml
 
-
-
+# temp files
+*.log

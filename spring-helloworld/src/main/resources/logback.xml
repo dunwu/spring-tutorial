@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
+<!-- logback中一共有5种有效级别，分别是TRACE、DEBUG、INFO、WARN、ERROR，优先级依次从低到高 -->
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
 
   <property name="LOG_DIR" value="logs" />
   <property name="FILE_NAME" value="spring-helloworld" />
-  <timestamp key="byDay" datePattern="yyyy-MM-dd" />
 
   <!-- 将记录日志打印到控制台 -->
-  <appender name="STDOUT-APPENDER" class="ch.qos.logback.core.ConsoleAppender">
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
-      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5p %c - %m%n</pattern>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%-5p] %c - %m%n</pattern>
     </encoder>
   </appender>
 
-  <!-- 滚动记录文件，先将日志记录到指定文件，当符合某个条件时，将日志记录到其他文件。 -->
-  <appender name="ALL-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+  <!-- RollingFileAppender begin -->
+  <appender name="ALL" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <!-- 根据时间来制定滚动策略 -->
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <fileNamePattern>${user.dir}/logs/${FILE_NAME}-all.%d{yyyy-MM-dd}.log</fileNamePattern>
@@ -27,11 +27,80 @@
     </triggeringPolicy>
 
     <encoder>
-      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5p %c - %m%n</pattern>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%-5p] %c - %m%n</pattern>
     </encoder>
   </appender>
 
-  <appender name="DEBUG-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+  <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!-- 根据时间来制定滚动策略 -->
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${user.dir}/logs/${FILE_NAME}-error.%d{yyyy-MM-dd}.log</fileNamePattern>
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+
+    <!-- 根据文件大小来制定滚动策略 -->
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+      <maxFileSize>10MB</maxFileSize>
+    </triggeringPolicy>
+
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>ERROR</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
+
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%-5p] %c - %m%n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="WARN" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!-- 根据时间来制定滚动策略 -->
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${user.dir}/logs/${FILE_NAME}-warn.%d{yyyy-MM-dd}.log</fileNamePattern>
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+
+    <!-- 根据文件大小来制定滚动策略 -->
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+      <maxFileSize>10MB</maxFileSize>
+    </triggeringPolicy>
+
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>WARN</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
+
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%-5p] %c - %m%n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!-- 根据时间来制定滚动策略 -->
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${user.dir}/logs/${FILE_NAME}-info.%d{yyyy-MM-dd}.log</fileNamePattern>
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+
+    <!-- 根据文件大小来制定滚动策略 -->
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+      <maxFileSize>10MB</maxFileSize>
+    </triggeringPolicy>
+
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>INFO</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
+
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%-5p] %c - %m%n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <!-- 根据时间来制定滚动策略 -->
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <fileNamePattern>${user.dir}/logs/${FILE_NAME}-debug.%d{yyyy-MM-dd}.log</fileNamePattern>
@@ -43,17 +112,78 @@
       <maxFileSize>10MB</maxFileSize>
     </triggeringPolicy>
 
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>DEBUG</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
+
     <encoder>
-      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5p %c - %m%n</pattern>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%-5p] %c - %m%n</pattern>
     </encoder>
   </appender>
 
-  <logger name="org.zp.notes.spring.helloworld" level="DEBUG" additivity="false">
-    <appender-ref ref="DEBUG-APPENDER" />
+  <appender name="TRACE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!-- 根据时间来制定滚动策略 -->
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${user.dir}/logs/${FILE_NAME}-trace.%d{yyyy-MM-dd}.log</fileNamePattern>
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+
+    <!-- 根据文件大小来制定滚动策略 -->
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+      <maxFileSize>10MB</maxFileSize>
+    </triggeringPolicy>
+
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>TRACE</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
+
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%-5p] %c - %m%n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="SPRING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!-- 根据时间来制定滚动策略 -->
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${user.dir}/logs/${FILE_NAME}-springframework.%d{yyyy-MM-dd}.log
+      </fileNamePattern>
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+
+    <!-- 根据文件大小来制定滚动策略 -->
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+      <maxFileSize>10MB</maxFileSize>
+    </triggeringPolicy>
+
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%-5p] %c - %m%n</pattern>
+    </encoder>
+  </appender>
+  <!-- RollingFileAppender end -->
+
+  <!-- logger begin -->
+  <!-- 本项目的日志记录，分级打印 -->
+  <logger name="org.zp.notes.spring.helloworld" level="TRACE" additivity="false">
+    <appender-ref ref="STDOUT" />
+    <appender-ref ref="ERROR" />
+    <appender-ref ref="WARN" />
+    <appender-ref ref="INFO" />
+    <appender-ref ref="DEBUG" />
+    <appender-ref ref="TRACE" />
   </logger>
 
-  <root level="DEBUG">
-    <appender-ref ref="STDOUT-APPENDER" />
-    <appender-ref ref="ALL-APPENDER" />
+  <!-- SPRING框架日志 -->
+  <logger name="org.springframework" level="TRACE" additivity="false">
+    <appender-ref ref="SPRING" />
+  </logger>
+
+  <root level="TRACE">
+    <appender-ref ref="ALL" />
   </root>
+  <!-- logger end -->
+
 </configuration>
