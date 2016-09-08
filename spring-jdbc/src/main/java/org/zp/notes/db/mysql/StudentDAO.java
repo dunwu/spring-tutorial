@@ -1,4 +1,4 @@
-package org.zp.notes.spring.jdbc;
+package org.zp.notes.db.mysql;
 
 import java.util.List;
 

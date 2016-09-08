@@ -1,4 +1,4 @@
-package org.zp.notes.spring.jdbc;
+package org.zp.notes.db.mysql;
 
 import java.util.List;
 
@@ -17,18 +17,20 @@ public class App {
         jdbcTemplateDemo.create("Ayan", 15);
 
         System.out.println("------Listing Multiple Records--------");
+        int lastId = 0;
         List<StudentDTO> students = jdbcTemplateDemo.list();
         for (StudentDTO record : students) {
             System.out.print("ID : " + record.getId());
             System.out.print(", Name : " + record.getName());
             System.out.println(", Age : " + record.getAge());
+            lastId = record.getId();
         }
 
         System.out.println("----Updating Record with ID = 2 -----");
-        jdbcTemplateDemo.update(2, 20);
+        jdbcTemplateDemo.update(lastId, 20);
 
         System.out.println("----Listing Record with ID = 2 -----");
-        StudentDTO student = jdbcTemplateDemo.getById(2);
+        StudentDTO student = jdbcTemplateDemo.getById(lastId);
         System.out.print("ID : " + student.getId());
         System.out.print(", Name : " + student.getName());
         System.out.println(", Age : " + student.getAge());
