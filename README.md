@@ -5,6 +5,8 @@ Spring的个人学习笔记。
 ## 项目说明
 ### spring-helloworld(入门)
 spring第一个简单例子。
+org.springside.modules.jetty包支持使用jetty启动
+
 
 ### spring-beans(核心)
 spring的依赖注入范例。

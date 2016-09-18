@@ -22,6 +22,7 @@
     <module>spring-validator</module>
     <module>spring-scheduler</module>
     <module>spring-rmi</module>
+    <module>spring-security</module>
   </modules>
 
   <developers>
