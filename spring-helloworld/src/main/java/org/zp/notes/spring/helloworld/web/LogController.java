@@ -15,7 +15,7 @@ public class LogController {
     @ResponseBody
     @RequestMapping(value = "/print", method = RequestMethod.GET)
     public String print() {
-        String msg = "尝试打印日志";
+        String msg = "try to print logs";
         log.trace(msg);
         log.debug(msg);
         log.info(msg);
