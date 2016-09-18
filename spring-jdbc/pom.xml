@@ -32,6 +32,11 @@
       <artifactId>mongo-java-driver</artifactId>
       <version>3.2.2</version>
     </dependency>
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>1.0.19</version>
+    </dependency>
     <!-- db end -->
 
     <!-- log start -->
