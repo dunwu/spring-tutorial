@@ -16,7 +16,7 @@
   <appender name="ALL" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <!-- 根据时间来制定滚动策略 -->
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>${user.dir}/logs/${DIR_NAME}/all.%d{yyyy-MM-dd}.log</fileNamePattern>
+      <fileNamePattern>d:/logs/${DIR_NAME}/all.%d{yyyy-MM-dd}.log</fileNamePattern>
       <maxHistory>30</maxHistory>
     </rollingPolicy>
 
@@ -33,7 +33,7 @@
   <appender name="SPRING" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <!-- 根据时间来制定滚动策略 -->
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>${user.dir}/logs/${DIR_NAME}/springframework.%d{yyyy-MM-dd}.log
+      <fileNamePattern>d:/logs/${DIR_NAME}/springframework.%d{yyyy-MM-dd}.log
       </fileNamePattern>
       <maxHistory>30</maxHistory>
     </rollingPolicy>
@@ -52,7 +52,7 @@
   <!-- logger begin -->
   <!-- 本项目的日志记录，分级打印 -->
   <logger name="org.zp.notes.spring" level="TRACE" additivity="false">
-    <appender-ref ref="ALL" />
+    <appender-ref ref="STDOUT" />
   </logger>
 
   <!-- SPRING框架日志 -->
@@ -60,8 +60,7 @@
     <appender-ref ref="SPRING" />
   </logger>
 
-  <root level="ERROR">
-    <appender-ref ref="STDOUT" />
+  <root level="DEBUG">
     <appender-ref ref="ALL" />
   </root>
   <!-- logger end -->

@@ -13,8 +13,8 @@ import java.util.ArrayList;
  * @author zhangpeng0913
  */
 public class JettyFactory {
-    public static final int PORT = 8080;
-    public static final String CONTEXT = "/";
+    public static final int PORT = 8089;
+    public static final String CONTEXT = "/shiro";
     public static final String RESOURCE_BASE_PATH = "src/main/webapp";
     public static final String WEB_XML_PATH = "/WEB-INF/web.xml";
     public static final String[] TLD_JAR_NAMES =

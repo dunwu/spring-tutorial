@@ -57,12 +57,6 @@
       <artifactId>jcl-over-slf4j</artifactId>
       <version>1.7.12</version>
     </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-simple</artifactId>
-      <version>1.6.1</version>
-      <scope>test</scope>
-    </dependency>
     <!-- log end -->
 
     <!-- jetty begin -->
@@ -70,21 +64,25 @@
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-webapp</artifactId>
       <version>${jetty.version}</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-annotations</artifactId>
       <version>${jetty.version}</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>apache-jsp</artifactId>
       <version>${jetty.version}</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>apache-jstl</artifactId>
       <version>${jetty.version}</version>
+      <scope>test</scope>
     </dependency>
     <!-- jetty end -->
 
@@ -165,16 +163,6 @@
       <version>19.0</version>
     </dependency>
     <!-- util end -->
-
-    <!-- web begin -->
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>3.1.0</version>
-    </dependency>
-
-    <!-- web end -->
-
   </dependencies>
 
   <build>

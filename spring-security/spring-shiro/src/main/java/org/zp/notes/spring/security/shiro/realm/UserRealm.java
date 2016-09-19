@@ -6,16 +6,20 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.zp.notes.spring.security.shiro.entity.User;
 import org.zp.notes.spring.security.shiro.service.UserService;
 
 /**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-1-28
- * <p>Version: 1.0
+ * <p>
+ * User: Zhang Kaitao
+ * <p>
+ * Date: 14-1-28
+ * <p>
+ * Version: 1.0
  */
 public class UserRealm extends AuthorizingRealm {
-
+    @Autowired
     private UserService userService;
 
     public void setUserService(UserService userService) {
@@ -24,7 +28,7 @@ public class UserRealm extends AuthorizingRealm {
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-        String username = (String)principals.getPrimaryPrincipal();
+        String username = (String) principals.getPrimaryPrincipal();
 
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         authorizationInfo.setRoles(userService.findRoles(username));
@@ -34,27 +38,28 @@ public class UserRealm extends AuthorizingRealm {
     }
 
     @Override
-    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
+    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token)
+                    throws AuthenticationException {
 
-        String username = (String)token.getPrincipal();
+        String username = (String) token.getPrincipal();
 
         User user = userService.findByUsername(username);
 
-        if(user == null) {
-            throw new UnknownAccountException();//没找到帐号
+        if (user == null) {
+            throw new UnknownAccountException();// 没找到帐号
         }
 
-        if(Boolean.TRUE.equals(user.getLocked())) {
-            throw new LockedAccountException(); //帐号锁定
+        if (Boolean.TRUE.equals(user.getLocked())) {
+            throw new LockedAccountException(); // 帐号锁定
         }
 
-        //交给AuthenticatingRealm使用CredentialsMatcher进行密码匹配，如果觉得人家的不好可以自定义实现
-        SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
-                user.getUsername(), //用户名
-                user.getPassword(), //密码
-                ByteSource.Util.bytes(user.getCredentialsSalt()),//salt=username+salt
-                getName()  //realm name
-        );
+        // 交给AuthenticatingRealm使用CredentialsMatcher进行密码匹配，如果觉得人家的不好可以自定义实现
+        SimpleAuthenticationInfo authenticationInfo =
+                        new SimpleAuthenticationInfo(user.getUsername(), // 用户名
+                                        user.getPassword(), // 密码
+                                        ByteSource.Util.bytes(user.getCredentialsSalt()), // salt=username+salt
+                                        getName() // realm name
+                        );
         return authenticationInfo;
     }
 
