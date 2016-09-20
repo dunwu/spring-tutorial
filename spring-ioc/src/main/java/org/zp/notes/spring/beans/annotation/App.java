@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App {
 
     public static void main(String[] args) throws Exception {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("/spring/spring-annotation.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
 
         // 自动装配：byName
         Musician musician = (Musician) ctx.getBean("musician");
