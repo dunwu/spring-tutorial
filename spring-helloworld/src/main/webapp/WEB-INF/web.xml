@@ -3,6 +3,8 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   <display-name>spring-helloworld</display-name>
 
+  <!-- listener begin -->
+  <!--
   <context-param>
     <param-name>logbackConfigLocation</param-name>
     <param-value>classpath:logback.xml</param-value>
@@ -10,7 +12,32 @@
   <listener>
     <listener-class>ch.qos.logback.ext.spring.web.LogbackConfigListener</listener-class>
   </listener>
+  -->
+  <!-- listener end -->
 
+  <!-- filter begin -->
+  <!-- 转换字符编码 -->
+  <filter>
+    <filter-name>encodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+    <init-param>
+      <param-name>forceEncoding</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>encodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+  <!-- filter end -->
+
+  <!-- servlet begin -->
   <servlet>
     <servlet-name>spring-servlet</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -24,4 +51,5 @@
     <servlet-name>spring-servlet</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+  <!-- servlet end -->
 </web-app>

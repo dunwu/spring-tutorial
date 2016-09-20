@@ -9,17 +9,20 @@ import org.eclipse.jetty.webapp.WebAppContext;
 import java.util.ArrayList;
 
 /**
- * Intellij 并不支持jetty，所以要想类似eclipse一样的使用jetty，需要配置webdefault.xml
- * @author zhangpeng0913
+ * JettyFactory 可以工作在 Eclipse 和 Intellij 中，用来启动 jetty 服务。 Intellij
+ * 并不支持jetty，所以要想类似eclipse一样的使用jetty，需要配置webdefault.xml。
+ * 
+ * @author vicotr zhang
  */
+@SuppressWarnings("unused")
 public class JettyFactory {
-    public static final int PORT = 8080;
-    public static final String CONTEXT = "/";
-    public static final String RESOURCE_BASE_PATH = "src/main/webapp";
-    public static final String WEB_XML_PATH = "/WEB-INF/web.xml";
-    public static final String[] TLD_JAR_NAMES =
+    private static final int PORT = 8080;
+    private static final String CONTEXT = "/";
+    private static final String RESOURCE_BASE_PATH = "src/main/webapp";
+    private static final String WEB_XML_PATH = "/WEB-INF/web.xml";
+    private static final String[] TLD_JAR_NAMES =
                     new String[] {"sitemesh", "spring-webmvc", "shiro-web", "tiles"};
-    public static final String WINDOWS_WEBDEFAULT_PATH = "jetty/webdefault.xml";
+    private static final String WINDOWS_WEBDEFAULT_PATH = "jetty/webdefault.xml";
 
     public static final int IDE_ECLIPSE = 0;
     public static final int IDE_INTELLIJ = 1;
@@ -72,8 +75,8 @@ public class JettyFactory {
 
     public static String getAbsolutePath() {
         String path = null;
-        String folderPath = JettyFactory.class.getProtectionDomain().getCodeSource()
-                        .getLocation().getPath().substring(1);
+        String folderPath = JettyFactory.class.getProtectionDomain().getCodeSource().getLocation()
+                        .getPath().substring(1);
         if (folderPath.indexOf("target") > 0) {
             path = folderPath.substring(0, folderPath.indexOf("target"));
         }

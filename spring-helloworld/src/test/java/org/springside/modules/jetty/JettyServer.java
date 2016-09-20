@@ -2,6 +2,11 @@ package org.springside.modules.jetty;
 
 import org.eclipse.jetty.server.Server;
 
+/**
+ * 启动 jetty 服务，方便测试
+ * 
+ * @author victor zhang
+ */
 public class JettyServer {
     // private static int STARTUP_TYPE = JettyFactory.IDE_ECLIPSE;
     private static int STARTUP_TYPE = JettyFactory.IDE_INTELLIJ;

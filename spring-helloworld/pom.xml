@@ -10,6 +10,7 @@
   <artifactId>spring-helloworld</artifactId>
   <name>spring-helloworld</name>
   <packaging>war</packaging>
+  <description>spring mvc 的第一个范例</description>
 
   <properties>
     <spring.version>4.1.4.RELEASE</spring.version>
@@ -45,21 +46,25 @@
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-webapp</artifactId>
       <version>${jetty.version}</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-annotations</artifactId>
       <version>${jetty.version}</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>apache-jsp</artifactId>
       <version>${jetty.version}</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>apache-jstl</artifactId>
       <version>${jetty.version}</version>
+      <scope>test</scope>
     </dependency>
     <!-- jetty end -->
 
