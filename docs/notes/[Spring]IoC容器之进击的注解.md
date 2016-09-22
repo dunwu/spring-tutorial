@@ -326,3 +326,63 @@ public class AnnotationPostConstructAndPreDestroy {
 ### @Inject
 
 `@Inject`和`@Autowired`一样，可以修饰属性、setter方法、构造方法。
+
+***范例***
+
+```java
+public class AnnotationInject {
+    private static final Logger log = LoggerFactory.getLogger(AnnotationInject.class);
+    @Inject
+    Apple fieldA;
+
+    Banana fieldB;
+
+    Orange fieldC;
+
+    public Apple getFieldA() {
+        return fieldA;
+    }
+
+    public void setFieldA(Apple fieldA) {
+        this.fieldA = fieldA;
+    }
+
+    public Banana getFieldB() {
+        return fieldB;
+    }
+
+    @Inject
+    public void setFieldB(Banana fieldB) {
+        this.fieldB = fieldB;
+    }
+
+    public Orange getFieldC() {
+        return fieldC;
+    }
+
+    public AnnotationInject() {}
+
+    @Inject
+    public AnnotationInject(Orange fieldC) {
+        this.fieldC = fieldC;
+    }
+
+    public static void main(String[] args) throws Exception {
+        AbstractApplicationContext ctx =
+                        new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
+        AnnotationInject annotationInject = (AnnotationInject) ctx.getBean("annotationInject");
+
+        log.debug("type: {}, name: {}", annotationInject.getFieldA().getClass(),
+                        annotationInject.getFieldA().getName());
+
+        log.debug("type: {}, name: {}", annotationInject.getFieldB().getClass(),
+                        annotationInject.getFieldB().getName());
+
+        log.debug("type: {}, name: {}", annotationInject.getFieldC().getClass(),
+                        annotationInject.getFieldC().getName());
+
+        ctx.close();
+    }
+}
+```
+
