@@ -41,19 +41,19 @@ Spring根据配置的元数据来进行初始化工作。
 
 Xml配置
 ```xml
-  <?xml version="1.0" encoding="UTF-8"?>  
-  <beans xmlns="http://www.springframework.org/schema/beans"  
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
-         xsi:schemaLocation="http://www.springframework.org/schema/beans  
-           http://www.springframework.org/schema/beans/spring-beans.xsd">  
-    <bean id="..." class="...">  
-      <!-- collaborators and configuration for this bean go here -->  
-    </bean>  
-    <bean id="..." class="...">  
-      <!-- collaborators and configuration for this bean go here -->  
-    </bean>  
-    <!-- more bean definitions go here -->  
-  </beans>  
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <bean id="..." class="...">
+    <!-- collaborators and configuration for this bean go here -->
+  </bean>
+  <bean id="..." class="...">
+    <!-- collaborators and configuration for this bean go here -->
+  </bean>
+  <!-- more bean definitions go here -->
+</beans>
 ```
 `<beans>`标签：Spring 配置文件的根节点。  
 `<bean>`标签：用来定义一个 JavaBean。`id` 属性是它的标识，在文件中必须唯一；`class` 属性是它关联的类。  
@@ -64,28 +64,28 @@ Xml配置
 读取配置信息(Resource)  
 转化为Spring 可识别的数据形式（BeanDefinition）  
 ```java
-  ApplicationContext context =  
-        new ClassPathXmlApplicationContext(new String[] {"services.xml", "daos.xml"});
+ApplicationContext context =  
+      new ClassPathXmlApplicationContext(new String[] {"services.xml", "daos.xml"});
 ```
 组合 xml 配置文件  
 配置的 Bean 功能各不相同，都放在一个xml文件中，不便管理。  
 Java 设计模式讲究职责单一原则。配置其实也是如此，功能不同的JavaBean应该被组织在不同的xml文件中。然后使用import标签把它们统一导入。
 ```xml
-  <import resource="classpath:spring/applicationContext.xml"/>
-  <import resource="/WEB-INF/spring/service.xml"/>
+<import resource="classpath:spring/applicationContext.xml"/>
+<import resource="/WEB-INF/spring/service.xml"/>
 ```
 
 ### 使用容器 ###
 使用容器的方式就是通过`getBean`获取IoC容器中的JavaBean。  
 Spring也有其他方法去获得JavaBean，但是Spring并不推荐其他方式。 
 ```java
-  // create and configure beans
-  ApplicationContext context =
-  new ClassPathXmlApplicationContext(new String[] {"services.xml", "daos.xml"});
-  // retrieve configured instance
-  PetStoreService service = context.getBean("petStore", PetStoreService.class);
-  // use configured instance
-  List<String> userList = service.getUsernameList();
+// create and configure beans
+ApplicationContext context =
+new ClassPathXmlApplicationContext(new String[] {"services.xml", "daos.xml"});
+// retrieve configured instance
+PetStoreService service = context.getBean("petStore", PetStoreService.class);
+// use configured instance
+List<String> userList = service.getUsernameList();
 ``` 
 
 ## Bean概述 ##
@@ -102,17 +102,18 @@ Spring中，并非一定要指定id和name属性。实际上，Spring会自动�
 可能存在这样的场景，不同系统中对于同一bean的命名方式不一样。  
 为了适配，Spring 支持 `<alias>` 为bean添加别名的功能。  
 ```xml
-  <alias name="subsystemA-dataSource" alias="subsystemB-dataSource"/>
-  <alias name="subsystemA-dataSource" alias="myApp-dataSource" />
+<alias name="subsystemA-dataSource" alias="subsystemB-dataSource"/>
+<alias name="subsystemA-dataSource" alias="myApp-dataSource" />
 ```
 
 ### 实例化Bean ###
 **构造器方式**  
 ```xml
-  <bean id="exampleBean" class="examples.ExampleBean"/>
+<bean id="exampleBean" class="examples.ExampleBean"/>
 ```
 
 **静态工厂方法**
+
 
 ## 依赖 ##
 依赖注入  
@@ -121,12 +122,12 @@ Spring中，并非一定要指定id和name属性。实际上，Spring会自动�
 - Setter注入  
 构造器注入有可能出现循环注入的错误。如：
 ```java
-  class A {
-    public A(B b){}
-  }
-  class B {
-    public B(A a){}
-  }
+class A {
+	public A(B b){}
+}
+class B {
+	public B(A a){}
+}
 ```
 
 **依赖和配置细节**
@@ -134,6 +135,7 @@ Spring中，并非一定要指定id和name属性。实际上，Spring会自动�
 Lazy-initialized Bean  
 自动装配  
 方法注入  
+
 
 ## 基于注解的配置 ##
 ## 基于Java的配置 ##
@@ -150,7 +152,7 @@ Spring2.5 引入了注解。
 Spring 默认是不启用注解的。如果想使用注解，需要先在xml中启动注解。  
 启动方式：在xml中加入一个标签，很简单吧。  
 ```xml
-  <context:annotation-config/>
+<context:annotation-config/>
 ```  
 *注：<context:annotation-config/> 只会检索定义它的上下文。什么意思呢？就是说，如果你
 为DispatcherServlet指定了一个WebApplicationContext，那么它只在controller中查找@Autowired注解，而不会检查其它的路径。*
