@@ -5,12 +5,12 @@
 
   <!-- Bean declarations go here -->
 
-  <bean id="piano" class="org.zp.notes.spring.beans.inject.instrument.Piano" />
-  <bean id="guitar" class="org.zp.notes.spring.beans.inject.instrument.Guitar" />
-  <bean id="violin" class="org.zp.notes.spring.beans.inject.instrument.Violin" />
+  <bean id="piano" class="org.zp.notes.spring.beans.annotation.inject.instrument.Piano" />
+  <bean id="guitar" class="org.zp.notes.spring.beans.annotation.inject.instrument.Guitar" />
+  <bean id="violin" class="org.zp.notes.spring.beans.annotation.inject.instrument.Violin" />
 
   <!-- 装配Collection/List -->
-  <bean id="band" class="org.zp.notes.spring.beans.inject.Band">
+  <bean id="band" class="org.zp.notes.spring.beans.annotation.inject.Band">
     <!-- 装配list -->
     <property name="collections">
       <list>

@@ -7,8 +7,8 @@
 
   <!-- Bean declarations go here -->
   <!-- 自动装配byName -->
-  <bean id="instrument" class="org.zp.notes.spring.beans.autowire.instrument.Piano" />
-  <bean id="chopinbyName" class="org.zp.notes.spring.beans.autowire.Musician" autowire="byName">
+  <bean id="instrument" class="org.zp.notes.spring.beans.annotation.autowire.instrument.Piano" />
+  <bean id="chopinbyName" class="org.zp.notes.spring.beans.annotation.autowire.Musician" autowire="byName">
     <property name="song" value="夜曲" />
     <property name="name" value="肖邦" />
   </bean>
@@ -16,17 +16,17 @@
   <!-- 自动装配byType -->
   <!-- 如果寻找到多个与自动装配的属性类型相匹配的Bean，则Spring会抛出异常 -->
   <!-- <bean id="guitar" class="org.zp.notes.spring.beans.autowire.instrument.Guitar" /> -->
-  <bean id="chopinbyType" class="org.zp.notes.spring.beans.autowire.Musician" autowire="byType">
+  <bean id="chopinbyType" class="org.zp.notes.spring.beans.annotation.autowire.Musician" autowire="byType">
     <property name="song" value="夜曲" />
     <property name="name" value="肖邦" />
   </bean>
 
   <!-- 自动装配constructor -->
   <!-- 如果寻找到多个与自动装配的属性类型相匹配的Bean，则Spring会抛出异常 -->
-  <bean id="poetry" class="org.zp.notes.spring.beans.autowire.Poetry">
+  <bean id="poetry" class="org.zp.notes.spring.beans.annotation.autowire.Poetry">
     <constructor-arg value="将进酒" />
   </bean>
-  <bean id="libai" class="org.zp.notes.spring.beans.autowire.Poet" autowire="constructor">
+  <bean id="libai" class="org.zp.notes.spring.beans.annotation.autowire.Poet" autowire="constructor">
     <constructor-arg value="李白" />
   </bean>
 </beans>

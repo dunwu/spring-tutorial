@@ -14,6 +14,33 @@
   <mvc:annotation-driven/>
 
   <!-- 设置后，将查找使用@Component(@Controller是它的一种具体化)注解的类并将其注册为Bean -->
-  <context:component-scan base-package="org.zp.notes.spring.beans"/>
+  <context:component-scan base-package="org.zp.notes.spring.beans.annotation.sample"/>
+
+  <!-- 测试@Reuquired -->
+  <bean id="annotationRequired" class="org.zp.notes.spring.beans.annotation.AnnotationRequired">
+    <!-- AnnotationRequired的name属性的setter方法被@Required修饰，如果不初始化name，会报异常 -->
+    <property name="name" value="zhangsan"/>
+  </bean>
+
+  <!-- 测试@Autowired -->
+  <bean id="annotationAutowired" class="org.zp.notes.spring.beans.annotation.AnnotationAutowired"/>
+
+  <!-- 测试@Qualifier -->
+  <bean id="annotationQualifier" class="org.zp.notes.spring.beans.annotation.AnnotationQualifier"/>
+
+  <!-- 测试@Resource -->
+  <bean id="annotationResource" class="org.zp.notes.spring.beans.annotation.AnnotationResource"/>
+
+  <!-- 测试@PostConstruct和@PreDestroy -->
+  <bean id="annotationPostConstructAndPreDestroy"
+        class="org.zp.notes.spring.beans.annotation.AnnotationPostConstructAndPreDestroy"/>
+
+  <bean id="annotationInject"
+        class="org.zp.notes.spring.beans.annotation.AnnotationInject"/>
+
+  <!-- 测试bean -->
+  <bean id="apple" class="org.zp.notes.spring.beans.annotation.sample.Apple"/>
+  <bean id="banana" class="org.zp.notes.spring.beans.annotation.sample.Banana"/>
+  <bean id="orange" class="org.zp.notes.spring.beans.annotation.sample.Orange"/>
 
 </beans>

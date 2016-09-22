@@ -1,11 +1,11 @@
 package org.zp.notes.spring.beans.annotation;
 
-import javax.annotation.Resource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.zp.notes.spring.beans.annotation.instrument.Instrument;
+
+import javax.annotation.Resource;
 
 @Service
 public class Musician implements Performer {

@@ -53,6 +53,7 @@
   <!-- 本项目的日志记录，分级打印 -->
   <logger name="org.zp.notes.spring" level="TRACE" additivity="false">
     <appender-ref ref="ALL"/>
+    <appender-ref ref="STDOUT"/>
   </logger>
 
   <!-- SPRING框架日志 -->
