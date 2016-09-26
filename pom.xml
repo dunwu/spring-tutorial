@@ -5,7 +5,7 @@
 
   <groupId>org.zp.notes.spring</groupId>
   <artifactId>SpringNotes</artifactId>
-  <version>0.0.1</version>
+  <version>${springnotes.version}</version>
   <packaging>pom</packaging>
   <name>SpringNotes</name>
   <url>https://github.com/atlantis1024/SpringNotes</url>
@@ -13,6 +13,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <springnotes.version>0.0.4</springnotes.version>
   </properties>
 
   <modules>
