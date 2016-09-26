@@ -94,9 +94,9 @@ public class Police implements Job {
 
 ## @Configuration
 
-用@Configuration标记一个类意味着它的主要作用是作为一个BeanDefinition。
+`@Configuration`是一个类级别的注解，用来标记被修饰类的对象是一个`BeanDefinition`。
 
-此外，@Configuration类允许在同一个类中通过@Bean定义内部bean依赖。
+@Configuration类声明bean是通过被@Bean修饰的公共方法。此外，@Configuration类允许在同一个类中通过@Bean定义内部bean依赖。
 
 ```java
 @Configuration
