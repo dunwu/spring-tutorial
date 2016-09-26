@@ -1,18 +1,24 @@
 <?xml version="1.0"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.zp.notes.spring</groupId>
     <artifactId>SpringNotes</artifactId>
-    <version>0.0.1</version>
+    <version>${springnotes.version}</version>
   </parent>
   <artifactId>spring-helloworld</artifactId>
   <name>spring-helloworld</name>
   <packaging>war</packaging>
+  <description>spring mvc 的第一个范例</description>
+
+  <properties>
+    <spring.version>4.1.4.RELEASE</spring.version>
+    <jetty.version>9.3.2.v20150730</jetty.version>
+  </properties>
 
   <dependencies>
-    <!-- log start -->
+    <!-- log begin -->
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
@@ -37,31 +43,82 @@
 
     <!-- jetty begin -->
     <dependency>
-      <groupId>org.eclipse.jetty.aggregate</groupId>
+      <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-webapp</artifactId>
-      <version>7.6.16.v20140903</version>
-      <scope>compile</scope>
+      <version>${jetty.version}</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
-      <artifactId>jetty-jsp</artifactId>
-      <version>7.6.16.v20140903</version>
-      <scope>provided</scope>
+      <artifactId>jetty-annotations</artifactId>
+      <version>${jetty.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>apache-jsp</artifactId>
+      <version>${jetty.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>apache-jstl</artifactId>
+      <version>${jetty.version}</version>
+      <scope>test</scope>
     </dependency>
     <!-- jetty end -->
+
+    <!-- json begin -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.5.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.5.1</version>
+    </dependency>
+    <!-- json end -->
 
     <!-- spring begin -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context-support</artifactId>
-      <version>4.1.4.RELEASE</version>
+      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>4.1.4.RELEASE</version>
+      <version>${spring.version}</version>
     </dependency>
     <!-- spring end -->
+
+    <!-- test begin -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+    </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>3.5.2</version>
+    </dependency>
+    <!-- test end -->
+
+    <!-- util begin -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.4</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>19.0</version>
+    </dependency>
+    <!-- util end -->
   </dependencies>
 
   <build>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.zp.notes.spring</groupId>
   <artifactId>SpringNotes</artifactId>
-  <version>0.0.1</version>
+  <version>${springnotes.version}</version>
   <packaging>pom</packaging>
   <name>SpringNotes</name>
   <url>https://github.com/atlantis1024/SpringNotes</url>
@@ -12,11 +13,12 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <springnotes.version>0.0.4</springnotes.version>
   </properties>
 
   <modules>
     <module>spring-helloworld</module>
-    <module>spring-beans</module>
+    <module>spring-ioc</module>
     <module>spring-aop</module>
     <module>spring-jdbc</module>
     <module>spring-validator</module>

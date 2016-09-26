@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.zp.notes.spring</groupId>
     <artifactId>spring-rmi</artifactId>
-    <version>0.0.1</version>
+    <version>${springnotes.version}</version>
   </parent>
   <artifactId>spring-rmi-server</artifactId>
   <name>spring-rmi-server</name>
