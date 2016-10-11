@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+  <mapping date-format="yyyy-MM-dd">
+    <class-a>org.zp.notes.spring.common.dozer.vo.NotSameAttributeA</class-a>
+    <class-b>org.zp.notes.spring.common.dozer.vo.NotSameAttributeB</class-b>
+    <field>
+      <a>name</a>
+      <b>value</b>
+    </field>
+  </mapping>
+
+  <!-- 枚举映射 -->
+  <mapping>
+    <class-a>org.zp.notes.spring.common.dozer.vo.User</class-a>
+    <class-b>org.zp.notes.spring.common.dozer.vo.UserPrime</class-b>
+    <field>
+      <a>status</a>
+      <b>statusPrime</b>
+    </field>
+  </mapping>
+</mappings>

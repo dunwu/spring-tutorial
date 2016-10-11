@@ -97,7 +97,6 @@ public class JettyFactory {
         // instead.
         ArrayList jarNameExprssions = Lists.newArrayList(".*/[^/]*servlet-api-[^/]*\\.jar$",
                         ".*/javax.servlet.jsp.jstl-.*\\.jar$", ".*/[^/]*taglibs.*\\.jar$");
-        int len$ = jarNames.length;
 
         for (String jarName : jarNames) {
             jarNameExprssions.add(".*/" + jarName + "-[^/]*\\.jar$");
