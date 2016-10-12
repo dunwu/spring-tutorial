@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.zp.notes.spring</groupId>
@@ -13,7 +12,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <springnotes.version>0.0.4</springnotes.version>
+    <springnotes.version>0.0.5</springnotes.version>
   </properties>
 
   <modules>
@@ -25,6 +24,7 @@
     <module>spring-scheduler</module>
     <module>spring-rmi</module>
     <module>spring-security</module>
+    <module>spring-common</module>
   </modules>
 
   <developers>
