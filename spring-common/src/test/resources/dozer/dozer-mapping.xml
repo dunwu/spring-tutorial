@@ -20,4 +20,13 @@
       <b>statusPrime</b>
     </field>
   </mapping>
+
+  <mapping>
+    <class-a>org.zp.notes.spring.common.dozer.vo.Source</class-a>
+    <class-b>org.zp.notes.spring.common.dozer.vo.Dest</class-b>
+    <field>
+      <a>info</a>
+      <b>info.content</b>
+    </field>
+  </mapping>
 </mappings>
