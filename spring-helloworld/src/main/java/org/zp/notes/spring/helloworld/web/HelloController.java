@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * spring mvc 的第一个程序
- * 
+ *
  * @author vicotr zhang
  * @since 2016.07.29
  */
@@ -49,12 +49,12 @@ public class HelloController {
     @ResponseBody
     @RequestMapping(value = "/log", method = RequestMethod.GET)
     public String log() {
-        String msg = "try to print logs";
-        log.trace(msg);
-        log.debug(msg);
-        log.info(msg);
-        log.warn(msg);
-        log.error(msg);
+        String msg = "print log, current level: {}";
+        log.trace(msg, "trace");
+        log.debug(msg, "debug");
+        log.info(msg, "info");
+        log.warn(msg, "warn");
+        log.error(msg, "error");
         return msg;
     }
 }
