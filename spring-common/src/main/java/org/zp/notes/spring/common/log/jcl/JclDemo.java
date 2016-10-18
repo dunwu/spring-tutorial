@@ -3,7 +3,7 @@ package org.zp.notes.spring.common.log.jcl;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-public class JclTest {
+public class JclDemo {
 //    private static final Log log = LogFactory.getLog(JclTest.class);
 
     public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class JclTest {
 
     public static void test() {
         System.setProperty("java.util.logging.config.file", "common-logging.properties");
-        Log logger = LogFactory.getLog(JclTest.class);
+        Log logger = LogFactory.getLog(JclDemo.class);
         logger.trace("测试common-logging + java.util.logging");
     }
 }

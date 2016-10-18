@@ -8,8 +8,8 @@ import org.slf4j.LoggerFactory;
  *
  * @author victor zhangs
  */
-public class Slf4jTest {
-    private static final Logger log = LoggerFactory.getLogger(Slf4jTest.class);
+public class Slf4jDemo {
+    private static final Logger log = LoggerFactory.getLogger(Slf4jDemo.class);
 
     public static void main(String[] args) {
         String msg = "print log, current level: {}";

@@ -12,4 +12,5 @@
 
   <!-- 加载资源文件 -->
   <import resource="classpath:spring/spring-dozer.xml"/>
+  <import resource="classpath:spring/spring-ehcache.xml"/>
 </beans>
