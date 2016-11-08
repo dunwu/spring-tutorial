@@ -72,7 +72,7 @@ public class CacheManagerOperationTest {
      */
     @Test
     public void create04() {
-        URL url = getClass().getResource("/ehcache.xml");
+        URL url = getClass().getResource("/cache/ehcache.xml");
         CacheManager manager = CacheManager.newInstance(url);
         String[] cacheNames = manager.getCacheNames();
 

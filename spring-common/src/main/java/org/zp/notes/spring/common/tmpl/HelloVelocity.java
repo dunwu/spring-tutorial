@@ -2,7 +2,6 @@ package org.zp.notes.spring.common.tmpl;
 
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
-import org.apache.velocity.app.Velocity;
 import org.apache.velocity.app.VelocityEngine;
 
 import java.io.IOException;
@@ -30,7 +29,7 @@ public class HelloVelocity {
         p.put("file.resource.loader.class", "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
         VelocityEngine ve = new VelocityEngine();
         ve.init(p);
-        Template t = ve.getTemplate("helloVelocity.vm");
+        Template t = ve.getTemplate("template/helloVelocity.vm");
 
         System.out.println(fillTemplate(t));
     }
@@ -45,7 +44,7 @@ public class HelloVelocity {
         p.put(VelocityEngine.FILE_RESOURCE_LOADER_PATH, "D:\\01_Workspace\\Project\\zp\\SpringNotes\\spring-common\\src\\main\\resources");
         VelocityEngine ve = new VelocityEngine();
         ve.init(p);
-        Template t = ve.getTemplate("helloVelocity.vm");
+        Template t = ve.getTemplate("template/helloVelocity.vm");
 
         System.out.println(fillTemplate(t));
     }
@@ -54,10 +53,10 @@ public class HelloVelocity {
         System.out.println("========== loadByConfig ==========");
 
         Properties p = new Properties();
-        p.load(this.getClass().getResourceAsStream("/velocity.properties"));
+        p.load(this.getClass().getResourceAsStream("/template/velocity.properties"));
         VelocityEngine ve = new VelocityEngine();
         ve.init(p);
-        Template t = ve.getTemplate("helloVelocity.vm");
+        Template t = ve.getTemplate("template/helloVelocity.vm");
 
         System.out.println(fillTemplate(t));
     }

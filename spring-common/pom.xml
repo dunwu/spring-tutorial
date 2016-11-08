@@ -36,13 +36,13 @@
         </dependency>
         <!-- cache end -->
 
-        <!-- html parser begin-->
+        <!-- spider begin-->
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
             <version>1.9.2</version>
         </dependency>
-        <!-- html parser end-->
+        <!-- spider end-->
 
         <!-- log begin -->
         <!-- logback-classic 包含 slf4j-api -->

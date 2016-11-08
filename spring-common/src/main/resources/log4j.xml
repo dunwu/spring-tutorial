@@ -19,7 +19,7 @@
 
 
   <appender name="ALL" class="org.apache.log4j.DailyRollingFileAppender">
-    <param name="File" value="${user.dir}/logs/spring-common/jcl/all"/>
+    <param name="File" value="${user.dir}/logs/spring-common/jcl/all.log"/>
     <param name="Append" value="true"/>
     <!-- 每天重新生成日志文件 -->
     <param name="DatePattern" value="'-'yyyy-MM-dd'.log'"/>

@@ -14,13 +14,5 @@ public class JclDemo {
         log.warn(msg + "warn");
         log.error(msg + "error");
         log.fatal(msg + "fatal");
-
-        test();
-    }
-
-    public static void test() {
-        System.setProperty("java.util.logging.config.file", "common-logging.properties");
-        Log logger = LogFactory.getLog(JclDemo.class);
-        logger.trace("测试common-logging + java.util.logging");
     }
 }
