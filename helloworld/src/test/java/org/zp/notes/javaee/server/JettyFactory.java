@@ -1,4 +1,4 @@
-package org.springside.modules.jetty;
+package org.zp.notes.javaee.server;
 
 import org.apache.commons.lang3.StringUtils;
 import org.assertj.core.util.Lists;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  * JettyFactory 可以工作在 Eclipse 和 Intellij 中，用来启动 jetty 服务。 Intellij
  * 并不支持jetty，所以要想类似eclipse一样的使用jetty，需要配置webdefault.xml。
- * 
+ *
  * @author vicotr zhang
  */
 @SuppressWarnings("unused")
@@ -21,7 +21,7 @@ public class JettyFactory {
     private static final String RESOURCE_BASE_PATH = "src/main/webapp";
     private static final String WEB_XML_PATH = "/WEB-INF/web.xml";
     private static final String[] TLD_JAR_NAMES =
-                    new String[] {"sitemesh", "spring-webmvc", "shiro-web", "tiles"};
+            new String[]{"sitemesh", "spring-webmvc", "shiro-web", "tiles"};
     private static final String WINDOWS_WEBDEFAULT_PATH = "jetty/webdefault.xml";
 
     public static final int IDE_ECLIPSE = 0;
@@ -76,7 +76,7 @@ public class JettyFactory {
     public static String getAbsolutePath() {
         String path = null;
         String folderPath = JettyFactory.class.getProtectionDomain().getCodeSource().getLocation()
-                        .getPath().substring(1);
+                .getPath().substring(1);
         if (folderPath.indexOf("target") > 0) {
             path = folderPath.substring(0, folderPath.indexOf("target"));
         }
@@ -88,21 +88,21 @@ public class JettyFactory {
         // This webapp will use jsps and jstl. We need to enable the AnnotationConfiguration in
         // order to correctly set up the jsp container
         org.eclipse.jetty.webapp.Configuration.ClassList classlist =
-                        org.eclipse.jetty.webapp.Configuration.ClassList.setServerDefault(server);
+                org.eclipse.jetty.webapp.Configuration.ClassList.setServerDefault(server);
         classlist.addBefore("org.eclipse.jetty.webapp.JettyWebXmlConfiguration",
-                        "org.eclipse.jetty.annotations.AnnotationConfiguration");
+                "org.eclipse.jetty.annotations.AnnotationConfiguration");
         // Set the ContainerIncludeJarPattern so that jetty examines these container-path jars for
         // tlds, web-fragments etc.
         // If you omit the jar that contains the jstl .tlds, the jsp engine will scan for them
         // instead.
         ArrayList jarNameExprssions = Lists.newArrayList(".*/[^/]*servlet-api-[^/]*\\.jar$",
-                        ".*/javax.servlet.jsp.jstl-.*\\.jar$", ".*/[^/]*taglibs.*\\.jar$");
+                ".*/javax.servlet.jsp.jstl-.*\\.jar$", ".*/[^/]*taglibs.*\\.jar$");
 
         for (String jarName : jarNames) {
             jarNameExprssions.add(".*/" + jarName + "-[^/]*\\.jar$");
         }
 
-        context.setAttribute("org.eclipse.jetty.server.webapp.ContainerIncludeJarPattern",
-                        StringUtils.join(jarNameExprssions, '|'));
+        context.setAttribute("org.eclipse.jetty.org.zp.notes.javaee.server.webapp.ContainerIncludeJarPattern",
+                StringUtils.join(jarNameExprssions, '|'));
     }
 }

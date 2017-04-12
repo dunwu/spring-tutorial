@@ -1,13 +1,13 @@
-package org.springside.modules.jetty;
+package org.zp.notes.javaee.server;
 
 import org.eclipse.jetty.server.Server;
 
 /**
- * 启动 jetty 服务，方便测试
+ * 快速启动 jetty 服务器，方便测试
  * 
  * @author victor zhang
  */
-public class JettyServer {
+public class QuickStartServer {
     // private static int STARTUP_TYPE = JettyFactory.IDE_ECLIPSE;
     private static int STARTUP_TYPE = JettyFactory.IDE_INTELLIJ;
 

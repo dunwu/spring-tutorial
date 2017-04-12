@@ -13,6 +13,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <springnotes.version>0.0.6</springnotes.version>
+    <!-- jety -->
+    <jetty.version>9.3.2.v20150730</jetty.version>
     <!-- Spring -->
     <spring.version>4.1.4.RELEASE</spring.version>
     <!-- Tets -->
@@ -20,7 +22,7 @@
   </properties>
 
   <modules>
-    <module>spring-helloworld</module>
+    <module>helloworld</module>
     <module>spring-ioc</module>
     <module>spring-aop</module>
     <module>spring-jdbc</module>
@@ -56,6 +58,46 @@
       </dependency>
       <!-- db end -->
 
+      <!-- jetty begin -->
+      <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-webapp</artifactId>
+        <version>${jetty.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-annotations</artifactId>
+        <version>${jetty.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>apache-jsp</artifactId>
+        <version>${jetty.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>apache-jstl</artifactId>
+        <version>${jetty.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <!-- jetty end -->
+
+      <!-- json begin -->
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>2.5.1</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.5.1</version>
+      </dependency>
+      <!-- json end -->
+
       <!-- log start -->
       <dependency>
         <groupId>ch.qos.logback</groupId>
@@ -84,6 +126,16 @@
         <groupId>javax.servlet</groupId>
         <artifactId>javax.servlet-api</artifactId>
         <version>3.1.0</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.servlet.jsp</groupId>
+        <artifactId>jsp-api</artifactId>
+        <version>2.2</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
       </dependency>
       <!-- web end -->
 
@@ -151,7 +203,25 @@
         <artifactId>junit</artifactId>
         <version>4.12</version>
       </dependency>
+      <dependency>
+        <groupId>org.assertj</groupId>
+        <artifactId>assertj-core</artifactId>
+        <version>3.4.1</version>
+      </dependency>
       <!-- test end -->
+
+      <!-- util begin -->
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>3.4</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>19.0</version>
+      </dependency>
+      <!-- util end -->
     </dependencies>
   </dependencyManagement>
 

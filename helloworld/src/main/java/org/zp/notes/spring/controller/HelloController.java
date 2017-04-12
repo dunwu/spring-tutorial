@@ -1,4 +1,4 @@
-package org.zp.notes.spring.helloworld.web;
+package org.zp.notes.spring.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,25 +16,15 @@ import org.springframework.web.servlet.ModelAndView;
  * @since 2016.07.29
  */
 @Controller
+@RequestMapping(value = "/hello")
 public class HelloController {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
-
-    /**
-     * <p>返回 ModelAndView 对象到视图层。在本例中，视图解析器解析视图名为 index，会自动关联到 index.jsp。
-     * <p>访问形式：http://localhost:8080/
-     */
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView index() {
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("index");
-        return mav;
-    }
 
     /**
      * <p>在本例中，Spring将会将数据传给 hello.jsp
      * <p>访问形式：http://localhost:8080/hello?name=张三
      */
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    @RequestMapping(value = "/name", method = RequestMethod.GET)
     public ModelAndView hello(@RequestParam("name") String name) {
         ModelAndView mav = new ModelAndView();
         mav.addObject("message", "你好，" + name);

@@ -3,7 +3,7 @@
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  *******************************************************************************/
-package org.springside.modules.jetty;
+package org.zp.notes.javaee.server;
 
 /**
  * Spring profile 常用方法与profile名称。
