@@ -1,4 +1,4 @@
-# Spring框架
+# Spring体系结构
 
 Spring当前框架有**20**个jar包，大致可以分为**6**大模块:
 
@@ -13,7 +13,7 @@ Spring框架提供了非常丰富的功能，因此整个架构也很庞大。
 在我们实际的应用开发中，并不一定要使用所有的功能，而是可以根据需要选择合适的Spring模块。
 ![Paste_Image.png](http://upload-images.jianshu.io/upload_images/3101171-47b048e2e94886be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-## 核心容器 (Core Container)
+## Core Container
 IoC容器是Spring框架的核心。spring容器使用依赖注入管理构成应用的组件，它会创建相互协作的组件之间的关联。毫无疑问，这些对象更简单干净，更容易理解，也更容易重用和测试。
 Spring自带了几种容器的实现，可归纳为两种类型：
 
@@ -41,41 +41,53 @@ ApplicationContext context2 = new ClassPathXmlApplicationContext("build.xml");
 通过引用应用上下文，可以很方便的调用 getBean() 方法从 Spring 容器中获取 Bean。 
 
 **相关jar包**
-`spring-core`, `spring-beans`, 提供框架的基础部分，包括IoC和依赖注入特性。
-`spring-context`, 在`spring-core`, `spring-beans`基础上构建。它提供一种框架式的访问对象的方法。
-它也支持类似Java EE特性，例如：EJB，JMX和基本remoting。ApplicationContext接口是它的聚焦点。
-`springcontext-support`, 集成第三方库到Spring application context。
-`spring-expression`，提供一种强有力的表达语言在运行时来查询和操纵一个对象图。
 
-## AOP 和 Instrumentation
+- `spring-core`, `spring-beans`, 提供框架的基础部分，包括IoC和依赖注入特性。
+
+- `spring-context`, 在`spring-core`, `spring-beans`基础上构建。它提供一种框架式的访问对象的方法。它也支持类似Java EE特性，例如：EJB，JMX和基本remoting。ApplicationContext接口是它的聚焦点。
+- `springcontext-support`, 集成第三方库到Spring application context。
+- `spring-expression`，提供一种强有力的表达语言在运行时来查询和操纵一个对象图。
+
+## AOP and Instrumentation
+
 **相关jar包**
-`spring-aop`，提供了对面向切面编程的丰富支持。
-`spring-aspects`，提供了对AspectJ的集成。
-`spring-instrument`，提供了对类instrumentation的支持和类加载器。
-`spring-instrument-tomcat`，包含了Spring对Tomcat的instrumentation代理。
+
+- `spring-aop`，提供了对面向切面编程的丰富支持。
+- `spring-aspects`，提供了对AspectJ的集成。
+- `spring-instrument`，提供了对类instrumentation的支持和类加载器。
+- `spring-instrument-tomcat`，包含了Spring对Tomcat的instrumentation代理。
 
 ## Messaging
-**相关jar包**
-`spring-messaging`，包含spring的消息处理功能，如Message，MessageChannel，MessageHandler。
 
-## 数据访问与集成 (Data Access / Integaration)
-Data Access/Integration层包含了JDBC / ORM / OXM / JMS和Transaction模块。
 **相关jar包**
-`spring-jdbc`，提供了一个JDBC抽象层。
-`spring-tx`，支持编程和声明式事务管理类。
-`spring-orm`，提供了流行的对象关系型映射API集，如JPA，JDO，Hibernate。
-`spring-oxm`，提供了一个抽象层以支持对象/XML 映射的实现，如JAXB，Castor，XMLBeans，JiBX 和 XStream.
-`spring-jms`，包含了生产和消费消息的功能。
+
+- `spring-messaging`，包含spring的消息处理功能，如Message，MessageChannel，MessageHandler。
+
+## Data Access / Integaration
+Data Access/Integration层包含了JDBC / ORM / OXM / JMS和Transaction模块。
+
+**相关jar包**
+
+- `spring-jdbc`，提供了一个JDBC抽象层。
+
+- `spring-tx`，支持编程和声明式事务管理类。
+- `spring-orm`，提供了流行的对象关系型映射API集，如JPA，JDO，Hibernate。
+- `spring-oxm`，提供了一个抽象层以支持对象/XML 映射的实现，如JAXB，Castor，XMLBeans，JiBX 和 XStream.
+- `spring-jms`，包含了生产和消费消息的功能。
 
 ## Web
-**相关jar包**
-`spring-web`，提供了基本的面向web的功能，如多文件上传、使用Servlet监听器的Ioc容器的初始化。一个面向web的应用层上下文。
-`spring-webmvc`，包括MVC和REST web服务实现。
-`spring-webmvc-portlet`，提供在Protlet环境的MVC实现和`spring-webmvc`功能的镜像。
 
-## 测试 (Test)
 **相关jar包**
-`spring-test`，以Junit和TestNG来支持spring组件的单元测试和集成测试。
+
+- `spring-web`，提供了基本的面向web的功能，如多文件上传、使用Servlet监听器的Ioc容器的初始化。一个面向web的应用层上下文。
+
+- `spring-webmvc`，包括MVC和REST web服务实现。
+- `spring-webmvc-portlet`，提供在Protlet环境的MVC实现和`spring-webmvc`功能的镜像。
+
+## Test
+**相关jar包**
+
+- `spring-test`，以Junit和TestNG来支持spring组件的单元测试和集成测试。
 
 # SpringMVC工作流程描述
 Spring MVC的工作流程可以用一幅图来说明：
