@@ -142,9 +142,9 @@
     <!-- web end -->
   </dependencies>
 
-  <build>
+  <!--<build>
     <plugins>
-      <!--本插件为mybatis-generator，使用mvn mybatis-generator:generate命令可自动生成mybatis代码-->
+      &lt;!&ndash;本插件为mybatis-generator，使用mvn mybatis-generator:generate命令可自动生成mybatis代码&ndash;&gt;
       <plugin>
         <groupId>org.mybatis.generator</groupId>
         <artifactId>mybatis-generator-maven-plugin</artifactId>
@@ -171,5 +171,5 @@
         </dependencies>
       </plugin>
     </plugins>
-  </build>
+  </build>-->
 </project>
