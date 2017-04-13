@@ -57,7 +57,7 @@
   </logger>
 
   <!-- SPRING框架日志 -->
-  <logger name="org.springframework" level="WARN" additivity="false">
+  <logger name="org.springframework" level="TRACE" additivity="false">
     <appender-ref ref="SPRING"/>
   </logger>
 
