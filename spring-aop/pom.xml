@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.zp.notes.spring</groupId>
     <artifactId>SpringNotes</artifactId>
-    <version>${springnotes.version}</version>
+    <version>0.0.7</version>
   </parent>
   <artifactId>spring-aop</artifactId>
   <name>spring-aop</name>
