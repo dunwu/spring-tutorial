@@ -454,7 +454,7 @@ public class BookRepositoryImpl implements BookRepository {
 
 
 # 参考
-如果想参考我的***完整代码示例***，请[点击这里](https://github.com/atlantis1024/SpringNotes/tree/master/spring-common/src/test/java/org/zp/notes/spring/common/ehcache)访问我的github。
+如果想参考我的***完整代码示例***，请[点击这里](https://github.com/atlantis1024/spring-notes/tree/master/spring-common/src/test/java/org/zp/notes/spring/common/ehcache)访问我的github。
 
 下面是我在写作时参考的资料或文章。
 [Ehcache github](https://github.com/ehcache/ehcache3)

@@ -4,10 +4,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.zp.notes.spring</groupId>
-  <artifactId>SpringNotes</artifactId>
+  <artifactId>spring-notes</artifactId>
   <version>0.0.7</version>
   <packaging>pom</packaging>
-  <name>SpringNotes</name>
+  <name>spring-notes</name>
   <url>https://github.com/atlantis1024/spring-notes</url>
   <description>Spring学习笔记</description>
 

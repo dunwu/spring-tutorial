@@ -124,4 +124,4 @@ public class AppConfig {
 
 需要参考本文范例代码的朋友，可以访问我github：
 
-https://github.com/atlantis1024/SpringNotes/tree/develop/spring-ioc
+https://github.com/atlantis1024/spring-notes/tree/develop/spring-ioc

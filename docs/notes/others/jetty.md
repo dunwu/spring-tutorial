@@ -125,7 +125,7 @@ public class SplitFileServer
 
 如果想了解在Eclipse和Intellij都能运行的通用方法可以参考我的github代码示例。代码行数有点多，不在这里贴代码了。
 
-[完整参考代码](https://github.com/atlantis1024/SpringNotes/tree/master/spring-helloworld)
+[完整参考代码](https://github.com/atlantis1024/spring-notes/tree/master/spring-helloworld)
 
 
 

@@ -41,7 +41,7 @@ public class HelloVelocity {
         System.out.println("========== loadByFilepath ==========");
 
         Properties p = new Properties();
-        p.put(VelocityEngine.FILE_RESOURCE_LOADER_PATH, "D:\\01_Workspace\\Project\\zp\\SpringNotes\\spring-common\\src\\main\\resources");
+        p.put(VelocityEngine.FILE_RESOURCE_LOADER_PATH, "D:\\01_Workspace\\Project\\zp\\spring-notes\\spring-common\\src\\main\\resources");
         VelocityEngine ve = new VelocityEngine();
         ve.init(p);
         Template t = ve.getTemplate("template/helloVelocity.vm");

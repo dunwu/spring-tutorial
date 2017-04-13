@@ -1,4 +1,4 @@
-# SpringNotes
+# spring-notes
 Spring的个人学习笔记。
 以简单范例来展示spring在web开发中的各种应用。
 
