@@ -22,7 +22,7 @@
   </properties>
 
   <modules>
-    <module>helloworld</module>
+    <module>spring-helloworld</module>
     <module>spring-ioc</module>
     <module>spring-aop</module>
     <module>spring-jdbc</module>
