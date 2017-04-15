@@ -12,11 +12,13 @@ public class Slf4jDemo {
     private static final Logger log = LoggerFactory.getLogger(Slf4jDemo.class);
 
     public static void main(String[] args) {
-        String msg = "print log, current level: {}";
-        log.trace(msg, "trace");
-        log.debug(msg, "debug");
-        log.info(msg, "info");
-        log.warn(msg, "warn");
-        log.error(msg, "error");
+        while (true) {
+            String msg = "print log, current level: {}";
+            log.trace(msg, "trace");
+            log.debug(msg, "debug");
+            log.info(msg, "info");
+            log.warn(msg, "warn");
+            log.error(msg, "error");
+        }
     }
 }
