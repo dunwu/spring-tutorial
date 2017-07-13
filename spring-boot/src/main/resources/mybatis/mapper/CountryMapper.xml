@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.zp.notes.spring.orm.mapper.CountryMapper" >
+  <resultMap id="BaseResultMap" type="org.zp.notes.spring.orm.model.Country" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="Id" property="id" jdbcType="INTEGER" />
+    <result column="countryname" property="countryname" jdbcType="VARCHAR" />
+    <result column="countrycode" property="countrycode" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>
