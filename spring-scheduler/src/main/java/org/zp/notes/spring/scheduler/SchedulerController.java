@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class SchedulerController {
 
     @Autowired
-    TaskScheduler scheduler;
+    private TaskScheduler scheduler;
 
     @RequestMapping(value = "/start", method = RequestMethod.GET)
     public void start() {
