@@ -4,10 +4,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.zp.notes.spring</groupId>
-  <artifactId>spring-web</artifactId>
+  <artifactId>spring-mvc</artifactId>
   <version>0.0.7</version>
   <packaging>war</packaging>
-  <name>spring-web</name>
+  <name>spring-mvc</name>
 
   <properties>
     <!-- jety -->

@@ -32,7 +32,7 @@
     <module>spring-security</module>
     <module>spring-common</module>
     <module>spring-orm</module>
-    <module>spring-web</module>
+    <module>spring-mvc</module>
   </modules>
 
   <dependencyManagement>
