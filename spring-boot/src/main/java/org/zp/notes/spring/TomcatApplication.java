@@ -20,7 +20,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * 2. 也支持用@Bean标注的类配置Bean <br/>
  * 3. 根据classpath中的三方包Class及集中的application.properties条件配置三方包，如线程池 <br/>
  * 4. 也支持用@Configuration标注的类配置三方包. <br/>
- * @author Victor Zhang
+ * @author Zhang Peng
  * @date 2017/7/13 18:07
  */
 @Controller

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * @author Victor Zhang
+ * @author Zhang Peng
  * @date 2017/7/13 18:02
  */
 @Controller

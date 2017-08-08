@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 /**
  * 测试 slf4j + logback 输出日志
  *
- * @author victor zhangs
+ * @author Zhang Pengs
  */
 public class Slf4jDemo {
     private static final Logger log = LoggerFactory.getLogger(Slf4jDemo.class);

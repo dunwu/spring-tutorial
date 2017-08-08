@@ -17,7 +17,7 @@ import java.net.URL;
 /**
  * 测试CacheManager的操作
  *
- * @author victor zhang
+ * @author Zhang Peng
  */
 public class CacheManagerOperationTest {
     private final Logger log = LoggerFactory.getLogger(CacheManagerOperationTest.class);

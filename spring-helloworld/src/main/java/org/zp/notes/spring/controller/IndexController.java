@@ -1,6 +1,6 @@
 /**
  * The Apache License 2.0
- * Copyright (c) 2016 victor zhang
+ * Copyright (c) 2016 Zhang Peng
  */
 package org.zp.notes.spring.controller;
 
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * @author victor zhang
+ * @author Zhang Peng
  * @date 2017/4/12.
  */
 @Controller

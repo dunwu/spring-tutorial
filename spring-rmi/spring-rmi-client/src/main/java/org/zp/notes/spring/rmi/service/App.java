@@ -9,6 +9,6 @@ public class App {
         ApplicationContext ctx = new FileSystemXmlApplicationContext("classpath:/spring/spring-servlet.xml");
         System.out.println("加载Spring容器,并初始化spring-rmi-client");
         MessageProvider client = (MessageProvider) ctx.getBean("messageService");
-        System.out.println("返回结果: " + client.getMessage("Victor Zhang"));
+        System.out.println("返回结果: " + client.getMessage("Zhang Peng"));
     }
 }

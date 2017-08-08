@@ -1,6 +1,6 @@
 /**
  * The Apache License 2.0
- * Copyright (c) 2016 Victor Zhang
+ * Copyright (c) 2016 Zhang Peng
  */
 package org.zp.notes.spring.common.html.jsoup;
 
@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * 博客园博文抓取工具
  *
- * @author Victor Zhang
+ * @author Zhang Peng
  * @date 2016/11/8.
  */
 public class CnblogParser {

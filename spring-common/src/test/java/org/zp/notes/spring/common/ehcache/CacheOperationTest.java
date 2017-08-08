@@ -8,7 +8,7 @@ import org.junit.Test;
 /**
  * 测试Cache的操作
  *
- * @author victor zhang
+ * @author Zhang Peng
  */
 public class CacheOperationTest {
     /**

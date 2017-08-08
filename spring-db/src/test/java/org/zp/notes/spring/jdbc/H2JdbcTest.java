@@ -1,6 +1,6 @@
 /**
  * The Apache License 2.0
- * Copyright (c) 2016 victor zhang
+ * Copyright (c) 2016 Zhang Peng
  */
 package org.zp.notes.spring.jdbc;
 
@@ -17,7 +17,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * 测试 H2 JDBC 操作
- * @author victor zhang
+ * @author Zhang Peng
  * @date 2017/4/14.
  */
 @SuppressWarnings("all")

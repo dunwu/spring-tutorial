@@ -4,8 +4,8 @@ import org.eclipse.jetty.server.Server;
 
 /**
  * 快速启动 jetty 服务器，方便测试
- * 
- * @author victor zhang
+ *
+ * @author Zhang Peng
  */
 public class QuickStartServer {
     // private static int STARTUP_TYPE = JettyFactory.IDE_ECLIPSE;

@@ -1,6 +1,6 @@
 /**
  * The Apache License 2.0
- * Copyright (c) 2016 victor zhang
+ * Copyright (c) 2016 Zhang Peng
  */
 package org.zp.notes.spring.orm;
 
@@ -19,7 +19,7 @@ import java.util.List;
 
 /**
  * 如果不使用maven插件mybatis-generator-maven-plugin调用mybatis-generator生成代码，也可以使用Java代码来生成
- * @author victor zhang
+ * @author Zhang Peng
  * @date 2017/4/13.
  */
 public class MybatisGeneratorTest {

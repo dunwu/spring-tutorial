@@ -1,6 +1,6 @@
 /**
  * The Apache License 2.0
- * Copyright (c) 2016 victor zhang
+ * Copyright (c) 2016 Zhang Peng
  */
 package org.zp.notes.spring.data.redis;
 
@@ -14,7 +14,7 @@ import java.util.Set;
 /**
  * Jedis 操作Redis的简单示例
  *
- * @author victor zhang
+ * @author Zhang Peng
  * @date 2017/4/12.
  */
 public class RedisDemo {

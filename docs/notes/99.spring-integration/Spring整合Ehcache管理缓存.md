@@ -203,7 +203,7 @@ Cache还提供了一系列的get、set方法来设置或获取缓存参数，这
 /**
  * 测试：使用默认配置或使用指定配置来创建CacheManager
  *
- * @author victor zhang
+ * @author Zhang Peng
  */
 public class CacheOperationTest {
     private final Logger log = LoggerFactory.getLogger(CacheOperationTest.class);

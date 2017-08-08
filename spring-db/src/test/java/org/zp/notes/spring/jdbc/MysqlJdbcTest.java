@@ -1,6 +1,6 @@
 /**
  * The Apache License 2.0
- * Copyright (c) 2016 victor zhang
+ * Copyright (c) 2016 Zhang Peng
  */
 package org.zp.notes.spring.jdbc;
 
@@ -18,7 +18,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 /**
  * 测试 Mysql JDBC 操作
  * 注：执行本测试例前，必须先成功执行sql/mysql/create_table_student.sql
- * @author victor zhang
+ * @author Zhang Peng
  * @date 2017/4/14.
  */
 @SuppressWarnings("all")

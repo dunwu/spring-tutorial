@@ -1,6 +1,6 @@
 /**
  * The Apache License 2.0
- * Copyright (c) 2016 Victor Zhang
+ * Copyright (c) 2016 Zhang Peng
  */
 package org.zp.notes.spring.common.html.jsoup;
 
@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * @author Victor Zhang
+ * @author Zhang Peng
  * @date 2016/11/8.
  */
 public class JsoupDemo {

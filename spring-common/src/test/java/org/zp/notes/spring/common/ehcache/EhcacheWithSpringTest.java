@@ -12,7 +12,7 @@ import org.zp.notes.spring.common.ehcache.vo.User;
 /**
  * 本类展示并测试 Spring + Ehcache 的缓存解决方案
  *
- * @author victor zhang
+ * @author Zhang Peng
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring/applicationContext.xml"})

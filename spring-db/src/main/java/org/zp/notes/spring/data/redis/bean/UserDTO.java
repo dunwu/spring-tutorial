@@ -1,13 +1,13 @@
 /**
  * The Apache License 2.0
- * Copyright (c) 2016 victor zhang
+ * Copyright (c) 2016 Zhang Peng
  */
 package org.zp.notes.spring.data.redis.bean;
 
 import java.io.Serializable;
 
 /**
- * @author victor zhang
+ * @author Zhang Peng
  * @date 2017/4/12.
  */
 public class UserDTO implements Serializable {

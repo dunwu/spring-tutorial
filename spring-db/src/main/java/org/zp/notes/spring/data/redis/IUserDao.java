@@ -5,7 +5,7 @@ import org.zp.notes.spring.data.redis.bean.UserDTO;
 import java.util.List;
 
 /**
- * @author victor zhang
+ * @author Zhang Peng
  * @date 2017/4/12.
  */
 public interface IUserDao {

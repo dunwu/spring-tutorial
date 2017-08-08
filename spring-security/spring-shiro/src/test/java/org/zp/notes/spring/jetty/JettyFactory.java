@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  * Intellij 并不支持jetty，所以要想类似eclipse一样的使用jetty，需要配置webdefault.xml
- * @author victor zhang
+ * @author Zhang Peng
  */
 public class JettyFactory {
     public static final int PORT = 8089;

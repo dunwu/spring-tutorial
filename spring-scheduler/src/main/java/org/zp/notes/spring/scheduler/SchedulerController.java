@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @description Spring Scheduler实时调度范例
- * @author Victor Zhang
+ * @author Zhang Peng
  * @date 2016年8月31日
  */
 @Controller

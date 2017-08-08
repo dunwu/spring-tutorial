@@ -1,6 +1,6 @@
 /**
  * The Apache License 2.0
- * Copyright (c) 2016 victor zhang
+ * Copyright (c) 2016 Zhang Peng
  */
 package org.zp.notes.spring.data.redis;
 
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author victor zhang
+ * @author Zhang Peng
  * @date 2017/4/12.
  */
 public class UserDao extends AbstractBaseRedisDao<String, UserDTO> implements IUserDao {
@@ -118,4 +118,4 @@ public class UserDao extends AbstractBaseRedisDao<String, UserDTO> implements IU
         });
         return result;
     }
-}  
+}
