@@ -14,7 +14,7 @@
   <appender name="ALL" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <!-- 根据时间来制定滚动策略 -->
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>${user.dir}/logs/spring-mvc/all.%d{yyyy-MM-dd}.log</fileNamePattern>
+      <fileNamePattern>${user.dir}/logs/spring-mvc/all-test.%d{yyyy-MM-dd}.log</fileNamePattern>
       <maxHistory>30</maxHistory>
     </rollingPolicy>
 
@@ -27,11 +27,10 @@
       <pattern>%d{HH:mm:ss.SSS} [%thread] [%-5p] %c{36}.%M - %m%n</pattern>
     </encoder>
   </appender>
-
   <appender name="SPRING" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <!-- 根据时间来制定滚动策略 -->
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>${user.dir}/logs/spring-mvc/spring.%d{yyyy-MM-dd}.log</fileNamePattern>
+      <fileNamePattern>${user.dir}/logs/spring-mvc/spring-test.%d{yyyy-MM-dd}.log</fileNamePattern>
       <maxHistory>30</maxHistory>
     </rollingPolicy>
 
@@ -48,11 +47,10 @@
 
   <!-- logger begin -->
   <!-- 本项目的日志记录，分级打印 -->
-  <logger name="org.zp" level="TRACE" additivity="false">
+  <logger name="org.zp.notes.spring.mvc" level="TRACE" additivity="false">
     <appender-ref ref="STDOUT" />
     <appender-ref ref="ALL" />
   </logger>
-
   <logger name="org.springframework" level="INFO" additivity="false">
     <appender-ref ref="SPRING" />
   </logger>
