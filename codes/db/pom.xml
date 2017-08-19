@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <!-- [Part 1] BASIC SETTINGS BEGIN -->
+
+  <!-- MAVEN COORDINATE BEGIN -->
+  <groupId>me.chongfeng</groupId>
+  <artifactId>spring-notes-db</artifactId>
+  <version>0.0.7</version>
+  <packaging>jar</packaging>
+  <!-- MAVEN COORDINATE END -->
+
+  <!-- RELATIONSHIP SETTINGS BEGIN -->
+  <parent>
+    <groupId>me.chongfeng</groupId>
+    <artifactId>spring-notes-parent</artifactId>
+    <version>0.0.7</version>
+    <relativePath>../parent</relativePath>
+  </parent>
+  <dependencies>
+    <!-- db start -->
+    <dependency>
+      <groupId>org.mongodb</groupId>
+      <artifactId>mongo-java-driver</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.mongodb</groupId>
+      <artifactId>mongodb-driver-async</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+    <!-- db end -->
+
+    <!-- log begin -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.logback-extensions</groupId>
+      <artifactId>logback-ext-spring</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+    </dependency>
+    <!-- log end -->
+
+    <!-- json begin -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+    </dependency>
+    <!-- json end -->
+
+    <!-- web begin -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>jsp-api</artifactId>
+    </dependency>
+    <!-- web end -->
+
+    <!-- spring begin -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aspects</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+    </dependency>
+    <!-- spring end -->
+
+    <!-- spring data begin -->
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-redis</artifactId>
+    </dependency>
+    <!-- spring data end -->
+
+    <!-- test begin -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+    </dependency>
+    <!-- test end -->
+  </dependencies>
+  <!-- RELATIONSHIP SETTINGS END -->
+
+  <!-- PROPERTIES BEGIN -->
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <!-- 核心库版本 -->
+    <jetty.version>9.3.2.v20150730</jetty.version>
+    <spring.version>4.1.4.RELEASE</spring.version>
+    <junit.version>4.12</junit.version>
+  </properties>
+  <!-- PROPERTIES END -->
+
+  <!-- [Part 1] BASIC SETTINGS END -->
+
+
+  <!-- [Part 3] PROJECT INFO BEGIN -->
+  <name>spring-notes-db</name>
+  <description>spring 学习笔记之 DB</description>
+  <!-- [Part 3] PROJECT INFO END -->
+
+
+</project>

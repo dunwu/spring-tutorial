@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <!-- [Part 1] BASIC SETTINGS BEGIN -->
+
+  <!-- MAVEN COORDINATE BEGIN -->
+  <groupId>me.chongfeng</groupId>
+  <artifactId>spring-notes-orm</artifactId>
+  <version>0.0.7</version>
+  <packaging>pom</packaging>
+  <!-- MAVEN COORDINATE END -->
+
+  <!-- RELATIONSHIP SETTINGS BEGIN -->
+  <modules>
+    <module>mybatis</module>
+  </modules>
+  <!-- RELATIONSHIP SETTINGS END -->
+
+  <!-- PROPERTIES BEGIN -->
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <!-- PROPERTIES END -->
+
+  <!-- [Part 1] BASIC SETTINGS END -->
+
+
+  <!-- [Part 3] PROJECT INFO BEGIN -->
+  <name>spring-notes-orm</name>
+  <description>spring 学习笔记之 orm</description>
+  <!-- [Part 3] PROJECT INFO END -->
+</project>

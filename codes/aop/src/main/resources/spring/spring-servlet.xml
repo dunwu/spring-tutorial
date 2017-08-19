@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mvc="http://www.springframework.org/schema/mvc"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+            http://www.springframework.org/schema/mvc
+            http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+  <!-- 启用注解 -->
+  <mvc:annotation-driven />
+
+  <!-- 设置后，将查找使用@Component(@Controller是它的一种具体化)注解的类并将其注册为Bean -->
+  <context:component-scan base-package="me.chongfeng.spring.aop" />
+
+  <!-- 启用aspectj aop -->
+  <aop:aspectj-autoproxy proxy-target-class="true" />
+
+  <!-- 配置视图解析器 (该配置的是jstl解析器的一个扩展解析类) -->
+  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="prefix" value="/views/jsp/" />
+    <property name="suffix" value=".jsp" />
+  </bean>
+</beans>

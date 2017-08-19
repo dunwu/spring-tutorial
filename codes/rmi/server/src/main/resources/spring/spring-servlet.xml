@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <!-- 注册要发布的RMI服务类 -->
+  <bean id="messageService" class="me.chongfeng.spring.rmi.service.MessageProviderImpl" />
+
+  <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+    <!-- RMI服务名称,可自定义服务名称 -->
+    <property name="serviceName" value="MessageService" />
+    <!-- 导出实体 -->
+    <property name="service" ref="messageService" />
+    <!-- 导出接口 -->
+    <property name="serviceInterface" value="me.chongfeng.spring.rmi.service.MessageProvider" />
+    <!-- spring默认使用1099端口 -->
+    <property name="registryPort" value="1199" />
+  </bean>
+
+</beans>

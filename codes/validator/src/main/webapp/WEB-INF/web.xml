@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+       http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name>spring-helloworld</display-name>
+
+  <!-- 声明前端控制器 -->
+  <servlet>
+    <servlet-name>spring-servlet</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <!-- 如果不设置的话，默认的servlet配置文件名为xxx-servlet.xml -->
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:/spring/spring-servlet.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <!-- 声明DispatcherServlet处理哪些URL -->
+  <servlet-mapping>
+    <servlet-name>spring-servlet</servlet-name>
+    <!-- 映射到/表示会处理所有的请求 -->
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
