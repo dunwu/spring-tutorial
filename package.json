@@ -1,0 +1,27 @@
+{
+  "name": "spring-notes",
+  "description": "Spring 学习笔记",
+  "scripts": {
+    "clean": "rimraf _book",
+    "prepare": "gitbook install",
+    "build": "gitbook build -g atlantis1024/spring-notes",
+    "start": "gitbook serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atlantis1024/spring-notes.git"
+  },
+  "keywords": [
+    "spring"
+  ],
+  "author": "Zhang Peng <atlantis1024@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atlantis1024/spring-notes/issues"
+  },
+  "homepage": "https://github.com/atlantis1024/spring-notes",
+  "devDependencies": {
+    "gitbook-cli": "^0.3.4",
+    "rimraf": "^2.3.4"
+  }
+}

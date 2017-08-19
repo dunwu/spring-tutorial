@@ -389,5 +389,3 @@ H2可以通过CreateCluster工具创建集群，示例步骤如下（在在一�
 # 参考资料
 
 [h2database官网](http://www.h2database.com/html/main.html)
-
-http://www.importnew.com/17924.html
