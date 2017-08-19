@@ -8,7 +8,7 @@
   <!-- MAVEN COORDINATE BEGIN -->
   <groupId>me.chongfeng</groupId>
   <artifactId>spring-notes-orm-mybatis</artifactId>
-  <version>0.0.7</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
   <!-- MAVEN COORDINATE END -->
 
@@ -16,7 +16,7 @@
   <parent>
     <groupId>me.chongfeng</groupId>
     <artifactId>spring-notes-parent</artifactId>
-    <version>0.0.7</version>
+    <version>1.0.0</version>
     <relativePath>../../parent</relativePath>
   </parent>
   <dependencies>
