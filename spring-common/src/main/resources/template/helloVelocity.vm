@@ -1,7 +1,0 @@
-#set( $iAmVariable = "good!" )
-Welcome to learn velocity, $name
-today is $date.
-#foreach ($i in $list)
-    $i
-#end
-$iAmVariable
