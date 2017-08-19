@@ -1,7 +1,10 @@
 # spring-notes
+
 Spring 学习笔记。
 
 以简单范例来展示 spring 在 web 开发中的各种应用。
+
+[**spring-notes 文档在线阅读**](https://atlantis1024.gitbooks.io/spring-notes/)
 
 ## 内容
 
@@ -44,7 +47,7 @@ Spring 学习笔记。
 - **codes**：代码目录。
 - **docs**：文档目录。
 
-### 使用说明
+### codes 使用说明
 
 为了便于展示示例，所有 war 包形式的项目都可以使用 maven 插件快速启动嵌入式服务器，支持 Tomcat 和 Jetty 两种方式。
 
@@ -63,6 +66,12 @@ $ mvn jetty:run
 如果子项目中无特殊说明，默认端口配置为 8089，当然，你可以自己指定。
 
 启动成功后，访问 http://localhost:8089 。
+
+### docs 使用说明
+
+docs 部分已经使用 Gitbook 生成电子书：
+
+[**spring-notes 文档在线阅读**](https://atlantis1024.gitbooks.io/spring-notes/)
 
 ## 约定
 
