@@ -42,6 +42,10 @@
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+    </dependency>
     <!-- db end -->
 
     <!-- log begin -->
@@ -135,11 +139,9 @@
   <!-- PROPERTIES BEGIN -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-    <!-- 核心库版本 -->
-    <jetty.version>9.3.2.v20150730</jetty.version>
-    <spring.version>4.1.4.RELEASE</spring.version>
-    <junit.version>4.12</junit.version>
+    <java.version>1.7</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
   </properties>
   <!-- PROPERTIES END -->
 

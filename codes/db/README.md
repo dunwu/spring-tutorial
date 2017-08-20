@@ -8,9 +8,9 @@
 
 ### 使用说明
 
-- `me.chongfeng.spring.jdbc.H2JdbcTest` 测试了H2的JDBC操作。
+- `me.chongfeng.spring.jdbc.H2Test` 测试了H2的JDBC操作。
 
-- `me.chongfeng.spring.jdbc.MysqlJdbcTest` 测试了Mysql的JDBC操作。
+- `me.chongfeng.spring.jdbc.MysqlTest` 测试了Mysql的JDBC操作。
 
 - `me.chongfeng.spring.jdbc.JdbcDemo` 展示了Java方式使用JDBC（非注解方式）。
 
