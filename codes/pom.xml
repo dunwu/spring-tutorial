@@ -19,13 +19,12 @@
     <module>helloworld</module>
     <module>ioc</module>
     <module>aop</module>
-    <module>db</module>
+    <module>data</module>
     <module>validator</module>
     <module>scheduler</module>
     <module>rmi</module>
     <module>security</module>
     <module>common</module>
-    <module>orm</module>
     <module>mvc</module>
     <module>boot</module>
   </modules>
