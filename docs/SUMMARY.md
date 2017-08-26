@@ -14,6 +14,7 @@
 * [数据](spring/data/README.md)
   * [Spring的数据访问策略](spring/data/data-access-in-spring.md)
   * [Spring中使用JDBC访问数据](spring/data/spring-and-jdbc.md)
+  * [事务管理](spring/data/transaction.md)
 * [整合](spring/integration/README.md)
   * [Spring和日志](spring/integration/spring-and-log.md)
   * [Spring和缓存](spring/integration/spring-and-cache.md)
