@@ -1,1 +1,2 @@
-INSERT INTO `user_t` (`id`, `user_name`, `password`, `age`) VALUES (1, '测试', 'sfasgfaf', 24);
+INSERT INTO `mydb`.`user` (`id`, `name`, `sex`, `age`) VALUES ('1', 'zhangsan', '男', '20');
+INSERT INTO `mydb`.`user` (`id`, `name`, `sex`, `age`) VALUES ('2', 'lisi', '男', '19');

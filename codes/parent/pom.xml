@@ -206,7 +206,7 @@
       <dependency>
         <groupId>org.mybatis.generator</groupId>
         <artifactId>mybatis-generator-core</artifactId>
-        <version>1.3.2</version>
+        <version>1.3.5</version>
       </dependency>
       <!-- orm end -->
 
@@ -467,12 +467,12 @@
         <plugin>
           <groupId>org.mybatis.generator</groupId>
           <artifactId>mybatis-generator-maven-plugin</artifactId>
-          <version>1.3.2</version>
+          <version>1.3.5</version>
           <dependencies>
             <dependency>
               <groupId>org.mybatis.generator</groupId>
               <artifactId>mybatis-generator-core</artifactId>
-              <version>1.3.2</version>
+              <version>1.3.5</version>
             </dependency>
           </dependencies>
         </plugin>

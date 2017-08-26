@@ -106,35 +106,28 @@
 
 
   <!-- [Part 2] BUILD SETTINGS BEGIN -->
-  <!--<build>-->
-  <!--<plugins>-->
-  <!--&lt;!&ndash;本插件为mybatis-generator，使用mvn mybatis-generator:generate命令可自动生成mybatis代码&ndash;&gt;-->
-  <!--<plugin>-->
-  <!--<groupId>org.mybatis.generator</groupId>-->
-  <!--<artifactId>mybatis-generator-maven-plugin</artifactId>-->
-  <!--<configuration>-->
-  <!--<configurationFile>src/main/resources/mybatis/generatorConfig.xml</configurationFile>-->
-  <!--<verbose>true</verbose>-->
-  <!--<overwrite>true</overwrite>-->
-  <!--</configuration>-->
-  <!--<executions>-->
-  <!--<execution>-->
-  <!--<id>Generate MyBatis Artifacts</id>-->
-  <!--<goals>-->
-  <!--<goal>generate</goal>-->
-  <!--</goals>-->
-  <!--</execution>-->
-  <!--</executions>-->
-  <!--<dependencies>-->
-  <!--<dependency>-->
-  <!--<groupId>org.mybatis.generator</groupId>-->
-  <!--<artifactId>mybatis-generator-core</artifactId>-->
-  <!--<version>1.3.2</version>-->
-  <!--</dependency>-->
-  <!--</dependencies>-->
-  <!--</plugin>-->
-  <!--</plugins>-->
-  <!--</build>-->
+  <build>
+    <plugins>
+      <!--本插件为mybatis-generator，使用mvn mybatis-generator:generate命令可自动生成mybatis代码-->
+      <!--<plugin>-->
+        <!--<groupId>org.mybatis.generator</groupId>-->
+        <!--<artifactId>mybatis-generator-maven-plugin</artifactId>-->
+        <!--<configuration>-->
+          <!--<configurationFile>src/main/resources/mybatis/generatorConfig.xml</configurationFile>-->
+          <!--<verbose>true</verbose>-->
+          <!--<overwrite>true</overwrite>-->
+        <!--</configuration>-->
+        <!--<executions>-->
+          <!--<execution>-->
+            <!--<id>Generate MyBatis Artifacts</id>-->
+            <!--<goals>-->
+              <!--<goal>generate</goal>-->
+            <!--</goals>-->
+          <!--</execution>-->
+        <!--</executions>-->
+      <!--</plugin>-->
+    </plugins>
+  </build>
   <!-- [Part 2] BUILD SETTINGS END -->
 
 
