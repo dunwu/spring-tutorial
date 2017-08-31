@@ -23,7 +23,7 @@ public class UserService {
         users.add(user3);
     }
 
-    @Cacheable({"users"})
+    @Cacheable(value = { "users" }, key = "#user.id")
     public User findUser(User user) {
         return findUserInDB(user.getId());
     }

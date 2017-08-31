@@ -30,16 +30,19 @@ public class EhcacheWithSpringTest {
         User user1 = new User(1, null);
         User user2 = new User(2, null);
         User user3 = new User(3, null);
+        User user4 = new User(3, null);
 
         System.out.println("第一次查询");
         System.out.println(userService.findUser(user1));
         System.out.println(userService.findUser(user2));
         System.out.println(userService.findUser(user3));
+        System.out.println(userService.findUser(user4));
 
         System.out.println("\n第二次查询");
         System.out.println(userService.findUser(user1));
         System.out.println(userService.findUser(user2));
         System.out.println(userService.findUser(user3));
+        System.out.println(userService.findUser(user4));
 
         // 在classpath:ehcache/ehcache.xml中，设置了userCache的缓存时间为3000 ms, 这里设置等待
         Thread.sleep(3000);
@@ -85,10 +88,13 @@ public class EhcacheWithSpringTest {
     @Test
     public void testUpdateUser() {
         // 设置查询条件
+        User user1 = new User(2, null);
         User user2 = new User(2, null);
 
+        System.out.println(userService.findUser(user1));
         System.out.println(userService.findUser(user2));
         userService.updateUser(new User(2, "尼古拉斯.赵四"));
+        System.out.println(userService.findUser(user1));
         System.out.println(userService.findUser(user2));
     }
 
