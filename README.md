@@ -38,9 +38,25 @@ Spring 学习笔记。
 
 - **spring-notes-boot**：spring-notes-boot 是 spring 的快速构建框架。
 
+- **spring-notes-websocket**：spring-notes-websocket 展示 spring 如何支持 HTML5 重要新特性 websocket。
+
 - **spring-notes-common**：spring-common 是一个工具集。
 
 ## 说明
+
+### 环境说明
+
+本项目运行所需要的重要库版本：
+
+- **Jdk**：1.8
+
+- **Spring**：4.1.4.RELEASE
+
+嵌入式服务器版本：
+
+- **Jetty**：Jetty 9
+
+- **Tomcat**：Tomcat 7
 
 ### 项目结构
 
