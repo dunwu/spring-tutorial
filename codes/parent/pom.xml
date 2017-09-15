@@ -122,12 +122,12 @@
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-core</artifactId>
-        <version>2.7.4</version>
+        <version>${fasterxml.jackson}</version>
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-databind</artifactId>
-        <version>2.5.1</version>
+        <version>${fasterxml.jackson}</version>
       </dependency>
       <dependency>
         <groupId>org.codehaus.jackson</groupId>
@@ -138,6 +138,11 @@
         <groupId>com.alibaba</groupId>
         <artifactId>fastjson</artifactId>
         <version>1.2.7</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.3.1</version>
       </dependency>
       <!-- json end -->
 
@@ -286,6 +291,11 @@
       </dependency>
       <dependency>
         <groupId>org.springframework</groupId>
+        <artifactId>spring-messaging</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
         <artifactId>spring-orm</artifactId>
         <version>${spring.version}</version>
       </dependency>
@@ -307,6 +317,11 @@
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-webmvc</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-websocket</artifactId>
         <version>${spring.version}</version>
       </dependency>
       <dependency>
@@ -406,6 +421,8 @@
     <spring.version>4.1.4.RELEASE</spring.version>
     <shiro.version>1.4.0</shiro.version>
     <junit.version>4.12</junit.version>
+
+    <fasterxml.jackson>2.9.0</fasterxml.jackson>
   </properties>
   <!-- PROPERTIES END -->
 
@@ -429,7 +446,7 @@
         <plugin>
           <groupId>org.eclipse.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
-          <version>9.0.6.v20130930</version>
+          <version>${jetty.version}</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
