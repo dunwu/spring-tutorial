@@ -28,7 +28,7 @@
   * [H2数据库](others/db-h2.md)
   * [嵌入式服务器Jetty](others/jetty.md)
   * [Dozer](others/dozer.md)
-  * [Dozer](others/nginx.md)
+  * [nginx快速入门](others/nginx-quickstart.md)
 
 ------
 
