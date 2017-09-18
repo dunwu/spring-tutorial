@@ -34,7 +34,7 @@
   <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
     <constructor-arg ref="dataSource1"/>
   </bean>
-  <bean id="myJdbcTemplate" class="me.chongfeng.spring.data.jdbc.MyJdbcTemplate">
+  <bean id="myJdbcTemplate" class="io.github.zp1024.spring.data.jdbc.MyJdbcTemplate">
     <property name="jdbcTemplate" ref="jdbcTemplate"/>
   </bean>
 

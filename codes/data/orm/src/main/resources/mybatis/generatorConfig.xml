@@ -33,7 +33,7 @@
     </javaTypeResolver>
 
     <!-- 生成模型的包名和位置-->
-    <javaModelGenerator targetPackage="me.chongfeng.spring.orm.entity"
+    <javaModelGenerator targetPackage="io.github.zp1024.spring.orm.entity"
                         targetProject="D:\01_Workspace\Project\zp\java\spring-notes\spring-orm\spring-mybatis\src\main\java">
       <property name="enableSubPackages" value="true"/>
       <property name="trimStrings" value="true"/>
@@ -46,7 +46,7 @@
     </sqlMapGenerator>
 
     <!-- 生成DAO的包名和位置-->
-    <javaClientGenerator targetPackage="me.chongfeng.spring.orm.mapper"
+    <javaClientGenerator targetPackage="io.github.zp1024.spring.orm.mapper"
                          targetProject="D:\01_Workspace\Project\zp\java\spring-notes\spring-orm\spring-mybatis\src\main\java"
                          type="XMLMAPPER">
       <property name="enableSubPackages" value="true"/>

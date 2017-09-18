@@ -8,11 +8,11 @@
 
 ### 使用说明
 
-- `me.chongfeng.spring.data.jdbc.H2JdbcTest` 测试了数据源为 H2 的 JDBC 操作。
+- `H2JdbcTest` 测试了数据源为 H2 的 JDBC 操作。
 
-- `me.chongfeng.spring.data.jdbc.MysqlJdbcTest` 测试了数据源为 Mysql 的 JDBC 操作。
+- `MysqlJdbcTest` 测试了数据源为 Mysql 的 JDBC 操作。
 
-- `me.chongfeng.spring.data.jdbc.DruidJdbcTest` 展示使用 Druid 建立数据源连接池。
+- `DruidJdbcTest` 展示使用 Druid 建立数据源连接池。
 
 
 ## spring-orm
@@ -23,6 +23,6 @@
 
 ## TODO
 
-`me.chongfeng.spring.data.db` 中的内容应该是 spring-data 的内容，以后会迁出。
+`io.github.zp1024.spring.data.db` 中的内容应该是 spring-data 的内容，以后会迁出。
 
 待完成 Spring 事务管理实例：spring-notes-data-tx

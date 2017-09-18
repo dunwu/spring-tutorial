@@ -7,7 +7,7 @@
   <!-- [Part 1] BASIC SETTINGS BEGIN -->
 
   <!-- MAVEN COORDINATE BEGIN -->
-  <groupId>me.chongfeng</groupId>
+  <groupId>io.github.zp1024</groupId>
   <artifactId>spring-notes-data</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>

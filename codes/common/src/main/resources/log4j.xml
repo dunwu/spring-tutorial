@@ -32,7 +32,7 @@
   </appender>
 
   <!-- 指定logger的设置，additivity指示是否遵循缺省的继承机制-->
-  <logger name="me.chongfeng.spring" additivity="false">
+  <logger name="io.github.zp1024.spring" additivity="false">
     <level value="error"/>
     <appender-ref ref="STDOUT"/>
     <appender-ref ref="ALL"/>

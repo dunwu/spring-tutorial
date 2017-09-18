@@ -10,6 +10,6 @@
 	<!-- Maps '/' requests to the 'home' view -->
 	<mvc:view-controller path="/" view-name="home"/>
 
-	<context:component-scan base-package="me.chongfeng.spring.mvc" />
+	<context:component-scan base-package="io.github.zp1024.spring.mvc" />
 
 </beans>

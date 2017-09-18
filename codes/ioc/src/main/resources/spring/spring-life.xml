@@ -4,5 +4,5 @@
   http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
   <!-- Bean declarations go here -->
-  <bean id="auditorium" class="me.chongfeng.spring.ioc.annotation.life.Auditorium" init-method="turnOnLight" destroy-method="turnOffLight" />
+  <bean id="auditorium" class="io.github.zp1024.spring.ioc.annotation.life.Auditorium" init-method="turnOnLight" destroy-method="turnOffLight" />
 </beans>

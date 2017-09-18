@@ -5,7 +5,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
   <!-- 注册要发布的RMI服务类 -->
-  <bean id="messageService" class="me.chongfeng.spring.rmi.service.MessageProviderImpl" />
+  <bean id="messageService" class="io.github.zp1024.spring.rmi.service.MessageProviderImpl" />
 
   <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
     <!-- RMI服务名称,可自定义服务名称 -->
@@ -13,7 +13,7 @@
     <!-- 导出实体 -->
     <property name="service" ref="messageService" />
     <!-- 导出接口 -->
-    <property name="serviceInterface" value="me.chongfeng.spring.rmi.service.MessageProvider" />
+    <property name="serviceInterface" value="MessageProvider" />
     <!-- spring默认使用1099端口 -->
     <property name="registryPort" value="1199" />
   </bean>

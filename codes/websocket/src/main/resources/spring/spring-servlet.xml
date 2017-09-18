@@ -13,7 +13,7 @@
   <!-- 启动注解服务 -->
   <mvc:annotation-driven/>
   <mvc:resources location="/resources/" mapping="/resources/**"/>
-  <context:component-scan base-package="me.chongfeng.spring"/>
+  <context:component-scan base-package="io.github.zp1024.spring"/>
 
   <!-- 视图解析器 -->
   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

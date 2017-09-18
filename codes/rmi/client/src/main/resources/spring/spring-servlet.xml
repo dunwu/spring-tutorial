@@ -7,7 +7,7 @@
   <!-- 声明消费的服务 -->
   <bean id="messageService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
     <property name="serviceUrl" value="rmi://127.0.0.1:1199/MessageService" />
-    <property name="serviceInterface" value="me.chongfeng.spring.rmi.service.MessageProvider" />
+    <property name="serviceInterface" value="MessageProvider" />
   </bean>
 
 </beans>
