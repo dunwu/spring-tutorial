@@ -4,7 +4,7 @@
   "scripts": {
     "clean": "rimraf _book",
     "prepare": "gitbook install",
-    "build": "gitbook build -g zp1024/spring-notes",
+    "build": "gitbook build ./ --log=debug --debug",
     "start": "gitbook serve"
   },
   "repository": {
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/zp1024/spring-notes",
   "devDependencies": {
-    "gitbook-cli": "^0.3.4",
-    "rimraf": "^2.3.4"
+    "gitbook-cli": "^2.3.2",
+    "rimraf": "^2.6.1"
   }
 }
