@@ -14,7 +14,7 @@
                         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
   <!-- 自动扫描 -->
-  <context:component-scan base-package="io.github.zp1024.spring.orm"/>
+  <context:component-scan base-package="io.github.dunwu.spring.orm"/>
 
   <!-- 引入配置文件 -->
   <context:property-placeholder location="classpath:properties/db.properties"/>
@@ -52,7 +52,7 @@
 
   <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
   <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-    <property name="basePackage" value="io.github.zp1024.spring.orm.mapper"/>
+    <property name="basePackage" value="io.github.dunwu.spring.orm.mapper"/>
     <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
   </bean>
 

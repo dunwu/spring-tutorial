@@ -23,6 +23,6 @@
 
 ## TODO
 
-`io.github.zp1024.spring.data.db` 中的内容应该是 spring-data 的内容，以后会迁出。
+`io.github.dunwu.spring.data.db` 中的内容应该是 spring-data 的内容，以后会迁出。
 
 待完成 Spring 事务管理实例：spring-notes-data-tx

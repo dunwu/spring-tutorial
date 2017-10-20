@@ -21,7 +21,7 @@
   <task:scheduler id="myScheduler" pool-size="10"/>
 
   <!-- 设置后，将查找使用@Component(@Controller是它的一种具体化)注解的类并将其注册为Bean -->
-  <context:component-scan base-package="io.github.zp1024.spring.scheduler"/>
+  <context:component-scan base-package="io.github.dunwu.spring.scheduler"/>
 
   <!-- 配置视图解析器 (该配置的是jstl解析器的一个扩展解析类) -->
   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

@@ -14,33 +14,33 @@
   <mvc:annotation-driven/>
 
   <!-- 设置后，将查找使用@Component(@Controller是它的一种具体化)注解的类并将其注册为Bean -->
-  <context:component-scan base-package="io.github.zp1024.spring.ioc.annotation"/>
+  <context:component-scan base-package="io.github.dunwu.spring.ioc.annotation"/>
 
   <!-- 测试@Reuquired -->
-  <bean id="annotationRequired" class="io.github.zp1024.spring.ioc.annotation.AnnotationRequired">
+  <bean id="annotationRequired" class="io.github.dunwu.spring.ioc.annotation.AnnotationRequired">
     <!-- AnnotationRequired的name属性的setter方法被@Required修饰，如果不初始化name，会报异常 -->
     <property name="name" value="zhangsan"/>
   </bean>
 
   <!-- 测试@Autowired -->
-  <bean id="annotationAutowired" class="io.github.zp1024.spring.ioc.annotation.AnnotationAutowired"/>
+  <bean id="annotationAutowired" class="io.github.dunwu.spring.ioc.annotation.AnnotationAutowired"/>
 
   <!-- 测试@Qualifier -->
-  <bean id="annotationQualifier" class="io.github.zp1024.spring.ioc.annotation.AnnotationQualifier"/>
+  <bean id="annotationQualifier" class="io.github.dunwu.spring.ioc.annotation.AnnotationQualifier"/>
 
   <!-- 测试@Resource -->
-  <bean id="annotationResource" class="io.github.zp1024.spring.ioc.annotation.AnnotationResource"/>
+  <bean id="annotationResource" class="io.github.dunwu.spring.ioc.annotation.AnnotationResource"/>
 
   <!-- 测试@PostConstruct和@PreDestroy -->
   <bean id="annotationPostConstructAndPreDestroy"
-        class="io.github.zp1024.spring.ioc.annotation.AnnotationPostConstructAndPreDestroy"/>
+        class="io.github.dunwu.spring.ioc.annotation.AnnotationPostConstructAndPreDestroy"/>
 
   <bean id="annotationInject"
-        class="io.github.zp1024.spring.ioc.annotation.AnnotationInject"/>
+        class="io.github.dunwu.spring.ioc.annotation.AnnotationInject"/>
 
   <!-- 测试bean -->
-  <bean id="apple" class="io.github.zp1024.spring.ioc.sample.Apple"/>
-  <bean id="banana" class="io.github.zp1024.spring.ioc.sample.Banana"/>
-  <bean id="orange" class="io.github.zp1024.spring.ioc.sample.Orange"/>
+  <bean id="apple" class="io.github.dunwu.spring.ioc.sample.Apple"/>
+  <bean id="banana" class="io.github.dunwu.spring.ioc.sample.Banana"/>
+  <bean id="orange" class="io.github.dunwu.spring.ioc.sample.Orange"/>
 
 </beans>

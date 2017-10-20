@@ -15,7 +15,7 @@
   <mvc:annotation-driven />
 
   <!-- 设置后，将查找使用@Component(@Controller是它的一种具体化)注解的类并将其注册为Bean -->
-  <context:component-scan base-package="io.github.zp1024.spring.aop" />
+  <context:component-scan base-package="io.github.dunwu.spring.aop" />
 
   <!-- 启用aspectj aop -->
   <aop:aspectj-autoproxy proxy-target-class="true" />

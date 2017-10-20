@@ -5,7 +5,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
   <!-- 注册要发布的RMI服务类 -->
-  <bean id="messageService" class="io.github.zp1024.spring.rmi.service.MessageProviderImpl" />
+  <bean id="messageService" class="io.github.dunwu.spring.rmi.service.MessageProviderImpl" />
 
   <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
     <!-- RMI服务名称,可自定义服务名称 -->

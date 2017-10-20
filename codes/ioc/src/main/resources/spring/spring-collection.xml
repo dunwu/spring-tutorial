@@ -5,12 +5,12 @@
 
   <!-- Bean declarations go here -->
 
-  <bean id="piano" class="io.github.zp1024.spring.ioc.annotation.inject.instrument.Piano" />
-  <bean id="guitar" class="io.github.zp1024.spring.ioc.annotation.inject.instrument.Guitar" />
-  <bean id="violin" class="io.github.zp1024.spring.ioc.annotation.inject.instrument.Violin" />
+  <bean id="piano" class="io.github.dunwu.spring.ioc.annotation.inject.instrument.Piano" />
+  <bean id="guitar" class="io.github.dunwu.spring.ioc.annotation.inject.instrument.Guitar" />
+  <bean id="violin" class="io.github.dunwu.spring.ioc.annotation.inject.instrument.Violin" />
 
   <!-- 装配Collection/List -->
-  <bean id="band" class="io.github.zp1024.spring.ioc.annotation.inject.Band">
+  <bean id="band" class="io.github.dunwu.spring.ioc.annotation.inject.Band">
     <!-- 装配list -->
     <property name="collections">
       <list>

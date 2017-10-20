@@ -3,8 +3,8 @@
           xsi:schemaLocation="http://dozer.sourceforge.net
           http://dozer.sourceforge.net/schema/beanmapping.xsd">
   <mapping date-format="yyyy-MM-dd">
-    <class-a>io.github.zp1024.spring.common.dozer.vo.NotSameAttributeA</class-a>
-    <class-b>io.github.zp1024.spring.common.dozer.vo.NotSameAttributeB</class-b>
+    <class-a>io.github.dunwu.spring.common.dozer.vo.NotSameAttributeA</class-a>
+    <class-b>io.github.dunwu.spring.common.dozer.vo.NotSameAttributeB</class-b>
     <field>
       <a>name</a>
       <b>value</b>
@@ -13,8 +13,8 @@
 
   <!-- 枚举映射 -->
   <mapping>
-    <class-a>io.github.zp1024.spring.common.dozer.vo.User</class-a>
-    <class-b>io.github.zp1024.spring.common.dozer.vo.UserPrime</class-b>
+    <class-a>io.github.dunwu.spring.common.dozer.vo.User</class-a>
+    <class-b>io.github.dunwu.spring.common.dozer.vo.UserPrime</class-b>
     <field>
       <a>status</a>
       <b>statusPrime</b>
@@ -22,8 +22,8 @@
   </mapping>
 
   <mapping>
-    <class-a>io.github.zp1024.spring.common.dozer.vo.Source</class-a>
-    <class-b>io.github.zp1024.spring.common.dozer.vo.Dest</class-b>
+    <class-a>io.github.dunwu.spring.common.dozer.vo.Source</class-a>
+    <class-b>io.github.dunwu.spring.common.dozer.vo.Dest</class-b>
     <field>
       <a>info</a>
       <b>info.content</b>

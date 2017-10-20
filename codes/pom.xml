@@ -7,7 +7,7 @@
   <!-- [Part 1] BASIC SETTINGS BEGIN -->
 
   <!-- MAVEN COORDINATE BEGIN -->
-  <groupId>io.github.zp1024</groupId>
+  <groupId>io.github.dunwu</groupId>
   <artifactId>spring-notes</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
@@ -47,7 +47,7 @@
   <!-- [Part 3] PROJECT INFO BEGIN -->
   <name>spring-notes</name>
   <description>spring 学习笔记</description>
-  <url>https://github.com/zp1024/spring-notes</url>
+  <url>https://github.com/dunwu/spring-notes</url>
   <inceptionYear>2016-2017</inceptionYear>
   <licenses>
     <license>
@@ -60,7 +60,7 @@
   <developers>
     <developer>
       <name>Zhang Peng</name>
-      <email>atlantis1024@163.com</email>
+      <email>forbreak@163.com</email>
       <timezone>+8</timezone>
     </developer>
   </developers>
@@ -70,12 +70,12 @@
   <!-- [Part 4] ENVIRONMENT SETTINGS BEGIN -->
   <issueManagement>
     <system>Github</system>
-    <url>https://github.com/zp1024/spring-notes/issues</url>
+    <url>https://github.com/dunwu/spring-notes/issues</url>
   </issueManagement>
   <scm>
-    <url>https://github.com/zp1024/spring-notes</url>
-    <connection>scm:git:git://github.com/zp1024/spring-notes.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com:zp1024/spring-notes.git</developerConnection>
+    <url>https://github.com/dunwu/spring-notes</url>
+    <connection>scm:git:git://github.com/dunwu/spring-notes.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:dunwu/spring-notes.git</developerConnection>
   </scm>
   <!-- [Part 4] ENVIRONMENT SETTINGS END -->
 

@@ -48,7 +48,7 @@
 
   <!-- LOGGER BEGIN -->
   <!-- 本项目的日志记录，分级打印 -->
-  <logger name="io.github.zp1024.spring" level="TRACE" additivity="false">
+  <logger name="io.github.dunwu.spring" level="TRACE" additivity="false">
     <appender-ref ref="ALL"/>
     <appender-ref ref="STDOUT"/>
   </logger>
