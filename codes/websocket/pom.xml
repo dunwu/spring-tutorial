@@ -83,6 +83,13 @@
     </dependency>
     <!-- spring end -->
 
+    <!-- util begin -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+    </dependency>
+    <!-- util end -->
+
   </dependencies>
   <!-- RELATIONSHIP SETTINGS END -->
 

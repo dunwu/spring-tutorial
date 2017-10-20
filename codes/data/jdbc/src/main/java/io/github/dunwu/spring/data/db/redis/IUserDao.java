@@ -12,7 +12,7 @@ public interface IUserDao {
     /**
      * 新增
      */
-    boolean add(UserDTO UserDTO);
+    boolean add(UserDTO userDTO);
 
     /**
      * 批量新增 使用pipeline方式

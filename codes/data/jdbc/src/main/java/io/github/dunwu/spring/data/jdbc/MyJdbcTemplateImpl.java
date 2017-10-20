@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-public class MyJdbcTemplate implements StudentDAO {
+public class MyJdbcTemplateImpl implements StudentDAO {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     private JdbcTemplate jdbcTemplate;
@@ -15,35 +15,40 @@ public class MyJdbcTemplate implements StudentDAO {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    @Override
     public void create(String name, Integer age) {
-        String SQL = "insert into Student (name, age) values (?, ?)";
-        jdbcTemplate.update(SQL, name, age);
+        String sql = "insert into Student (name, age) values (?, ?)";
+        jdbcTemplate.update(sql, name, age);
         logger.debug("Created Record Name = " + name + " Age = " + age);
     }
 
+    @Override
     public StudentDTO getById(Integer id) {
-        String SQL = "select * from Student where id = ?";
+        String sql = "select * from Student where id = ?";
         StudentDTO student =
-                        jdbcTemplate.queryForObject(SQL, new Object[] {id}, new StudentMapper());
+                        jdbcTemplate.queryForObject(sql, new Object[] {id}, new StudentMapper());
         logger.debug("查到Student记录：{}", student.toString());
         return student;
     }
 
+    @Override
     public List<StudentDTO> list() {
-        String SQL = "select * from Student";
-        List<StudentDTO> students = jdbcTemplate.query(SQL, new StudentMapper());
+        String sql = "select * from Student";
+        List<StudentDTO> students = jdbcTemplate.query(sql, new StudentMapper());
         return students;
     }
 
+    @Override
     public void delete(Integer id) {
-        String SQL = "delete from Student where id = ?";
-        jdbcTemplate.update(SQL, id);
+        String sql = "delete from Student where id = ?";
+        jdbcTemplate.update(sql, id);
         logger.debug("Deleted Record with ID = " + id);
     }
 
+    @Override
     public void update(Integer id, Integer age) {
-        String SQL = "update Student set age = ? where id = ?";
-        jdbcTemplate.update(SQL, age, id);
+        String sql = "update Student set age = ? where id = ?";
+        jdbcTemplate.update(sql, age, id);
         logger.debug("Updated Record with ID = " + id);
     }
 }

@@ -6,7 +6,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 
+import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
@@ -30,6 +33,7 @@ public class MyWebSocketHandler implements WebSocketHandler {
     /**
      * 建立连接后
      */
+    @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
         Long uid = (Long) session.getAttributes().get("uid");
         if (userSocketSessionMap.get(uid) == null) {
@@ -40,9 +44,11 @@ public class MyWebSocketHandler implements WebSocketHandler {
     /**
      * 消息处理，在客户端通过Websocket API发送的消息会经过这里，然后进行相应的处理
      */
+    @Override
     public void handleMessage(WebSocketSession session, WebSocketMessage<?> message) throws Exception {
-        if (message.getPayloadLength() == 0)
+        if (message.getPayloadLength() == 0) {
             return;
+        }
         Message msg = new Gson().fromJson(message.getPayload().toString(), Message.class);
         msg.setDate(new Date());
         sendMessageToUser(msg.getTo(),
@@ -52,6 +58,7 @@ public class MyWebSocketHandler implements WebSocketHandler {
     /**
      * 消息传输错误处理
      */
+    @Override
     public void handleTransportError(WebSocketSession session, Throwable exception) throws Exception {
         if (session.isOpen()) {
             session.close();
@@ -71,6 +78,7 @@ public class MyWebSocketHandler implements WebSocketHandler {
     /**
      * 关闭连接后
      */
+    @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus closeStatus) throws Exception {
         System.out.println("Websocket:" + session.getId() + "已经关闭");
         Iterator<Entry<Long, WebSocketSession>> it = userSocketSessionMap.entrySet().iterator();
@@ -85,6 +93,7 @@ public class MyWebSocketHandler implements WebSocketHandler {
         }
     }
 
+    @Override
     public boolean supportsPartialMessages() {
         return false;
     }
@@ -104,21 +113,24 @@ public class MyWebSocketHandler implements WebSocketHandler {
             final Entry<Long, WebSocketSession> entry = it.next();
 
             if (entry.getValue().isOpen()) {
-                // entry.getValue().sendMessage(message);
-                new Thread(new Runnable() {
-
-                    public void run() {
-                        try {
-                            if (entry.getValue().isOpen()) {
-                                System.out.println("broadcast output:" + message.toString());
-                                entry.getValue().sendMessage(message);
+                ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1,
+                        new BasicThreadFactory.Builder().namingPattern("socket-schedule-pool-%d").daemon(true).build());
+                for (int i = 0; i < 10; i++) {
+                    final int index = i;
+                    executorService.execute(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                if (entry.getValue().isOpen()) {
+                                    System.out.println("broadcast output:" + message.toString());
+                                    entry.getValue().sendMessage(message);
+                                }
+                            } catch (IOException e) {
+                                e.printStackTrace();
                             }
-                        } catch (IOException e) {
-                            e.printStackTrace();
                         }
-                    }
-
-                }).start();
+                    });
+                }
             }
 
         }

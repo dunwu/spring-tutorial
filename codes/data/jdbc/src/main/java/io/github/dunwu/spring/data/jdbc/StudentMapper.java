@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;
 
 public class StudentMapper implements RowMapper<StudentDTO> {
+    @Override
     public StudentDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
         StudentDTO student = new StudentDTO();
         student.setId(rs.getInt("id"));

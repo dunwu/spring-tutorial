@@ -7,7 +7,7 @@ import java.util.Date;
 import org.springframework.expression.ParseException;
 
 @ValidRule
-public class DateValidatorRule extends AbastractValidatorRule {
+public class DateValidatorRule extends AbstractValidatorRule {
     @Override
     public boolean support(Annotation annotation) {
         return annotation instanceof DateString;

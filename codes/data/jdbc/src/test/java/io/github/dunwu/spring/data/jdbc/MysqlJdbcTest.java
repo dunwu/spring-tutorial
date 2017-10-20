@@ -35,7 +35,7 @@ public class MysqlJdbcTest {
 
     @Test
     public void testExecJdbcOper() throws SQLException, IOException {
-        MyJdbcTemplate myJdbcTemplate = (MyJdbcTemplate) ctx.getBean("myJdbcTemplate");
+        MyJdbcTemplateImpl myJdbcTemplate = (MyJdbcTemplateImpl) ctx.getBean("myJdbcTemplate");
         JdbcDemo.execJdbcOper(myJdbcTemplate);
     }
 

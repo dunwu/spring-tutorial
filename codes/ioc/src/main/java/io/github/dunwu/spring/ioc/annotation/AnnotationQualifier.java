@@ -1,6 +1,6 @@
 package io.github.dunwu.spring.ioc.annotation;
 
-import io.github.dunwu.spring.ioc.sample.Fruit;
+import io.github.dunwu.spring.ioc.sample.AbstractFruit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,24 +19,24 @@ public class AnnotationQualifier {
 
     @Autowired
     @Qualifier("apple") /** 去除这行，会报异常 */
-        Fruit fieldA;
+        AbstractFruit fieldA;
 
-    Fruit fieldB;
+    AbstractFruit fieldB;
 
-    public Fruit getFieldA() {
+    public AbstractFruit getFieldA() {
         return fieldA;
     }
 
-    public void setFieldA(Fruit fieldA) {
+    public void setFieldA(AbstractFruit fieldA) {
         this.fieldA = fieldA;
     }
 
-    public Fruit getFieldB() {
+    public AbstractFruit getFieldB() {
         return fieldB;
     }
 
     @Autowired
-    public void setFieldB(@Qualifier("banana") Fruit fieldB) {
+    public void setFieldB(@Qualifier("banana") AbstractFruit fieldB) {
         this.fieldB = fieldB;
     }
 

@@ -28,6 +28,7 @@ public class Musician implements Performer {
 
     public Musician() {}
 
+    @Override
     public void perform() throws Exception {
         System.out.println(String.format("%s演绎%s", name, song));
         violin.play();

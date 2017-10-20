@@ -22,7 +22,7 @@ public class JdbcDemo {
         return new ClassPathXmlApplicationContext("/db/spring-druid.xml");
     }
 
-    public static void execJdbcOper(MyJdbcTemplate jdbcTemplateDemo) {
+    public static void execJdbcOper(MyJdbcTemplateImpl jdbcTemplateDemo) {
         log.debug("------Records Creation--------");
         jdbcTemplateDemo.create("Zara", 11);
         jdbcTemplateDemo.create("Nuha", 2);

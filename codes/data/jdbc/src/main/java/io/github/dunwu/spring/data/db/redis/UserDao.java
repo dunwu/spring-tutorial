@@ -24,13 +24,14 @@ public class UserDao extends AbstractBaseRedisDao<String, UserDTO> implements IU
      * 新增
      */
     @Override
-    public boolean add(final UserDTO UserDTO) {
+    public boolean add(final UserDTO userDTO) {
         boolean result = redisTemplate.execute(new RedisCallback<Boolean>() {
+            @Override
             public Boolean doInRedis(RedisConnection connection)
                     throws DataAccessException {
                 RedisSerializer<String> serializer = getRedisSerializer();
-                byte[] key = serializer.serialize(UserDTO.getId());
-                byte[] name = serializer.serialize(UserDTO.getName());
+                byte[] key = serializer.serialize(userDTO.getId());
+                byte[] name = serializer.serialize(userDTO.getName());
                 return connection.setNX(key, name);
             }
         });
@@ -44,12 +45,13 @@ public class UserDao extends AbstractBaseRedisDao<String, UserDTO> implements IU
     public boolean add(final List<UserDTO> list) {
         Assert.notEmpty(list);
         boolean result = redisTemplate.execute(new RedisCallback<Boolean>() {
+            @Override
             public Boolean doInRedis(RedisConnection connection)
                     throws DataAccessException {
                 RedisSerializer<String> serializer = getRedisSerializer();
-                for (UserDTO UserDTO : list) {
-                    byte[] key = serializer.serialize(UserDTO.getId());
-                    byte[] name = serializer.serialize(UserDTO.getName());
+                for (UserDTO userDTO : list) {
+                    byte[] key = serializer.serialize(userDTO.getId());
+                    byte[] name = serializer.serialize(userDTO.getName());
                     connection.setNX(key, name);
                 }
                 return true;
@@ -80,17 +82,18 @@ public class UserDao extends AbstractBaseRedisDao<String, UserDTO> implements IU
      * 修改
      */
     @Override
-    public boolean update(final UserDTO UserDTO) {
-        String key = UserDTO.getId();
+    public boolean update(final UserDTO userDTO) {
+        String key = userDTO.getId();
         if (get(key) == null) {
             throw new NullPointerException("数据行不存在, key = " + key);
         }
         boolean result = redisTemplate.execute(new RedisCallback<Boolean>() {
+            @Override
             public Boolean doInRedis(RedisConnection connection)
                     throws DataAccessException {
                 RedisSerializer<String> serializer = getRedisSerializer();
-                byte[] key = serializer.serialize(UserDTO.getId());
-                byte[] name = serializer.serialize(UserDTO.getName());
+                byte[] key = serializer.serialize(userDTO.getId());
+                byte[] name = serializer.serialize(userDTO.getName());
                 connection.set(key, name);
                 return true;
             }
@@ -104,6 +107,7 @@ public class UserDao extends AbstractBaseRedisDao<String, UserDTO> implements IU
     @Override
     public UserDTO get(final String keyId) {
         UserDTO result = redisTemplate.execute(new RedisCallback<UserDTO>() {
+            @Override
             public UserDTO doInRedis(RedisConnection connection)
                     throws DataAccessException {
                 RedisSerializer<String> serializer = getRedisSerializer();

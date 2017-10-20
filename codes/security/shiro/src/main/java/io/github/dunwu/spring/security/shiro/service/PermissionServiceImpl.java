@@ -16,10 +16,12 @@ public class PermissionServiceImpl implements PermissionService {
         this.permissionDao = permissionDao;
     }
 
+    @Override
     public Permission createPermission(Permission permission) {
         return permissionDao.createPermission(permission);
     }
 
+    @Override
     public void deletePermission(Long permissionId) {
         permissionDao.deletePermission(permissionId);
     }

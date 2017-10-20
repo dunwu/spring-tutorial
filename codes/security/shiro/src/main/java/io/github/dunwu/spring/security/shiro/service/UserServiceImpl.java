@@ -34,6 +34,7 @@ public class UserServiceImpl implements UserService {
      *
      * @param user
      */
+    @Override
     public User createUser(User user) {
         // 加密密码
         passwordHelper.encryptPassword(user);
@@ -46,6 +47,7 @@ public class UserServiceImpl implements UserService {
      * @param userId
      * @param newPassword
      */
+    @Override
     public void changePassword(Long userId, String newPassword) {
         User user = userDao.findOne(userId);
         user.setPassword(newPassword);
@@ -59,6 +61,7 @@ public class UserServiceImpl implements UserService {
      * @param userId
      * @param roleIds
      */
+    @Override
     public void correlationRoles(Long userId, Long... roleIds) {
         userDao.correlationRoles(userId, roleIds);
     }
@@ -70,6 +73,7 @@ public class UserServiceImpl implements UserService {
      * @param userId
      * @param roleIds
      */
+    @Override
     public void uncorrelationRoles(Long userId, Long... roleIds) {
         userDao.uncorrelationRoles(userId, roleIds);
     }
@@ -80,6 +84,7 @@ public class UserServiceImpl implements UserService {
      * @param username
      * @return
      */
+    @Override
     public User findByUsername(String username) {
         return userDao.findByUsername(username);
     }
@@ -90,6 +95,7 @@ public class UserServiceImpl implements UserService {
      * @param username
      * @return
      */
+    @Override
     public Set<String> findRoles(String username) {
         return userDao.findRoles(username);
     }
@@ -100,6 +106,7 @@ public class UserServiceImpl implements UserService {
      * @param username
      * @return
      */
+    @Override
     public Set<String> findPermissions(String username) {
         return userDao.findPermissions(username);
     }

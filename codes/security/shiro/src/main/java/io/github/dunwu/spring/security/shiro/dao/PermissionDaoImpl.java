@@ -16,6 +16,7 @@ import java.sql.SQLException;
  */
 public class PermissionDaoImpl extends JdbcDaoSupport implements PermissionDao {
 
+    @Override
     public Permission createPermission(final Permission permission) {
         final String sql = "insert into sys_permissions(permission, description, available) values(?,?,?)";
 
@@ -35,6 +36,7 @@ public class PermissionDaoImpl extends JdbcDaoSupport implements PermissionDao {
         return permission;
     }
 
+    @Override
     public void deletePermission(Long permissionId) {
         //首先把与permission关联的相关表的数据删掉
         String sql = "delete from sys_roles_permissions where permission_id=?";

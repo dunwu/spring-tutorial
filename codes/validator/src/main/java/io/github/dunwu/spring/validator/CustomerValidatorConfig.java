@@ -12,6 +12,7 @@ import org.springframework.context.ApplicationContextAware;
 public class CustomerValidatorConfig implements ApplicationContextAware {
     private Map<Annotation, ValidatorRule> rules = new ConcurrentHashMap<Annotation, ValidatorRule>();
     Map<String, Object> customerValidationRules = null;
+    @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         customerValidationRules = applicationContext.getBeansWithAnnotation(ValidRule.class);
         System.out.println(customerValidationRules);

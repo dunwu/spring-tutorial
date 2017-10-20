@@ -123,7 +123,8 @@ public class FormBean {
 		this.additionalInfo = additionalInfo;
 	}
 
-	public String toString() {
+	@Override
+    public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("properties name=");
         if (name != null) {

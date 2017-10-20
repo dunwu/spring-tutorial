@@ -9,6 +9,7 @@ public class Musician implements Performer {
 
     public Musician() {}
 
+    @Override
     public void perform() throws Exception {
         System.out.println(String.format("%s弹奏%s", name, song));
         instrument.play();

@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import io.github.dunwu.spring.ioc.sample.Fruit;
+import io.github.dunwu.spring.ioc.sample.AbstractFruit;
 
 import javax.annotation.Resource;
 
@@ -21,31 +21,31 @@ import javax.annotation.Resource;
 public class AnnotationResource {
     private static final Logger log = LoggerFactory.getLogger(AnnotationResource.class);
     @Resource(name = "apple")
-    Fruit fieldA;
+    AbstractFruit fieldA;
 
-    Fruit fieldB;
+    AbstractFruit fieldB;
 
     @Resource
     Orange fieldC;
 
-    public Fruit getFieldA() {
+    public AbstractFruit getFieldA() {
         return fieldA;
     }
 
-    public void setFieldA(Fruit fieldA) {
+    public void setFieldA(AbstractFruit fieldA) {
         this.fieldA = fieldA;
     }
 
-    public Fruit getFieldB() {
+    public AbstractFruit getFieldB() {
         return fieldB;
     }
 
     @Resource(name = "banana")
-    public void setFieldB(Fruit fieldB) {
+    public void setFieldB(AbstractFruit fieldB) {
         this.fieldB = fieldB;
     }
 
-    public Fruit getFieldC() {
+    public AbstractFruit getFieldC() {
         return fieldC;
     }
 

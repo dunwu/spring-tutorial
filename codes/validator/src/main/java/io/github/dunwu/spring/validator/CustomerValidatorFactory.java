@@ -17,10 +17,12 @@ public class CustomerValidatorFactory implements Validator {
     @Autowired
     private CustomerValidatorConfig customerValidatorConfig;
 
+    @Override
     public boolean supports(Class<?> clazz) {
         return true;
     }
 
+    @Override
     public void validate(Object target, Errors errors) {
         List<Field> fileds = getFields(target.getClass());
         for (Field field : fileds) {

@@ -46,13 +46,13 @@ public class RequestDataController {
 	}
 
 	@RequestMapping(value="header", method=RequestMethod.GET)
-	public @ResponseBody String withHeader(@RequestHeader String Accept) {
-		return "Obtained 'Accept' header '" + Accept + "'";
+	public @ResponseBody String withHeader(@RequestHeader String accept) {
+		return "Obtained 'Accept' header '" + accept + "'";
 	}
 
 	@RequestMapping(value="cookie", method=RequestMethod.GET)
-	public @ResponseBody String withCookie(@CookieValue String openid_provider) {
-		return "Obtained 'openid_provider' cookie '" + openid_provider + "'";
+	public @ResponseBody String withCookie(@CookieValue String openidProvider) {
+		return "Obtained 'openid_provider' cookie '" + openidProvider + "'";
 	}
 
 	@RequestMapping(value="body", method=RequestMethod.POST)

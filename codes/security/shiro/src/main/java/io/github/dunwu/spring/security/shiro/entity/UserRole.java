@@ -31,13 +31,21 @@ public class UserRole implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         UserRole userRole = (UserRole) o;
 
-        if (roleId != null ? !roleId.equals(userRole.roleId) : userRole.roleId != null) return false;
-        if (userId != null ? !userId.equals(userRole.userId) : userRole.userId != null) return false;
+        if (roleId != null ? !roleId.equals(userRole.roleId) : userRole.roleId != null) {
+            return false;
+        }
+        if (userId != null ? !userId.equals(userRole.userId) : userRole.userId != null) {
+            return false;
+        }
 
         return true;
     }

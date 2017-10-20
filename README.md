@@ -89,6 +89,9 @@ docs 部分已经使用 Gitbook 生成电子书：
 
 [**spring-notes 文档在线阅读**](https://dunwu.gitbooks.io/spring-notes/)
 
-## 约定
+## 规范
 
 - 本项目的文档部分，遵循 [Gitbook](https://github.com/GitbookIO/gitbook) 规范，以便生成电子书。
+
+- 代码规范使用 [阿里巴巴Java开发手册](https://github.com/alibaba/p3c)
+如果你使用 IDEA 作为你的 IDE，推荐安装 Alibaba-Java-Coding-Guidelines 插件

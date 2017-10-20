@@ -15,6 +15,7 @@ public class Band implements Performer {
 
     public Band() {}
 
+    @Override
     public void perform() throws Exception {
         System.out.println("乐队演奏");
 

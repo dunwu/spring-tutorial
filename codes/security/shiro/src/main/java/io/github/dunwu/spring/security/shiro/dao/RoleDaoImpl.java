@@ -16,7 +16,8 @@ import java.sql.SQLException;
  */
 public class RoleDaoImpl extends JdbcDaoSupport implements RoleDao {
 
-    public Role createRole(final Role Role) {
+    @Override
+    public Role createRole(final Role role) {
         final String sql = "insert into sys_roles(role, description, available) values(?,?,?)";
 
         GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
@@ -24,17 +25,18 @@ public class RoleDaoImpl extends JdbcDaoSupport implements RoleDao {
             @Override
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
                 PreparedStatement psst = connection.prepareStatement(sql, new String[]{"id"});
-                psst.setString(1, Role.getRole());
-                psst.setString(2, Role.getDescription());
-                psst.setBoolean(3, Role.getAvailable());
+                psst.setString(1, role.getRole());
+                psst.setString(2, role.getDescription());
+                psst.setBoolean(3, role.getAvailable());
                 return psst;
             }
         }, keyHolder);
-        Role.setId(keyHolder.getKey().longValue());
+        role.setId(keyHolder.getKey().longValue());
 
-        return Role;
+        return role;
     }
 
+    @Override
     public void deleteRole(Long roleId) {
         //首先把和role关联的相关表数据删掉
         String sql = "delete from sys_users_roles where role_id=?";

@@ -29,6 +29,7 @@ public class StudentDTO {
         return id;
     }
 
+    @Override
     public String toString() {
         return String.format("id=%d, name=%s, age=%d\n", id, name, age);
     }
