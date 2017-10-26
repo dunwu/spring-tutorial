@@ -52,6 +52,8 @@ Spring 学习笔记。
 
 - **Spring**：4.1.4.RELEASE
 
+- **Maven**：3.5.2
+
 嵌入式服务器版本：
 
 - **Jetty**：Jetty 9

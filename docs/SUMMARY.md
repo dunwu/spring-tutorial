@@ -29,6 +29,8 @@
   * [嵌入式服务器Jetty](others/jetty.md)
   * [Dozer](others/dozer.md)
   * [nginx快速入门](others/nginx-quickstart.md)
+  * [Maven 快速指南](others/maven/maven-quickstart.md)
+  * [Maven 之 settings.xml 详解](others/maven/maven-settings-config.md)
 
 ------
 
