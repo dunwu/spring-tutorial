@@ -1,10 +1,14 @@
 # spring-notes
 
-Spring 学习笔记。
+> Spring 学习笔记。
+> 
+> 以简单范例来展示 spring 在 web 开发中的各种应用。
 
-以简单范例来展示 spring 在 web 开发中的各种应用。
-
-[**spring-notes 文档在线阅读**](https://dunwu.gitbooks.io/spring-notes/)
+<p align="center">
+  <a href="https://dunwu.gitbooks.io/spring-notes/" target="_blank">
+    :point_right: spring-notes 文档在线阅读
+  </a>
+</p>
 
 ## 内容
 
@@ -101,7 +105,7 @@ $ mvn jetty:run
 
 docs 部分已经使用 Gitbook 生成电子书：
 
-[**spring-notes 文档在线阅读**](https://dunwu.gitbooks.io/spring-notes/)
+:point_right: [**spring-notes 文档在线阅读**](https://dunwu.gitbooks.io/spring-notes/)
 
 ## 规范
 
