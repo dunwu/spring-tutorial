@@ -16,15 +16,13 @@
   * [Spring中使用JDBC访问数据](spring/data/spring-and-jdbc.md)
   * [事务管理](spring/data/transaction.md)
 * [整合](spring/integration/README.md)
-  * [Spring和日志](spring/integration/spring-and-log.md)
   * [Spring和缓存](spring/integration/spring-and-cache.md)
   * [Spring和调度器](spring/integration/spring-and-scheduler.md)
-* [附录](spring/appendix/README.md)
-  * [资源](spring/appendix/resources.md)
   
 ## Others
 
 * [其它技术](others/README.md)
+  * [细说Java主流日志工具库](others/java-log-libs.md)
   * [H2数据库](others/db-h2.md)
   * [嵌入式服务器Jetty](others/jetty.md)
   * [Dozer](others/dozer.md)
@@ -34,4 +32,6 @@
 
 ------
 
+* [附录](spring/appendix/README.md)
+  * [资源](spring/appendix/resources.md)
 
