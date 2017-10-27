@@ -8,7 +8,7 @@
 
   <!-- MAVEN COORDINATE BEGIN -->
   <groupId>io.github.dunwu</groupId>
-  <artifactId>spring-notes-integration-soa</artifactId>
+  <artifactId>spring-notes-integration-rpc</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
   <!-- MAVEN COORDINATE END -->
@@ -31,7 +31,7 @@
 
 
   <!-- [Part 3] PROJECT INFO BEGIN -->
-  <name>spring-notes-integration-soa</name>
+  <name>spring-notes-integration-rpc</name>
   <description>spring 学习笔记之集成 SOA</description>
   <!-- [Part 3] PROJECT INFO END -->
 

@@ -7,7 +7,7 @@
   <!-- [Part 1] BASIC SETTINGS BEGIN -->
 
   <!-- MAVEN COORDINATE BEGIN -->
-  <artifactId>spring-notes-integration-soa-provider</artifactId>
+  <artifactId>spring-notes-integration-rpc-consumer</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>
   <!-- MAVEN COORDINATE END -->
@@ -22,7 +22,7 @@
   <dependencies>
     <dependency>
       <groupId>io.github.dunwu</groupId>
-      <artifactId>spring-notes-integration-soa-api</artifactId>
+      <artifactId>spring-notes-integration-rpc-api</artifactId>
       <version>${project.parent.version}</version>
     </dependency>
 
@@ -80,8 +80,8 @@
 
 
   <!-- [Part 3] PROJECT INFO BEGIN -->
-  <name>spring-notes-integration-soa-provider</name>
-  <description>dubbo provider</description>
+  <name>spring-notes-integration-rpc-consumer</name>
+  <description>dubbo consumer</description>
   <!-- [Part 3] PROJECT INFO END -->
 
 

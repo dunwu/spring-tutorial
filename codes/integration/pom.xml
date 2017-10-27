@@ -15,7 +15,7 @@
 
   <!-- RELATIONSHIP SETTINGS BEGIN -->
   <modules>
-    <module>soa</module>
+    <module>rpc</module>
   </modules>
   <!-- RELATIONSHIP SETTINGS END -->
 
