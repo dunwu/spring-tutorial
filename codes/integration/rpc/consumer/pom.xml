@@ -8,7 +8,6 @@
 
   <!-- MAVEN COORDINATE BEGIN -->
   <artifactId>spring-notes-integration-rpc-consumer</artifactId>
-  <version>1.0.0</version>
   <packaging>jar</packaging>
   <!-- MAVEN COORDINATE END -->
 
@@ -80,7 +79,7 @@
 
 
   <!-- [Part 3] PROJECT INFO BEGIN -->
-  <name>spring-notes-integration-rpc-consumer</name>
+  <name>${project.artifactId}</name>
   <description>dubbo consumer</description>
   <!-- [Part 3] PROJECT INFO END -->
 

@@ -514,7 +514,7 @@
 
 
   <!-- [Part 3] PROJECT INFO BEGIN -->
-  <name>spring-notes-parent</name>
+  <name>${project.artifactId}</name>
   <description>spring 学习笔记</description>
   <!-- [Part 3] PROJECT INFO END -->
 

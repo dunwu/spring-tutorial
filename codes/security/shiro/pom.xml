@@ -7,9 +7,7 @@
   <!-- [Part 1] BASIC SETTINGS BEGIN -->
 
   <!-- MAVEN COORDINATE BEGIN -->
-  <groupId>io.github.dunwu</groupId>
   <artifactId>spring-notes-security-shiro</artifactId>
-  <version>1.0.0</version>
   <packaging>war</packaging>
   <!-- MAVEN COORDINATE END -->
 
@@ -170,7 +168,7 @@
 
 
   <!-- [Part 3] PROJECT INFO BEGIN -->
-  <name>spring-notes-security-shiro</name>
+  <name>${project.artifactId}</name>
   <description>spring 学习笔记之 security shiro</description>
   <!-- [Part 3] PROJECT INFO END -->
 

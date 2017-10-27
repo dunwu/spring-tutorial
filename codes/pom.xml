@@ -16,19 +16,14 @@
   <!-- RELATIONSHIP SETTINGS BEGIN -->
   <modules>
     <module>parent</module>
-    <module>helloworld</module>
-    <module>ioc</module>
-    <module>aop</module>
-    <module>data</module>
-    <module>validator</module>
-    <module>scheduler</module>
-    <module>rmi</module>
-    <module>security</module>
     <module>common</module>
-    <module>mvc</module>
-    <module>boot</module>
-    <module>websocket</module>
+    <module>core</module>
+    <module>data</module>
+    <module>web</module>
     <module>integration</module>
+    <module>security</module>
+    <module>boot</module>
+    <module>example</module>
   </modules>
   <!-- RELATIONSHIP SETTINGS END -->
 
@@ -46,7 +41,7 @@
 
 
   <!-- [Part 3] PROJECT INFO BEGIN -->
-  <name>spring-notes</name>
+  <name>${project.artifactId}</name>
   <description>spring 学习笔记</description>
   <url>https://github.com/dunwu/spring-notes</url>
   <inceptionYear>2016-2017</inceptionYear>

@@ -8,16 +8,14 @@
 
   <!-- MAVEN COORDINATE BEGIN -->
   <groupId>io.github.dunwu</groupId>
-  <artifactId>spring-notes-integration</artifactId>
+  <artifactId>spring-notes-example</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
   <!-- MAVEN COORDINATE END -->
 
   <!-- RELATIONSHIP SETTINGS BEGIN -->
   <modules>
-    <module>rmi</module>
-    <module>rpc</module>
-    <module>scheduler</module>
+    <module>helloworld</module>
   </modules>
   <!-- RELATIONSHIP SETTINGS END -->
 

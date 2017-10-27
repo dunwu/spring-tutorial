@@ -7,9 +7,7 @@
   <!-- [Part 1] BASIC SETTINGS BEGIN -->
 
   <!-- MAVEN COORDINATE BEGIN -->
-  <groupId>io.github.dunwu</groupId>
-  <artifactId>spring-notes-aop</artifactId>
-  <version>1.0.0</version>
+  <artifactId>spring-notes-core-validator</artifactId>
   <packaging>war</packaging>
   <!-- MAVEN COORDINATE END -->
 
@@ -18,9 +16,24 @@
     <groupId>io.github.dunwu</groupId>
     <artifactId>spring-notes-parent</artifactId>
     <version>1.0.0</version>
-    <relativePath>../parent</relativePath>
+    <relativePath>../../parent</relativePath>
   </parent>
   <dependencies>
+    <!-- json begin -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-mapper-asl</artifactId>
+    </dependency>
+    <!-- json end -->
+
     <!-- log begin -->
     <dependency>
       <groupId>ch.qos.logback</groupId>
@@ -36,19 +49,6 @@
     </dependency>
     <!-- log end -->
 
-    <!-- javaee begin -->
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>javax.servlet.jsp</groupId>
-      <artifactId>jsp-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <!-- javaee end -->
-
     <!-- spring begin -->
     <dependency>
       <groupId>org.springframework</groupId>
@@ -60,11 +60,39 @@
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
       <artifactId>spring-context-support</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-expression</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jms</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
     </dependency>
     <!-- spring end -->
 
@@ -74,12 +102,22 @@
       <artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>org.assertj</groupId>
-      <artifactId>assertj-core</artifactId>
-      <scope>test</scope>
-    </dependency>
     <!-- test end -->
+
+    <!-- web begin -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>jsp-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+    </dependency>
+    <!-- web end -->
   </dependencies>
   <!-- RELATIONSHIP SETTINGS END -->
 
@@ -125,8 +163,8 @@
 
 
   <!-- [Part 3] PROJECT INFO BEGIN -->
-  <name>spring-notes-aop</name>
-  <description>spring 学习笔记之 AOP</description>
+  <name>${project.artifactId}</name>
+  <description>spring 学习笔记之 validator</description>
   <!-- [Part 3] PROJECT INFO END -->
 
 

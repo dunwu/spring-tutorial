@@ -1,15 +1,13 @@
 <?xml version="1.0"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-         xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
 
 
   <!-- [Part 1] BASIC SETTINGS BEGIN -->
 
   <!-- MAVEN COORDINATE BEGIN -->
-  <groupId>io.github.dunwu</groupId>
-  <artifactId>spring-notes-rmi-client</artifactId>
-  <version>1.0.0</version>
+  <artifactId>spring-notes-integration-rmi-server</artifactId>
   <packaging>jar</packaging>
   <!-- MAVEN COORDINATE END -->
 
@@ -18,7 +16,7 @@
     <groupId>io.github.dunwu</groupId>
     <artifactId>spring-notes-parent</artifactId>
     <version>1.0.0</version>
-    <relativePath>../../parent</relativePath>
+    <relativePath>../../../parent</relativePath>
   </parent>
   <dependencies>
     <!-- spring begin -->
@@ -55,8 +53,8 @@
 
 
   <!-- [Part 3] PROJECT INFO BEGIN -->
-  <name>spring-notes-rmi-client</name>
-  <description>spring 学习笔记之 rmi-client</description>
+  <name>${project.artifactId}</name>
+  <description>spring 学习笔记之 rmi-server</description>
   <!-- [Part 3] PROJECT INFO END -->
 
 

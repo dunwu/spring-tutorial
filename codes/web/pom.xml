@@ -8,16 +8,15 @@
 
   <!-- MAVEN COORDINATE BEGIN -->
   <groupId>io.github.dunwu</groupId>
-  <artifactId>spring-notes-integration</artifactId>
+  <artifactId>spring-notes-web</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
   <!-- MAVEN COORDINATE END -->
 
   <!-- RELATIONSHIP SETTINGS BEGIN -->
   <modules>
-    <module>rmi</module>
-    <module>rpc</module>
-    <module>scheduler</module>
+    <module>mvc</module>
+    <module>websocket</module>
   </modules>
   <!-- RELATIONSHIP SETTINGS END -->
 
@@ -32,7 +31,7 @@
 
   <!-- [Part 3] PROJECT INFO BEGIN -->
   <name>${project.artifactId}</name>
-  <description>Remoting, JMS, JCA, JMX, Email, Tasks, Scheduling, Cache.</description>
+  <description>Spring MVC, WebSocket, SockJS, STOMP messaging, Spring WebFlux, WebClient, WebSocket.</description>
   <!-- [Part 3] PROJECT INFO END -->
 
 

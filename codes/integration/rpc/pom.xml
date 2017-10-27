@@ -31,7 +31,7 @@
 
 
   <!-- [Part 3] PROJECT INFO BEGIN -->
-  <name>spring-notes-integration-rpc</name>
+  <name>${project.artifactId}</name>
   <description>spring 学习笔记之集成 SOA</description>
   <!-- [Part 3] PROJECT INFO END -->
 

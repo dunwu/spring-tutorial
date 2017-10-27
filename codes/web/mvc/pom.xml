@@ -7,9 +7,7 @@
   <!-- [Part 1] BASIC SETTINGS BEGIN -->
 
   <!-- MAVEN COORDINATE BEGIN -->
-  <groupId>io.github.dunwu</groupId>
-  <artifactId>spring-notes-mvc</artifactId>
-  <version>1.0.0</version>
+  <artifactId>spring-notes-web-mvc</artifactId>
   <packaging>war</packaging>
   <!-- MAVEN COORDINATE END -->
 
@@ -18,7 +16,7 @@
     <groupId>io.github.dunwu</groupId>
     <artifactId>spring-notes-parent</artifactId>
     <version>1.0.0</version>
-    <relativePath>../parent</relativePath>
+    <relativePath>../../parent</relativePath>
   </parent>
   <dependencies>
     <!-- IOC and AOP enhance begin -->
@@ -341,7 +339,7 @@
 
 
   <!-- [Part 3] PROJECT INFO BEGIN -->
-  <name>spring-notes-mvc</name>
+  <name>${project.artifactId}</name>
   <description>spring 学习笔记之 MVC</description>
   <!-- [Part 3] PROJECT INFO END -->
 

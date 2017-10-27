@@ -30,8 +30,8 @@
 
 
   <!-- [Part 3] PROJECT INFO BEGIN -->
-  <name>spring-notes-data</name>
-  <description>spring 学习笔记之数据篇</description>
+  <name>${project.artifactId}</name>
+  <description>Transactions, DAO support, JDBC, ORM, Marshalling XML.</description>
   <!-- [Part 3] PROJECT INFO END -->
 
 

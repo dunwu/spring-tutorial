@@ -8,15 +8,16 @@
 
   <!-- MAVEN COORDINATE BEGIN -->
   <groupId>io.github.dunwu</groupId>
-  <artifactId>spring-notes-rmi</artifactId>
+  <artifactId>spring-notes-core</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
   <!-- MAVEN COORDINATE END -->
 
   <!-- RELATIONSHIP SETTINGS BEGIN -->
   <modules>
-    <module>server</module>
-    <module>client</module>
+    <module>ioc</module>
+    <module>aop</module>
+    <module>validator</module>
   </modules>
   <!-- RELATIONSHIP SETTINGS END -->
 
@@ -30,8 +31,8 @@
 
 
   <!-- [Part 3] PROJECT INFO BEGIN -->
-  <name>spring-notes-rmi</name>
-  <description>spring 学习笔记之 rmi</description>
+  <name>${project.artifactId}</name>
+  <description>IoC container, Events, Resources, i18n, Validation, Data Binding, Type Conversion, SpEL, AOP.</description>
   <!-- [Part 3] PROJECT INFO END -->
 
 

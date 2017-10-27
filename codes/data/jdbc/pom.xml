@@ -7,9 +7,7 @@
   <!-- [Part 1] BASIC SETTINGS BEGIN -->
 
   <!-- MAVEN COORDINATE BEGIN -->
-  <groupId>io.github.dunwu</groupId>
   <artifactId>spring-notes-data-jdbc</artifactId>
-  <version>1.0.0</version>
   <packaging>pom</packaging>
   <!-- MAVEN COORDINATE END -->
 
@@ -115,7 +113,7 @@
 
 
   <!-- [Part 3] PROJECT INFO BEGIN -->
-  <name>spring-notes-data-jdbc</name>
+  <name>${project.artifactId}</name>
   <description>[spring][data][jdbc]本项目展示 Spring 中如何使用 JDBC 访问数据</description>
   <!-- [Part 3] PROJECT INFO END -->
 

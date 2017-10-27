@@ -7,9 +7,7 @@
   <!-- [Part 1] BASIC SETTINGS BEGIN -->
 
   <!-- MAVEN COORDINATE BEGIN -->
-  <groupId>io.github.dunwu</groupId>
-  <artifactId>spring-notes-helolworld</artifactId>
-  <version>1.0.0</version>
+  <artifactId>spring-notes-example-helolworld</artifactId>
   <packaging>war</packaging>
   <!-- MAVEN COORDINATE END -->
 
@@ -18,7 +16,7 @@
     <groupId>io.github.dunwu</groupId>
     <artifactId>spring-notes-parent</artifactId>
     <version>1.0.0</version>
-    <relativePath>../parent</relativePath>
+    <relativePath>../../parent</relativePath>
   </parent>
   <dependencies>
     <!-- log begin -->
@@ -104,7 +102,7 @@
 
 
   <!-- [Part 3] PROJECT INFO BEGIN -->
-  <name>spring-notes-helloworld</name>
+  <name>${project.artifactId}</name>
   <description>spring 学习笔记之 helloworld</description>
   <!-- [Part 3] PROJECT INFO END -->
 
