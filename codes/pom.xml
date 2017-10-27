@@ -16,7 +16,6 @@
   <!-- RELATIONSHIP SETTINGS BEGIN -->
   <modules>
     <module>parent</module>
-    <module>common</module>
     <module>core</module>
     <module>data</module>
     <module>web</module>

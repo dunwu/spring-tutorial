@@ -515,7 +515,7 @@
 
   <!-- [Part 3] PROJECT INFO BEGIN -->
   <name>${project.artifactId}</name>
-  <description>spring 学习笔记</description>
+  <description>spring-notes 统一管理 pom</description>
   <!-- [Part 3] PROJECT INFO END -->
 
 
