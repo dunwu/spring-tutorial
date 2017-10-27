@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <!-- [Part 1] BASIC SETTINGS BEGIN -->
+
+  <!-- MAVEN COORDINATE BEGIN -->
+  <groupId>io.github.dunwu</groupId>
+  <artifactId>spring-notes-integration</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <!-- MAVEN COORDINATE END -->
+
+  <!-- RELATIONSHIP SETTINGS BEGIN -->
+  <modules>
+    <module>soa</module>
+  </modules>
+  <!-- RELATIONSHIP SETTINGS END -->
+
+  <!-- PROPERTIES BEGIN -->
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <!-- PROPERTIES END -->
+
+  <!-- [Part 1] BASIC SETTINGS END -->
+
+
+  <!-- [Part 3] PROJECT INFO BEGIN -->
+  <name>spring-notes-integration</name>
+  <description>spring 学习笔记之集成</description>
+  <!-- [Part 3] PROJECT INFO END -->
+
+
+</project>

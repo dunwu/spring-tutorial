@@ -28,6 +28,7 @@
     <module>mvc</module>
     <module>boot</module>
     <module>websocket</module>
+    <module>integration</module>
   </modules>
   <!-- RELATIONSHIP SETTINGS END -->
 

@@ -62,6 +62,14 @@
       </dependency>
       <!-- db end -->
 
+      <!-- dubbo begin -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>dubbo</artifactId>
+        <version>${dubbo.version}</version>
+      </dependency>
+      <!-- dubbo end -->
+
       <!-- html begin-->
       <dependency>
         <groupId>org.jsoup</groupId>
@@ -176,6 +184,11 @@
         <groupId>org.slf4j</groupId>
         <artifactId>jcl-over-slf4j</artifactId>
         <version>1.7.12</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.25</version>
       </dependency>
       <!-- log end -->
 
@@ -421,6 +434,7 @@
     <spring.version>4.1.4.RELEASE</spring.version>
     <shiro.version>1.4.0</shiro.version>
     <junit.version>4.12</junit.version>
+    <dubbo.version>2.5.6</dubbo.version>
 
     <fasterxml.jackson>2.9.0</fasterxml.jackson>
   </properties>
