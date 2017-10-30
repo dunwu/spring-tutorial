@@ -25,7 +25,7 @@
       <dependency>
         <groupId>javax.cache</groupId>
         <artifactId>cache-api</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.0</version>
       </dependency>
       <!-- cache end -->
 

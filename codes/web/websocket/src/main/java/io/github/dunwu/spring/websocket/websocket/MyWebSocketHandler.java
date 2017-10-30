@@ -2,14 +2,18 @@ package io.github.dunwu.spring.websocket.websocket;
 
 import java.io.IOException;
 import java.util.Date;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 import org.apache.commons.lang3.concurrent.BasicThreadFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
@@ -24,11 +28,8 @@ import io.github.dunwu.spring.websocket.entity.Message;
 
 @Component
 public class MyWebSocketHandler implements WebSocketHandler {
-    public static Map<Long, WebSocketSession> userSocketSessionMap;
-
-    static {
-        userSocketSessionMap = new HashMap<Long, WebSocketSession>();
-    }
+    private static final Logger logger = LoggerFactory.getLogger(MyWebSocketHandler.class);
+    private static Map<Long, Set<WebSocketSession>> userSocketSessionMap = new ConcurrentHashMap<>();
 
     /**
      * 建立连接后
@@ -36,9 +37,25 @@ public class MyWebSocketHandler implements WebSocketHandler {
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
         Long uid = (Long) session.getAttributes().get("uid");
-        if (userSocketSessionMap.get(uid) == null) {
-            userSocketSessionMap.put(uid, session);
+        logger.info("Session {} connected.", uid);
+
+        // 如果是新 Session，记录进 Map
+        boolean isNewUser = true;
+        for (Object o : userSocketSessionMap.entrySet()) {
+            Entry entry = (Entry) o;
+            Long key = (Long) entry.getKey();
+            if (key.equals(uid)) {
+                userSocketSessionMap.get(uid).add(session);
+                isNewUser = false;
+                break;
+            }
         }
+        if (isNewUser) {
+            Set<WebSocketSession> sessions = new HashSet<>();
+            sessions.add(session);
+            userSocketSessionMap.put(uid, sessions);
+        }
+        logger.info("当前在线用户数: {}", userSocketSessionMap.values().size());
     }
 
     /**
@@ -63,13 +80,15 @@ public class MyWebSocketHandler implements WebSocketHandler {
         if (session.isOpen()) {
             session.close();
         }
-        Iterator<Entry<Long, WebSocketSession>> it = userSocketSessionMap.entrySet().iterator();
         // 移除Socket会话
-        while (it.hasNext()) {
-            Entry<Long, WebSocketSession> entry = it.next();
-            if (entry.getValue().getId().equals(session.getId())) {
-                userSocketSessionMap.remove(entry.getKey());
-                System.out.println("Socket会话已经移除:用户ID" + entry.getKey());
+        for (Set<WebSocketSession> item : userSocketSessionMap.values()) {
+            if (item.contains(session)) {
+                // 删除连接 session
+                item.remove(session);
+                // 如果 userId 对应的 session 数为 0 ，删除该 userId 对应的记录
+                if (0 == item.size()) {
+                    userSocketSessionMap.values().remove(item);
+                }
                 break;
             }
         }
@@ -80,17 +99,19 @@ public class MyWebSocketHandler implements WebSocketHandler {
      */
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus closeStatus) throws Exception {
-        System.out.println("Websocket:" + session.getId() + "已经关闭");
-        Iterator<Entry<Long, WebSocketSession>> it = userSocketSessionMap.entrySet().iterator();
-        // 移除Socket会话
-        while (it.hasNext()) {
-            Entry<Long, WebSocketSession> entry = it.next();
-            if (entry.getValue().getId().equals(session.getId())) {
-                userSocketSessionMap.remove(entry.getKey());
-                System.out.println("Socket会话已经移除:用户ID" + entry.getKey());
+        logger.info("Session {} disconnected. Because of {}", session.getId(), closeStatus);
+        for (Set<WebSocketSession> item : userSocketSessionMap.values()) {
+            if (item.contains(session)) {
+                // 删除连接 session
+                item.remove(session);
+                // 如果 userId 对应的 session 数为 0 ，删除该 userId 对应的记录
+                if (0 == item.size()) {
+                    userSocketSessionMap.values().remove(item);
+                }
                 break;
             }
         }
+        logger.info("当前在线用户数: {}", userSocketSessionMap.values().size());
     }
 
     @Override
@@ -105,34 +126,29 @@ public class MyWebSocketHandler implements WebSocketHandler {
      * @throws IOException
      */
     public void broadcast(final TextMessage message) throws IOException {
-        Iterator<Entry<Long, WebSocketSession>> it = userSocketSessionMap.entrySet().iterator();
-
         // 多线程群发
-        while (it.hasNext()) {
-
-            final Entry<Long, WebSocketSession> entry = it.next();
-
-            if (entry.getValue().isOpen()) {
-                ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1,
+        for(Set<WebSocketSession> item : userSocketSessionMap.values()) {
+            for (final WebSocketSession session : item) {
+                if (session.isOpen()) {
+                    ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1,
                         new BasicThreadFactory.Builder().namingPattern("socket-schedule-pool-%d").daemon(true).build());
-                for (int i = 0; i < 10; i++) {
-                    final int index = i;
-                    executorService.execute(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                if (entry.getValue().isOpen()) {
-                                    System.out.println("broadcast output:" + message.toString());
-                                    entry.getValue().sendMessage(message);
+                    for (int i = 0; i < 3; i++) {
+                        executorService.execute(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
+                                    if (session.isOpen()) {
+                                        logger.debug("broadcast output:" + message.toString());
+                                        session.sendMessage(message);
+                                    }
+                                } catch (IOException e) {
+                                    e.printStackTrace();
                                 }
-                            } catch (IOException e) {
-                                e.printStackTrace();
                             }
-                        }
-                    });
+                        });
+                    }
                 }
             }
-
         }
     }
 
@@ -143,10 +159,18 @@ public class MyWebSocketHandler implements WebSocketHandler {
      * @param message
      * @throws IOException
      */
-    public void sendMessageToUser(Long uid, TextMessage message) throws IOException {
-        WebSocketSession session = userSocketSessionMap.get(uid);
-        if (session != null && session.isOpen()) {
-            session.sendMessage(message);
+    private void sendMessageToUser(Long uid, TextMessage message) throws IOException {
+        for (Long id : userSocketSessionMap.keySet()) {
+            if (id.equals(uid)) {
+                for (WebSocketSession session : userSocketSessionMap.get(uid)) {
+                    try {
+                        logger.info("SendAll: {}", message);
+                        session.sendMessage(message);
+                    } catch (Exception e) {
+                        logger.error(e.toString());
+                    }
+                }
+            }
         }
     }
 
