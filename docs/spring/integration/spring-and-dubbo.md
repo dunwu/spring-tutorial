@@ -1,4 +1,14 @@
-# Spring 集成 Dubbo
+---
+title: Spring 集成 Dubbo
+date: 2017/11/08
+categories:
+- spring
+tags:
+- spring
+- integration
+- rpc
+- dubbo
+---
 
 ## ZooKeeper
 

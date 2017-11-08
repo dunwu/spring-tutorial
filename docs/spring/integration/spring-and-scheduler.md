@@ -1,10 +1,22 @@
-# 概述
+---
+title: Spring 集成调度器
+date: 2017/11/08
+categories:
+- spring
+tags:
+- spring
+- integration
+- scheduler
+- quartz
+---
+
+## 概述
 如果想在Spring中使用任务调度功能，除了集成调度框架Quartz这种方式，也可以使用Spring自己的调度任务框架。
 使用Spring的调度框架，优点是：支持注解`@Scheduler`，可以省去大量的配置。
 
-# 实时触发调度任务
+## 实时触发调度任务
 
-### TaskScheduler接口
+#### TaskScheduler接口
 Spring3引入了`TaskScheduler`接口，这个接口定义了调度任务的抽象方法。
 TaskScheduler接口的声明：
 ```java
@@ -34,7 +46,7 @@ public interface TaskScheduler {
 **TimerManagerTaskScheduler**：托管`commonj.timers.TimerManager`实例的调度器。
 **ThreadPoolTaskScheduler**：提供线程池管理的调度器，它也实现了`TaskExecutor`接口，从而使的单一的实例可以尽可能快地异步执行。
 
-### Trigger接口
+#### Trigger接口
 Trigger接口抽象了触发条件的方法。
 Trigger接口的声明：
 ```
@@ -47,7 +59,7 @@ public interface Trigger {
 **CronTrigger**：实现了cron规则的触发器类（和Quartz的cron规则相同）。
 **PeriodicTrigger**：实现了一个周期性规则的触发器类（例如：定义触发起始时间、间隔时间等）。
 
-### 完整范例
+#### 完整范例
 实现一个调度任务的功能有以下几个关键点：
 **(1)  定义调度器**
 在spring-bean.xml中进行配置
@@ -121,11 +133,11 @@ public class SchedulerController {
 13:53:30.005 myScheduler-1 o.zp.notes.spring.scheduler.DemoTask.run - call DemoTask.run
 ```
 
-## @Scheduler的使用方法
+### @Scheduler的使用方法
 
 Spring的调度器一个很大的亮点在于`@Scheduler`注解，这可以省去很多繁琐的配置。
 
-### 启动注解
+#### 启动注解
 使用@Scheduler注解先要使用`<task:annotation-driven>`启动注解开关。
 ***例：***
 ```xml
@@ -147,7 +159,7 @@ Spring的调度器一个很大的亮点在于`@Scheduler`注解，这可以省�
 </beans>
 ```
 
-### @Scheduler定义触发条件
+#### @Scheduler定义触发条件
 例：使用`fixedDelay`指定触发条件为每5000毫秒执行一次。注意：必须在上一次调度成功后的5000秒才能执行。
 ```java
 @Scheduled(fixedDelay=5000)
@@ -181,7 +193,7 @@ public void doSomething() {
 }
 ```
 
-### 完整范例
+#### 完整范例
 **(1) 启动注解开关，并定义调度器和执行器**
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -300,5 +312,5 @@ testInitialDelay第一次调度时间和构造方法调度时间相隔7秒。说
 testCron打印三次，时间间隔并非5秒或6秒，显然，cron等待上一次调度执行成功后，开始计算间隔时间，再执行。
 此外，可以从日志中看出，打印日志的线程最多只有10个，说明2.1中的调度器线程池配置生效。
 
-# 参考
+## 参考
 [Spring Framework官方文档](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/)

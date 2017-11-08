@@ -4,8 +4,7 @@
 
 * [自述](README.md)
 * [简介](spring/introduction/README.md)
-  * [Spring综述](spring/introduction/spring-overview.md)
-  * [Spring体系架构](spring/introduction/spring-architecture.md)
+  * [Spring 概述](spring/introduction/spring-overview.md)
 * [核心](spring/core/README.md)
   * [IoC容器](spring/core/ioc.md)
   * [基于Java的IoC容器配置](spring/core/ioc-settings-in-java.md)
@@ -15,11 +14,13 @@
   * [Spring的数据访问策略](spring/data/data-access-in-spring.md)
   * [Spring中使用JDBC访问数据](spring/data/spring-and-jdbc.md)
   * [事务管理](spring/data/transaction.md)
-* [整合](spring/integration/README.md)
-  * [Spring和缓存](spring/integration/spring-and-cache.md)
-  * [Spring和调度器](spring/integration/spring-and-scheduler.md)
+* [集成](spring/integration/README.md)
+  * [Spring 集成 Dubbo](spring/integration/spring-and-dubbo.md)
+  * [Spring 集成缓存](spring/integration/spring-and-cache.md)
+  * [Spring 集成调度器](spring/integration/spring-and-scheduler.md)
 * [Web](spring/web/README.md)
-  * [WebSocket 详解教程](spring/web/spring-and-websocket.md)
+  * [SpringMVC 简介](spring/web/spring-mvc-introduction.md)
+  * [Spring 和 WebSocket](spring/web/spring-websocket.md)
   
 ## Others
 

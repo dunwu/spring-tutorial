@@ -1,15 +1,30 @@
+---
+title: Spring 集成缓存
+date: 2017/11/08
+categories:
+- spring
+tags:
+- spring
+- integration
+- cache
+- ehcache
+---
+
 ## 前言
+
 *Ehcache* 是一个成熟的缓存框架，你可以直接使用它来管理你的缓存。
 *Spring* 提供了对缓存功能的抽象：即允许绑定不同的缓存解决方案（如Ehcache），但本身不直接提供缓存功能的实现。它支持注解方式使用缓存，非常方便。
 本文先通过Ehcache独立应用的范例来介绍它的基本使用方法，然后再介绍与Spring整合的方法。
 
 ## 概述
+
 **Ehcache是什么？**
 EhCache 是一个纯Java的进程内缓存框架，具有快速、精干等特点。它是Hibernate中的默认缓存框架。
 Ehcache已经发布了3.1版本。但是本文的讲解基于2.10.2版本。
 为什么不使用最新版呢？因为Spring4还不能直接整合Ehcache 3.x。虽然可以通过JCache间接整合，Ehcache也支持JCache，但是个人觉得不是很方便。
 
 ## 安装
+
 **Ehcache**
 如果你的项目使用maven管理，添加以下依赖到你的*pom.xml*中。
 ```xml
@@ -22,7 +37,6 @@ Ehcache已经发布了3.1版本。但是本文的讲解基于2.10.2版本。
 ```
 如果你的项目不使用maven管理，请在 [Ehcache官网下载地址](http://www.ehcache.org/downloads/) 下载jar包。
 
-
 **Spring**
 如果你的项目使用maven管理，添加以下依赖到你的*pom.xml*中。
 `spring-context-support`这个jar包中含有Spring对于缓存功能的抽象封装接口。
@@ -34,9 +48,10 @@ Ehcache已经发布了3.1版本。但是本文的讲解基于2.10.2版本。
 </dependency>
 ```
 
-
 ## Ehcache的使用
+
 ### HelloWorld范例
+
 接触一种技术最快最直接的途径总是一个Hello World例子，毕竟动手实践印象更深刻，不是吗？
 (1) 在classpath下添加*ehcache.xml*
 添加一个名为*helloworld*的缓存。
@@ -107,13 +122,15 @@ public class EhcacheDemo {
 Hello, World!
 ```
 
-
 ### Ehcache基本操作
+
 `Element`、`Cache`、`CacheManager`是Ehcache最重要的API。
 - Element：缓存的元素，它维护着一个键值对。
 - Cache：它是Ehcache的核心类，它有多个`Element`，并被`CacheManager`管理。它实现了对缓存的逻辑行为。
 - CacheManager：`Cache`的容器对象，并管理着`Cache`的生命周期。
+
 #### 创建CacheManager
+
 下面的代码列举了创建`CacheManager`的五种方式。
 使用静态方法`create()`会以默认配置来创建单例的`CacheManager`实例。
 `newInstance()`方法是一个工厂方法，以默认配置创建一个新的`CacheManager`实例。
@@ -148,8 +165,8 @@ try {
 }
 ```
 
-
 #### 添加缓存
+
 ***需要强调一点，`Cache`对象在用`addCache`方法添加到`CacheManager`之前，是无效的。***
 使用CacheManager的addCache方法可以根据缓存名将ehcache.xml中声明的cache添加到容器中；它也可以直接将Cache对象添加到缓存容器中。
 `Cache`有多个构造函数，提供了不同方式去加载缓存的配置参数。
@@ -183,16 +200,16 @@ Cache testCache = new Cache(
  manager.addCache(testCache);
 ```
 
-
 ### 删除缓存
+
 删除缓存比较简单，你只需要将指定的缓存名传入`removeCache`方法即可。
 ```java
 CacheManager singletonManager = CacheManager.create();
 singletonManager.removeCache("sampleCache1");
 ```
 
-
 ### 实现基本缓存操作
+
 Cache最重要的两个方法就是put和get，分别用来添加Element和获取Element。
 Cache还提供了一系列的get、set方法来设置或获取缓存参数，这里不一一列举，更多API操作可参考[官方API开发手册](http://www.ehcache.org/generated/2.10.2/pdf/Ehcache_API_Developer_Guide.pdf)。
 ```java
@@ -251,10 +268,12 @@ public class CacheOperationTest {
 }
 ```
 
-
 ### 缓存配置
+
 Ehcache支持通过xml文件和API两种方式进行配置。
+
 #### xml方式
+
 Ehcache的`CacheManager`构造函数或工厂方法被调用时，会默认加载classpath下名为*ehcache.xml*的配置文件。如果加载失败，会加载Ehcache jar包中的*ehcache-failsafe.xml*文件，这个文件中含有简单的默认配置。
 **ehcache.xml配置参数说明：**
 - **name**：缓存名称。
@@ -303,8 +322,8 @@ ehcache.xml的一个范例
 </ehcache>
 ```
 
-
 #### API方式
+
 xml配置的参数也可以直接通过编程方式来动态的进行配置（dynamicConfig没有设为false）。
 ```java
 Cache cache = manager.getCache("sampleCache"); 
@@ -320,14 +339,14 @@ Cache cache = manager.getCache("sampleCache");
 cache.disableDynamicFeatures();
 ```
 
-
 ## Spring整合Ehcache
+
 Spring3.1开始添加了对缓存的支持。和事务功能的支持方式类似，缓存抽象允许底层使用不同的缓存解决方案来进行整合。
 Spring4.1开始支持JSR-107注解。
 ***注：我本人使用的Spring版本为4.1.4.RELEASE，目前Spring版本仅支持Ehcache2.5以上版本，但不支持Ehcache3。***
 
-
 ### 绑定Ehcache
+
 `org.springframework.cache.ehcache.EhCacheManagerFactoryBean`这个类的作用是加载Ehcache配置文件。
 `org.springframework.cache.ehcache.EhCacheCacheManager`这个类的作用是支持net.sf.ehcache.CacheManager。
 
@@ -357,9 +376,10 @@ Spring4.1开始支持JSR-107注解。
 </beans>
 ```
 
-
 ### 使用Spring的缓存注解
+
 #### 开启注解
+
 Spring为缓存功能提供了注解功能，但是你必须启动注解。
 你有两个选择：
 (1) 在xml中声明
@@ -378,23 +398,25 @@ public class AppConfig {
 }
 ```
 
-
 ### 注解基本使用方法
+
 Spring对缓存的支持类似于对事务的支持。
 首先使用注解标记方法，相当于定义了切点，然后使用Aop技术在这个方法的调用前、调用后获取方法的入参和返回值，进而实现了缓存的逻辑。
 下面三个注解都是方法级别：
+
 #### @Cacheable
+
 表明所修饰的方法是可以缓存的：当第一次调用这个方法时，它的结果会被缓存下来，在缓存的有效时间内，以后访问这个方法都直接返回缓存结果，不再执行方法中的代码段。
 这个注解可以用`condition`属性来设置条件，如果不满足条件，就不使用缓存能力，直接执行方法。
 可以使用`key`属性来指定key的生成规则。
 
-
 #### @CachePut
+
 与`@Cacheable`不同，`@CachePut`不仅会缓存方法的结果，还会执行方法的代码段。
 它支持的属性和用法都与`@Cacheable`一致。
 
-
 #### @CacheEvict
+
 与`@Cacheable`功能相反，`@CacheEvict`表明所修饰的方法是用来删除失效或无用的缓存数据。
 下面是`@Cacheable`、`@CacheEvict`和`@CachePut`基本使用方法的一个集中展示：
 ```java
@@ -428,16 +450,16 @@ public class UserService {
 }
 ```
 
-
 #### @Caching
+
 如果需要使用同一个缓存注解（`@Cacheable`、`@CacheEvict`或`@CachePut`）多次修饰一个方法，就需要用到`@Caching`。
 ```java
 @Caching(evict = { @CacheEvict("primary"), @CacheEvict(cacheNames="secondary", key="#p0") })
 public Book importBooks(String deposit, Date date)
 ```
 
-
 #### @CacheConfig
+
 与前面的缓存注解不同，这是一个类级别的注解。
 如果类的所有操作都是缓存操作，你可以使用`@CacheConfig`来指定类，省去一些配置。
 ```java
@@ -448,13 +470,14 @@ public class BookRepositoryImpl implements BookRepository {
 }
 ```
 
-
 ## 参考
-如果想参考我的***完整代码示例***，请[点击这里](https://github.com/dunwu/spring-notes/tree/master/codes/common/src/test/java/me/chongfeng/spring/common/ehcache)访问我的github。
+
+如果想参考我的***完整代码示例***，请[点击这里](https://github.com/dunwu/spring-notes/tree/master/codes/integration/cache)访问我的github。
 
 下面是我在写作时参考的资料或文章。
-[Ehcache github](https://github.com/ehcache/ehcache3)
-[Ehcache官方文档](http://www.ehcache.org/documentation/)
-[Ehcache详细解读](http://raychase.iteye.com/blog/1545906)
-[注释驱动的 Spring cache 缓存介绍](http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/)
-[Spring官方文档4.3.3.RELEASE 第36章缓存抽象](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/)
+
+- [Ehcache github](https://github.com/ehcache/ehcache3)
+- [Ehcache官方文档](http://www.ehcache.org/documentation/)
+- [Ehcache详细解读](http://raychase.iteye.com/blog/1545906)
+- [注释驱动的 Spring cache 缓存介绍](http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/)
+- [Spring官方文档4.3.3.RELEASE 第36章缓存抽象](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/)
