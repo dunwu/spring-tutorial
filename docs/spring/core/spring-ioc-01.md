@@ -1,6 +1,17 @@
-# IoC 核心概念
+---
+title: Spring IoC（一）
+date: 2017/11/08
+categories:
+- spring
+tags:
+- spring
+- core
+- ioc
+---
 
-## IoC是什么
+## IoC 概念
+
+### IoC是什么
 
 > **IoC，是 Inversion of Control 的缩写，即控制反转。**
 >
@@ -26,7 +37,7 @@ IoC 不是什么技术，而是一种设计思想。在 Java 开发中，IoC 意
 
 图2-2有IoC/DI容器后程序结构示意图
 
-## IoC能做什么
+### IoC能做什么
 
 IoC 不是一种技术，只是一种思想，一个重要的面向对象编程的法则，它能指导我们如何设计出松耦合、更优良的程序。传统应用程序都是由我们在类内部主动创建依赖对象，从而导致类与类之间高耦合，难于测试；有了IoC容器后，把创建和查找依赖对象的控制权交给了容器，由容器进行注入组合对象，所以对象与对象之间是松散耦合，这样也方便测试，利于功能复用，更重要的是使得程序的整个体系结构变得非常灵活。
 
@@ -34,7 +45,7 @@ IoC 不是一种技术，只是一种思想，一个重要的面向对象编程�
 
 IoC 很好的体现了面向对象设计法则之一—— 好莱坞法则：“别找我们，我们找你”；即由 IoC 容器帮对象找相应的依赖对象并注入，而不是由对象主动去找。
 
-## DI
+### 依赖注入
 
 > DI，是 Dependency Injection 的缩写，即依赖注入。
 >
@@ -51,13 +62,13 @@ DI 是组件之间依赖关系由容器在运行期决定，形象的说，即�
 - **谁注入谁：**很明显是 IoC 容器注入应用程序某个对象，应用程序依赖的对象；
 - **注入了什么**：就是注入某个对象所需要的外部资源（包括对象、资源、常量数据）。
 
-## IoC 和 DI
+### IoC 和 DI
 
 其实它们是同一个概念的不同角度描述，由于控制反转概念比较含糊（可能只是理解为容器控制对象这一个层面，很难让人想到谁来维护对象关系），所以2004年大师级人物Martin Fowler又给出了一个新的名字：“依赖注入”，相对IoC 而言，“依赖注入”明确描述了“被注入对象依赖 IoC 容器配置依赖对象”。
 
 > 注：如果想要更加深入的了解 IoC 和 DI，请参考大师级人物 Martin Fowler 的一篇经典文章 [Inversion of Control Containers and the Dependency Injection pattern](http://www.martinfowler.com/articles/injection.html) 。
 
-## IoC容器
+### IoC容器
 
 IoC 容器就是具有依赖注入功能的容器。IoC 容器负责实例化、定位、配置应用程序中的对象及建立这些对象间的依赖。应用程序无需直接在代码中 new 相关的对象，应用程序由 IoC 容器进行组装。在 Spring 中 BeanFactory 是IoC容器的实际代表者。
 
@@ -65,8 +76,115 @@ Spring IoC 容器如何知道哪些是它管理的对象呢？这就需要配置
 
 那Spring IoC 容器管理的对象叫什么呢？
 
-## Bean
+### Bean
 
 > **JavaBean** 是一种 JAVA 语言写成的可重用组件。为写成 JavaBean，类必须是具体的和公共的，并且具有无参数的构造器。JavaBean 对外部通过提供 getter / setter 方法来访问其成员。
 
 由 IoC 容器管理的那些组成你应用程序的对象我们就叫它 Bean。Bean 就是由 Spring 容器初始化、装配及管理的对象，除此之外，bean 就与应用程序中的其他对象没有什么区别了。那 IoC 怎样确定如何实例化 Bean、管理 Bean 之间的依赖关系以及管理 Bean 呢？这就需要配置元数据，在 Spring 中由 BeanDefinition 代表，后边会详细介绍，配置元数据指定如何实例化 Bean、如何组装 Bean 等。
+
+## IoC 容器
+
+### 核心接口
+
+`org.springframework.beans` 和 `org.springframework.context` 是 IoC 容器的基础。
+
+在 Spring 中，有两种 IoC 容器：`BeanFactory` 和 `ApplicationContext`。
+
+- `BeanFactory`：Spring 实例化、配置和管理对象的最基本接口。
+- `ApplicationContext`：BeanFactory 的子接口。它还扩展了其他一些接口，以支持更丰富的功能，如：国际化、访问资源、事件机制、更方便的支持 AOP、在web应用中指定应用层上下文等。  
+
+实际开发中，更推荐使用 `ApplicationContext` 作为 IoC 容器，因为它的功能远多于 `FactoryBean`。 
+
+常见 `ApplicationContext` 实现：
+
+- **ClassPathXmlApplicationContext**：`ApplicationContext` 的实现，从 classpath 获取配置文件；
+
+
+```java
+BeanFactory beanFactory = new ClassPathXmlApplicationContext("classpath.xml");
+```
+
+- **FileSystemXmlApplicationContext**：`ApplicationContext` 的实现，从文件系统获取配置文件。
+
+```java
+BeanFactory beanFactory = new FileSystemXmlApplicationContext("fileSystemConfig.xml");
+```
+
+### IoC 容器工作步骤
+
+使用 IoC 容器可分为三步骤： 
+
+1. 配置元数据：需要配置一些元数据来告诉Spring，你希望容器如何工作，具体来说，就是如何去初始化、配置、管理 JavaBean 对象。
+
+
+2. 实例化容器：由 IoC容器解析配置的元数据。IoC 容器的 Bean Reader 读取并解析配置文件，根据定义生成 BeanDefinition 配置元数据对象，IoC 容器根据 BeanDefinition 进行实例化、配置及组装 Bean。
+
+
+3. 使用容器：由客户端实例化容器，获取需要的 Bean。
+
+
+#### 配置元数据 ####  
+> **元数据（Metadata）**
+> 又称中介数据、中继数据，为描述数据的数据（data about data），主要是描述数据属性（property）的信息。  
+
+配置元数据的方式：
+
+- **基于 xml 配置**：Spring 的传统配置方式。在 `<beans>` 标签中配置元数据内容。 
+
+  缺点是当 JavaBean 过多时，产生的配置文件足以让你眼花缭乱。 
+
+- **基于注解配置**：Spring2.5 引入。可以大大简化你的配置。 
+
+- **基于 Java 配置**：可以使用 Java 类来定义 JavaBean 。
+
+  为了使用这个新特性，需要用到 `@Configuration` 、`@Bean` 、`@Import` 和 `@DependsOn` 注解。
+
+### Bean概述 ###
+一个Spring容器管理一个或多个bean。 
+这些bean根据你配置的元数据（比如xml形式）来创建。 
+Spring IoC容器本身，并不能识别你配置的元数据。为此，要将这些配置信息转为Spring能识别的格式——BeanDefinition对象。  
+
+#### 命名 Bean ####
+指定id和name属性不是必须的。 
+Spring中，并非一定要指定id和name属性。实际上，Spring会自动为其分配一个特殊名。 
+如果你需要引用声明的bean，这时你才需要一个标识。官方推荐驼峰命名法来命名。  
+
+#### 支持别名 ####
+可能存在这样的场景，不同系统中对于同一bean的命名方式不一样。 
+为了适配，Spring 支持 `<alias>` 为bean添加别名的功能。  
+```xml
+<alias name="subsystemA-dataSource" alias="subsystemB-dataSource"/>
+<alias name="subsystemA-dataSource" alias="myApp-dataSource" />
+```
+
+#### 实例化Bean ####
+**构造器方式**  
+```xml
+<bean id="exampleBean" class="examples.ExampleBean"/>
+```
+
+**静态工厂方法**
+
+
+### 依赖 ###
+依赖注入 
+依赖注入有两种主要方式：  
+- 构造器注入  
+- Setter注入 
+  构造器注入有可能出现循环注入的错误。如：
+```java
+class A {
+	public A(B b){}
+}
+class B {
+	public B(A a){}
+}
+```
+
+**依赖和配置细节**
+使用 depends-on 
+Lazy-initialized Bean 
+自动装配 
+方法注入 
+
+
