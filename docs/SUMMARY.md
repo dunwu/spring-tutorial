@@ -18,6 +18,7 @@
   * [Spring 集成 Dubbo](spring/integration/spring-and-dubbo.md)
   * [Spring 集成缓存](spring/integration/spring-and-cache.md)
   * [Spring 集成调度器](spring/integration/spring-and-scheduler.md)
+  * [Lombok 使用小结](spring/integration/libs/lombok.md)
 * [Web](spring/web/README.md)
   * [SpringMVC 简介](spring/web/spring-mvc-introduction.md)
   * [Spring 和 WebSocket](spring/web/spring-websocket.md)

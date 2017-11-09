@@ -15,7 +15,7 @@
 
   <!-- RELATIONSHIP SETTINGS BEGIN -->
   <modules>
-    <module>3party</module>
+    <module>libs</module>
     <module>cache</module>
     <module>rmi</module>
     <module>rpc</module>

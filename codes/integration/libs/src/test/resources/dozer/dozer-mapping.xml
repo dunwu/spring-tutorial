@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+  <mapping date-format="yyyy-MM-dd">
+    <class-a>io.github.dunwu.spring.libs.dozer.vo.NotSameAttributeA</class-a>
+    <class-b>io.github.dunwu.spring.libs.dozer.vo.NotSameAttributeB</class-b>
+    <field>
+      <a>name</a>
+      <b>value</b>
+    </field>
+  </mapping>
+
+  <!-- 枚举映射 -->
+  <mapping>
+    <class-a>io.github.dunwu.spring.libs.dozer.vo.User</class-a>
+    <class-b>io.github.dunwu.spring.libs.dozer.vo.UserPrime</class-b>
+    <field>
+      <a>status</a>
+      <b>statusPrime</b>
+    </field>
+  </mapping>
+
+  <mapping>
+    <class-a>io.github.dunwu.spring.libs.dozer.vo.Source</class-a>
+    <class-b>io.github.dunwu.spring.libs.dozer.vo.Dest</class-b>
+    <field>
+      <a>info</a>
+      <b>info.content</b>
+    </field>
+  </mapping>
+</mappings>
