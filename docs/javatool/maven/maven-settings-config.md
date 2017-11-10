@@ -1,4 +1,13 @@
-# Maven 之 settings.xml 详解
+---
+title: Maven 之 settings.xml 详解
+date: 2016/11/10
+categories:
+- javatool
+tags:
+- java
+- tool
+- build
+---
 
 ## 概要
 
