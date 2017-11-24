@@ -33,6 +33,12 @@
       <groupId>org.slf4j</groupId>
       <artifactId>jcl-over-slf4j</artifactId>
     </dependency>
+    <!-- logback 接入 elk 的工具 -->
+    <dependency>
+      <groupId>net.logstash.logback</groupId>
+      <artifactId>logstash-logback-encoder</artifactId>
+      <version>4.11</version>
+    </dependency>
     <!-- log end -->
 
     <!-- bean begin -->

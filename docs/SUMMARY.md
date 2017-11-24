@@ -29,6 +29,7 @@
 * [Eclipse 使用小结](javatool/eclipse.md)
 * [Intellij IDEA 使用小结](javatool/intellij.md)
 * [Jetty 使用小结](javatool/jetty.md)
+* [ELK 快速指南](javatool/elk.md)
 * [Maven](javatool/maven/README.md)
   * [Maven 快速指南（一）](javatool/maven/maven-quickstart-01.md)
   * [Maven 快速指南（二）](javatool/maven/maven-quickstart-02.md)

@@ -48,14 +48,24 @@
       <pattern>%d{HH:mm:ss.SSS} [%thread] [%-5p] %c{36}.%M - %m%n</pattern>
     </encoder>
   </appender>
+
+<appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+  <!--
+  destination 是 logstash 服务的 host:port，
+  相当于和 logstash 建立了管道，将日志数据定向传输到 logstash
+  -->
+  <destination>127.0.0.1:9250</destination>
+  <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder"/>
+</appender>
   <!-- RollingFileAppender end -->
 
   <!-- logger begin -->
   <!-- 本项目的日志记录，分级打印 -->
-  <logger name="io.github.dunwu.spring" level="TRACE" additivity="false">
-    <appender-ref ref="STDOUT"/>
-    <appender-ref ref="ALL" />
-  </logger>
+<logger name="io.github.dunwu.spring" level="TRACE" additivity="false">
+<appender-ref ref="STDOUT"/>
+<appender-ref ref="ALL" />
+<appender-ref ref="LOGSTASH" />
+</logger>
 
   <!-- SPRING框架日志 -->
   <logger name="org.springframework" level="TRACE" additivity="false">
