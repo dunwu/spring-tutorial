@@ -51,4 +51,5 @@
 
 * [附录](spring/appendix/README.md)
   * [资源](spring/appendix/resources.md)
+  * [spring 4 升级踩雷指南](spring/appendix/spring4-upgrade.md)
 
