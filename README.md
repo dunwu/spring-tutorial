@@ -3,6 +3,9 @@
 > Spring 学习笔记。
 > 
 > 以简单范例来展示 spring 在 web 开发中的各种应用。
+>
+> 扩展学习：更多 Java 技术栈知识（JavaSE/JavaEE/Java 库/Java 工具/Java 框架）可以在 [java-stack](https://github.com/dunwu/java-stack) 了解。
+>
 
 <p align="center">
   <a href="https://dunwu.gitbooks.io/spring-notes/" target="_blank">
@@ -106,6 +109,8 @@ $ mvn jetty:run
 docs 部分已经使用 Gitbook 生成电子书：
 
 :point_right: [**spring-notes 文档在线阅读**](https://dunwu.gitbooks.io/spring-notes/)
+
+扩展学习：更多 Java 技术栈知识（JavaSE/JavaEE/Java 库/Java 工具/Java 框架）可以在 [java-stack](https://github.com/dunwu/java-stack) 了解。
 
 ## 规范
 

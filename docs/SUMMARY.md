@@ -1,7 +1,5 @@
 # Summary
 
-## Spring
-
 * [自述](README.md)
 * [简介](spring/introduction/README.md)
   * [Spring 概述](spring/introduction/spring-overview.md)
@@ -22,30 +20,6 @@
 * [Web](spring/web/README.md)
   * [SpringMVC 简介](spring/web/spring-mvc-introduction.md)
   * [Spring 和 WebSocket](spring/web/spring-websocket.md)
-
-## Java 工具
-
-* [Ant 简易教程](javatool/ant.md)
-* [Eclipse 使用小结](javatool/eclipse.md)
-* [Intellij IDEA 使用小结](javatool/intellij.md)
-* [Jetty 使用小结](javatool/jetty.md)
-* [ELK 快速指南](javatool/elk.md)
-* [Maven](javatool/maven/README.md)
-  * [Maven 快速指南（一）](javatool/maven/maven-quickstart-01.md)
-  * [Maven 快速指南（二）](javatool/maven/maven-quickstart-02.md)
-  * [Maven 之 settings.xml 详解](javatool/maven/maven-settings-config.md)
-  * [Maven 排错](javatool/maven/maven-faq.md)
-
-## Others
-
-* [其它技术](others/README.md)
-  * [细说Java主流日志工具库](others/java-log-libs.md)
-  * [H2数据库](others/db-h2.md)
-  * [嵌入式服务器Jetty](others/jetty.md)
-  * [Dozer](others/dozer.md)
-  * [nginx快速入门](others/nginx-quickstart.md)
-  * [Maven 快速指南](others/maven/maven-quickstart.md)
-  * [Maven 之 settings.xml 详解](others/maven/maven-settings-config.md)
 
 ------
 
