@@ -20,6 +20,7 @@
     <module>rmi</module>
     <module>rpc</module>
     <module>scheduler</module>
+    <module>api</module>
   </modules>
   <!-- RELATIONSHIP SETTINGS END -->
 
