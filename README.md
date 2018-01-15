@@ -51,10 +51,6 @@
 
 - **spring-notes-example-helloworld**：spring 第一个简单例子。
 
-### Boot
-
-- **spring-notes-boot**：spring-boot 是 spring 的快速构建框架。
-
 ### Security
 
 - **spring-notes-sccurity-shiro**：spring 集成 shiro 实现安全框架的范例。

@@ -21,7 +21,6 @@
     <module>web</module>
     <module>integration</module>
     <module>security</module>
-    <module>boot</module>
     <module>example</module>
   </modules>
   <!-- RELATIONSHIP SETTINGS END -->
