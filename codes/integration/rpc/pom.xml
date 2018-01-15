@@ -9,11 +9,17 @@
   <!-- MAVEN COORDINATE BEGIN -->
   <groupId>io.github.dunwu</groupId>
   <artifactId>spring-notes-integration-rpc</artifactId>
-  <version>1.0.1</version>
+  <version>${spring.notes.version}</version>
   <packaging>pom</packaging>
   <!-- MAVEN COORDINATE END -->
 
   <!-- RELATIONSHIP SETTINGS BEGIN -->
+  <parent>
+    <groupId>io.github.dunwu</groupId>
+    <artifactId>spring-notes-parent</artifactId>
+    <version>${spring.notes.version}</version>
+    <relativePath>../../parent</relativePath>
+  </parent>
   <modules>
     <module>api</module>
     <module>provider</module>

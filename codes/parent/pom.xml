@@ -9,11 +9,21 @@
   <!-- MAVEN COORDINATE BEGIN -->
   <groupId>io.github.dunwu</groupId>
   <artifactId>spring-notes-parent</artifactId>
-  <version>1.0.1</version>
+  <version>${spring.notes.version}</version>
   <packaging>pom</packaging>
   <!-- MAVEN COORDINATE END -->
 
   <!-- RELATIONSHIP SETTINGS BEGIN -->
+  <dependencies>
+    <!-- test begin -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+      <version>4.12</version>
+    </dependency>
+    <!-- test end -->
+  </dependencies>
   <dependencyManagement>
     <dependencies>
       <!-- cache begin -->
@@ -362,18 +372,6 @@
       <!-- template end -->
 
       <!-- test begin -->
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.12</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.assertj</groupId>
-        <artifactId>assertj-core</artifactId>
-        <version>3.4.1</version>
-        <scope>test</scope>
-      </dependency>
       <!-- test end -->
 
       <!-- util begin -->
@@ -432,13 +430,14 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
 
+    <spring.notes.version>1.0.2</spring.notes.version>
+
     <!-- 核心库版本 -->
     <jetty.version>9.3.2.v20150730</jetty.version>
     <spring.version>5.0.2.RELEASE</spring.version>
     <shiro.version>1.4.0</shiro.version>
     <junit.version>4.12</junit.version>
     <dubbo.version>2.5.6</dubbo.version>
-
     <fasterxml.jackson>2.9.0</fasterxml.jackson>
   </properties>
   <!-- PROPERTIES END -->
