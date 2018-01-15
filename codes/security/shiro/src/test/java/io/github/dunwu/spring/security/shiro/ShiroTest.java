@@ -1,9 +1,7 @@
 package io.github.dunwu.spring.security.shiro;
 
-import io.github.dunwu.spring.security.shiro.entity.Permission;
-import io.github.dunwu.spring.security.shiro.entity.Role;
-import io.github.dunwu.spring.security.shiro.realm.UserRealm;
-import io.github.dunwu.spring.security.shiro.service.PermissionService;
+import javax.sql.DataSource;
+
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
@@ -16,12 +14,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.transaction.TransactionConfiguration;
+
+import io.github.dunwu.spring.security.shiro.entity.Permission;
+import io.github.dunwu.spring.security.shiro.entity.Role;
 import io.github.dunwu.spring.security.shiro.entity.User;
+import io.github.dunwu.spring.security.shiro.realm.UserRealm;
+import io.github.dunwu.spring.security.shiro.service.PermissionService;
 import io.github.dunwu.spring.security.shiro.service.RoleService;
 import io.github.dunwu.spring.security.shiro.service.UserService;
-
-import javax.sql.DataSource;
 
 /**
  * <p>
@@ -34,7 +34,6 @@ import javax.sql.DataSource;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring/spring-beans.xml",
                 "classpath:spring/spring-shiro.xml"})
-@TransactionConfiguration(defaultRollback = false)
 public class ShiroTest {
     private static final Logger log = LoggerFactory.getLogger(ShiroTest.class);
 

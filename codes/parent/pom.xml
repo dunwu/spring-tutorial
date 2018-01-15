@@ -434,7 +434,7 @@
 
     <!-- 核心库版本 -->
     <jetty.version>9.3.2.v20150730</jetty.version>
-    <spring.version>4.1.4.RELEASE</spring.version>
+    <spring.version>5.0.2.RELEASE</spring.version>
     <shiro.version>1.4.0</shiro.version>
     <junit.version>4.12</junit.version>
     <dubbo.version>2.5.6</dubbo.version>

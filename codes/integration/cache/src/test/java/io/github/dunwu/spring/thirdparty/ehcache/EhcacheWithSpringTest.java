@@ -5,7 +5,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.transaction.TransactionConfiguration;
 
 import io.github.dunwu.spring.thirdparty.ehcache.service.UserService;
 import io.github.dunwu.spring.thirdparty.ehcache.vo.User;
@@ -17,7 +16,6 @@ import io.github.dunwu.spring.thirdparty.ehcache.vo.User;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:spring/applicationContext.xml" })
-@TransactionConfiguration(defaultRollback = false)
 public class EhcacheWithSpringTest {
     @Autowired
     UserService userService;

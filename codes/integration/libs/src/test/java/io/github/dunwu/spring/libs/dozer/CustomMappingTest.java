@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import io.github.dunwu.spring.libs.dozer.vo.UserGroupPrime;
 import org.dozer.Mapper;
 import org.junit.Assert;
 import org.junit.Test;
@@ -14,7 +13,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.transaction.TransactionConfiguration;
 
 import io.github.dunwu.spring.libs.dozer.vo.Dest;
 import io.github.dunwu.spring.libs.dozer.vo.NotSameAttributeA;
@@ -27,6 +25,7 @@ import io.github.dunwu.spring.libs.dozer.vo.Status;
 import io.github.dunwu.spring.libs.dozer.vo.TargetBean;
 import io.github.dunwu.spring.libs.dozer.vo.User;
 import io.github.dunwu.spring.libs.dozer.vo.UserGroup;
+import io.github.dunwu.spring.libs.dozer.vo.UserGroupPrime;
 import io.github.dunwu.spring.libs.dozer.vo.UserPrime;
 import junit.framework.TestCase;
 
@@ -35,7 +34,6 @@ import junit.framework.TestCase;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:spring/spring-dozer.xml" })
-@TransactionConfiguration(defaultRollback = false)
 public class CustomMappingTest extends TestCase {
     @Autowired
     Mapper mapper;
