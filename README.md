@@ -1,7 +1,7 @@
 # spring-notes
 
 > Spring 学习笔记。
-> 
+>
 > 以简单范例来展示 spring 在 web 开发中的各种应用。
 >
 > 扩展学习：更多 Java 技术栈知识（JavaSE/JavaEE/Java 库/Java 工具/Java 框架）可以在 [java-stack](https://github.com/dunwu/java-stack) 了解。
@@ -15,47 +15,43 @@
 
 ## 内容
 
-### Core
+spring-notes 参考 Spring 官方的技术划分，将技术内容分为以下部分：
 
-- **spring-notes-core-ioc** spring 的依赖注入范例。
-- **spring-notes-core-aop** spring 的切面编程范例。
-- **spring-notes-core-validator** spring 的校验器范例。自定义一个简单的校验器。
+**Core**
 
-### Data
+> Spring 框架的核心技术。如；IOC 依赖注入、AOP、数据绑定等。
 
-- **spring-notes-data-db** spring 集成不同数据源的范例。
+**| [CODES](https://github.com/dunwu/spring-notes/tree/master/codes/core) | [DOCS](https://github.com/dunwu/spring-notes/tree/master/docs/spring/core) |**
 
-- **spring-notes-data-orm** spring 集成 orm 框架的范例。
+**Data**
 
-  hibernate 和 mybatis 都是比较流行的 orm 框架。
+> Spring 在数据库领域的应用。如：JDBC、ORM、事务等。
 
-  hibernate 功能更强大，但是也更复杂，学习周期更长，数据调优也更为复杂。
+**| [CODES](https://github.com/dunwu/spring-notes/tree/master/codes/data) | [DOCS](https://github.com/dunwu/spring-notes/tree/master/docs/spring/data) |**
 
-  相对于新手，mybatis 更容易上手，因此这里选用 mybatis 来展示如何集成。
+**Web**
 
-### Web
+> Spring 在 web 领域的应用。如：Spring MVC、WebSocket 等。
 
-- **spring-notes-web-mvc** 展示 spring mvc 的特性。
-- **spring-notes-web-websocket** 展示 spring 如何支持 HTML5 重要新特性 websocket。
+**| [CODES](https://github.com/dunwu/spring-notes/tree/master/codes/web) | [DOCS](https://github.com/dunwu/spring-notes/tree/master/docs/spring/web) |**
 
-### Integration
+**Integration**
 
-- **spring-notes-integration-3party** spring  集成第三方库。
-- **spring-notes-integration-cache** spring  集成 ehcache 实现缓存方案。
+> Spring 与第三方框架、库集成。如：Cache、Scheduling、JMS、JMX 等。
 
-- **spring-notes-integration-rmi** spring 的远程调用范例。分为 server 端和 client 端。
-- **spring-notes-integration-rpc** spring 集成 dubbo 实现远程服务化调用。
-- **spring-notes-integration-scheduler** spring 的调度任务范例。
+**| [CODES](https://github.com/dunwu/spring-notes/tree/master/codes/integration) | [DOCS](https://github.com/dunwu/spring-notes/tree/master/docs/spring/integration) |**
 
-### Example
+**Security**
 
-- **spring-notes-example-helloworld**：spring 第一个简单例子。
+> Spring 在安全领域的应用。如：认证、授权 等。
 
-### Security
+**| [CODES](https://github.com/dunwu/spring-notes/tree/master/codes/security) |**
 
-- **spring-notes-sccurity-shiro**：spring 集成 shiro 实现安全框架的范例。
+**Example**
 
-  spring 自身的安全框架 spring-security 相比 shiro 较为重型化，并且 shiro 可以满足大部分的应用，所以这里选用 shiro。
+> Spring 实战示例。
+
+**| [CODES](https://github.com/dunwu/spring-notes/tree/master/codes/example) |**
 
 ## 说明
 
@@ -63,50 +59,48 @@
 
 **重要库版本**
 
-- **Jdk**：1.8
+| 库或工具                 | 版本              | 说明                                       |
+| -------------------- | --------------- | ---------------------------------------- |
+| Spring Framework     | 5.0.2.RELEASE   |                                          |
+| JDK                  | 1.8+            | Spring5 开始，要求 JDK8+                      |
+| Maven                | 3.5.2           | 本项目使用 [maven](https://maven.apache.org/index.html) 作为构建工具。 |
+| jetty-maven-plugin   | 9.4.8.v20171121 | [Jetty](http://www.eclipse.org/jetty/) 可作为 web 服务器和 servlet 容器。此插件可以免部署启动 web app。 |
+| tomcat7-maven-plugin | 2.2             | [Tomcat](https://tomcat.apache.org/index.html) 可作为 web 服务器和 servlet 容器。此插件可以免部署启动 web app。Tomcat 早已经发布 Tomcat8，但是 maven 插件 一直没有提供 tomcat8 的支持（最后更新为2013年）。 |
 
-- **Spring**：4.1.4.RELEASE
+### 项目说明
 
-- **Maven**：3.5.2
+- **`/codes`**：代码目录。
+- **`/docs`**：文档目录。
 
-**嵌入式服务器版本**
-
-- **Jetty**：Jetty 9
-
-- **Tomcat**：Tomcat 7
-
-### 项目结构
-
-- **codes**：代码目录。
-- **docs**：文档目录。
-
-### codes 使用说明
+#### codes 使用说明
 
 为了便于展示示例，所有 war 包形式的项目都可以使用 maven 插件快速启动嵌入式服务器，支持 Tomcat 和 Jetty 两种方式。
 
 Tomcat7 嵌入式服务器启动：
 
 ```bash
-$ mvn tomcat7:run
+$ mvn tomcat7:run -Dmaven.test.skip=true
 ```
 
 Jetty 嵌入式服务器启动：
 
 ```bash
-$ mvn jetty:run
+$ mvn jetty:run -Dmaven.test.skip=true
 ```
 
-如果子项目中无特殊说明，默认端口配置为 8089，当然，你可以自己指定。
+> 如果子项目中无特殊说明，默认端口配置为 8089，当然，你可以自己指定。
+>
+> 启动成功后，访问 http://localhost:8089 。
+>
 
-启动成功后，访问 http://localhost:8089 。
+#### docs 使用说明
 
-### docs 使用说明
+`/docs` 遵循 [Gitbook](https://github.com/GitbookIO/gitbook) 规范，可以生成静态 html 电子书。
 
-docs 部分已经使用 Gitbook 生成电子书：
-
-:point_right: [**spring-notes 文档在线阅读**](https://dunwu.gitbooks.io/spring-notes/)
-
-扩展学习：更多 Java 技术栈知识（JavaSE/JavaEE/Java 库/Java 工具/Java 框架）可以在 [java-stack](https://github.com/dunwu/java-stack) 了解。
+> :point_right: [**spring-notes 文档在线阅读**](https://dunwu.gitbooks.io/spring-notes/)
+>
+> 扩展学习：更多 Java 技术栈知识（JavaSE/JavaEE/Java 库/Java 工具/Java 框架）可以在 [java-stack](https://github.com/dunwu/java-stack) 了解。
+>
 
 ## 规范
 

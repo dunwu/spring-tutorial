@@ -1,28 +1,15 @@
-# spring-notes-data
+# 说明
 
-> 展示 Spring 的数据访问技术
+> Transactions, DAO support, JDBC, ORM, Marshalling XML.
 
-## spring-jdbc
+## 示例
 
-> 本项目当前展示了对于H2/Mysql的JDBC操作。
+- **spring-notes-data-db** spring 集成不同数据源的范例。
 
-### 使用说明
+- **spring-notes-data-orm** spring 集成 orm 框架的范例。
 
-- `H2JdbcTest` 测试了数据源为 H2 的 JDBC 操作。
+  hibernate 和 mybatis 都是比较流行的 orm 框架。
 
-- `MysqlJdbcTest` 测试了数据源为 Mysql 的 JDBC 操作。
+  hibernate 功能更强大，但是也更复杂，学习周期更长，数据调优也更为复杂。
 
-- `DruidJdbcTest` 展示使用 Druid 建立数据源连接池。
-
-
-## spring-orm
-
-展示 Spring + Mybatis 集成的完整示例。
-
-并引入了 Mybatis Generator，可以根据数据库自动生成 Mybatis 的数据访问样板式代码。
-
-## TODO
-
-`io.github.dunwu.spring.data.db` 中的内容应该是 spring-data 的内容，以后会迁出。
-
-待完成 Spring 事务管理实例：spring-notes-data-tx
+  相对于新手，mybatis 更容易上手，因此这里选用 mybatis 来展示如何集成。

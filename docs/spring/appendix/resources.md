@@ -4,7 +4,9 @@
 
 - [https://spring.io/](https://spring.io/)
 
-- [Spring Project Github](https://github.com/spring-projects)
+- [Spring Framework 官方文档](https://docs.spring.io/spring/docs/current/spring-framework-reference/)
+
+- [Spring Framework Github](https://github.com/spring-projects/spring-framework)
 
 
 ## 教程资源
