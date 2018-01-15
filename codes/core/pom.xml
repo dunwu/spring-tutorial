@@ -8,22 +8,67 @@
 
   <!-- MAVEN COORDINATE BEGIN -->
   <artifactId>spring-notes-core</artifactId>
-  <packaging>pom</packaging>
+  <packaging>jar</packaging>
   <!-- MAVEN COORDINATE END -->
 
-  <!-- RELATIONSHIP SETTINGS BEGIN -->
+  <!-- POM RELATIONSHIP BEGIN -->
   <parent>
     <groupId>io.github.dunwu</groupId>
     <artifactId>spring-notes-parent</artifactId>
     <version>${spring.notes.version}</version>
     <relativePath>../parent</relativePath>
   </parent>
-  <modules>
-    <module>ioc</module>
-    <module>aop</module>
-    <module>validator</module>
-  </modules>
-  <!-- RELATIONSHIP SETTINGS END -->
+
+  <dependencies>
+    <!-- javax begin -->
+    <!-- JSR 330 -->
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <version>1</version>
+    </dependency>
+    <!-- javax end -->
+
+    <!-- log begin -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.logback-extensions</groupId>
+      <artifactId>logback-ext-spring</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+    </dependency>
+    <!-- log end -->
+
+    <!-- spring begin -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aspects</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+    </dependency>
+    <!-- spring end -->
+
+  </dependencies>
+  <!-- POM RELATIONSHIP END -->
 
   <!-- PROPERTIES BEGIN -->
   <properties>
@@ -35,7 +80,8 @@
 
   <!-- [Part 3] PROJECT INFO BEGIN -->
   <name>${project.artifactId}</name>
-  <description>IoC container, Events, Resources, i18n, Validation, Data Binding, Type Conversion, SpEL, AOP.</description>
+  <description>IoC container, Events, Resources, i18n, Validation, Data Binding, Type Conversion, SpEL, AOP.
+  </description>
   <!-- [Part 3] PROJECT INFO END -->
 
 
