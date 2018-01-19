@@ -9,7 +9,7 @@
   <!-- MAVEN COORDINATE BEGIN -->
   <groupId>io.github.dunwu</groupId>
   <artifactId>spring-notes-integration</artifactId>
-  <version>${spring.notes.version}</version>
+  <version>1.0.2</version>
   <packaging>pom</packaging>
   <!-- MAVEN COORDINATE END -->
 
