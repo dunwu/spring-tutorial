@@ -1,0 +1,23 @@
+<assembly>
+  <id>bin</id>
+  <formats>
+    <format>dir</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <baseDirectory>dist</baseDirectory>
+  <fileSets>
+    <fileSet>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>**/target/*.jar</include>
+        <include>**/target/*.war</include>
+        <include>**/target/*.tar</include>
+      </includes>
+      <excludes>
+        <exclude>/target/**</exclude>
+        <exclude>/dist/**</exclude>
+      </excludes>
+      <fileMode>0755</fileMode>
+    </fileSet>
+  </fileSets>
+</assembly>

@@ -42,6 +42,28 @@
 
 
   <!-- [Part 2] BUILD SETTINGS BEGIN -->
+  <build>
+    <finalName>spring</finalName>
+    <plugins>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <descriptors>
+            <descriptor>assembly.xml</descriptor>
+          </descriptors>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
   <!-- [Part 2] BUILD SETTINGS END -->
 
 
