@@ -4,7 +4,7 @@
   "description": "Spring 学习笔记",
   "author": "Zhang Peng",
   "language": "zh-hans",
-  "root": "./docs",
+  "root": ".",
   "links": {
     "sidebar": {
       "spring-notes": "https://github.com/dunwu/spring-notes"
