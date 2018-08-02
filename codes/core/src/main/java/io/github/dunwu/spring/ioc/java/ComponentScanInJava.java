@@ -17,7 +17,7 @@ public class ComponentScanInJava {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-        ctx.scan("io.github.dunwu.spring.beans");
+        ctx.scan("io.github.dunwu.spring.ioc");
         ctx.refresh();
         Teacher teacher = (Teacher) ctx.getBean("teacher");
         log.debug(teacher.work());

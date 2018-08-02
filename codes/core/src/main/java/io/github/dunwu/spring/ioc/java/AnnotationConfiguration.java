@@ -19,8 +19,7 @@ public class AnnotationConfiguration {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AnnotationConfiguration.class);
-        ctx.scan("io.github.dunwu.spring.beans");
-        ctx.refresh();
+        ctx.scan("io.github.dunwu.spring.ioc");
         Job job = (Job) ctx.getBean("police");
         log.debug("job: {}, work: {}", job.getClass(), job.work());
     }

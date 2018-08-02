@@ -51,13 +51,13 @@
 
   <!-- logger begin -->
   <!-- 本项目的日志记录，分级打印 -->
-  <logger name="io.github.dunwu.spring" level="TRACE" additivity="false">
+  <logger name="io.github.dunwu.spring" level="DEBUG" additivity="false">
     <appender-ref ref="STDOUT"/>
     <appender-ref ref="ALL"/>
   </logger>
 
   <!-- SPRING框架日志 -->
-  <logger name="org.springframework" level="TRACE" additivity="false">
+  <logger name="org.springframework" level="WARN" additivity="false">
     <appender-ref ref="SPRING"/>
   </logger>
 
