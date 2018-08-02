@@ -53,19 +53,25 @@ spring-notes 参考 Spring 官方的技术划分，将技术内容分为以下�
 
 **| [CODES](https://github.com/dunwu/spring-notes/tree/master/codes/example) |**
 
+**面试**
+
+> Spring 面试问题 TOP 50
+
+**| [DOCS](https://github.com/dunwu/spring-notes/tree/master/docs/spring/spring-interview.md) |**
+
 ## 说明
 
 ### 环境说明
 
 **重要库版本**
 
-| 库或工具                 | 版本              | 说明                                       |
-| -------------------- | --------------- | ---------------------------------------- |
-| Spring Framework     | 5.0.2.RELEASE   |                                          |
-| JDK                  | 1.8+            | Spring5 开始，要求 JDK8+                      |
-| Maven                | 3.5.2           | 本项目使用 [maven](https://maven.apache.org/index.html) 作为构建工具。 |
-| jetty-maven-plugin   | 9.4.8.v20171121 | [Jetty](http://www.eclipse.org/jetty/) 可作为 web 服务器和 servlet 容器。此插件可以免部署启动 web app。 |
-| tomcat7-maven-plugin | 2.2             | [Tomcat](https://tomcat.apache.org/index.html) 可作为 web 服务器和 servlet 容器。此插件可以免部署启动 web app。Tomcat 早已经发布 Tomcat8，但是 maven 插件 一直没有提供 tomcat8 的支持（最后更新为2013年）。 |
+| 库或工具             | 版本            | 说明                                                                                                                                                                                                          |
+| -------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Spring Framework     | 5.0.2.RELEASE   |                                                                                                                                                                                                               |
+| JDK                  | 1.8+            | Spring5 开始，要求 JDK8+                                                                                                                                                                                      |
+| Maven                | 3.5.2           | 本项目使用 [maven](https://maven.apache.org/index.html) 作为构建工具。                                                                                                                                        |
+| jetty-maven-plugin   | 9.4.8.v20171121 | [Jetty](http://www.eclipse.org/jetty/) 可作为 web 服务器和 servlet 容器。此插件可以免部署启动 web app。                                                                                                       |
+| tomcat7-maven-plugin | 2.2             | [Tomcat](https://tomcat.apache.org/index.html) 可作为 web 服务器和 servlet 容器。此插件可以免部署启动 web app。Tomcat 早已经发布 Tomcat8，但是 maven 插件 一直没有提供 tomcat8 的支持（最后更新为 2013 年）。 |
 
 ### 项目说明
 
@@ -91,7 +97,6 @@ $ mvn jetty:run -Dmaven.test.skip=true
 > 如果子项目中无特殊说明，默认端口配置为 8089，当然，你可以自己指定。
 >
 > 启动成功后，访问 http://localhost:8089 。
->
 
 #### docs 使用说明
 
@@ -100,14 +105,13 @@ $ mvn jetty:run -Dmaven.test.skip=true
 > :point_right: [**spring-notes 文档在线阅读**](https://dunwu.gitbooks.io/spring-notes/)
 >
 > 扩展学习：更多 Java 技术栈知识（JavaSE/JavaEE/Java 库/Java 工具/Java 框架）可以在 [java-stack](https://github.com/dunwu/java-stack) 了解。
->
 
 ## 规范
 
 - 本项目的文档部分，遵循 [Gitbook](https://github.com/GitbookIO/gitbook) 规范，以便生成电子书。
 
-- 推荐使用 [IDEA](https://www.jetbrains.com/idea/) 作为 IDE，自从使用了 IDEA，我就彻底放弃了 Eclipse 和 MyEclipse 等 IDE。
+- 推荐使用 [IDEA](https://www.jetbrains.com/idea/) 作为 IDE
 
-- 代码规范使用 [阿里巴巴Java开发手册](https://github.com/alibaba/p3c)
+- 代码规范使用 [阿里巴巴 Java 开发手册](https://github.com/alibaba/p3c)
 
   如果你使用 IDEA 作为你的 IDE，推荐安装 Alibaba-Java-Coding-Guidelines 插件来做静态检查。
