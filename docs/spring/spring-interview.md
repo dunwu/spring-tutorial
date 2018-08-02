@@ -1,5 +1,5 @@
 ---
-title: Spring 面试问题 TOP 50
+title: Spring 常见面试问题
 date: 2018/08/02
 categories:
 - spring
@@ -8,7 +8,7 @@ tags:
 - spring
 ---
 
-# Spring 面试问题 TOP 50
+# Spring 常见面试问题
 
 <!-- TOC depthFrom:2 depthTo:3 -->
 
@@ -40,7 +40,7 @@ tags:
     - [3.7. 自动装配有哪些方式？](#37-自动装配有哪些方式)
     - [3.8. 自动装配有什么局限？](#38-自动装配有什么局限)
 - [4. 注解](#4-注解)
-    - [4.1. 什么是基于注解的容器配置](#41-什么是基于注解的容器配置)
+    - [4.1. 你用过哪些重要的 Spring 注解？](#41-你用过哪些重要的-spring-注解)
     - [4.2. 如何在 spring 中启动注解装配？](#42-如何在-spring-中启动注解装配)
     - [4.3. @Component, @Controller, @Repository, @Service 有何区别？](#43-component-controller-repository-service-有何区别)
     - [4.4. @Required 注解有什么用？](#44-required-注解有什么用)
@@ -56,15 +56,14 @@ tags:
     - [5.6. spring 支持哪些 ORM 框架](#56-spring-支持哪些-orm-框架)
 - [6. AOP](#6-aop)
     - [6.1. 什么是 AOP？](#61-什么是-aop)
-    - [6.2. 什么是 Aspect？](#62-什么是-aspect)
-    - [6.3. 什么是切点（JoinPoint）](#63-什么是切点joinpoint)
-    - [6.4. 什么是通知（Advice）？](#64-什么是通知advice)
-    - [6.5. 有哪些类型的通知（Advice）？](#65-有哪些类型的通知advice)
-    - [6.6. 指出在 spring aop 中 concern 和 cross-cutting concern 的不同之处。](#66-指出在-spring-aop-中-concern-和-cross-cutting-concern-的不同之处)
-    - [6.7. AOP 有哪些实现方式？](#67-aop-有哪些实现方式)
-    - [6.8. Spring AOP and AspectJ AOP 有什么区别？](#68-spring-aop-and-aspectj-aop-有什么区别)
-    - [6.9. 如何理解 Spring 中的代理？](#69-如何理解-spring-中的代理)
-    - [6.10. 什么是编织（Weaving）？](#610-什么是编织weaving)
+    - [6.2. AOP 中的 Aspect、Advice、Pointcut、JointPoint 和 Advice 参数分别是什么？](#62-aop-中的-aspectadvicepointcutjointpoint-和-advice-参数分别是什么)
+    - [6.3. 什么是通知（Advice）？](#63-什么是通知advice)
+    - [6.4. 有哪些类型的通知（Advice）？](#64-有哪些类型的通知advice)
+    - [6.5. 指出在 spring aop 中 concern 和 cross-cutting concern 的不同之处。](#65-指出在-spring-aop-中-concern-和-cross-cutting-concern-的不同之处)
+    - [6.6. AOP 有哪些实现方式？](#66-aop-有哪些实现方式)
+    - [6.7. Spring AOP and AspectJ AOP 有什么区别？](#67-spring-aop-and-aspectj-aop-有什么区别)
+    - [6.8. 如何理解 Spring 中的代理？](#68-如何理解-spring-中的代理)
+    - [6.9. 什么是编织（Weaving）？](#69-什么是编织weaving)
 - [7. MVC](#7-mvc)
     - [7.1. Spring MVC 框架有什么用？](#71-spring-mvc-框架有什么用)
     - [7.2. 描述一下 DispatcherServlet 的工作流程](#72-描述一下-dispatcherservlet-的工作流程)
@@ -389,26 +388,18 @@ Spring 容器能够自动装配 bean。也就是说，可以通过检查 BeanFac
 
 ## 4. 注解
 
-### 4.1. 什么是基于注解的容器配置
+### 4.1. 你用过哪些重要的 Spring 注解？
 
-不使用 XML 来描述 bean 装配，开发人员通过在相关的类，方法或字段声明上使用注解将配置移动到组件类本身。它可以作为 XML 设置的替代方案。例如：
-
-Spring 的 Java 配置是通过使用 @Bean 和 @Configuration 来实现。
-
-- @Bean 注解扮演与 <bean /> 元素相同的角色。
-- @Configuration 类允许通过简单地调用同一个类中的其他 @Bean 方法来定义 bean 间依赖关系。
-
-例如：
-
-```java
-@Configuration
-public class StudentConfig {
-    @Bean
-    public StudentBean myStudent() {
-        return new StudentBean();
-    }
-}
-```
+- **@Controller** - 用于 Spring MVC 项目中的控制器类。
+- **@Service** - 用于服务类。
+- **@RequestMapping** - 用于在控制器处理程序方法中配置 URI 映射。
+- **@ResponseBody** - 用于发送 Object 作为响应，通常用于发送 XML 或 JSON 数据作为响应。
+- **@PathVariable** - 用于将动态值从 URI 映射到处理程序方法参数。
+- **@Autowired** - 用于在 spring bean 中自动装配依赖项。
+- **@Qualifier** - 使用 @Autowired 注解，以避免在存在多个 bean 类型实例时出现混淆。
+- **@Scope** - 用于配置 spring bean 的范围。
+- **@Configuration**，**@ComponentScan** 和 **@Bean** - 用于基于 java 的配置。
+- **@Aspect**，**@Before**，**@After**，**@Around**，**@Pointcut** - 用于切面编程（AOP）。
 
 ### 4.2. 如何在 spring 中启动注解装配？
 
@@ -494,7 +485,7 @@ public class EmpAccount {
 
 ### 4.7. @RequestMapping 注解有什么用？
 
-@RequestMapping 注解用于将特定 HTTP 请求方法映射到将处理相应请求的控制器中的特定类/方法。此注释可应用于两个级别：
+@RequestMapping 注解用于将特定 HTTP 请求方法映射到将处理相应请求的控制器中的特定类/方法。此注解可应用于两个级别：
 
 - 类级别：映射请求的 URL
 - 方法级别：映射 URL 以及 HTTP 请求方法
@@ -546,43 +537,35 @@ Spring 支持两种类型的事务管理：
 AOP(Aspect-Oriented Programming), 即 **面向切面编程**, 它与 OOP( Object-Oriented Programming, 面向对象编程) 相辅相成, 提供了与 OOP 不同的抽象软件结构的视角.
 在 OOP 中, 我们以类(class)作为我们的基本单元, 而 AOP 中的基本单元是 **Aspect(切面)**
 
-### 6.2. 什么是 Aspect？
-
-`aspect` 由 `pointcount` 和 `advice` 组成, 它既包含了横切逻辑的定义, 也包括了连接点的定义. Spring AOP 就是负责实施切面的框架, 它将切面所定义的横切逻辑编织到切面所指定的连接点中.
-AOP 的工作重心在于如何将增强编织目标对象的连接点上, 这里包含两个工作:
-
-1.  如何通过 pointcut 和 advice 定位到特定的 joinpoint 上
-2.  如何在 advice 中编写切面代码.
-
-**可以简单地认为, 使用 @Aspect 注解的类就是切面.**
+### 6.2. AOP 中的 Aspect、Advice、Pointcut、JointPoint 和 Advice 参数分别是什么？
 
 ![spring-aop](https://raw.githubusercontent.com/dunwu/spring-notes/master/images/spring/core/spring-aop.png)
 
-### 6.3. 什么是切点（JoinPoint）
+- **Aspect** - Aspect 是一个实现交叉问题的类，例如事务管理。方面可以是配置的普通类，然后在 Spring Bean 配置文件中配置，或者我们可以使用 Spring AspectJ 支持使用 @Aspect 注解将类声明为 Aspect。
+- **Advice** - Advice 是针对特定 JoinPoint 采取的操作。在编程方面，它们是在应用程序中达到具有匹配切入点的特定 JoinPoint 时执行的方法。您可以将 Advice 视为 Spring 拦截器（Interceptor）或 Servlet 过滤器（filter）。
+- **Advice Arguments** - 我们可以在 advice 方法中传递参数。我们可以在切入点中使用 args() 表达式来应用于与参数模式匹配的任何方法。如果我们使用它，那么我们需要在确定参数类型的 advice 方法中使用相同的名称。
+- **Pointcut** - Pointcut 是与 JoinPoint 匹配的正则表达式，用于确定是否需要执行 Advice。 Pointcut 使用与 JoinPoint 匹配的不同类型的表达式。Spring 框架使用 AspectJ Pointcut 表达式语言来确定将应用通知方法的 JoinPoint。
+- **JoinPoint** - JoinPoint 是应用程序中的特定点，例如方法执行，异常处理，更改对象变量值等。在 Spring AOP 中，JoinPoint 始终是方法的执行器。
 
-程序运行中的一些时间点, 例如一个方法的执行, 或者是一个异常的处理.
-
-在 Spring AOP 中, join point 总是方法的执行点。
-
-### 6.4. 什么是通知（Advice）？
+### 6.3. 什么是通知（Advice）？
 
 特定 JoinPoint 处的 Aspect 所采取的动作称为 Advice。Spring AOP 使用一个 Advice 作为拦截器，在 JoinPoint “周围”维护一系列的拦截器。
 
-### 6.5. 有哪些类型的通知（Advice）？
+### 6.4. 有哪些类型的通知（Advice）？
 
-- **Before** - 这些类型的建议在 joinpoint 方法之前执行，并使用 @Before 注释标记进行配置。
-- **After Returning** - 这些类型的建议在连接点方法正常执行后执行，并使用@AfterReturning 注释标记进行配置。
-- **After Throwing** - 这些类型的建议仅在 joinpoint 方法通过抛出异常退出并使用 @AfterThrowing 注释标记配置时执行。
-- **After (finally)** - 这些类型的建议在连接点方法之后执行，无论方法退出是正常还是异常返回，并使用 @After 注释标记进行配置。
-- **Around** - 这些类型的建议在连接点之前和之后执行，并使用 @Around 注释标记进行配置。
+- **Before** - 这些类型的 Advice 在 joinpoint 方法之前执行，并使用 @Before 注解标记进行配置。
+- **After Returning** - 这些类型的 Advice 在连接点方法正常执行后执行，并使用@AfterReturning 注解标记进行配置。
+- **After Throwing** - 这些类型的 Advice 仅在 joinpoint 方法通过抛出异常退出并使用 @AfterThrowing 注解标记配置时执行。
+- **After (finally)** - 这些类型的 Advice 在连接点方法之后执行，无论方法退出是正常还是异常返回，并使用 @After 注解标记进行配置。
+- **Around** - 这些类型的 Advice 在连接点之前和之后执行，并使用 @Around 注解标记进行配置。
 
-### 6.6. 指出在 spring aop 中 concern 和 cross-cutting concern 的不同之处。
+### 6.5. 指出在 spring aop 中 concern 和 cross-cutting concern 的不同之处。
 
 concern 是我们想要在应用程序的特定模块中定义的行为。它可以定义为我们想要实现的功能。
 
 cross-cutting concern 是一个适用于整个应用的行为，这会影响整个应用程序。例如，日志记录，安全性和数据传输是应用程序几乎每个模块都需要关注的问题，因此它们是跨领域的问题。
 
-### 6.7. AOP 有哪些实现方式？
+### 6.6. AOP 有哪些实现方式？
 
 实现 AOP 的技术，主要分为两大类：
 
@@ -593,12 +576,12 @@ cross-cutting concern 是一个适用于整个应用的行为，这会影响整�
   - JDK 动态代理
   - CGLIB
 
-### 6.8. Spring AOP and AspectJ AOP 有什么区别？
+### 6.7. Spring AOP and AspectJ AOP 有什么区别？
 
 Spring AOP 基于动态代理方式实现；AspectJ 基于静态代理方式实现。
 Spring AOP 仅支持方法级别的 PointCut；提供了完全的 AOP 支持，它还支持属性级别的 PointCut。
 
-### 6.9. 如何理解 Spring 中的代理？
+### 6.8. 如何理解 Spring 中的代理？
 
 将 Advice 应用于目标对象后创建的对象称为代理。在客户端对象的情况下，目标对象和代理对象是相同的。
 
@@ -606,7 +589,7 @@ Spring AOP 仅支持方法级别的 PointCut；提供了完全的 AOP 支持，�
 Advice + Target Object = Proxy
 ```
 
-### 6.10. 什么是编织（Weaving）？
+### 6.9. 什么是编织（Weaving）？
 
 为了创建一个 advice 对象而链接一个 aspect 和其它应用类型或对象，称为编织（Weaving）。在 Spring AOP 中，编织在运行时执行。请参考下图：
 
@@ -649,4 +632,5 @@ WebApplicationContext 是 ApplicationContext 的扩展。它具有 Web 应用程
 
 ## 8. 资料
 
-[Top 50 Spring Interview Questions You Must Prepare In 2018](https://www.edureka.co/blog/interview-questions/spring-interview-questions/)
+- [Top 50 Spring Interview Questions You Must Prepare In 2018](https://www.edureka.co/blog/interview-questions/spring-interview-questions/)
+- [Spring Interview Questions and Answers](https://www.journaldev.com/2696/spring-interview-questions-and-answers)
