@@ -1,6 +1,6 @@
 ---
 title: Spring 集成调度器
-date: 2017/11/08
+date: 2017-11-08
 categories:
 - spring
 tags:

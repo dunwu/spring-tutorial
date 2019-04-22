@@ -21,25 +21,25 @@ spring-tutorial 参考 Spring 官方的技术划分，将技术内容分为以�
 
 > Spring 框架的核心技术。如；IOC 依赖注入、AOP、数据绑定等。
 
-**| [CODES](https://github.com/dunwu/spring-tutorial/tree/master/codes/core) | [DOCS](https://github.com/dunwu/spring-tutorial/tree/master/docs/spring/core) |**
+**| [CODES](https://github.com/dunwu/spring-tutorial/tree/master/codes/core) | [DOCS](https://github.com/dunwu/spring-tutorial/tree/master/docs/core) |**
 
 **Data**
 
 > Spring 在数据库领域的应用。如：JDBC、ORM、事务等。
 
-**| [CODES](https://github.com/dunwu/spring-tutorial/tree/master/codes/data) | [DOCS](https://github.com/dunwu/spring-tutorial/tree/master/docs/spring/data) |**
+**| [CODES](https://github.com/dunwu/spring-tutorial/tree/master/codes/data) | [DOCS](https://github.com/dunwu/spring-tutorial/tree/master/docs/data) |**
 
 **Web**
 
 > Spring 在 web 领域的应用。如：Spring MVC、WebSocket 等。
 
-**| [CODES](https://github.com/dunwu/spring-tutorial/tree/master/codes/web) | [DOCS](https://github.com/dunwu/spring-tutorial/tree/master/docs/spring/web) |**
+**| [CODES](https://github.com/dunwu/spring-tutorial/tree/master/codes/web) | [DOCS](https://github.com/dunwu/spring-tutorial/tree/master/docs/web) |**
 
 **Integration**
 
 > Spring 与第三方框架、库集成。如：Cache、Scheduling、JMS、JMX 等。
 
-**| [CODES](https://github.com/dunwu/spring-tutorial/tree/master/codes/integration) | [DOCS](https://github.com/dunwu/spring-tutorial/tree/master/docs/spring/integration) |**
+**| [CODES](https://github.com/dunwu/spring-tutorial/tree/master/codes/integration) | [DOCS](https://github.com/dunwu/spring-tutorial/tree/master/docs/integration) |**
 
 **Security**
 
@@ -57,7 +57,7 @@ spring-tutorial 参考 Spring 官方的技术划分，将技术内容分为以�
 
 > Spring 面试问题 TOP 50
 
-**| [DOCS](https://github.com/dunwu/spring-tutorial/tree/master/docs/spring/spring-interview.md) |**
+**| [DOCS](https://github.com/dunwu/spring-tutorial/tree/master/docs/spring-interview.md) |**
 
 ## 说明
 
