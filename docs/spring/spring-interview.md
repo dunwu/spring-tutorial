@@ -328,7 +328,7 @@ spring bean 容器的生命周期流程如下：
 8.  如果 bean 实现 DisposableBean 接口，当 spring 容器关闭时，会调用 destory()。
 9.  如果为 bean 指定了 destroy 方法（`<bean>` 的 destroy-method 属性），那么将调用它。
 
-![spring-bean-life](https://raw.githubusercontent.com/dunwu/spring-notes/master/images/spring/core/spring-bean-life.png)
+![spring-bean-life](https://raw.githubusercontent.com/dunwu/spring-tutorial/master/images/spring/core/spring-bean-life.png)
 
 ### 3.5. 什么是 spring 的内部 bean？
 
@@ -498,7 +498,7 @@ Spring DAO 使得 JDBC，Hibernate 或 JDO 这样的数据访问技术更容易�
 
 ### 5.2. 列举 Spring DAO 抛出的异常。
 
-![spring-data-access-exception](https://raw.githubusercontent.com/dunwu/spring-notes/master/images/spring/data-access/spring-data-access-exception.png)
+![spring-data-access-exception](https://raw.githubusercontent.com/dunwu/spring-tutorial/master/images/spring/data-access/spring-data-access-exception.png)
 
 ### 5.3. spring JDBC API 中存在哪些类？
 
@@ -539,7 +539,7 @@ AOP(Aspect-Oriented Programming), 即 **面向切面编程**, 它与 OOP( Object
 
 ### 6.2. AOP 中的 Aspect、Advice、Pointcut、JointPoint 和 Advice 参数分别是什么？
 
-![spring-aop](https://raw.githubusercontent.com/dunwu/spring-notes/master/images/spring/core/spring-aop.png)
+![spring-aop](https://raw.githubusercontent.com/dunwu/spring-tutorial/master/images/spring/core/spring-aop.png)
 
 - **Aspect** - Aspect 是一个实现交叉问题的类，例如事务管理。方面可以是配置的普通类，然后在 Spring Bean 配置文件中配置，或者我们可以使用 Spring AspectJ 支持使用 @Aspect 注解将类声明为 Aspect。
 - **Advice** - Advice 是针对特定 JoinPoint 采取的操作。在编程方面，它们是在应用程序中达到具有匹配切入点的特定 JoinPoint 时执行的方法。您可以将 Advice 视为 Spring 拦截器（Interceptor）或 Servlet 过滤器（filter）。
@@ -628,7 +628,7 @@ WebApplicationContext 是 ApplicationContext 的扩展。它具有 Web 应用程
 
 ---
 
-:point_right: 想学习更多 Spring 内容可以访问我的 Spring 教程：**[spring-notes](https://github.com/dunwu/spring-notes)**
+:point_right: 想学习更多 Spring 内容可以访问我的 Spring 教程：**[spring-tutorial](https://github.com/dunwu/spring-tutorial)**
 
 ## 8. 资料
 

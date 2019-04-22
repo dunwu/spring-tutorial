@@ -472,7 +472,7 @@ public class BookRepositoryImpl implements BookRepository {
 
 ## 参考
 
-如果想参考我的***完整代码示例***，请[点击这里](https://github.com/dunwu/spring-notes/tree/master/codes/integration/cache)访问我的github。
+如果想参考我的***完整代码示例***，请[点击这里](https://github.com/dunwu/spring-tutorial/tree/master/codes/integration/cache)访问我的github。
 
 下面是我在写作时参考的资料或文章。
 

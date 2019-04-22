@@ -1,13 +1,13 @@
 {
   "gitbook": "3.2.2",
-  "title": "spring-notes",
+  "title": "spring-tutorial",
   "description": "Spring 学习笔记",
   "author": "Zhang Peng",
   "language": "zh-hans",
   "root": ".",
   "links": {
     "sidebar": {
-      "spring-notes": "https://github.com/dunwu/spring-notes"
+      "spring-tutorial": "https://github.com/dunwu/spring-tutorial"
     }
   },
   "plugins": [
@@ -45,7 +45,7 @@
       }
     },
     "edit-link": {
-      "base": "https://github.com/dunwu/spring-notes/blob/master/docs/",
+      "base": "https://github.com/dunwu/spring-tutorial/blob/master/docs/",
       "label": "编辑此页面"
     },
     "github": {

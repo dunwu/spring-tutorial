@@ -7,16 +7,16 @@
   <!-- [Part 1] BASIC SETTINGS BEGIN -->
 
   <!-- MAVEN COORDINATE BEGIN -->
-  <artifactId>spring-notes-integration-rmi-client</artifactId>
+  <artifactId>spring-tutorial-integration-rmi-client</artifactId>
   <packaging>jar</packaging>
   <!-- MAVEN COORDINATE END -->
 
   <!-- RELATIONSHIP SETTINGS BEGIN -->
   <parent>
     <groupId>io.github.dunwu</groupId>
-    <artifactId>spring-notes-parent</artifactId>
+    <artifactId>spring-tutorial-parent</artifactId>
     <version>1.0.3</version>
-    <relativePath>../../parent</relativePath>
+    <relativePath>../../../parent</relativePath>
   </parent>
   <dependencies>
     <!-- spring begin -->

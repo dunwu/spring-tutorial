@@ -1,4 +1,4 @@
-# spring-notes-websocket
+# spring-tutorial-websocket
 
 ## 说明
 
@@ -29,9 +29,9 @@ Tomcat7 嵌入式服务器启动：
 $ mvn tomcat7:run
 ```
 
-访问 http://localhost:8089/spring-notes-websocket/index.jsp 可以尝试 websocket 点对点通信
+访问 http://localhost:8089/spring-tutorial-websocket/index.jsp 可以尝试 websocket 点对点通信
 
-访问 http://localhost:8089/spring-notes-websocket/msg/broadcast 可以尝试 websocket 广播通信，服务器会向所有用户发送广播消息。
+访问 http://localhost:8089/spring-tutorial-websocket/msg/broadcast 可以尝试 websocket 广播通信，服务器会向所有用户发送广播消息。
 
 ## 问题
 

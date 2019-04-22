@@ -372,7 +372,7 @@ Http 是一种网络通信协议。其本身和 Html 没有直接关系。
 
 如果需要完整示例代码，可以参考我的 Github 代码：
 
-- [Spring 对 WebSocket 支持的示例](https://github.com/dunwu/spring-notes/tree/master/codes/web/websocket)
+- [Spring 对 WebSocket 支持的示例](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/websocket)
 
 - [嵌入式 Jetty 服务器的 WebSocket 示例](https://github.com/dunwu/javaee-notes/tree/master/codes/websocket)
 

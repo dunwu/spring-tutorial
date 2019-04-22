@@ -7,11 +7,11 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-  <title>spring-notes</title>
+  <title>spring-tutorial</title>
 </head>
 
 <body>
-<h1>spring-notes</h1>
+<h1>spring-tutorial</h1>
 <p><%out.print("Server Ip：" + basePath);%></p>
 <div>
   <h2>示例列表</h2>

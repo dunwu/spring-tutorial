@@ -4,7 +4,7 @@
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
 
   <property name="LOG_DIR" value="logs" />
-  <property name="FILE_NAME" value="spring-notes-integration-3party" />
+  <property name="FILE_NAME" value="spring-tutorial-integration-3party" />
 
   <!-- 将记录日志打印到控制台 -->
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">

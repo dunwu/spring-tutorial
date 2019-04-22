@@ -3,7 +3,7 @@
 <!-- logback中一共有5种有效级别，分别是TRACE、DEBUG、INFO、WARN、ERROR，优先级依次从低到高 -->
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
 
-  <property name="DIR_NAME" value="spring-notes-helloworld"/>
+  <property name="DIR_NAME" value="spring-tutorial-helloworld"/>
 
   <!-- 将记录日志打印到控制台 -->
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">

@@ -7,14 +7,14 @@
   <!-- [Part 1] BASIC SETTINGS BEGIN -->
 
   <!-- MAVEN COORDINATE BEGIN -->
-  <artifactId>spring-notes-security-shiro</artifactId>
+  <artifactId>spring-tutorial-security-shiro</artifactId>
   <packaging>war</packaging>
   <!-- MAVEN COORDINATE END -->
 
   <!-- RELATIONSHIP SETTINGS BEGIN -->
   <parent>
     <groupId>io.github.dunwu</groupId>
-    <artifactId>spring-notes-parent</artifactId>
+    <artifactId>spring-tutorial-parent</artifactId>
     <version>1.0.3</version>
     <relativePath>../../parent</relativePath>
   </parent>
@@ -104,8 +104,8 @@
       <artifactId>commons-lang3</artifactId>
     </dependency>
     <dependency>
-      <groupId>commons-collections</groupId>
-      <artifactId>commons-collections</artifactId>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-collections4</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>

@@ -34,20 +34,20 @@
 
     <!-- 生成模型的包名和位置-->
     <javaModelGenerator targetPackage="io.github.dunwu.spring.orm.entity"
-                        targetProject="D:\01_Workspace\Project\zp\java\spring-notes\spring-orm\spring-mybatis\src\main\java">
+                        targetProject="D:\01_Workspace\Project\zp\java\spring-tutorial\spring-orm\spring-mybatis\src\main\java">
       <property name="enableSubPackages" value="true"/>
       <property name="trimStrings" value="true"/>
     </javaModelGenerator>
 
     <!-- 生成映射文件的包名和位置-->
     <sqlMapGenerator targetPackage="mybatis/xml/mapper"
-                     targetProject="D:\01_Workspace\Project\zp\java\spring-notes\spring-orm\spring-mybatis\src\main\resources">
+                     targetProject="D:\01_Workspace\Project\zp\java\spring-tutorial\spring-orm\spring-mybatis\src\main\resources">
       <property name="enableSubPackages" value="true"/>
     </sqlMapGenerator>
 
     <!-- 生成DAO的包名和位置-->
     <javaClientGenerator targetPackage="io.github.dunwu.spring.orm.mapper"
-                         targetProject="D:\01_Workspace\Project\zp\java\spring-notes\spring-orm\spring-mybatis\src\main\java"
+                         targetProject="D:\01_Workspace\Project\zp\java\spring-tutorial\spring-orm\spring-mybatis\src\main\java"
                          type="XMLMAPPER">
       <property name="enableSubPackages" value="true"/>
     </javaClientGenerator>

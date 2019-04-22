@@ -1,4 +1,4 @@
-# spring-notes
+# spring-tutorial
 
 > Spring 学习笔记。
 >
@@ -8,60 +8,60 @@
 >
 
 <p align="center">
-  <a href="https://dunwu.gitbooks.io/spring-notes/" target="_blank">
-    :point_right: spring-notes 文档在线阅读
+  <a href="https://dunwu.gitbooks.io/spring-tutorial/" target="_blank">
+    :point_right: spring-tutorial 文档在线阅读
   </a>
 </p>
 
 ## 内容
 
-spring-notes 参考 Spring 官方的技术划分，将技术内容分为以下部分：
+spring-tutorial 参考 Spring 官方的技术划分，将技术内容分为以下部分：
 
 **Core**
 
 > Spring 框架的核心技术。如；IOC 依赖注入、AOP、数据绑定等。
 
-**| [CODES](https://github.com/dunwu/spring-notes/tree/master/codes/core) | [DOCS](https://github.com/dunwu/spring-notes/tree/master/docs/spring/core) |**
+**| [CODES](https://github.com/dunwu/spring-tutorial/tree/master/codes/core) | [DOCS](https://github.com/dunwu/spring-tutorial/tree/master/docs/spring/core) |**
 
 **Data**
 
 > Spring 在数据库领域的应用。如：JDBC、ORM、事务等。
 
-**| [CODES](https://github.com/dunwu/spring-notes/tree/master/codes/data) | [DOCS](https://github.com/dunwu/spring-notes/tree/master/docs/spring/data) |**
+**| [CODES](https://github.com/dunwu/spring-tutorial/tree/master/codes/data) | [DOCS](https://github.com/dunwu/spring-tutorial/tree/master/docs/spring/data) |**
 
 **Web**
 
 > Spring 在 web 领域的应用。如：Spring MVC、WebSocket 等。
 
-**| [CODES](https://github.com/dunwu/spring-notes/tree/master/codes/web) | [DOCS](https://github.com/dunwu/spring-notes/tree/master/docs/spring/web) |**
+**| [CODES](https://github.com/dunwu/spring-tutorial/tree/master/codes/web) | [DOCS](https://github.com/dunwu/spring-tutorial/tree/master/docs/spring/web) |**
 
 **Integration**
 
 > Spring 与第三方框架、库集成。如：Cache、Scheduling、JMS、JMX 等。
 
-**| [CODES](https://github.com/dunwu/spring-notes/tree/master/codes/integration) | [DOCS](https://github.com/dunwu/spring-notes/tree/master/docs/spring/integration) |**
+**| [CODES](https://github.com/dunwu/spring-tutorial/tree/master/codes/integration) | [DOCS](https://github.com/dunwu/spring-tutorial/tree/master/docs/spring/integration) |**
 
 **Security**
 
 > Spring 在安全领域的应用。如：认证、授权 等。
 
-**| [CODES](https://github.com/dunwu/spring-notes/tree/master/codes/security) |**
+**| [CODES](https://github.com/dunwu/spring-tutorial/tree/master/codes/security) |**
 
 **Example**
 
 > Spring 实战示例。
 
-**| [CODES](https://github.com/dunwu/spring-notes/tree/master/codes/example) |**
+**| [CODES](https://github.com/dunwu/spring-tutorial/tree/master/codes/example) |**
 
 **面试**
 
 > Spring 面试问题 TOP 50
 
-**| [DOCS](https://github.com/dunwu/spring-notes/tree/master/docs/spring/spring-interview.md) |**
+**| [DOCS](https://github.com/dunwu/spring-tutorial/tree/master/docs/spring/spring-interview.md) |**
 
 ## 说明
 
-### 环境说明
+### 环境
 
 **重要库版本**
 
@@ -73,7 +73,7 @@ spring-notes 参考 Spring 官方的技术划分，将技术内容分为以下�
 | jetty-maven-plugin   | 9.4.8.v20171121 | [Jetty](http://www.eclipse.org/jetty/) 可作为 web 服务器和 servlet 容器。此插件可以免部署启动 web app。                                                                                                       |
 | tomcat7-maven-plugin | 2.2             | [Tomcat](https://tomcat.apache.org/index.html) 可作为 web 服务器和 servlet 容器。此插件可以免部署启动 web app。Tomcat 早已经发布 Tomcat8，但是 maven 插件 一直没有提供 tomcat8 的支持（最后更新为 2013 年）。 |
 
-### 项目说明
+### 项目
 
 - **`/codes`**：代码目录。
 - **`/docs`**：文档目录。
@@ -102,7 +102,7 @@ $ mvn jetty:run -Dmaven.test.skip=true
 
 `/docs` 遵循 [Gitbook](https://github.com/GitbookIO/gitbook) 规范，可以生成静态 html 电子书。
 
-> :point_right: [**spring-notes 文档在线阅读**](https://dunwu.gitbooks.io/spring-notes/)
+> :point_right: [**spring-tutorial 文档在线阅读**](https://dunwu.gitbooks.io/spring-tutorial/)
 >
 > 扩展学习：更多 Java 技术栈知识（JavaSE/JavaEE/Java 库/Java 工具/Java 框架）可以在 [java-stack](https://github.com/dunwu/java-stack) 了解。
 

@@ -3,21 +3,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-
-  <!-- [Part 1] BASIC SETTINGS BEGIN -->
-
-  <!-- MAVEN COORDINATE BEGIN -->
-  <artifactId>spring-notes</artifactId>
-  <packaging>pom</packaging>
-  <!-- MAVEN COORDINATE END -->
-
-  <!-- RELATIONSHIP SETTINGS BEGIN -->
   <parent>
     <groupId>io.github.dunwu</groupId>
-    <artifactId>spring-notes-parent</artifactId>
+    <artifactId>spring-tutorial-parent</artifactId>
     <version>1.0.3</version>
     <relativePath>parent</relativePath>
   </parent>
+  <artifactId>spring-tutorial</artifactId>
+  <packaging>pom</packaging>
+
   <modules>
     <module>parent</module>
     <module>core</module>
@@ -27,21 +21,13 @@
     <module>security</module>
     <module>example</module>
   </modules>
-  <!-- RELATIONSHIP SETTINGS END -->
 
-  <!-- PROPERTIES BEGIN -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>1.8</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
   </properties>
-  <!-- PROPERTIES END -->
-
-  <!-- [Part 1] BASIC SETTINGS END -->
-
-
-  <!-- [Part 2] BUILD SETTINGS BEGIN -->
   <build>
     <finalName>spring</finalName>
     <plugins>
@@ -64,13 +50,9 @@
       </plugin>
     </plugins>
   </build>
-  <!-- [Part 2] BUILD SETTINGS END -->
-
-
-  <!-- [Part 3] PROJECT INFO BEGIN -->
   <name>${project.artifactId}</name>
   <description>spring 学习笔记</description>
-  <url>https://github.com/dunwu/spring-notes</url>
+  <url>https://github.com/dunwu/spring-tutorial</url>
   <inceptionYear>2016-2017</inceptionYear>
   <licenses>
     <license>
@@ -87,20 +69,14 @@
       <timezone>+8</timezone>
     </developer>
   </developers>
-  <!-- [Part 3] PROJECT INFO END -->
-
-
-  <!-- [Part 4] ENVIRONMENT SETTINGS BEGIN -->
   <issueManagement>
     <system>Github</system>
-    <url>https://github.com/dunwu/spring-notes/issues</url>
+    <url>https://github.com/dunwu/spring-tutorial/issues</url>
   </issueManagement>
   <scm>
-    <url>https://github.com/dunwu/spring-notes</url>
-    <connection>scm:git:git://github.com/dunwu/spring-notes.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com:dunwu/spring-notes.git</developerConnection>
+    <url>https://github.com/dunwu/spring-tutorial</url>
+    <connection>scm:git:git://github.com/dunwu/spring-tutorial.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:dunwu/spring-tutorial.git</developerConnection>
   </scm>
-  <!-- [Part 4] ENVIRONMENT SETTINGS END -->
-
 
 </project>

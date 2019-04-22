@@ -8,7 +8,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>spring-notes</title>
+  <title>spring-tutorial</title>
   <link rel="icon" type="image/png" href="swagger-ui/images/favicon-32x32.png" sizes="32x32"/>
   <link rel="icon" type="image/png" href="swagger-ui/images/favicon-16x16.png" sizes="16x16"/>
   <link href='swagger-ui/css/typography.css' media='screen' rel='stylesheet' type='text/css'/>
@@ -36,7 +36,7 @@
 <body class="swagger-section">
 <div id='header'>
   <div class="swagger-ui-wrap">
-    <a id="logo" href="https://github.com/dunwu/spring-notes">spring-notes</a>
+    <a id="logo" href="https://github.com/dunwu/spring-tutorial">spring-tutorial</a>
   </div>
 </div>
 

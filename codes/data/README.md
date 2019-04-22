@@ -4,9 +4,9 @@
 
 ## 示例
 
-- **spring-notes-data-db** spring 集成不同数据源的范例。
+- **spring-tutorial-data-db** spring 集成不同数据源的范例。
 
-- **spring-notes-data-orm** spring 集成 orm 框架的范例。
+- **spring-tutorial-data-orm** spring 集成 orm 框架的范例。
 
   hibernate 和 mybatis 都是比较流行的 orm 框架。
 

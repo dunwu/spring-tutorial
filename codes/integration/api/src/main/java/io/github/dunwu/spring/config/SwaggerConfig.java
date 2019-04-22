@@ -56,7 +56,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         ApiInfo apiInfo = new ApiInfo("API 平台", "使用Swagger UI构建SpringMVC REST风格的可视化文档", "1.0.0",
-                "http://localhost:8089/spring-notes-integration-api/v2/api-docs", "forbreak@163.com",
+                "http://localhost:8089/spring-tutorial-integration-api/v2/api-docs", "forbreak@163.com",
                 "Apache License 2.0", "http://www.apache.org/licenses/LICENSE-2.0.html");
         return apiInfo;
     }
