@@ -374,7 +374,7 @@ Http 是一种网络通信协议。其本身和 Html 没有直接关系。
 
 - [Spring 对 WebSocket 支持的示例](https://github.com/dunwu/spring-notes/tree/master/codes/web/websocket)
 
-- [嵌入式 Jetty 服务器的 WebSocket 示例](https://github.com/dunwu/javaee-notes/tree/master/codes/websocket)
+- [嵌入式 Jetty 服务器的 WebSocket 示例](https://github.com/dunwu/javaee-tutorial/tree/master/codes/websocket)
 
   spring-websocket 和 jetty 9.3 版本似乎存在兼容性问题，Tomcat则木有问题。
 
