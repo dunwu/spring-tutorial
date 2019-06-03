@@ -33,7 +33,6 @@
 > Spring 在 web 领域的应用。如：Spring MVC、WebSocket 等。
 
 - [SpringMVC 简介](docs/web/spring-mvc-introduction.md)
-- [Spring 和 WebSocket](docs/web/spring-websocket.md)
 
 ## [集成](docs/integration/README.md)
 
@@ -95,7 +94,7 @@ $ mvn jetty:run -Dmaven.test.skip=true
 
 `/docs` 遵循 [Gitbook](https://github.com/GitbookIO/gitbook) 规范，可以生成静态 html 电子书。
 
-> :point_right: [**spring-tutorial 文档在线阅读**](https://dunwu.gitbooks.io/spring-tutorial/)
+> :point_right: [**spring-tutorial 文档在线阅读**](https://dunwu.github.io/spring-tutorial/)
 >
 > 扩展学习：更多 Java 技术栈知识（JavaSE/JavaEE/Java 库/Java 工具/Java 框架）可以在 [java-stack](https://github.com/dunwu/java-stack) 了解。
 
