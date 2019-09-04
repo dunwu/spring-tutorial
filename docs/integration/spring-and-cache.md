@@ -1,6 +1,20 @@
-# Spring 中使用 Cache
+# Spring 集成缓存
 
-Spring 中提供了缓存功能的抽象，允许你在底层灵活的替换缓存实现，而对上层暴露相同的缓存接口。
+> Spring 中提供了缓存功能的抽象，允许你在底层灵活的替换缓存实现，而对上层暴露相同的缓存接口。
+
+<!-- TOC depthFrom:2 depthTo:3 -->
+
+- [缓存接口](#缓存接口)
+    - [开启注解](#开启注解)
+    - [缓存注解使用](#缓存注解使用)
+- [缓存存储](#缓存存储)
+    - [使用 ConcurrentHashMap 作为缓存](#使用-concurrenthashmap-作为缓存)
+    - [使用 Ehcache 作为缓存](#使用-ehcache-作为缓存)
+    - [使用 Caffeine 作为缓存](#使用-caffeine-作为缓存)
+- [示例代码](#示例代码)
+- [参考资料](#参考资料)
+
+<!-- /TOC -->
 
 ## 缓存接口
 
@@ -109,43 +123,102 @@ Spring 允许通过配置方式接入多种不同的缓存存储。用户可以�
 
 不同的缓存存储，具有不同的性能和特性，如果想了解具体原理，可以参考：[全面理解缓存原理](https://dunwu.github.io/javaweb/#/technology/cache/cache-theory?id=%e5%85%a8%e9%9d%a2%e7%90%86%e8%a7%a3%e7%bc%93%e5%ad%98%e5%8e%9f%e7%90%86)。这里不再赘述。
 
-### 使用 ConcurrentHashMap 作为存储
+### 使用 ConcurrentHashMap 作为缓存
 
-### 使用 Ehcache 作为存储
-
-`org.springframework.cache.ehcache.EhCacheManagerFactoryBean`这个类的作用是加载 Ehcache 配置文件。
-`org.springframework.cache.ehcache.EhCacheCacheManager`这个类的作用是支持 net.sf.ehcache.CacheManager。
-
-*spring-ehcache.xml*的配置
+参考配置：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:cache="http://www.springframework.org/schema/cache"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-        http://www.springframework.org/schema/cache
-        http://www.springframework.org/schema/cache/spring-cache-3.2.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:cache="http://www.springframework.org/schema/cache" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+         http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
 
-  <description>ehcache缓存配置管理文件</description>
+  <description>使用 ConcurrentHashMap 作为 Spring 缓存</description>
+
+  <!--配置参考：https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#cache-store-configuration-->
+
+  <context:component-scan base-package="io.github.dunwu.spring.cache"/>
+
+  <bean id="simpleCacheManager" class="org.springframework.cache.support.SimpleCacheManager">
+    <property name="caches">
+      <set>
+        <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean" p:name="default"/>
+        <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean" p:name="users"/>
+      </set>
+    </property>
+  </bean>
+
+  <cache:annotation-driven cache-manager="simpleCacheManager"/>
+</beans>
+```
+
+### 使用 Ehcache 作为缓存
+
+参考配置：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+         http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+  <description>使用 EhCache 作为 Spring 缓存</description>
+
+  <!--配置参考：https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#cache-store-configuration-->
+
+  <context:component-scan base-package="io.github.dunwu.spring.cache"/>
 
   <bean id="ehcache" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
     <property name="configLocation" value="classpath:ehcache/ehcache.xml"/>
   </bean>
 
-  <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+  <bean id="ehcacheCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
     <property name="cacheManager" ref="ehcache"/>
   </bean>
 
-  <!-- 启用缓存注解开关 -->
-  <cache:annotation-driven cache-manager="cacheManager"/>
+  <cache:annotation-driven cache-manager="ehcacheCacheManager"/>
+</beans>
+```
+
+ehcache.xml 中的配置内容完全符合 Ehcache 的官方配置标准。
+
+### 使用 Caffeine 作为缓存
+
+参考配置：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+         http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+  <description>使用 Caffeine 作为 Spring 缓存</description>
+
+  <!--配置参考：https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#cache-store-configuration-->
+
+  <context:component-scan base-package="io.github.dunwu.spring.cache"/>
+
+  <bean id="caffeineCacheManager" class="org.springframework.cache.caffeine.CaffeineCacheManager"/>
+
+  <cache:annotation-driven cache-manager="caffeineCacheManager"/>
 </beans>
 ```
 
 ## 示例代码
 
-示例代码地址：
+我的示例代码地址：[spring-examples-integration-cache](https://github.com/dunwu/spring-tutorial/tree/master/spring-examples/spring-examples-integration/spring-examples-integration-cache)
 
 ## 参考资料
 

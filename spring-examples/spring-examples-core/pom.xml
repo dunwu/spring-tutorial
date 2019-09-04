@@ -18,6 +18,7 @@
   <modules>
     <module>spring-examples-core-ioc</module>
     <module>spring-examples-core-aop</module>
+    <module>spring-examples-core-resouces</module>
     <module>spring-examples-core-validation</module>
   </modules>
 </project>

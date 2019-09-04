@@ -19,6 +19,7 @@
 
 - [Spring IoC](core/ioc.md)
 - [Spring AOP](core/aop.md)
+- [Spring Resources](core/spring-and-resources.md)
 
 ## 数据
 
