@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.github.dunwu.spring</groupId>
+  <artifactId>spring-tutorial</artifactId>
+  <version>1.0.4</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>spring-examples</module>
+  </modules>
+
+  <name>${project.artifactId}</name>
+  <description>spring 学习笔记</description>
+  <url>https://github.com/dunwu/spring-tutorial</url>
+  <inceptionYear>2016-2019</inceptionYear>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <name>Zhang Peng</name>
+      <email>forbreak@163.com</email>
+      <timezone>+8</timezone>
+    </developer>
+  </developers>
+  <issueManagement>
+    <system>Github</system>
+    <url>https://github.com/dunwu/spring-tutorial/issues</url>
+  </issueManagement>
+  <scm>
+    <url>https://github.com/dunwu/spring-tutorial</url>
+    <connection>scm:git:git://github.com/dunwu/spring-tutorial.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:dunwu/spring-tutorial.git</developerConnection>
+  </scm>
+</project>

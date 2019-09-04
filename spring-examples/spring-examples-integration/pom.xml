@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.github.dunwu.spring</groupId>
+    <artifactId>spring-examples-parent</artifactId>
+    <version>1.0.4</version>
+    <relativePath>../spring-examples-parent</relativePath>
+  </parent>
+  
+  <artifactId>spring-examples-integration</artifactId>
+  <packaging>pom</packaging>
+  <description>Remoting, JMS, JCA, JMX, Email, Tasks, Scheduling, Cache.</description>
+
+  <modules>
+    <module>spring-examples-integration-cache</module>
+    <module>spring-examples-integration-libs</module>
+    <module>spring-examples-integration-rmi</module>
+    <module>spring-examples-integration-rpc</module>
+    <module>spring-examples-integration-scheduler</module>
+    <module>spring-examples-integration-swagger</module>
+  </modules>
+</project>

@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <!-- [Part 1] BASIC SETTINGS BEGIN -->
+
+  <!-- MAVEN COORDINATE BEGIN -->
+  <artifactId>spring-examples-data-jdbc</artifactId>
+  <packaging>pom</packaging>
+  <!-- MAVEN COORDINATE END -->
+
+  <!-- RELATIONSHIP SETTINGS BEGIN -->
+  <parent>
+    <groupId>io.github.dunwu.spring</groupId>
+    <artifactId>spring-examples-parent</artifactId>
+    <version>1.0.4</version>
+    <relativePath>../../spring-examples-parent</relativePath>
+  </parent>
+  <dependencies>
+    <!-- db start -->
+    <dependency>
+      <groupId>org.mongodb</groupId>
+      <artifactId>mongo-java-driver</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.mongodb</groupId>
+      <artifactId>mongodb-driver-async</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+    </dependency>
+    <!-- db end -->
+
+    <!-- log begin -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.logback-extensions</groupId>
+      <artifactId>logback-ext-spring</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+    </dependency>
+    <!-- log end -->
+
+    <!-- spring begin -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+    </dependency>
+    <!-- spring end -->
+
+    <!-- spring data begin -->
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-redis</artifactId>
+    </dependency>
+    <!-- spring data end -->
+
+  </dependencies>
+  <!-- RELATIONSHIP SETTINGS END -->
+
+  <!-- PROPERTIES BEGIN -->
+  <properties>
+  </properties>
+  <!-- PROPERTIES END -->
+
+  <!-- [Part 1] BASIC SETTINGS END -->
+
+
+  <!-- [Part 3] PROJECT INFO BEGIN -->
+  <name>${project.artifactId}</name>
+  <description>[spring][data][jdbc]本项目展示 Spring 中如何使用 JDBC 访问数据</description>
+  <!-- [Part 3] PROJECT INFO END -->
+
+
+</project>

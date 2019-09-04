@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.github.dunwu.spring</groupId>
+    <artifactId>spring-tutorial</artifactId>
+    <version>1.0.4</version>
+    <relativePath>..</relativePath>
+  </parent>
+
+  <artifactId>spring-examples</artifactId>
+  <packaging>pom</packaging>
+  <description>Spring 样例工程</description>
+
+  <modules>
+    <module>spring-examples-parent</module>
+    <module>spring-examples-core</module>
+    <module>spring-examples-data</module>
+    <module>spring-examples-web</module>
+    <module>spring-examples-integration</module>
+    <module>spring-examples-security</module>
+  </modules>
+
+  <!--<build>-->
+    <!--<finalName>${project.artifactId}</finalName>-->
+    <!--<plugins>-->
+      <!--<plugin>-->
+        <!--<artifactId>maven-assembly-plugin</artifactId>-->
+        <!--<configuration>-->
+          <!--<descriptors>-->
+            <!--<descriptor>assembly.xml</descriptor>-->
+          <!--</descriptors>-->
+        <!--</configuration>-->
+        <!--<executions>-->
+          <!--<execution>-->
+            <!--<id>make-assembly</id>-->
+            <!--<phase>package</phase>-->
+            <!--<goals>-->
+              <!--<goal>single</goal>-->
+            <!--</goals>-->
+          <!--</execution>-->
+        <!--</executions>-->
+      <!--</plugin>-->
+    <!--</plugins>-->
+  <!--</build>-->
+</project>
