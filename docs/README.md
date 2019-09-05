@@ -7,15 +7,18 @@
 > - 🔁 项目同步维护：[Github](https://github.com/dunwu/spring-tutorial/) | [Gitee](https://gitee.com/turnon/spring-tutorial/)
 > - 📖 电子书阅读：[Github Pages](https://dunwu.github.io/spring-tutorial/) | [Gitee Pages](http://turnon.gitee.io/spring-tutorial/)
 
-## [Spring 面经](spring-interview.md)
+|      0️⃣       |      1️⃣       |      2️⃣       |     3️⃣      |      4️⃣       |      5️⃣       |
+| :-----------: | :-----------: | :-----------: | :---------: | :-----------: | :-----------: |
+| [综合](#综合) | [核心](#核心) | [数据](#数据) | [Web](#Web) | [集成](#集成) | [安全](#安全) |
 
-## 简介
+## 综合
 
-- [Spring 概述](introduction/spring-overview.md)
+- [Spring 面经](spring-interview.md)
+- [Spring 概述](spring-overview.md)
 
 ## 核心
 
-> Spring 框架的核心技术。如；IOC 依赖注入、AOP、数据绑定等。
+> [核心](core/README.md) 章节主要针对：Spring 框架的核心技术。如；IOC 依赖注入、AOP、数据绑定等。
 
 - [Spring IoC](core/ioc.md)
 - [Spring AOP](core/aop.md)
@@ -23,7 +26,7 @@
 
 ## 数据
 
-> Spring 在数据库领域的应用。如：JDBC、ORM、事务等。
+> [数据](data/README.md) 章节主要针对：Spring 在数据库领域的应用。如：JDBC、ORM、事务等。
 
 - [Spring 的数据访问策略](data/data-access-in-spring.md)
 - [Spring 中使用 JDBC 访问数据](data/spring-and-jdbc.md)
@@ -31,23 +34,23 @@
 
 ## Web
 
-> Spring 在 web 领域的应用。如：Spring MVC、WebSocket 等。
+> [Web](web/README.md) 章节主要针对：Spring 在 web 领域的应用。如：Spring MVC、WebSocket 等。
 
 - [SpringMVC 简介](web/spring-mvc-introduction.md)
 
 ## 集成
 
-> Spring 与第三方框架、库集成。如：Cache、Scheduling、JMS、JMX 等。
+> [集成](integration/README.md) 章节主要针对：Spring 与第三方框架、库集成。如：Cache、Scheduling、JMS、JMX 等。
 
 - [Spring 集成 Dubbo](integration/spring-and-dubbo.md)
 - [Spring 集成缓存](integration/spring-and-cache.md)
 - [Spring 集成调度器](integration/spring-and-scheduler.md)
 
-## Security
+## 安全
 
 > Spring 在安全领域的应用。如：认证、授权 等。
 
-## 附录
+## [附录](appendix/README.md)
 
 - [资源](appendix/resources.md)
 - [spring 4 升级踩雷指南](appendix/spring4-upgrade.md)
