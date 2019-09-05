@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+        version="2.0">
+
+  <description>layout-framework tag library</description>
+  <display-name>layout-framework tag</display-name>
+  <tlib-version>1.0</tlib-version>
+  <short-name>layout</short-name>
+  <uri>http://io.github.dunwu/layout</uri>
+
+  <tag>
+    <description>
+      block tag
+    </description>
+    <name>block</name>
+    <tag-class>io.github.dunwu.web.jsp.BlockTag</tag-class>
+    <body-content>JSP</body-content>
+    <attribute>
+      <description>
+        block name
+      </description>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <description>
+      override desc
+    </description>
+    <name>override</name>
+    <tag-class>io.github.dunwu.web.jsp.OverrideTag</tag-class>
+    <body-content>JSP</body-content>
+    <attribute>
+      <description>
+        override name, must be equals block name for override
+      </description>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+</taglib>

@@ -3,23 +3,31 @@
          xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
 
-
-  <!-- [Part 1] BASIC SETTINGS BEGIN -->
-
-  <!-- MAVEN COORDINATE BEGIN -->
-  <artifactId>spring-examples-web-helloworld</artifactId>
-  <packaging>war</packaging>
-  <!-- MAVEN COORDINATE END -->
-
-  <!-- RELATIONSHIP SETTINGS BEGIN -->
   <parent>
     <groupId>io.github.dunwu.spring</groupId>
     <artifactId>spring-examples-parent</artifactId>
     <version>1.0.4</version>
     <relativePath>../../spring-examples-parent</relativePath>
   </parent>
+
+  <artifactId>spring-examples-web-helloworld</artifactId>
+  <packaging>war</packaging>
+  <description>spring web 之 HelloWorld 示例</description>
+
+  <properties>
+    <jetty.version>9.4.12.v20180830</jetty.version>
+  </properties>
+
   <dependencies>
-    <!-- log begin -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+    </dependency>
+
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
@@ -28,13 +36,7 @@
       <groupId>org.logback-extensions</groupId>
       <artifactId>logback-ext-spring</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>jcl-over-slf4j</artifactId>
-    </dependency>
-    <!-- log end -->
 
-    <!-- javaee begin -->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
@@ -45,31 +47,19 @@
       <artifactId>javax.servlet.jsp-api</artifactId>
       <scope>provided</scope>
     </dependency>
-    <!-- javaee end -->
+    <dependency>
+      <groupId>javax.servlet.jsp.jstl</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
 
-    <!-- spring begin -->
     <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context-support</artifactId>
+      <groupId>io.github.dunwu</groupId>
+      <artifactId>dunwu-util</artifactId>
+      <version>0.4.6</version>
     </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-webmvc</artifactId>
-    </dependency>
-    <!-- spring end -->
   </dependencies>
-  <!-- RELATIONSHIP SETTINGS END -->
 
-  <!-- PROPERTIES BEGIN -->
-  <!-- PROPERTIES BEGIN -->
-  <properties>
-  </properties>
-  <!-- PROPERTIES END -->
-
-  <!-- [Part 1] BASIC SETTINGS END -->
-
-
-  <!-- [Part 2] BUILD SETTINGS BEGIN -->
   <build>
     <plugins>
       <plugin>
@@ -95,13 +85,4 @@
       </plugin>
     </plugins>
   </build>
-  <!-- [Part 2] BUILD SETTINGS END -->
-
-
-  <!-- [Part 3] PROJECT INFO BEGIN -->
-  <name>${project.artifactId}</name>
-  <description>spring 学习笔记之 helloworld</description>
-  <!-- [Part 3] PROJECT INFO END -->
-
-
 </project>

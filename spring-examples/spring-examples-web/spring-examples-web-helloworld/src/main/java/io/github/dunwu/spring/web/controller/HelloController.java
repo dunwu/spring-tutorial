@@ -1,4 +1,4 @@
-package io.github.dunwu.spring.controller;
+package io.github.dunwu.spring.web.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

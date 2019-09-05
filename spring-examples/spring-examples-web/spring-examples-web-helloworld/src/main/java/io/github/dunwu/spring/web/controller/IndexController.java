@@ -1,13 +1,11 @@
-/**
- * The Apache License 2.0
- * Copyright (c) 2016 Zhang Peng
- */
-package io.github.dunwu.spring.controller;
+package io.github.dunwu.spring.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.Date;
 
 /**
  * @author Zhang Peng
@@ -23,6 +21,14 @@ public class IndexController {
     public ModelAndView index() {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("index");
+        return mav;
+    }
+
+    @RequestMapping(value = "/welcome", method = RequestMethod.GET)
+    public ModelAndView welcome() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("welcome");
+        mav.addObject("time", new Date());
         return mav;
     }
 }
