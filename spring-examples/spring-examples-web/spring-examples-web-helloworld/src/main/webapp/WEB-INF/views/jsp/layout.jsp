@@ -23,7 +23,7 @@
   }
 
   .nav-link {
-    font-size: 24px;
+    font-size: 18px;
     color: #399ab2;
   }
 
@@ -64,16 +64,26 @@
     <nav class="col-md-2 d-none d-md-block bg-light sidebar">
       <div class="sidebar-sticky" style="padding: 10px">
         <h5 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-          <span>示例清单</span>
+          <span style="font-size: 24px;">示例清单</span>
         </h5>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
             <c:choose>
               <c:when test="${param.menuId eq 'hello'}">
-                <a class="nav-link active" href="${ctx}/hello/name?name=zhangsan">hello</a>
+                <a class="nav-link active" href="${ctx}/hello?name=zhangsan">HelloWorld 示例</a>
               </c:when>
               <c:otherwise>
-                <a class="nav-link" href="${ctx}/hello/name?name=zhangsan">hello</a>
+                <a class="nav-link" href="${ctx}/hello?name=zhangsan">HelloWorld 示例</a>
+              </c:otherwise>
+            </c:choose>
+          </li>
+          <li class="nav-item">
+            <c:choose>
+              <c:when test="${param.menuId eq 'log'}">
+                <a class="nav-link active" href="${ctx}/log">日志示例</a>
+              </c:when>
+              <c:otherwise>
+                <a class="nav-link" href="${ctx}/log">日志示例</a>
               </c:otherwise>
             </c:choose>
           </li>

@@ -11,13 +11,18 @@
   </parent>
   <artifactId>spring-examples-web-mvc</artifactId>
   <packaging>war</packaging>
-  <name>${project.artifactId}</name>
-  <description>spring 学习笔记之 MVC</description>
+  <description>spring mvc</description>
 
   <properties>
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>io.github.dunwu.spring</groupId>
+      <artifactId>spring-examples-common</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
     <!-- IOC and AOP enhance begin -->
     <!-- JSR 330 -->
     <dependency>
@@ -31,56 +36,6 @@
       <version>1.8.1</version>
     </dependency>
     <!-- IOC and AOP enhance end -->
-
-    <!-- log begin -->
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <version>1.1.3</version>
-    </dependency>
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-core</artifactId>
-      <version>1.1.3</version>
-    </dependency>
-    <dependency>
-      <groupId>org.logback-extensions</groupId>
-      <artifactId>logback-ext-spring</artifactId>
-      <version>0.1.2</version>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>jcl-over-slf4j</artifactId>
-      <version>1.7.12</version>
-    </dependency>
-    <!-- log end -->
-
-    <!-- jetty begin -->
-    <dependency>
-      <groupId>org.eclipse.jetty</groupId>
-      <artifactId>jetty-webapp</artifactId>
-      <version>${jetty.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.eclipse.jetty</groupId>
-      <artifactId>jetty-annotations</artifactId>
-      <version>${jetty.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.eclipse.jetty</groupId>
-      <artifactId>apache-jsp</artifactId>
-      <version>${jetty.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.eclipse.jetty</groupId>
-      <artifactId>apache-jstl</artifactId>
-      <version>${jetty.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- jetty end -->
 
     <!-- json begin -->
     <dependency>
@@ -211,12 +166,10 @@
     <dependency>
       <groupId>commons-fileupload</groupId>
       <artifactId>commons-fileupload</artifactId>
-      <version>1.3.3</version>
     </dependency>
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
-      <version>2.0.1</version>
     </dependency>
     <!-- utils end -->
   </dependencies>
@@ -251,42 +204,11 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>aspectj-maven-plugin</artifactId>
-        <!-- Have to use version 1.2 since version 1.3 does not appear to work with ITDs -->
-        <dependencies>
-          <!-- You must use Maven 2.0.9 or above or these are ignored (see MNG-2972) -->
-          <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjrt</artifactId>
-            <version>1.8.1</version>
-          </dependency>
-          <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjtools</artifactId>
-            <version>1.8.1</version>
-          </dependency>
-        </dependencies>
-        <executions>
-          <execution>
-            <goals>
-              <goal>compile</goal>
-              <goal>test-compile</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <outxml>true</outxml>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
-        </configuration>
-      </plugin>
-      <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
         <configuration>
           <port>8089</port>
-          <path>/${artifactId}</path>
+          <path>/${project.artifactId}</path>
           <uriEncoding>UTF-8</uriEncoding>
         </configuration>
       </plugin>
@@ -298,7 +220,7 @@
             <port>8089</port>
           </httpConnector>
           <webApp>
-            <contextPath>/${artifactId}</contextPath>
+            <contextPath>/${project.artifactId}</contextPath>
           </webApp>
         </configuration>
       </plugin>

@@ -22,7 +22,8 @@
 
     <!-- 核心库版本 -->
     <dunwu.version>0.4.6</dunwu.version>
-    <jetty.version>9.4.12.v20180830</jetty.version>
+    <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>
+    <jetty-maven-plugin.version>9.4.12.v20180830</jetty-maven-plugin.version>
     <shiro.version>1.4.0</shiro.version>
     <dubbo.version>2.5.6</dubbo.version>
   </properties>
@@ -98,12 +99,12 @@
         <plugin>
           <groupId>org.apache.tomcat.maven</groupId>
           <artifactId>tomcat7-maven-plugin</artifactId>
-          <version>2.2</version>
+          <version>${tomcat7-maven-plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.eclipse.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
-          <version>${jetty.version}</version>
+          <version>${jetty-maven-plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>

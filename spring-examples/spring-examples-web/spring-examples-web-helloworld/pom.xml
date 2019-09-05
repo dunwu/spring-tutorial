@@ -14,11 +14,12 @@
   <packaging>war</packaging>
   <description>spring web 之 HelloWorld 示例</description>
 
-  <properties>
-    <jetty.version>9.4.12.v20180830</jetty.version>
-  </properties>
-
   <dependencies>
+    <dependency>
+      <groupId>io.github.dunwu.spring</groupId>
+      <artifactId>spring-examples-common</artifactId>
+      <version>${project.version}</version>
+    </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context-support</artifactId>
@@ -26,37 +27,6 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.logback-extensions</groupId>
-      <artifactId>logback-ext-spring</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>javax.servlet.jsp</groupId>
-      <artifactId>javax.servlet.jsp-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>javax.servlet.jsp.jstl</groupId>
-      <artifactId>jstl</artifactId>
-      <version>1.2</version>
-    </dependency>
-
-    <dependency>
-      <groupId>io.github.dunwu</groupId>
-      <artifactId>dunwu-util</artifactId>
-      <version>0.4.6</version>
     </dependency>
   </dependencies>
 
@@ -67,7 +37,7 @@
         <artifactId>tomcat7-maven-plugin</artifactId>
         <configuration>
           <port>8089</port>
-          <path>/${artifactId}</path>
+          <path>/${project.artifactId}</path>
           <uriEncoding>UTF-8</uriEncoding>
         </configuration>
       </plugin>
@@ -79,7 +49,7 @@
             <port>8089</port>
           </httpConnector>
           <webApp>
-            <contextPath>/${artifactId}</contextPath>
+            <contextPath>/${project.artifactId}</contextPath>
           </webApp>
         </configuration>
       </plugin>

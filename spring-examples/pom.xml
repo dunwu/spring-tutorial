@@ -16,33 +16,11 @@
 
   <modules>
     <module>spring-examples-parent</module>
+    <module>spring-examples-common</module>
     <module>spring-examples-core</module>
     <module>spring-examples-data</module>
     <module>spring-examples-web</module>
     <module>spring-examples-integration</module>
     <module>spring-examples-security</module>
   </modules>
-
-  <!--<build>-->
-    <!--<finalName>${project.artifactId}</finalName>-->
-    <!--<plugins>-->
-      <!--<plugin>-->
-        <!--<artifactId>maven-assembly-plugin</artifactId>-->
-        <!--<configuration>-->
-          <!--<descriptors>-->
-            <!--<descriptor>assembly.xml</descriptor>-->
-          <!--</descriptors>-->
-        <!--</configuration>-->
-        <!--<executions>-->
-          <!--<execution>-->
-            <!--<id>make-assembly</id>-->
-            <!--<phase>package</phase>-->
-            <!--<goals>-->
-              <!--<goal>single</goal>-->
-            <!--</goals>-->
-          <!--</execution>-->
-        <!--</executions>-->
-      <!--</plugin>-->
-    <!--</plugins>-->
-  <!--</build>-->
 </project>

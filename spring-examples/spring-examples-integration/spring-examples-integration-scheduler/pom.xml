@@ -95,7 +95,7 @@
         <artifactId>tomcat7-maven-plugin</artifactId>
         <configuration>
           <port>8089</port>
-          <path>/${artifactId}</path>
+          <path>/${project.artifactId}</path>
           <uriEncoding>UTF-8</uriEncoding>
         </configuration>
       </plugin>
@@ -107,7 +107,7 @@
             <port>8089</port>
           </httpConnector>
           <webApp>
-            <contextPath>/${artifactId}</contextPath>
+            <contextPath>/${project.artifactId}</contextPath>
           </webApp>
         </configuration>
       </plugin>
