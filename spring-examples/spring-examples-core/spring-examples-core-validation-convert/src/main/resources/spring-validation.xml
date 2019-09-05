@@ -9,5 +9,5 @@
   <!-- 设置后，将查找使用@Component(@Controller是它的一种具体化)注解的类并将其注册为Bean -->
   <context:component-scan base-package="io.github.dunwu.spring"/>
 
-  <bean id="customerValidatorConfig" class="io.github.dunwu.spring.core.validation.CustomerValidatorConfig"/>
+  <bean id="personValidatorConfig" class="io.github.dunwu.spring.core.validation.PersonValidatorConfig"/>
 </beans>

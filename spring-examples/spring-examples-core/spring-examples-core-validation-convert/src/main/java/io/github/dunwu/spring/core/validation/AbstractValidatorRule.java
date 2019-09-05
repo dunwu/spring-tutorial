@@ -2,6 +2,7 @@ package io.github.dunwu.spring.core.validation;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
 
 import java.beans.PropertyDescriptor;
 import java.lang.annotation.Annotation;
@@ -17,16 +18,12 @@ public abstract class AbstractValidatorRule implements ValidatorRule {
         PropertyDescriptor propertyDescriptor = BeanUtils.getPropertyDescriptor(target.getClass(), field.getName());
         Method reader = propertyDescriptor.getReadMethod();
         Object property = reader.invoke(target);
-        validProperty(annotation, property, new PostHandler() {
-            @Override
-            public void postHanle(String errorCode, String message) {
-                errors.rejectValue(field.getName(), errorCode, message);
-            }
-        });
+        validProperty(annotation, property,
+                      (errorCode, message) -> errors.rejectValue(field.getName(), errorCode, message));
     }
 
-    static interface PostHandler {
-        public void postHanle(String errorCode, String message);
+    interface PostHandler {
+        void postHanle(String errorCode, String message);
     }
 
     public abstract void validProperty(Annotation annotation, Object property, PostHandler postHandler);

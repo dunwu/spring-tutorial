@@ -16,9 +16,9 @@
   </description>
 
   <modules>
-    <module>spring-examples-core-ioc</module>
     <module>spring-examples-core-aop</module>
+    <module>spring-examples-core-ioc</module>
     <module>spring-examples-core-resouces</module>
-    <module>spring-examples-core-validation</module>
+    <module>spring-examples-core-validation-convert</module>
   </modules>
 </project>

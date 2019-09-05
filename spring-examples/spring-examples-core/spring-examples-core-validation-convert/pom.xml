@@ -10,8 +10,9 @@
     <relativePath>../../spring-examples-parent</relativePath>
   </parent>
 
-  <artifactId>spring-examples-core-validation</artifactId>
+  <artifactId>spring-examples-core-validation-convert</artifactId>
   <packaging>jar</packaging>
+  <description>Spring 校验、类型转换示例</description>
 
   <dependencies>
     <dependency>
@@ -26,6 +27,12 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
       <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.github.dunwu</groupId>
+      <artifactId>dunwu-util</artifactId>
+      <version>0.4.6</version>
     </dependency>
   </dependencies>
 </project>

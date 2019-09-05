@@ -8,6 +8,7 @@ import java.util.Date;
 
 @ValidRule
 public class DateValidatorRule extends AbstractValidatorRule {
+
     @Override
     public boolean support(Annotation annotation) {
         return annotation instanceof DateString;
@@ -25,9 +26,7 @@ public class DateValidatorRule extends AbstractValidatorRule {
         try {
             SimpleDateFormat sdf = new SimpleDateFormat(pattern);
             return sdf.parse(property);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        } catch (java.text.ParseException e) {
+        } catch (ParseException | java.text.ParseException e) {
             e.printStackTrace();
         }
         return null;
