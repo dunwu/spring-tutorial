@@ -21,7 +21,7 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
 
     <!-- 核心库版本 -->
-    <dunwu.version>0.4.6</dunwu.version>
+    <dunwu.version>0.4.7</dunwu.version>
     <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>
     <jetty-maven-plugin.version>9.4.12.v20180830</jetty-maven-plugin.version>
     <shiro.version>1.4.0</shiro.version>
@@ -30,8 +30,14 @@
 
   <dependencies>
     <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
+      <version>4.12</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
