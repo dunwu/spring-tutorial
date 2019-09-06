@@ -25,6 +25,7 @@
     <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>
     <jetty-maven-plugin.version>9.4.12.v20180830</jetty-maven-plugin.version>
     <shiro.version>1.4.0</shiro.version>
+    <swagger.version>2.9.2</swagger.version>
     <dubbo.version>2.5.6</dubbo.version>
   </properties>
 
@@ -85,6 +86,17 @@
         <groupId>org.apache.shiro</groupId>
         <artifactId>shiro-spring</artifactId>
         <version>${shiro.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger2</artifactId>
+        <version>${swagger.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger-ui</artifactId>
+        <version>${swagger.version}</version>
       </dependency>
       <dependency>
         <groupId>dom4j</groupId>

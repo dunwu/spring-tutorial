@@ -3,55 +3,23 @@
          xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
 
-
-  <!-- [Part 1] BASIC SETTINGS BEGIN -->
-
-  <!-- MAVEN COORDINATE BEGIN -->
-  <artifactId>spring-examples-integration-swagger</artifactId>
-  <packaging>war</packaging>
-  <!-- MAVEN COORDINATE END -->
-
-  <!-- RELATIONSHIP SETTINGS BEGIN -->
   <parent>
     <groupId>io.github.dunwu.spring</groupId>
     <artifactId>spring-examples-parent</artifactId>
     <version>1.0.4</version>
     <relativePath>../../spring-examples-parent</relativePath>
   </parent>
+
+  <artifactId>spring-examples-integration-swagger</artifactId>
+  <packaging>war</packaging>
+  <description>spring + swagger 自动生成 REST API 在线文档</description>
+
   <dependencies>
-    <!-- javaee begin -->
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
+      <groupId>io.github.dunwu.spring</groupId>
+      <artifactId>spring-examples-common</artifactId>
+      <version>1.0.4</version>
     </dependency>
-    <dependency>
-      <groupId>javax.servlet.jsp</groupId>
-      <artifactId>javax.servlet.jsp-api</artifactId>
-    </dependency>
-    <!-- javaee end -->
-
-    <!-- json begin -->
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-    </dependency>
-
-    <!-- log begin -->
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.logback-extensions</groupId>
-      <artifactId>logback-ext-spring</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>jcl-over-slf4j</artifactId>
-    </dependency>
-    <!-- log end -->
-
-    <!-- spring begin -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context-support</artifactId>
@@ -60,28 +28,20 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
     </dependency>
-    <!-- spring end -->
-
-    <!-- swagger begin -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+    </dependency>
     <dependency>
       <groupId>io.springfox</groupId>
       <artifactId>springfox-swagger2</artifactId>
-      <version>2.3.0</version>
     </dependency>
-    <!-- swagger begin -->
-
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger-ui</artifactId>
+    </dependency>
   </dependencies>
-  <!-- RELATIONSHIP SETTINGS END -->
 
-  <!-- PROPERTIES BEGIN -->
-  <properties>
-  </properties>
-  <!-- PROPERTIES END -->
-
-  <!-- [Part 1] BASIC SETTINGS END -->
-
-
-  <!-- [Part 2] BUILD SETTINGS BEGIN -->
   <build>
     <plugins>
       <plugin>
@@ -89,22 +49,13 @@
         <artifactId>jetty-maven-plugin</artifactId>
         <configuration>
           <httpConnector>
-            <port>8089</port>
+            <port>8080</port>
           </httpConnector>
           <webApp>
-          <contextPath>/${project.artifactId}</contextPath>
+            <contextPath>/</contextPath>
           </webApp>
         </configuration>
       </plugin>
     </plugins>
   </build>
-  <!-- [Part 2] BUILD SETTINGS END -->
-
-
-  <!-- [Part 3] PROJECT INFO BEGIN -->
-  <name>${project.artifactId}</name>
-  <description>spring 学习笔记之 api</description>
-  <!-- [Part 3] PROJECT INFO END -->
-
-
 </project>

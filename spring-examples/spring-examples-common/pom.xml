@@ -57,7 +57,7 @@
     <!--util-->
     <dependency>
       <groupId>io.github.dunwu</groupId>
-      <artifactId>dunwu-util</artifactId>
+      <artifactId>dunwu-common</artifactId>
       <version>0.4.7</version>
     </dependency>
   </dependencies>

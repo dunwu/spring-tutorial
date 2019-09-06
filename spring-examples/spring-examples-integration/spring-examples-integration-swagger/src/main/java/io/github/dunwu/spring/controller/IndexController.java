@@ -1,7 +1,3 @@
-/**
- * The Apache License 2.0
- * Copyright (c) 2016 Zhang Peng
- */
 package io.github.dunwu.spring.controller;
 
 import org.springframework.stereotype.Controller;
@@ -21,10 +17,10 @@ public class IndexController {
      * <p>
      * 访问形式：http://localhost:8089/
      */
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/swagger", method = RequestMethod.GET)
     public ModelAndView index() {
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("index");
+        mav.setViewName("swagger-ui");
         return mav;
     }
 }

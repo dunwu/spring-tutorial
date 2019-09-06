@@ -10,6 +10,10 @@
     <servlet-name>mvc-dispatcher</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>/WEB-INF/applicationContext.xml</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>mvc-dispatcher</servlet-name>
@@ -37,17 +41,13 @@
   </filter-mapping>
   <!-- FILTER END -->
 
-  <!-- CONTEXT BEGIN -->
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/mvc-dispatcher-servlet.xml</param-value>
-  </context-param>
-  <!-- CONTEXT END -->
-
   <!-- LISTENER BEGIN -->
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
   <!-- LISTENER END -->
 
+  <welcome-file-list>
+    <welcome-file>/META-INF/resources/swagger-ui.html</welcome-file>
+  </welcome-file-list>
 </web-app>
