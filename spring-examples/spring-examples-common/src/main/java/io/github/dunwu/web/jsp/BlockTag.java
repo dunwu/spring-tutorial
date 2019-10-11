@@ -10,37 +10,40 @@ import java.io.IOException;
  */
 public class BlockTag extends TagSupport {
 
-    private static final long serialVersionUID = 5981092740359798010L;
-    private static final String BLOCK = "__jsp_override__";
+	private static final long serialVersionUID = 5981092740359798010L;
 
-    protected String name;
+	private static final String BLOCK = "__jsp_override__";
 
-    @Override
-    public int doStartTag() {
-        return getOverriedContent() == null ? EVAL_BODY_INCLUDE : SKIP_BODY;
-    }
+	protected String name;
 
-    @Override
-    public int doEndTag() throws JspException {
-        String overriedContent = getOverriedContent();
-        if (overriedContent == null) {
-            return EVAL_PAGE;
-        }
+	@Override
+	public int doStartTag() {
+		return getOverriedContent() == null ? EVAL_BODY_INCLUDE : SKIP_BODY;
+	}
 
-        try {
-            pageContext.getOut().write(overriedContent);
-        } catch (IOException e) {
-            throw new JspException("try to override jsp content failed, block name:" + name, e);
-        }
-        return EVAL_PAGE;
-    }
+	@Override
+	public int doEndTag() throws JspException {
+		String overriedContent = getOverriedContent();
+		if (overriedContent == null) {
+			return EVAL_PAGE;
+		}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+		try {
+			pageContext.getOut().write(overriedContent);
+		}
+		catch (IOException e) {
+			throw new JspException("try to override jsp content failed, block name:" + name, e);
+		}
+		return EVAL_PAGE;
+	}
 
-    private String getOverriedContent() {
-        String newName = BLOCK + name;
-        return (String) pageContext.getRequest().getAttribute(newName);
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	private String getOverriedContent() {
+		String newName = BLOCK + name;
+		return (String) pageContext.getRequest().getAttribute(newName);
+	}
+
 }

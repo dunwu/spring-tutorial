@@ -12,15 +12,15 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 @EnableWebSocket
 public class WebSocketConfig extends WebMvcConfigurerAdapter implements WebSocketConfigurer {
 
-    @Bean
-    public WebSocketHandler myHandler() {
-        return new MyWebSocketHandler();
-    }
+	@Bean
+	public WebSocketHandler myHandler() {
+		return new MyWebSocketHandler();
+	}
 
-    @Override
-    public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(myHandler(), "/ws").addInterceptors(new HandShake());
-        registry.addHandler(myHandler(), "/ws/sockjs").addInterceptors(new HandShake()).withSockJS();
-    }
+	@Override
+	public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
+		registry.addHandler(myHandler(), "/ws").addInterceptors(new HandShake());
+		registry.addHandler(myHandler(), "/ws/sockjs").addInterceptors(new HandShake()).withSockJS();
+	}
 
 }

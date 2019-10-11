@@ -1,20 +1,20 @@
 package io.github.dunwu.spring.mvc.convert;
 
-import static org.hamcrest.Matchers.startsWith;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
-
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
 import org.springframework.test.web.servlet.MockMvc;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
+
+import static org.hamcrest.Matchers.startsWith;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 public class ConvertControllerTests {
 
@@ -25,9 +25,7 @@ public class ConvertControllerTests {
 		FormattingConversionService cs = new DefaultFormattingConversionService();
 		cs.addFormatterForFieldAnnotation(new MaskFormatAnnotationFormatterFactory());
 
-		this.mockMvc = standaloneSetup(new ConvertController())
-				.setConversionService(cs)
-				.alwaysExpect(status().isOk())
+		this.mockMvc = standaloneSetup(new ConvertController()).setConversionService(cs).alwaysExpect(status().isOk())
 				.build();
 	}
 
@@ -61,16 +59,14 @@ public class ConvertControllerTests {
 		String timezone2010 = getTimezone(2010, 7, 4);
 		String timezone2011 = getTimezone(2011, 7, 4);
 		this.mockMvc.perform(get("/convert/formattedCollection?values=2010-07-04,2011-07-04"))
-				.andExpect(content().string(
-						"Converted formatted collection [Sun Jul 04 00:00:00 "
-								+ timezone2010 + " 2010, Mon Jul 04 00:00:00 " + timezone2011 + " 2011]"));
+				.andExpect(content().string("Converted formatted collection [Sun Jul 04 00:00:00 " + timezone2010
+						+ " 2010, Mon Jul 04 00:00:00 " + timezone2011 + " 2011]"));
 	}
 
 	@Test
 	public void valueOf() throws Exception {
 		this.mockMvc.perform(get("/convert/value?value=123456789"))
-				.andExpect(content().string(startsWith(
-						"Converted value object SocialSecurityNumber")));
+				.andExpect(content().string(startsWith("Converted value object SocialSecurityNumber")));
 	}
 
 	@Test
@@ -109,9 +105,8 @@ public class ConvertControllerTests {
 		String timezone2010 = getTimezone(2010, 7, 4);
 		String timezone2011 = getTimezone(2011, 7, 4);
 		this.mockMvc.perform(get("/convert/bean?formattedList[0]=2010-07-04&formattedList[1]=2011-07-04"))
-				.andExpect(content().string(
-						"Converted JavaBean formattedList=[Sun Jul 04 00:00:00 " + timezone2010
-							+ " 2010, Mon Jul 04 00:00:00 " + timezone2011 + " 2011]"));
+				.andExpect(content().string("Converted JavaBean formattedList=[Sun Jul 04 00:00:00 " + timezone2010
+						+ " 2010, Mon Jul 04 00:00:00 " + timezone2011 + " 2011]"));
 	}
 
 	@Test
@@ -127,8 +122,7 @@ public class ConvertControllerTests {
 						"Converted JavaBean nested=NestedBean foo=bar list=[NestedBean foo=baz] map={key=NestedBean list=[NestedBean foo=bip]}"));
 	}
 
-	private String getTimezone(int year, int month, int day)
-	{
+	private String getTimezone(int year, int month, int day) {
 		Calendar calendar = Calendar.getInstance();
 		calendar.set(Calendar.YEAR, year);
 		calendar.set(Calendar.MONTH, month);
@@ -138,6 +132,5 @@ public class ConvertControllerTests {
 		boolean inDaylight = timezone.inDaylightTime(date);
 		return timezone.getDisplayName(inDaylight, TimeZone.SHORT);
 	}
-
 
 }

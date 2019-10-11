@@ -1,13 +1,12 @@
 package io.github.dunwu.spring.mvc.validation;
 
-import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import javax.validation.constraints.Future;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
-
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
+import java.util.Date;
 
 public class JavaBean {
 
@@ -17,7 +16,7 @@ public class JavaBean {
 
 	@NotNull
 	@Future
-	@DateTimeFormat(iso=ISO.DATE)
+	@DateTimeFormat(iso = ISO.DATE)
 	private Date date;
 
 	public Integer getNumber() {

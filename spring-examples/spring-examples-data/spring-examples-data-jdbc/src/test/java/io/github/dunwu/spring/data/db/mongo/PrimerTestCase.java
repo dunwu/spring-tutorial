@@ -9,21 +9,24 @@ import org.junit.BeforeClass;
  * Created by zp on 16/9/6.
  */
 public class PrimerTestCase {
-    static MongoDatabase db = null;
-    private static MongoClient mongoClient;
 
-    @BeforeClass
-    public static void init() {
-        mongoClient = new MongoClient("localhost", 27017);
+	static MongoDatabase db = null;
 
-        // 连接到数据库
-        db = mongoClient.getDatabase("test");
-    }
+	private static MongoClient mongoClient;
 
-    @AfterClass
-    public static void close() {
-        if (null != mongoClient) {
-            mongoClient.close();
-        }
-    }
+	@BeforeClass
+	public static void init() {
+		mongoClient = new MongoClient("localhost", 27017);
+
+		// 连接到数据库
+		db = mongoClient.getDatabase("test");
+	}
+
+	@AfterClass
+	public static void close() {
+		if (null != mongoClient) {
+			mongoClient.close();
+		}
+	}
+
 }

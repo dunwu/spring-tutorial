@@ -11,71 +11,73 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * 展示 @Autowired 的用法
- * <p>@Autowired 可用于修饰属性、setter 方法、构造方法。
- * 被@Autowired修饰的属性在初始化时，会自动匹配与其类型相符的bean。如果存在多个匹配的候选bean，Spring会报异常。
+ * <p>
  *
+ * @Autowired 可用于修饰属性、setter 方法、构造方法。
+ * 被@Autowired修饰的属性在初始化时，会自动匹配与其类型相符的bean。如果存在多个匹配的候选bean，Spring会报异常。
  * @author Zhang Peng
  */
 public class AnnotationAutowired {
-    private static final Logger log = LoggerFactory.getLogger(AnnotationAutowired.class);
 
-    /** 修饰属性 */
-    @Autowired
-    private Apple fieldA;
+	private static final Logger log = LoggerFactory.getLogger(AnnotationAutowired.class);
 
-    private Banana fieldB;
+	/** 修饰属性 */
+	@Autowired
+	private Apple fieldA;
 
-    private Orange fieldC;
+	private Banana fieldB;
 
-    public Apple getFieldA() {
-        return fieldA;
-    }
+	private Orange fieldC;
 
-    public void setFieldA(Apple fieldA) {
-        this.fieldA = fieldA;
-    }
+	public AnnotationAutowired() {
+	}
 
-    public Banana getFieldB() {
-        return fieldB;
-    }
+	/** 修饰构造方法 */
+	@Autowired
+	public AnnotationAutowired(Orange fieldC) {
+		this.fieldC = fieldC;
+	}
 
-    /** 修饰setter方法 */
-    @Autowired
-    public void setFieldB(Banana fieldB) {
-        this.fieldB = fieldB;
-    }
+	public static void main(String[] args) throws Exception {
+		AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
 
-    public Orange getFieldC() {
-        return fieldC;
-    }
+		AnnotationAutowired annotationAutowired = (AnnotationAutowired) ctx.getBean("annotationAutowired");
 
-    public void setFieldC(Orange fieldC) {
-        this.fieldC = fieldC;
-    }
+		log.debug("type: {}, name: {}", annotationAutowired.getFieldA().getClass(),
+				annotationAutowired.getFieldA().getName());
 
-    public AnnotationAutowired() {}
+		log.debug("type: {}, name: {}", annotationAutowired.getFieldB().getClass(),
+				annotationAutowired.getFieldB().getName());
 
-    /** 修饰构造方法 */
-    @Autowired
-    public AnnotationAutowired(Orange fieldC) {
-        this.fieldC = fieldC;
-    }
+		log.debug("type: {}, name: {}", annotationAutowired.getFieldC().getClass(),
+				annotationAutowired.getFieldC().getName());
+		ctx.close();
+	}
 
-    public static void main(String[] args) throws Exception {
-        AbstractApplicationContext ctx =
-                        new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
+	public Apple getFieldA() {
+		return fieldA;
+	}
 
-        AnnotationAutowired annotationAutowired =
-                        (AnnotationAutowired) ctx.getBean("annotationAutowired");
+	public void setFieldA(Apple fieldA) {
+		this.fieldA = fieldA;
+	}
 
-        log.debug("type: {}, name: {}", annotationAutowired.getFieldA().getClass(),
-                        annotationAutowired.getFieldA().getName());
+	public Banana getFieldB() {
+		return fieldB;
+	}
 
-        log.debug("type: {}, name: {}", annotationAutowired.getFieldB().getClass(),
-                annotationAutowired.getFieldB().getName());
+	/** 修饰setter方法 */
+	@Autowired
+	public void setFieldB(Banana fieldB) {
+		this.fieldB = fieldB;
+	}
 
-        log.debug("type: {}, name: {}", annotationAutowired.getFieldC().getClass(),
-                annotationAutowired.getFieldC().getName());
-        ctx.close();
-    }
+	public Orange getFieldC() {
+		return fieldC;
+	}
+
+	public void setFieldC(Orange fieldC) {
+		this.fieldC = fieldC;
+	}
+
 }

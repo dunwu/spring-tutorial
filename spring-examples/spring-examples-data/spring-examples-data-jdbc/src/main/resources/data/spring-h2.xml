@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd
             http://www.springframework.org/schema/context
@@ -15,10 +15,10 @@
 
   <!--配置数据源-->
   <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
-    <property name="driverClass" value="${jdbc.driver}" />
-    <property name="url" value="${jdbc.url}" />
-    <property name="username" value="${jdbc.username}" />
-    <property name="password" value="${jdbc.password}" />
+    <property name="driverClass" value="${jdbc.driver}"/>
+    <property name="url" value="${jdbc.url}"/>
+    <property name="username" value="${jdbc.username}"/>
+    <property name="password" value="${jdbc.password}"/>
   </bean>
 
   <!-- JDBC模板 -->

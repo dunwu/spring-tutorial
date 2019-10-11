@@ -12,11 +12,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class ComponentScanInJava {
 
-    public static void main(String[] args) {
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-        ctx.scan("io.github.dunwu.spring.ioc");
-        ctx.refresh();
-        Teacher teacher = (Teacher) ctx.getBean("teacher");
-        System.out.println(teacher.work());
-    }
+	public static void main(String[] args) {
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+		ctx.scan("io.github.dunwu.spring.ioc");
+		ctx.refresh();
+		Teacher teacher = (Teacher) ctx.getBean("teacher");
+		System.out.println(teacher.work());
+	}
+
 }

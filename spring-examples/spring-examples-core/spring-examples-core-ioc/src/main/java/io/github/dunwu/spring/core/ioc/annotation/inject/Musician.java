@@ -3,39 +3,44 @@ package io.github.dunwu.spring.core.ioc.annotation.inject;
 import io.github.dunwu.spring.core.ioc.annotation.inject.instrument.Instrument;
 
 public class Musician implements Performer {
-    private String name;
-    private String song;
-    private Instrument instrument;
 
-    public Musician() {}
+	private String name;
 
-    @Override
-    public void perform() throws Exception {
-        System.out.println(String.format("%s弹奏%s", name, song));
-        instrument.play();
-    }
+	private String song;
 
-    public String getSong() {
-        return song;
-    }
+	private Instrument instrument;
 
-    public void setSong(String song) {
-        this.song = song;
-    }
+	public Musician() {
+	}
 
-    public String getName() {
-        return name;
-    }
+	@Override
+	public void perform() throws Exception {
+		System.out.println(String.format("%s弹奏%s", name, song));
+		instrument.play();
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getSong() {
+		return song;
+	}
 
-    public Instrument getInstrument() {
-        return instrument;
-    }
+	public void setSong(String song) {
+		this.song = song;
+	}
 
-    public void setInstrument(Instrument instrument) {
-        this.instrument = instrument;
-    }
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Instrument getInstrument() {
+		return instrument;
+	}
+
+	public void setInstrument(Instrument instrument) {
+		this.instrument = instrument;
+	}
+
 }

@@ -14,11 +14,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = "classpath:spring-aop.xml")
 public class SpringAopTest {
 
-    @Autowired
-    Performer performer;
+	@Autowired
+	Performer performer;
 
-    @Test
-    public void test() {
-        Assert.assertEquals("play a song", performer.perform());
-    }
+	@Test
+	public void test() {
+		Assert.assertEquals("play a song", performer.perform());
+	}
+
 }

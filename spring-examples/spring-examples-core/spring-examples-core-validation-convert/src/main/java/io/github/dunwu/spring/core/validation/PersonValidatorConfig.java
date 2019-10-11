@@ -10,35 +10,39 @@ import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class PersonValidatorConfig implements ApplicationContextAware {
-    private Map<Annotation, ValidatorRule> rules = new ConcurrentHashMap<>();
-    Map<String, Object> ruleMap = null;
 
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        ruleMap = applicationContext.getBeansWithAnnotation(ValidRule.class);
-        //        System.out.println(ruleMap);
-    }
+	Map<String, Object> ruleMap = null;
 
-    public ValidatorRule findRule(Annotation annotation) {
-        ValidatorRule validatorRule;
-        if (rules.containsKey(annotation)) {
-            validatorRule = rules.get(annotation);
-        } else {
-            ValidatorRule vr = findFormMap(annotation);
-            if (vr != null) {
-                rules.put(annotation, vr);
-            }
-            validatorRule = vr;
-        }
-        return validatorRule;
-    }
+	private Map<Annotation, ValidatorRule> rules = new ConcurrentHashMap<>();
 
-    private ValidatorRule findFormMap(Annotation annotation) {
-        for (Entry<String, Object> entry : ruleMap.entrySet()) {
-            if (entry.getValue() != null && ((ValidatorRule) entry.getValue()).support(annotation)) {
-                return (ValidatorRule) entry.getValue();
-            }
-        }
-        return null;
-    }
+	@Override
+	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+		ruleMap = applicationContext.getBeansWithAnnotation(ValidRule.class);
+		// System.out.println(ruleMap);
+	}
+
+	public ValidatorRule findRule(Annotation annotation) {
+		ValidatorRule validatorRule;
+		if (rules.containsKey(annotation)) {
+			validatorRule = rules.get(annotation);
+		}
+		else {
+			ValidatorRule vr = findFormMap(annotation);
+			if (vr != null) {
+				rules.put(annotation, vr);
+			}
+			validatorRule = vr;
+		}
+		return validatorRule;
+	}
+
+	private ValidatorRule findFormMap(Annotation annotation) {
+		for (Entry<String, Object> entry : ruleMap.entrySet()) {
+			if (entry.getValue() != null && ((ValidatorRule) entry.getValue()).support(annotation)) {
+				return (ValidatorRule) entry.getValue();
+			}
+		}
+		return null;
+	}
+
 }

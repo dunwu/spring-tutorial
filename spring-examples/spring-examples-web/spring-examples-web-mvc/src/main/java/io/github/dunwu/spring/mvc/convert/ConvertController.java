@@ -1,8 +1,5 @@
 package io.github.dunwu.spring.mvc.convert;
 
-import java.util.Collection;
-import java.util.Date;
-
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.stereotype.Controller;
@@ -10,6 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.Collection;
+import java.util.Date;
 
 @Controller
 @RequestMapping("/convert")
@@ -22,7 +22,7 @@ public class ConvertController {
 
 	// requires Joda-Time on the classpath
 	@RequestMapping("date/{value}")
-	public @ResponseBody String date(@PathVariable @DateTimeFormat(iso=ISO.DATE) Date value) {
+	public @ResponseBody String date(@PathVariable @DateTimeFormat(iso = ISO.DATE) Date value) {
 		return "Converted date " + value;
 	}
 
@@ -32,7 +32,8 @@ public class ConvertController {
 	}
 
 	@RequestMapping("formattedCollection")
-	public @ResponseBody String formattedCollection(@RequestParam @DateTimeFormat(iso=ISO.DATE) Collection<Date> values) {
+	public @ResponseBody String formattedCollection(
+			@RequestParam @DateTimeFormat(iso = ISO.DATE) Collection<Date> values) {
 		return "Converted formatted collection " + values;
 	}
 

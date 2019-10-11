@@ -10,22 +10,24 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @date 2016年7月31日
  */
 public class App {
-    public static void main(String[] args) throws Exception {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("/spring/spring-autowire.xml");
 
-        // 自动装配：byName
-        Musician chopinbyName = (Musician) ctx.getBean("chopinbyName");
-        chopinbyName.perform();
+	public static void main(String[] args) throws Exception {
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("/spring/spring-autowire.xml");
 
-        // 自动装配：byType
-        Musician chopinbyType = (Musician) ctx.getBean("chopinbyType");
-        chopinbyType.perform();
+		// 自动装配：byName
+		Musician chopinbyName = (Musician) ctx.getBean("chopinbyName");
+		chopinbyName.perform();
 
-        // 自动装配：constructor
-        Poet libai = (Poet) ctx.getBean("libai");
-        libai.perform();
+		// 自动装配：byType
+		Musician chopinbyType = (Musician) ctx.getBean("chopinbyType");
+		chopinbyType.perform();
 
-        // 关闭应用上下文容器，不要忘记这句话
-        ((ClassPathXmlApplicationContext) ctx).close();
-    }
+		// 自动装配：constructor
+		Poet libai = (Poet) ctx.getBean("libai");
+		libai.perform();
+
+		// 关闭应用上下文容器，不要忘记这句话
+		((ClassPathXmlApplicationContext) ctx).close();
+	}
+
 }

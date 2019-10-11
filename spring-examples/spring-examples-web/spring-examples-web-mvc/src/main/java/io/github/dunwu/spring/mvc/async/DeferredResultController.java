@@ -1,8 +1,5 @@
 package io.github.dunwu.spring.mvc.async;
 
-import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
-
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -10,6 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.async.DeferredResult;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 @Controller
 @RequestMapping("/async")
@@ -20,7 +20,6 @@ public class DeferredResultController {
 	private final Queue<DeferredResult<ModelAndView>> mavQueue = new ConcurrentLinkedQueue<DeferredResult<ModelAndView>>();
 
 	private final Queue<DeferredResult<String>> exceptionQueue = new ConcurrentLinkedQueue<DeferredResult<String>>();
-
 
 	@RequestMapping("/deferred-result/response-body")
 	public @ResponseBody DeferredResult<String> deferredResult() {
@@ -52,7 +51,7 @@ public class DeferredResultController {
 		return new DeferredResult<String>(1000L, "Deferred result after timeout");
 	}
 
-	@Scheduled(fixedRate=2000)
+	@Scheduled(fixedRate = 2000)
 	public void processQueues() {
 		for (DeferredResult<String> result : this.responseBodyQueue) {
 			result.setResult("Deferred result");

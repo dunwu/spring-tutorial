@@ -10,18 +10,19 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AnnotationConfiguration {
-    private static final Logger log = LoggerFactory.getLogger(ComponentScanInJava.class);
 
-    @Bean
-    public Job getPolice() {
-        return new Police();
-    }
+	private static final Logger log = LoggerFactory.getLogger(ComponentScanInJava.class);
 
-    public static void main(String[] args) {
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(
-            AnnotationConfiguration.class);
-        ctx.scan("io.github.dunwu.spring.ioc");
-        Job job = (Job) ctx.getBean("police");
-        log.debug("job: {}, work: {}", job.getClass(), job.work());
-    }
+	public static void main(String[] args) {
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AnnotationConfiguration.class);
+		ctx.scan("io.github.dunwu.spring.ioc");
+		Job job = (Job) ctx.getBean("police");
+		log.debug("job: {}, work: {}", job.getClass(), job.work());
+	}
+
+	@Bean
+	public Job getPolice() {
+		return new Police();
+	}
+
 }

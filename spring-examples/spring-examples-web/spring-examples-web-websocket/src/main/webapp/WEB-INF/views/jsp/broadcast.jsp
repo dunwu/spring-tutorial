@@ -13,13 +13,14 @@
   <script type="text/javascript" src="<%=basePath%>resources/jquery.js"></script>
   <script type="text/javascript">
     var path = '<%=basePath%>';
+
     function broadcast() {
       $.ajax({
         url: path + 'msg/broadcast',
         type: "post",
         data: { text: $("#msg").val() },
         dataType: "json",
-        success: function (data) {
+        success: function(data) {
           alert("发送成功");
         }
       });

@@ -1,29 +1,35 @@
 package io.github.dunwu.spring.security.shiro.dao;
 
-
 import io.github.dunwu.spring.security.shiro.entity.User;
 
 import java.util.Set;
 
 /**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-1-28
- * <p>Version: 1.0
+ * <p>
+ * User: Zhang Kaitao
+ * <p>
+ * Date: 14-1-28
+ * <p>
+ * Version: 1.0
  */
 public interface UserDao {
 
-    public User createUser(User user);
-    public void updateUser(User user);
-    public void deleteUser(Long userId);
+	public User createUser(User user);
 
-    public void correlationRoles(Long userId, Long... roleIds);
-    public void uncorrelationRoles(Long userId, Long... roleIds);
+	public void updateUser(User user);
 
-    User findOne(Long userId);
+	public void deleteUser(Long userId);
 
-    User findByUsername(String username);
+	public void correlationRoles(Long userId, Long... roleIds);
 
-    Set<String> findRoles(String username);
+	public void uncorrelationRoles(Long userId, Long... roleIds);
 
-    Set<String> findPermissions(String username);
+	User findOne(Long userId);
+
+	User findByUsername(String username);
+
+	Set<String> findRoles(String username);
+
+	Set<String> findPermissions(String username);
+
 }

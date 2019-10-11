@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mappings xmlns="http://dozermapper.github.io/schema/bean-mapping"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://dozermapper.github.io/schema/bean-mapping"
           xsi:schemaLocation="http://dozermapper.github.io/schema/bean-mapping http://dozermapper.github.io/schema/bean-mapping.xsd">
   <mapping date-format="yyyy-MM-dd">
     <class-a>io.github.dunwu.spring.libs.dozer.vo.NotSameAttributeA</class-a>

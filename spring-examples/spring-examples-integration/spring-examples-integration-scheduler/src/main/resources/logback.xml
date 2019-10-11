@@ -3,8 +3,8 @@
 <!-- logback中一共有5种有效级别，分别是TRACE、DEBUG、INFO、WARN、ERROR，优先级依次从低到高 -->
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
 
-  <property name="LOG_DIR" value="logs" />
-  <property name="FILE_NAME" value="spring-scheduler" />
+  <property name="LOG_DIR" value="logs"/>
+  <property name="FILE_NAME" value="spring-scheduler"/>
 
   <!-- 将记录日志打印到控制台 -->
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
@@ -53,17 +53,17 @@
   <!-- logger begin -->
   <!-- 本项目的日志记录，分级打印 -->
   <logger name="io.github.dunwu.spring" level="TRACE" additivity="false">
-    <appender-ref ref="STDOUT" />
-    <appender-ref ref="ALL" />
+    <appender-ref ref="STDOUT"/>
+    <appender-ref ref="ALL"/>
   </logger>
 
   <!-- SPRING框架日志 -->
   <logger name="org.springframework" level="TRACE" additivity="false">
-    <appender-ref ref="SPRING" />
+    <appender-ref ref="SPRING"/>
   </logger>
 
   <root level="TRACE">
-    <appender-ref ref="STDOUT" />
+    <appender-ref ref="STDOUT"/>
   </root>
   <!-- logger end -->
 

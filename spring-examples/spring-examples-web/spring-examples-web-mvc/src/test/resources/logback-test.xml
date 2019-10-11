@@ -48,15 +48,15 @@
   <!-- logger begin -->
   <!-- 本项目的日志记录，分级打印 -->
   <logger name="io.github.dunwu.spring.mvc" level="TRACE" additivity="false">
-    <appender-ref ref="STDOUT" />
-    <appender-ref ref="ALL" />
+    <appender-ref ref="STDOUT"/>
+    <appender-ref ref="ALL"/>
   </logger>
   <logger name="org.springframework" level="INFO" additivity="false">
-    <appender-ref ref="SPRING" />
+    <appender-ref ref="SPRING"/>
   </logger>
 
   <root level="WARN">
-    <appender-ref ref="STDOUT" />
+    <appender-ref ref="STDOUT"/>
   </root>
   <!-- logger end -->
 

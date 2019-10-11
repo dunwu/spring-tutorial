@@ -6,95 +6,95 @@
 /* General */
 
 .cleanform {
-	font-size:1em;
-	width:40em;
-	color:#1b1b1b;
-	text-align:left;
-	margin:1em auto
+  font-size: 1em;
+  width: 40em;
+  color: #1B1B1B;
+  text-align: left;
+  margin: 1em auto
 }
 
 /* Elements */
 
-.cleanform  label,.cleanform legend {
-	padding:0;
-	margin:0.3em 0
+.cleanform label, .cleanform legend {
+  padding: 0;
+  margin: 0.3em 0
 }
 
 .cleanform fieldset {
-	padding:0.7em;
-	border:1px solid #ddd;
-	margin:0 0 0.5em 0
+  padding: 0.7em;
+  border: 1px solid #DDDDDD;
+  margin: 0 0 0.5em 0
 }
 
 .cleanform label {
-	font-weight:bold
+  font-weight: bold
 }
 
 .cleanform fieldset input {
-	width:70%;
-	line-height:1.5em;
-	padding:0.15em
+  width: 70%;
+  line-height: 1.5em;
+  padding: 0.15em
 }
 
 .cleanform .radio input,
 .cleanform .checkbox input {
-	width:auto;
-	border:none;
-	margin:0 1.5em 0 0
+  width: auto;
+  border: none;
+  margin: 0 1.5em 0 0
 }
 
 .cleanform input, .cleanform textarea, .cleanform select {
-	display:block;
-	margin-bottom:1em;
-	font-size:1em;
-	border:1px solid #bbb;
-	padding:0.15em;
-	margin-right:1em
+  display: block;
+  margin-bottom: 1em;
+  font-size: 1em;
+  border: 1px solid #BBBBBB;
+  padding: 0.15em;
+  margin-right: 1em
 }
 
 .cleanform .radio label, .cleanform .radio input,
 .cleanform .checkbox label, .cleanform .checkbox input {
-	display:inline;
-	margin:0 1.5em 0 0
+  display: inline;
+  margin: 0 1.5em 0 0
 }
 
 .cleanform .radio input, .cleanform .checkbox input {
-	margin:0 0.3em 0 0
+  margin: 0 0.3em 0 0
 }
 
-.cleanform .multiple label{
-	float:left;
-	width:29%;
-	overflow:hidden;
-	padding-left:1px
+.cleanform .multiple label {
+  float: left;
+  width: 29%;
+  overflow: hidden;
+  padding-left: 1px
 }
 
 .cleanform .multiple input {
-	cursor:pointer
+  cursor: pointer
 }
 
 
 /* information */
 
 .cleanform .formInfo {
-	margin-bottom:1em;
-	padding-bottom:0.5em;
-	border-bottom:0.1em solid #ddd
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 0.1em solid #DDDDDD
 }
 
 .cleanform .formInfo h2 {
-	color:#00889e;
-	font-weight:bold;
-	font-size:1.2em;
-	margin-bottom:1em
+  color: #00889E;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 1em
 }
 
-.cleanform .formInfo p{
-	text-align:justify
+.cleanform .formInfo p {
+  text-align: justify
 }
 
 .cleanform .required {
-	color:#ff3838;
-	font-weight:bold;
-	font-size:0.8em
+  color: #FF3838;
+  font-weight: bold;
+  font-size: 0.8em
 }

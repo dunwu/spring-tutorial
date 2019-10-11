@@ -8,52 +8,58 @@ import java.util.Map;
 import java.util.Set;
 
 public class Band implements Performer {
-    private Collection<Instrument> collections;
-    private List<Instrument> list;
-    private Set<Instrument> set;
-    private Map<String, Instrument> map;
 
-    public Band() {}
+	private Collection<Instrument> collections;
 
-    @Override
-    public void perform() throws Exception {
-        System.out.println("乐队演奏");
+	private List<Instrument> list;
 
-        System.out.println("=============== collections ===============");
-        for (Instrument instrument : collections) {
-            instrument.play();
-        }
+	private Set<Instrument> set;
 
-        System.out.println("=============== list ===============");
-        for (Instrument instrument : list) {
-            instrument.play();
-        }
+	private Map<String, Instrument> map;
 
-        System.out.println("=============== set ===============");
-        for (Instrument instrument : set) {
-            instrument.play();
-        }
+	public Band() {
+	}
 
-        System.out.println("=============== map ===============");
-        for (String key : map.keySet()) {
-            Instrument instrument = map.get(key);
-            instrument.play();
-        }
-    }
+	@Override
+	public void perform() throws Exception {
+		System.out.println("乐队演奏");
 
-    public void setCollections(Collection<Instrument> collections) {
-        this.collections = collections;
-    }
+		System.out.println("=============== collections ===============");
+		for (Instrument instrument : collections) {
+			instrument.play();
+		}
 
-    public void setList(List<Instrument> list) {
-        this.list = list;
-    }
+		System.out.println("=============== list ===============");
+		for (Instrument instrument : list) {
+			instrument.play();
+		}
 
-    public void setSet(Set<Instrument> set) {
-        this.set = set;
-    }
+		System.out.println("=============== set ===============");
+		for (Instrument instrument : set) {
+			instrument.play();
+		}
 
-    public void setMap(Map<String, Instrument> map) {
-        this.map = map;
-    }
+		System.out.println("=============== map ===============");
+		for (String key : map.keySet()) {
+			Instrument instrument = map.get(key);
+			instrument.play();
+		}
+	}
+
+	public void setCollections(Collection<Instrument> collections) {
+		this.collections = collections;
+	}
+
+	public void setList(List<Instrument> list) {
+		this.list = list;
+	}
+
+	public void setSet(Set<Instrument> set) {
+		this.set = set;
+	}
+
+	public void setMap(Map<String, Instrument> map) {
+		this.map = map;
+	}
+
 }

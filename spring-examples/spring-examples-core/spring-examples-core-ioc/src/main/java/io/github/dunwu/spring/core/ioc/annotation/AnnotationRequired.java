@@ -8,41 +8,43 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * 展示 @Required 注解的用法
- * <p>@Required 注解用于bean属性的setter方法并且它指示，受影响的bean属性必须在配置时被填充在xml配置文件中，
- * 否则容器将抛出BeanInitializationException。
+ * <p>
  *
+ * @Required 注解用于bean属性的setter方法并且它指示，受影响的bean属性必须在配置时被填充在xml配置文件中，
+ * 否则容器将抛出BeanInitializationException。
  * @author Zhang Peng
  */
 public class AnnotationRequired {
-    private static final Logger log = LoggerFactory.getLogger(AnnotationRequired.class);
 
-    private String name;
-    private String sex;
+	private static final Logger log = LoggerFactory.getLogger(AnnotationRequired.class);
 
-    public String getName() {
-        return name;
-    }
+	private String name;
 
-    @Required
-    public void setName(String name) {
-        this.name = name;
-    }
+	private String sex;
 
-    public String getSex() {
-        return sex;
-    }
+	public static void main(String[] args) throws Exception {
+		AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
 
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
+		AnnotationRequired annotationRequired = (AnnotationRequired) ctx.getBean("annotationRequired");
+		log.debug("name: {}", annotationRequired.getName());
+		ctx.close();
+	}
 
-    public static void main(String[] args) throws Exception {
-        AbstractApplicationContext ctx =
-                        new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
+	public String getName() {
+		return name;
+	}
 
-        AnnotationRequired annotationRequired =
-                        (AnnotationRequired) ctx.getBean("annotationRequired");
-        log.debug("name: {}", annotationRequired.getName());
-        ctx.close();
-    }
+	@Required
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
 }

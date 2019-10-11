@@ -4,55 +4,59 @@ import java.util.Date;
 
 public class Message {
 
-    // 发送者
-    private Long from;
-    // 发送者名称
-    private String fromName;
-    // 接收者
-    private Long to;
-    // 发送的文本
-    private String text;
-    // 发送日期
-    private Date date;
+	// 发送者
+	private Long from;
 
-    public Long getFrom() {
-        return from;
-    }
+	// 发送者名称
+	private String fromName;
 
-    public void setFrom(Long from) {
-        this.from = from;
-    }
+	// 接收者
+	private Long to;
 
-    public Long getTo() {
-        return to;
-    }
+	// 发送的文本
+	private String text;
 
-    public void setTo(Long to) {
-        this.to = to;
-    }
+	// 发送日期
+	private Date date;
 
-    public String getText() {
-        return text;
-    }
+	public Long getFrom() {
+		return from;
+	}
 
-    public void setText(String text) {
-        this.text = text;
-    }
+	public void setFrom(Long from) {
+		this.from = from;
+	}
 
-    public String getFromName() {
-        return fromName;
-    }
+	public Long getTo() {
+		return to;
+	}
 
-    public void setFromName(String fromName) {
-        this.fromName = fromName;
-    }
+	public void setTo(Long to) {
+		this.to = to;
+	}
 
-    public Date getDate() {
-        return date;
-    }
+	public String getText() {
+		return text;
+	}
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public String getFromName() {
+		return fromName;
+	}
+
+	public void setFromName(String fromName) {
+		this.fromName = fromName;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
 
 }

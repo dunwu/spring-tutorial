@@ -4,13 +4,14 @@ import java.util.List;
 
 public class UserGroupPrime {
 
-    private List<UserPrime> users;
+	private List<UserPrime> users;
 
-    public List<UserPrime> getUsers() {
-        return users;
-    }
+	public List<UserPrime> getUsers() {
+		return users;
+	}
 
-    public void setUsers(List<UserPrime> aUsers) {
-        users = aUsers;
-    }
+	public void setUsers(List<UserPrime> aUsers) {
+		users = aUsers;
+	}
+
 }

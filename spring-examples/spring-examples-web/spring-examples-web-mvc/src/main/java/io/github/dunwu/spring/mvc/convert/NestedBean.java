@@ -36,18 +36,19 @@ public class NestedBean {
 	}
 
 	@Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("NestedBean");
-        if (foo != null) {
-        	sb.append(" foo=").append(foo);
-        }
-        if (list != null) {
-        	sb.append(" list=").append(list);
-        }
-        if (map != null) {
-        	sb.append(" map=").append(map);
-        }
-        return sb.toString();
-    }
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("NestedBean");
+		if (foo != null) {
+			sb.append(" foo=").append(foo);
+		}
+		if (list != null) {
+			sb.append(" list=").append(list);
+		}
+		if (map != null) {
+			sb.append(" map=").append(map);
+		}
+		return sb.toString();
+	}
+
 }

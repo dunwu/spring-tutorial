@@ -16,11 +16,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/scheduler")
 public class SchedulerController {
 
-    @Autowired
-    TaskScheduler scheduler;
+	@Autowired
+	TaskScheduler scheduler;
 
-    @RequestMapping(value = "/start", method = RequestMethod.GET)
-    public void start() {
-        scheduler.schedule(new DemoTask(), new CronTrigger("0/5 * * * * *"));
-    }
+	@RequestMapping(value = "/start", method = RequestMethod.GET)
+	public void start() {
+		scheduler.schedule(new DemoTask(), new CronTrigger("0/5 * * * * *"));
+	}
+
 }

@@ -7,18 +7,19 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 
 public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
-    public MyBeanFactoryPostProcessor() {
-        super();
-        System.out.println("[BeanFactoryPostProcessor] construct");
-    }
+	public MyBeanFactoryPostProcessor() {
+		super();
+		System.out.println("[BeanFactoryPostProcessor] construct");
+	}
 
-    @Override
-    public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        System.out.println("[BeanFactoryPostProcessor] BeanFactoryPostProcessor call postProcessBeanFactory");
-        String[] beanNamesForType = beanFactory.getBeanNamesForType(Person.class);
-        for (String name : beanNamesForType) {
-            BeanDefinition bd = beanFactory.getBeanDefinition(name);
-            bd.getPropertyValues().addPropertyValue("phone", "110");
-        }
-    }
+	@Override
+	public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+		System.out.println("[BeanFactoryPostProcessor] BeanFactoryPostProcessor call postProcessBeanFactory");
+		String[] beanNamesForType = beanFactory.getBeanNamesForType(Person.class);
+		for (String name : beanNamesForType) {
+			BeanDefinition bd = beanFactory.getBeanDefinition(name);
+			bd.getPropertyValues().addPropertyValue("phone", "110");
+		}
+	}
+
 }

@@ -3,33 +3,37 @@ package io.github.dunwu.spring.cache.entity;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    private static final long serialVersionUID = 1L;
-    private int id;
-    private String name;
 
-    public User(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+	private static final long serialVersionUID = 1L;
 
-    public int getId() {
-        return id;
-    }
+	private int id;
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	private String name;
 
-    public String getName() {
-        return name;
-    }
+	public User(int id, String name) {
+		this.id = id;
+		this.name = name;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public int getId() {
+		return id;
+	}
 
-    @Override
-    public String toString() {
-        return "id=" + this.id + ", name=" + this.name;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "id=" + this.id + ", name=" + this.name;
+	}
+
 }

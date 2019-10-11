@@ -16,7 +16,6 @@
 
 package io.github.dunwu.spring.data.db.mongo;
 
-
 import org.bson.Document;
 import org.junit.Test;
 
@@ -25,26 +24,27 @@ import org.junit.Test;
 
 public class IndexesPrimer extends PrimerTestCase {
 
-    @Test
-    public void  singleFieldIndex() {
+	@Test
+	public void singleFieldIndex() {
 
-        // @begin: single-field-index
-        // @code: start
-        db.getCollection("restaurants").createIndex(new Document("cuisine", 1));
-        // @code: end
+		// @begin: single-field-index
+		// @code: start
+		db.getCollection("restaurants").createIndex(new Document("cuisine", 1));
+		// @code: end
 
-        // @post: The method does not return a result.
-        // @end: single-field-index
-    }
+		// @post: The method does not return a result.
+		// @end: single-field-index
+	}
 
-    @Test
-    public void  createCompoundIndex() {
-        // @begin: create-compound-index
-        // @code: start
-        db.getCollection("restaurants").createIndex(new Document("cuisine", 1).append("address.zipcode", -1));
-        // @code: end
+	@Test
+	public void createCompoundIndex() {
+		// @begin: create-compound-index
+		// @code: start
+		db.getCollection("restaurants").createIndex(new Document("cuisine", 1).append("address.zipcode", -1));
+		// @code: end
 
-        // @post: The method does not return a result.
-        // @end: create-compound-index
-    }
+		// @post: The method does not return a result.
+		// @end: create-compound-index
+	}
+
 }

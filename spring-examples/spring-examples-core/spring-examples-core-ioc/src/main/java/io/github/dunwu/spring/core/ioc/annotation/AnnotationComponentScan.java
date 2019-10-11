@@ -18,12 +18,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(basePackages = "io.github.dunwu.spring.ioc")
 public class AnnotationComponentScan {
-    private static final Logger log = LoggerFactory.getLogger(
-        AnnotationComponentScan.class);
 
-    public static void main(String[] args) {
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AnnotationConfiguration.class);
-        Teacher teacher = (Teacher) ctx.getBean("teacher");
-        log.debug(teacher.work());
-    }
+	private static final Logger log = LoggerFactory.getLogger(AnnotationComponentScan.class);
+
+	public static void main(String[] args) {
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AnnotationConfiguration.class);
+		Teacher teacher = (Teacher) ctx.getBean("teacher");
+		log.debug(teacher.work());
+	}
+
 }

@@ -1,14 +1,14 @@
 package io.github.dunwu.spring.mvc.redirect;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.test.web.servlet.MockMvc;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 public class RedirectControllerTests {
 
@@ -22,8 +22,7 @@ public class RedirectControllerTests {
 
 	@Test
 	public void uriTemplate() throws Exception {
-		this.mockMvc.perform(get("/redirect/uriTemplate"))
-				.andExpect(redirectedUrl("/redirect/a123?date=12%2F31%2F11"));
+		this.mockMvc.perform(get("/redirect/uriTemplate")).andExpect(redirectedUrl("/redirect/a123?date=12%2F31%2F11"));
 	}
 
 	@Test

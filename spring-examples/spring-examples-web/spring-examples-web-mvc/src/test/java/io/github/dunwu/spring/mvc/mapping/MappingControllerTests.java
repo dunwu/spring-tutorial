@@ -1,21 +1,18 @@
 package io.github.dunwu.spring.mvc.mapping;
 
-import static org.hamcrest.Matchers.startsWith;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.xpath;
-import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
-
+import io.github.dunwu.spring.mvc.AbstractContextControllerTests;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.http.MediaType;
-import io.github.dunwu.spring.mvc.AbstractContextControllerTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
+
+import static org.hamcrest.Matchers.startsWith;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 public class MappingControllerTests extends AbstractContextControllerTests {
@@ -40,8 +37,7 @@ public class MappingControllerTests extends AbstractContextControllerTests {
 
 	@Test
 	public void byMethod() throws Exception {
-		this.mockMvc.perform(get("/mapping/method"))
-				.andExpect(content().string("Mapped by path + method"));
+		this.mockMvc.perform(get("/mapping/method")).andExpect(content().string("Mapped by path + method"));
 	}
 
 	@Test
@@ -65,43 +61,38 @@ public class MappingControllerTests extends AbstractContextControllerTests {
 	@Test
 	public void byHeaderNegation() throws Exception {
 		this.mockMvc.perform(get("/mapping/header"))
- 				.andExpect(content().string("Mapped by path + method + absence of header!"));
+				.andExpect(content().string("Mapped by path + method + absence of header!"));
 	}
 
 	@Test
 	public void byConsumes() throws Exception {
-		this.mockMvc.perform(
-				post("/mapping/consumes")
-					.contentType(MediaType.APPLICATION_JSON)
-					.content("{ \"foo\": \"bar\", \"fruit\": \"apple\" }".getBytes()))
+		this.mockMvc
+				.perform(post("/mapping/consumes").contentType(MediaType.APPLICATION_JSON)
+						.content("{ \"foo\": \"bar\", \"fruit\": \"apple\" }".getBytes()))
 				.andExpect(content().string(startsWith("Mapped by path + method + consumable media type (javaBean")));
 	}
 
 	@Test
 	public void byProducesAcceptJson() throws Exception {
 		this.mockMvc.perform(get("/mapping/produces").accept(MediaType.APPLICATION_JSON))
-				.andExpect(jsonPath("$.foo").value("bar"))
-				.andExpect(jsonPath("$.fruit").value("apple"));
+				.andExpect(jsonPath("$.foo").value("bar")).andExpect(jsonPath("$.fruit").value("apple"));
 	}
 
 	@Test
 	public void byProducesAcceptXml() throws Exception {
 		this.mockMvc.perform(get("/mapping/produces").accept(MediaType.APPLICATION_XML))
-				.andExpect(xpath("/javaBean/foo").string("bar"))
-				.andExpect(xpath("/javaBean/fruit").string("apple"));
+				.andExpect(xpath("/javaBean/foo").string("bar")).andExpect(xpath("/javaBean/fruit").string("apple"));
 	}
 
 	@Test
 	public void byProducesJsonExtension() throws Exception {
-		this.mockMvc.perform(get("/mapping/produces.json"))
-				.andExpect(jsonPath("$.foo").value("bar"))
+		this.mockMvc.perform(get("/mapping/produces.json")).andExpect(jsonPath("$.foo").value("bar"))
 				.andExpect(jsonPath("$.fruit").value("apple"));
 	}
 
 	@Test
 	public void byProducesXmlExtension() throws Exception {
-		this.mockMvc.perform(get("/mapping/produces.xml"))
-				.andExpect(xpath("/javaBean/foo").string("bar"))
+		this.mockMvc.perform(get("/mapping/produces.xml")).andExpect(xpath("/javaBean/foo").string("bar"))
 				.andExpect(xpath("/javaBean/fruit").string("apple"));
 	}
 

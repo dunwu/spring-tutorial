@@ -5,10 +5,11 @@ package io.github.dunwu.spring.dubbo.api;
  */
 public interface HelloProvider {
 
-    /**
-     * 定义接口
-     * @param name
-     * @return
-     */
-    String sayHello(String name);
+	/**
+	 * 定义接口
+	 * @param name
+	 * @return
+	 */
+	String sayHello(String name);
+
 }

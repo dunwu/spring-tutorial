@@ -1,36 +1,40 @@
 package io.github.dunwu.spring.data.jdbc;
 
 public class StudentDTO {
-    private Integer age;
-    private String name;
-    private Integer id;
 
-    public void setAge(Integer age) {
-        this.age = age;
-    }
+	private Integer age;
 
-    public Integer getAge() {
-        return age;
-    }
+	private String name;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	private Integer id;
 
-    public String getName() {
-        return name;
-    }
+	public Integer getAge() {
+		return age;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public void setAge(Integer age) {
+		this.age = age;
+	}
 
-    public Integer getId() {
-        return id;
-    }
+	public String getName() {
+		return name;
+	}
 
-    @Override
-    public String toString() {
-        return String.format("id=%d, name=%s, age=%d\n", id, name, age);
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("id=%d, name=%s, age=%d\n", id, name, age);
+	}
+
 }

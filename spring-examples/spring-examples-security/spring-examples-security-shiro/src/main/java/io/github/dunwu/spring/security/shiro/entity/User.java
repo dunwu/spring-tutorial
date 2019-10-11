@@ -3,101 +3,104 @@ package io.github.dunwu.spring.security.shiro.entity;
 import java.io.Serializable;
 
 /**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-1-28
- * <p>Version: 1.0
+ * <p>
+ * User: Zhang Kaitao
+ * <p>
+ * Date: 14-1-28
+ * <p>
+ * Version: 1.0
  */
 public class User implements Serializable {
-    private Long id;
-    private String username;
-    private String password;
-    private String salt;
 
-    private Boolean locked = Boolean.FALSE;
+	private Long id;
 
-    public User() {
-    }
+	private String username;
 
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
+	private String password;
 
-    public Long getId() {
-        return id;
-    }
+	private String salt;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	private Boolean locked = Boolean.FALSE;
 
-    public String getUsername() {
-        return username;
-    }
+	public User() {
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public User(String username, String password) {
+		this.username = username;
+		this.password = password;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public String getSalt() {
-        return salt;
-    }
+	public String getUsername() {
+		return username;
+	}
 
-    public void setSalt(String salt) {
-        this.salt = salt;
-    }
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-    public String getCredentialsSalt() {
-        return username + salt;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    public Boolean getLocked() {
-        return locked;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    public void setLocked(Boolean locked) {
-        this.locked = locked;
-    }
+	public String getSalt() {
+		return salt;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+	public void setSalt(String salt) {
+		this.salt = salt;
+	}
 
-        User user = (User) o;
+	public String getCredentialsSalt() {
+		return username + salt;
+	}
 
-        if (id != null ? !id.equals(user.id) : user.id != null) {
-            return false;
-        }
+	public Boolean getLocked() {
+		return locked;
+	}
 
-        return true;
-    }
+	public void setLocked(Boolean locked) {
+		this.locked = locked;
+	}
 
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : 0;
-    }
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", salt='" + salt + '\'' +
-                ", locked=" + locked +
-                '}';
-    }
+		User user = (User) o;
+
+		if (id != null ? !id.equals(user.id) : user.id != null) {
+			return false;
+		}
+
+		return true;
+	}
+
+	@Override
+	public int hashCode() {
+		return id != null ? id.hashCode() : 0;
+	}
+
+	@Override
+	public String toString() {
+		return "User{" + "id=" + id + ", username='" + username + '\'' + ", password='" + password + '\'' + ", salt='"
+				+ salt + '\'' + ", locked=" + locked + '}';
+	}
+
 }

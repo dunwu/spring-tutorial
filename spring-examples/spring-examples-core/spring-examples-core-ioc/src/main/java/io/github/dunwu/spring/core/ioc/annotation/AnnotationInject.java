@@ -16,59 +16,59 @@ import javax.inject.Inject;
  * @author Zhang Peng
  */
 public class AnnotationInject {
-    private static final Logger log = LoggerFactory.getLogger(AnnotationInject.class);
-    @Inject
-    Apple fieldA;
 
-    Banana fieldB;
+	private static final Logger log = LoggerFactory.getLogger(AnnotationInject.class);
 
-    Orange fieldC;
+	@Inject
+	Apple fieldA;
 
-    public Apple getFieldA() {
-        return fieldA;
-    }
+	Banana fieldB;
 
-    public void setFieldA(Apple fieldA) {
-        this.fieldA = fieldA;
-    }
+	Orange fieldC;
 
-    public Banana getFieldB() {
-        return fieldB;
-    }
+	public AnnotationInject() {
+	}
 
-    @Inject
-    public void setFieldB(Banana fieldB) {
-        this.fieldB = fieldB;
-    }
+	@Inject
+	public AnnotationInject(Orange fieldC) {
+		this.fieldC = fieldC;
+	}
 
-    public Orange getFieldC() {
-        return fieldC;
-    }
+	public static void main(String[] args) throws Exception {
+		AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
+		AnnotationInject annotationInject = (AnnotationInject) ctx.getBean("annotationInject");
 
-    public AnnotationInject() {}
+		log.debug("type: {}, name: {}", annotationInject.getFieldA().getClass(),
+				annotationInject.getFieldA().getName());
 
-    @Inject
-    public AnnotationInject(Orange fieldC) {
-        this.fieldC = fieldC;
-    }
+		log.debug("type: {}, name: {}", annotationInject.getFieldB().getClass(),
+				annotationInject.getFieldB().getName());
 
-    public static void main(String[] args) throws Exception {
-        AbstractApplicationContext ctx =
-                        new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
-        AnnotationInject
-            annotationInject = (AnnotationInject) ctx.getBean("annotationInject");
+		log.debug("type: {}, name: {}", annotationInject.getFieldC().getClass(),
+				annotationInject.getFieldC().getName());
 
-        log.debug("type: {}, name: {}", annotationInject.getFieldA().getClass(),
-                        annotationInject.getFieldA().getName());
+		ctx.close();
+	}
 
-        log.debug("type: {}, name: {}", annotationInject.getFieldB().getClass(),
-                        annotationInject.getFieldB().getName());
+	public Apple getFieldA() {
+		return fieldA;
+	}
 
-        log.debug("type: {}, name: {}", annotationInject.getFieldC().getClass(),
-                        annotationInject.getFieldC().getName());
+	public void setFieldA(Apple fieldA) {
+		this.fieldA = fieldA;
+	}
 
-        ctx.close();
-    }
+	public Banana getFieldB() {
+		return fieldB;
+	}
+
+	@Inject
+	public void setFieldB(Banana fieldB) {
+		this.fieldB = fieldB;
+	}
+
+	public Orange getFieldC() {
+		return fieldC;
+	}
+
 }
-
-

@@ -1,13 +1,5 @@
 package io.github.dunwu.spring.mvc.data;
 
-import static org.hamcrest.Matchers.startsWith;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
-
 import io.github.dunwu.spring.mvc.AbstractContextControllerTests;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,6 +7,14 @@ import org.junit.runner.RunWith;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
+
+import static org.hamcrest.Matchers.startsWith;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 public class DataControllerTests extends AbstractContextControllerTests {
@@ -35,8 +35,7 @@ public class DataControllerTests extends AbstractContextControllerTests {
 	@Test
 	public void group() throws Exception {
 		this.mockMvc.perform(get("/data/group?param1=foo&param2=bar&param3=baz"))
-				.andExpect(content().string(startsWith(
-						"Obtained parameter group JavaBean")));
+				.andExpect(content().string(startsWith("Obtained parameter group JavaBean")));
 	}
 
 	@Test
@@ -53,8 +52,8 @@ public class DataControllerTests extends AbstractContextControllerTests {
 
 	@Test
 	public void matrixVarMultiple() throws Exception {
-		this.mockMvc.perform(get("/data/matrixvars;foo=bar1/multiple;foo=bar2"))
-				.andExpect(content().string("Obtained matrix variable foo=bar1 from path segment 'matrixvars' and variable 'foo=bar2 from path segment 'multiple'"));
+		this.mockMvc.perform(get("/data/matrixvars;foo=bar1/multiple;foo=bar2")).andExpect(content().string(
+				"Obtained matrix variable foo=bar1 from path segment 'matrixvars' and variable 'foo=bar2 from path segment 'multiple'"));
 	}
 
 	@Test
@@ -65,19 +64,13 @@ public class DataControllerTests extends AbstractContextControllerTests {
 
 	@Test
 	public void requestBody() throws Exception {
-		this.mockMvc.perform(
-				post("/data/body")
-					.contentType(MediaType.TEXT_PLAIN)
-					.content("foo".getBytes()))
+		this.mockMvc.perform(post("/data/body").contentType(MediaType.TEXT_PLAIN).content("foo".getBytes()))
 				.andExpect(content().string("Posted request body 'foo'"));
 	}
 
 	@Test
 	public void requestBodyAndHeaders() throws Exception {
-		this.mockMvc.perform(
-				post("/data/entity")
-					.contentType(MediaType.TEXT_PLAIN)
-					.content("foo".getBytes()))
+		this.mockMvc.perform(post("/data/entity").contentType(MediaType.TEXT_PLAIN).content("foo".getBytes()))
 				.andExpect(content().string(
 						"Posted request body 'foo'; headers = {Content-Type=[text/plain], Content-Length=[3]}"));
 	}

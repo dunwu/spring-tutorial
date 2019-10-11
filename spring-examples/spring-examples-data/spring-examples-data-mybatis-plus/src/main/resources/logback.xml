@@ -4,7 +4,8 @@
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
 
   <property name="FILE_NAME" value="spring-examples-data"/>
-  <property name="PATTERN" value="%d{HH:mm:ss.SSS} [%boldYellow(%thread)] [%highlight(%-5level)] %boldGreen(%c{36}.%M) - %boldBlue(%m%n)"/>
+  <property name="PATTERN"
+            value="%d{HH:mm:ss.SSS} [%boldYellow(%thread)] [%highlight(%-5level)] %boldGreen(%c{36}.%M) - %boldBlue(%m%n)"/>
 
   <!-- 将记录日志打印到控制台 -->
   <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">

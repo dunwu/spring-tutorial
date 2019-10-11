@@ -1,7 +1,5 @@
 package io.github.dunwu.spring.mvc.async;
 
-import java.util.concurrent.Callable;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -10,10 +8,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.async.WebAsyncTask;
 
+import java.util.concurrent.Callable;
+
 @Controller
 @RequestMapping("/async/callable")
 public class CallableController {
-
 
 	@RequestMapping("/response-body")
 	public @ResponseBody Callable<String> callable() {
@@ -43,7 +42,7 @@ public class CallableController {
 
 	@RequestMapping("/exception")
 	public @ResponseBody Callable<String> callableWithException(
-			final @RequestParam(required=false, defaultValue="true") boolean handled) {
+			final @RequestParam(required = false, defaultValue = "true") boolean handled) {
 
 		return new Callable<String>() {
 			@Override

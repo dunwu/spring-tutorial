@@ -8,13 +8,14 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AnnotationBean {
-    private static final Logger log = LoggerFactory.getLogger(ComponentScanInJava.class);
 
-    public static void main(String[] args) {
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(
-            AnnotationBean.class);
-        ctx.scan("io.github.dunwu.spring.ioc");
-        Job job = (Job) ctx.getBean("police");
-        log.debug("job: {}, work: {}", job.getClass(), job.work());
-    }
+	private static final Logger log = LoggerFactory.getLogger(ComponentScanInJava.class);
+
+	public static void main(String[] args) {
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AnnotationBean.class);
+		ctx.scan("io.github.dunwu.spring.ioc");
+		Job job = (Job) ctx.getBean("police");
+		log.debug("job: {}, work: {}", job.getClass(), job.work());
+	}
+
 }

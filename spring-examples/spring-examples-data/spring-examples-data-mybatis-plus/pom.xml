@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
@@ -61,8 +61,8 @@
 
     <!-- spring begin -->
     <!--<dependency>-->
-      <!--<groupId>org.springframework</groupId>-->
-      <!--<artifactId>spring-oxm</artifactId>-->
+    <!--<groupId>org.springframework</groupId>-->
+    <!--<artifactId>spring-oxm</artifactId>-->
     <!--</dependency>-->
     <dependency>
       <groupId>org.springframework</groupId>
@@ -94,21 +94,21 @@
     <plugins>
       <!--本插件为mybatis-generator，使用mvn mybatis-generator:generate命令可自动生成mybatis代码-->
       <!--<plugin>-->
-        <!--<groupId>org.mybatis.generator</groupId>-->
-        <!--<artifactId>mybatis-generator-maven-plugin</artifactId>-->
-        <!--<configuration>-->
-          <!--<configurationFile>src/main/resources/mybatis/generatorConfig.xml</configurationFile>-->
-          <!--<verbose>true</verbose>-->
-          <!--<overwrite>true</overwrite>-->
-        <!--</configuration>-->
-        <!--<executions>-->
-          <!--<execution>-->
-            <!--<id>Generate MyBatis Artifacts</id>-->
-            <!--<goals>-->
-              <!--<goal>generate</goal>-->
-            <!--</goals>-->
-          <!--</execution>-->
-        <!--</executions>-->
+      <!--<groupId>org.mybatis.generator</groupId>-->
+      <!--<artifactId>mybatis-generator-maven-plugin</artifactId>-->
+      <!--<configuration>-->
+      <!--<configurationFile>src/main/resources/mybatis/generatorConfig.xml</configurationFile>-->
+      <!--<verbose>true</verbose>-->
+      <!--<overwrite>true</overwrite>-->
+      <!--</configuration>-->
+      <!--<executions>-->
+      <!--<execution>-->
+      <!--<id>Generate MyBatis Artifacts</id>-->
+      <!--<goals>-->
+      <!--<goal>generate</goal>-->
+      <!--</goals>-->
+      <!--</execution>-->
+      <!--</executions>-->
       <!--</plugin>-->
     </plugins>
   </build>

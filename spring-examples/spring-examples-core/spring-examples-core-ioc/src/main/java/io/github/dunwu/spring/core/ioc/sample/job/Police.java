@@ -4,8 +4,10 @@ import org.springframework.stereotype.Component;
 
 @Component("police")
 public class Police implements Job {
-    @Override
-    public String work() {
-        return "抓罪犯";
-    }
+
+	@Override
+	public String work() {
+		return "抓罪犯";
+	}
+
 }

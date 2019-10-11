@@ -9,49 +9,52 @@ import javax.annotation.Resource;
 
 @Service
 public class Musician implements Performer {
-    private String name;
-    private String song;
 
-    // @Autowired
-    // private Instrument instrument;
+	private String name;
 
-    @Autowired
-    private Instrument violin;
+	private String song;
 
-    @Autowired
-    @Qualifier(value = "guitar")
-    private Instrument instrument1;
+	// @Autowired
+	// private Instrument instrument;
 
-    @Resource(name = "piano")
-    private Instrument instrument2;
+	@Autowired
+	private Instrument violin;
 
+	@Autowired
+	@Qualifier(value = "guitar")
+	private Instrument instrument1;
 
-    public Musician() {}
+	@Resource(name = "piano")
+	private Instrument instrument2;
 
-    @Override
-    public String perform() throws Exception {
-        String result = String.format("%s演绎%s", name, song);
-        System.out.println(result);
-        violin.play();
-        // instrument.play();
-        instrument1.play();
-        instrument2.play();
-        return result;
-    }
+	public Musician() {
+	}
 
-    public String getSong() {
-        return song;
-    }
+	@Override
+	public String perform() throws Exception {
+		String result = String.format("%s演绎%s", name, song);
+		System.out.println(result);
+		violin.play();
+		// instrument.play();
+		instrument1.play();
+		instrument2.play();
+		return result;
+	}
 
-    public void setSong(String song) {
-        this.song = song;
-    }
+	public String getSong() {
+		return song;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setSong(String song) {
+		this.song = song;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 }

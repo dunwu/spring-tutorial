@@ -4,13 +4,14 @@ import java.util.Set;
 
 public class UserGroup {
 
-    private Set<User> users;
+	private Set<User> users;
 
-    public Set<User> getUsers() {
-        return users;
-    }
+	public Set<User> getUsers() {
+		return users;
+	}
 
-    public void setUsers(Set<User> aUsers) {
-        users = aUsers;
-    }
+	public void setUsers(Set<User> aUsers) {
+		users = aUsers;
+	}
+
 }

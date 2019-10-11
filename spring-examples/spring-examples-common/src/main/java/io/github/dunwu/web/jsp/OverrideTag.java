@@ -9,34 +9,36 @@ import javax.servlet.jsp.tagext.BodyTagSupport;
  */
 public class OverrideTag extends BodyTagSupport {
 
-    private static final long serialVersionUID = 1692569211455126528L;
-    private static final String BLOCK = "__jsp_override__";
+	private static final long serialVersionUID = 1692569211455126528L;
 
-    protected String name;
+	private static final String BLOCK = "__jsp_override__";
 
-    @Override
-    public int doStartTag() {
-        return isOverrided() ? SKIP_BODY : EVAL_BODY_BUFFERED;
-    }
+	protected String name;
 
-    @Override
-    public int doEndTag() {
-        if (isOverrided()) {
-            return EVAL_PAGE;
-        }
-        BodyContent b = getBodyContent();
-        String newName = BLOCK + name;
+	@Override
+	public int doStartTag() {
+		return isOverrided() ? SKIP_BODY : EVAL_BODY_BUFFERED;
+	}
 
-        pageContext.getRequest().setAttribute(newName, b.getString());
-        return EVAL_PAGE;
-    }
+	@Override
+	public int doEndTag() {
+		if (isOverrided()) {
+			return EVAL_PAGE;
+		}
+		BodyContent b = getBodyContent();
+		String newName = BLOCK + name;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+		pageContext.getRequest().setAttribute(newName, b.getString());
+		return EVAL_PAGE;
+	}
 
-    private boolean isOverrided() {
-        String newName = BLOCK + name;
-        return pageContext.getRequest().getAttribute(newName) != null;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	private boolean isOverrided() {
+		String newName = BLOCK + name;
+		return pageContext.getRequest().getAttribute(newName) != null;
+	}
+
 }
