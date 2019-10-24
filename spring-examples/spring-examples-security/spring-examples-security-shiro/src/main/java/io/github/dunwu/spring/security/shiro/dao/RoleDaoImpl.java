@@ -1,13 +1,12 @@
 package io.github.dunwu.spring.security.shiro.dao;
 
 import io.github.dunwu.spring.security.shiro.entity.Role;
-import org.springframework.jdbc.core.PreparedStatementCreator;
-import org.springframework.jdbc.core.support.JdbcDaoSupport;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
 
 /**
  * <p>
@@ -27,7 +26,7 @@ public class RoleDaoImpl extends JdbcDaoSupport implements RoleDao {
 		getJdbcTemplate().update(new PreparedStatementCreator() {
 			@Override
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				PreparedStatement psst = connection.prepareStatement(sql, new String[] { "id" });
+				PreparedStatement psst = connection.prepareStatement(sql, new String[] {"id"});
 				psst.setString(1, role.getRole());
 				psst.setString(2, role.getDescription());
 				psst.setBoolean(3, role.getAvailable());
@@ -62,6 +61,11 @@ public class RoleDaoImpl extends JdbcDaoSupport implements RoleDao {
 		}
 	}
 
+	private boolean exists(Long roleId, Long permissionId) {
+		String sql = "select count(1) from sys_roles_permissions where role_id=? and permission_id=?";
+		return getJdbcTemplate().queryForObject(sql, Integer.class, roleId, permissionId) != 0;
+	}
+
 	@Override
 	public void uncorrelationPermissions(Long roleId, Long... permissionIds) {
 		if (permissionIds == null || permissionIds.length == 0) {
@@ -73,11 +77,6 @@ public class RoleDaoImpl extends JdbcDaoSupport implements RoleDao {
 				getJdbcTemplate().update(sql, roleId, permissionId);
 			}
 		}
-	}
-
-	private boolean exists(Long roleId, Long permissionId) {
-		String sql = "select count(1) from sys_roles_permissions where role_id=? and permission_id=?";
-		return getJdbcTemplate().queryForObject(sql, Integer.class, roleId, permissionId) != 0;
 	}
 
 }

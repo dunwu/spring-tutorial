@@ -13,15 +13,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * 展示 @Autowired 的用法
  * <p>
  *
- * @Autowired 可用于修饰属性、setter 方法、构造方法。
- * 被@Autowired修饰的属性在初始化时，会自动匹配与其类型相符的bean。如果存在多个匹配的候选bean，Spring会报异常。
  * @author Zhang Peng
+ * @Autowired 可用于修饰属性、setter 方法、构造方法。 被@Autowired修饰的属性在初始化时，会自动匹配与其类型相符的bean。如果存在多个匹配的候选bean，Spring会报异常。
  */
 public class AnnotationAutowired {
 
 	private static final Logger log = LoggerFactory.getLogger(AnnotationAutowired.class);
 
-	/** 修饰属性 */
+	/**
+	 * 修饰属性
+	 */
 	@Autowired
 	private Apple fieldA;
 
@@ -32,7 +33,9 @@ public class AnnotationAutowired {
 	public AnnotationAutowired() {
 	}
 
-	/** 修饰构造方法 */
+	/**
+	 * 修饰构造方法
+	 */
 	@Autowired
 	public AnnotationAutowired(Orange fieldC) {
 		this.fieldC = fieldC;
@@ -44,13 +47,13 @@ public class AnnotationAutowired {
 		AnnotationAutowired annotationAutowired = (AnnotationAutowired) ctx.getBean("annotationAutowired");
 
 		log.debug("type: {}, name: {}", annotationAutowired.getFieldA().getClass(),
-				annotationAutowired.getFieldA().getName());
+			annotationAutowired.getFieldA().getName());
 
 		log.debug("type: {}, name: {}", annotationAutowired.getFieldB().getClass(),
-				annotationAutowired.getFieldB().getName());
+			annotationAutowired.getFieldB().getName());
 
 		log.debug("type: {}, name: {}", annotationAutowired.getFieldC().getClass(),
-				annotationAutowired.getFieldC().getName());
+			annotationAutowired.getFieldC().getName());
 		ctx.close();
 	}
 
@@ -66,7 +69,9 @@ public class AnnotationAutowired {
 		return fieldB;
 	}
 
-	/** 修饰setter方法 */
+	/**
+	 * 修饰setter方法
+	 */
 	@Autowired
 	public void setFieldB(Banana fieldB) {
 		this.fieldB = fieldB;

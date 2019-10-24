@@ -14,7 +14,9 @@ import org.slf4j.LoggerFactory;
 public class MongoDBTest {
 
 	final static Logger log = LoggerFactory.getLogger(MongoDBTest.class);
+
 	static MongoDatabase db;
+
 	static {
 		MongoClient mongoClient = new MongoClient("localhost", 27017);
 

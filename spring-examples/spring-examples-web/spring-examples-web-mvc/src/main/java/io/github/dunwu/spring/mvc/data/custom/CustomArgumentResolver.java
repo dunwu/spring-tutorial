@@ -16,7 +16,7 @@ public class CustomArgumentResolver implements HandlerMethodArgumentResolver {
 
 	@Override
 	public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer,
-			NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
+		NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
 		RequestAttribute attr = parameter.getParameterAnnotation(RequestAttribute.class);
 		return webRequest.getAttribute(attr.value(), WebRequest.SCOPE_REQUEST);
 	}

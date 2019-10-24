@@ -1,11 +1,10 @@
 package io.github.dunwu.spring.data.jdbc;
 
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.util.List;
 
 public class JdbcDemo {
 

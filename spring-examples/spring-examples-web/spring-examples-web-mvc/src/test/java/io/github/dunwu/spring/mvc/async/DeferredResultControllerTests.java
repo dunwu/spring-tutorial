@@ -28,34 +28,34 @@ public class DeferredResultControllerTests extends AbstractContextControllerTest
 	@Test
 	public void responseBody() throws Exception {
 		MvcResult mvcResult = this.mockMvc.perform(get("/async/deferred-result/response-body"))
-				.andExpect(status().isOk()).andExpect(request().asyncStarted())
-				.andExpect(request().asyncResult("Deferred result")).andReturn();
+			.andExpect(status().isOk()).andExpect(request().asyncStarted())
+			.andExpect(request().asyncResult("Deferred result")).andReturn();
 
 		this.mockMvc.perform(asyncDispatch(mvcResult)).andExpect(status().isOk())
-				.andExpect(content().contentType("text/plain;charset=ISO-8859-1"))
-				.andExpect(content().string("Deferred result"));
+			.andExpect(content().contentType("text/plain;charset=ISO-8859-1"))
+			.andExpect(content().string("Deferred result"));
 	}
 
 	@Test
 	public void view() throws Exception {
 		MvcResult mvcResult = this.mockMvc.perform(get("/async/deferred-result/model-and-view"))
-				.andExpect(status().isOk()).andExpect(request().asyncStarted())
-				.andExpect(request().asyncResult(instanceOf(ModelAndView.class))).andReturn();
+			.andExpect(status().isOk()).andExpect(request().asyncStarted())
+			.andExpect(request().asyncResult(instanceOf(ModelAndView.class))).andReturn();
 
 		this.mockMvc.perform(asyncDispatch(mvcResult)).andExpect(status().isOk())
-				.andExpect(forwardedUrl("/WEB-INF/views/views/html.jsp"))
-				.andExpect(model().attributeExists("javaBean"));
+			.andExpect(forwardedUrl("/WEB-INF/views/views/html.jsp"))
+			.andExpect(model().attributeExists("javaBean"));
 	}
 
 	@Test
 	public void exception() throws Exception {
 		MvcResult mvcResult = this.mockMvc.perform(get("/async/deferred-result/exception")).andExpect(status().isOk())
-				.andExpect(request().asyncStarted())
-				.andExpect(request().asyncResult(instanceOf(IllegalStateException.class))).andReturn();
+			.andExpect(request().asyncStarted())
+			.andExpect(request().asyncResult(instanceOf(IllegalStateException.class))).andReturn();
 
 		this.mockMvc.perform(asyncDispatch(mvcResult)).andExpect(status().isOk())
-				.andExpect(content().contentType("text/plain;charset=ISO-8859-1"))
-				.andExpect(content().string("Handled exception: DeferredResult error"));
+			.andExpect(content().contentType("text/plain;charset=ISO-8859-1"))
+			.andExpect(content().string("Handled exception: DeferredResult error"));
 	}
 
 }

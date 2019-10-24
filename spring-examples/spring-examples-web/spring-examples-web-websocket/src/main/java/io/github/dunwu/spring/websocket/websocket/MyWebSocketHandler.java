@@ -3,11 +3,6 @@ package io.github.dunwu.spring.websocket.websocket;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import io.github.dunwu.spring.websocket.entity.Message;
-import org.apache.commons.lang3.concurrent.BasicThreadFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
-
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashSet;
@@ -17,6 +12,10 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
+import org.apache.commons.lang3.concurrent.BasicThreadFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 @Component
 public class MyWebSocketHandler implements WebSocketHandler {
@@ -63,7 +62,29 @@ public class MyWebSocketHandler implements WebSocketHandler {
 		Message msg = new Gson().fromJson(message.getPayload().toString(), Message.class);
 		msg.setDate(new Date());
 		sendMessageToUser(msg.getTo(),
-				new TextMessage(new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create().toJson(msg)));
+			new TextMessage(new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create().toJson(msg)));
+	}
+
+	/**
+	 * 给某个用户发送消息
+	 *
+	 * @param userName
+	 * @param message
+	 * @throws IOException
+	 */
+	private void sendMessageToUser(Long uid, TextMessage message) throws IOException {
+		for (Long id : userSocketSessionMap.keySet()) {
+			if (id.equals(uid)) {
+				for (WebSocketSession session : userSocketSessionMap.get(uid)) {
+					try {
+						logger.info("SendAll: {}", message);
+						session.sendMessage(message);
+					} catch (Exception e) {
+						logger.error(e.toString());
+					}
+				}
+			}
+		}
 	}
 
 	/**
@@ -115,6 +136,7 @@ public class MyWebSocketHandler implements WebSocketHandler {
 
 	/**
 	 * 给所有在线用户发送消息
+	 *
 	 * @param message
 	 * @throws IOException
 	 */
@@ -124,8 +146,8 @@ public class MyWebSocketHandler implements WebSocketHandler {
 			for (final WebSocketSession session : item) {
 				if (session.isOpen()) {
 					ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1,
-							new BasicThreadFactory.Builder().namingPattern("socket-schedule-pool-%d").daemon(true)
-									.build());
+						new BasicThreadFactory.Builder().namingPattern("socket-schedule-pool-%d").daemon(true)
+							.build());
 					for (int i = 0; i < 3; i++) {
 						executorService.execute(new Runnable() {
 							@Override
@@ -135,34 +157,11 @@ public class MyWebSocketHandler implements WebSocketHandler {
 										logger.debug("broadcast output:" + message.toString());
 										session.sendMessage(message);
 									}
-								}
-								catch (IOException e) {
+								} catch (IOException e) {
 									e.printStackTrace();
 								}
 							}
 						});
-					}
-				}
-			}
-		}
-	}
-
-	/**
-	 * 给某个用户发送消息
-	 * @param userName
-	 * @param message
-	 * @throws IOException
-	 */
-	private void sendMessageToUser(Long uid, TextMessage message) throws IOException {
-		for (Long id : userSocketSessionMap.keySet()) {
-			if (id.equals(uid)) {
-				for (WebSocketSession session : userSocketSessionMap.get(uid)) {
-					try {
-						logger.info("SendAll: {}", message);
-						session.sendMessage(message);
-					}
-					catch (Exception e) {
-						logger.error(e.toString());
 					}
 				}
 			}

@@ -1,12 +1,11 @@
 package io.github.dunwu.spring.cache.service;
 
 import io.github.dunwu.spring.cache.entity.User;
+import java.util.concurrent.ConcurrentHashMap;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
-
-import java.util.concurrent.ConcurrentHashMap;
 
 @Service
 public class UserService {
@@ -24,29 +23,9 @@ public class UserService {
 		map.put(user3.getId(), user3);
 	}
 
-	@Cacheable(value = { "users" }, key = "#user.id")
+	@Cacheable(value = {"users"}, key = "#user.id")
 	public User findUser(User user) {
 		return findUserInDb(user.getId());
-	}
-
-	@Cacheable(value = "users", condition = "#user.getId() <= 2")
-	public User findUserInLimit(User user) {
-		return findUserInDb(user.getId());
-	}
-
-	@CachePut(value = "users", key = "#user.getId()")
-	public void updateUser(User user) {
-		updateUserInDb(user);
-	}
-
-	@CacheEvict(value = "users")
-	public void removeUser(User user) {
-		removeUserInDb(user.getId());
-	}
-
-	@CacheEvict(value = "users", allEntries = true)
-	public void clear() {
-		removeAllInDb();
 	}
 
 	/**
@@ -61,6 +40,16 @@ public class UserService {
 		return null;
 	}
 
+	@Cacheable(value = "users", condition = "#user.getId() <= 2")
+	public User findUserInLimit(User user) {
+		return findUserInDb(user.getId());
+	}
+
+	@CachePut(value = "users", key = "#user.getId()")
+	public void updateUser(User user) {
+		updateUserInDb(user);
+	}
+
 	/**
 	 * 模拟数据库更新操作
 	 */
@@ -72,12 +61,22 @@ public class UserService {
 		}
 	}
 
+	@CacheEvict(value = "users")
+	public void removeUser(User user) {
+		removeUserInDb(user.getId());
+	}
+
 	/**
 	 * 模拟数据库删除操作
 	 */
 	private void removeUserInDb(int id) {
 		map.remove(id);
 		System.out.println("从数据库移除 id = " + id + " 的数据");
+	}
+
+	@CacheEvict(value = "users", allEntries = true)
+	public void clear() {
+		removeAllInDb();
 	}
 
 	private void removeAllInDb() {

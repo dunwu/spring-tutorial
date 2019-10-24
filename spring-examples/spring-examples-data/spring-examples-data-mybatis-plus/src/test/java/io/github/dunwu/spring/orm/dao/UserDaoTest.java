@@ -9,10 +9,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * @author Zhang Peng
- * @date 2017/4/13.
+ * @since 2017/4/13.
  */
 @RunWith(SpringJUnit4ClassRunner.class) // 表示继承了SpringJUnit4ClassRunner类
-@ContextConfiguration(locations = { "classpath:mybatis/mybatis-spring.xml" })
+@ContextConfiguration(locations = {"classpath:mybatis/mybatis-spring.xml"})
 public class UserDaoTest {
 
 	@Autowired

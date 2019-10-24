@@ -4,7 +4,7 @@ public class Person {
 
 	private String name;
 
-	@DateString
+	@sinceString
 	private String birthday;
 
 	public String getName() {

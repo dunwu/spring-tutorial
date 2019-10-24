@@ -2,7 +2,6 @@ package io.github.dunwu.spring.security.shiro.service;
 
 import io.github.dunwu.spring.security.shiro.dao.UserDao;
 import io.github.dunwu.spring.security.shiro.entity.User;
-
 import java.util.Set;
 
 /**
@@ -29,6 +28,7 @@ public class UserServiceImpl implements UserService {
 
 	/**
 	 * 创建用户
+	 *
 	 * @param user
 	 */
 	@Override
@@ -40,6 +40,7 @@ public class UserServiceImpl implements UserService {
 
 	/**
 	 * 修改密码
+	 *
 	 * @param userId
 	 * @param newPassword
 	 */
@@ -53,6 +54,7 @@ public class UserServiceImpl implements UserService {
 
 	/**
 	 * 添加用户-角色关系
+	 *
 	 * @param userId
 	 * @param roleIds
 	 */
@@ -63,6 +65,7 @@ public class UserServiceImpl implements UserService {
 
 	/**
 	 * 移除用户-角色关系
+	 *
 	 * @param userId
 	 * @param roleIds
 	 */
@@ -73,6 +76,7 @@ public class UserServiceImpl implements UserService {
 
 	/**
 	 * 根据用户名查找用户
+	 *
 	 * @param username
 	 * @return
 	 */
@@ -83,6 +87,7 @@ public class UserServiceImpl implements UserService {
 
 	/**
 	 * 根据用户名查找其角色
+	 *
 	 * @param username
 	 * @return
 	 */
@@ -93,6 +98,7 @@ public class UserServiceImpl implements UserService {
 
 	/**
 	 * 根据用户名查找其权限
+	 *
 	 * @param username
 	 * @return
 	 */

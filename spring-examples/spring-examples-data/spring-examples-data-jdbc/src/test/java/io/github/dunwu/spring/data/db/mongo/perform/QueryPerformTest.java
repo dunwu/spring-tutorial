@@ -26,7 +26,6 @@ public class QueryPerformTest extends MongoDBConnector {
 			@Override
 			public void apply(Document document) {
 				log.debug(document.getString("itemid"));
-
 			}
 		});
 		Assert.assertNotNull(iterable);

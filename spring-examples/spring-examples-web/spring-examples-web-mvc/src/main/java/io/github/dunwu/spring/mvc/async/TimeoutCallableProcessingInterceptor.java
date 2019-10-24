@@ -1,9 +1,8 @@
 package io.github.dunwu.spring.mvc.async;
 
+import java.util.concurrent.Callable;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.context.request.async.CallableProcessingInterceptorAdapter;
-
-import java.util.concurrent.Callable;
 
 public class TimeoutCallableProcessingInterceptor extends CallableProcessingInterceptorAdapter {
 

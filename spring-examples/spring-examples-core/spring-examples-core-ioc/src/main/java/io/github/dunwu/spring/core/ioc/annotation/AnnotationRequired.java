@@ -10,9 +10,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * 展示 @Required 注解的用法
  * <p>
  *
- * @Required 注解用于bean属性的setter方法并且它指示，受影响的bean属性必须在配置时被填充在xml配置文件中，
- * 否则容器将抛出BeanInitializationException。
  * @author Zhang Peng
+ * @Required 注解用于bean属性的setter方法并且它指示，受影响的bean属性必须在配置时被填充在xml配置文件中， 否则容器将抛出BeanInitializationException。
  */
 public class AnnotationRequired {
 

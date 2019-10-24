@@ -20,6 +20,11 @@ public class OverrideTag extends BodyTagSupport {
 		return isOverrided() ? SKIP_BODY : EVAL_BODY_BUFFERED;
 	}
 
+	private boolean isOverrided() {
+		String newName = BLOCK + name;
+		return pageContext.getRequest().getAttribute(newName) != null;
+	}
+
 	@Override
 	public int doEndTag() {
 		if (isOverrided()) {
@@ -34,11 +39,6 @@ public class OverrideTag extends BodyTagSupport {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	private boolean isOverrided() {
-		String newName = BLOCK + name;
-		return pageContext.getRequest().getAttribute(newName) != null;
 	}
 
 }

@@ -1,5 +1,8 @@
 package io.github.dunwu.spring.web.controller;
 
+import java.util.Date;
+import java.util.concurrent.atomic.AtomicInteger;
+import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -8,13 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
-import java.util.concurrent.atomic.AtomicInteger;
-
 /**
  * @author Zhang Peng
- * @date 2017/4/12.
+ * @since 2017/4/12.
  */
 @Controller
 public class HomeController {

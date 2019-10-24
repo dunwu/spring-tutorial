@@ -4,16 +4,15 @@ import com.google.gson.GsonBuilder;
 import io.github.dunwu.spring.websocket.entity.Message;
 import io.github.dunwu.spring.websocket.entity.User;
 import io.github.dunwu.spring.websocket.websocket.MyWebSocketHandler;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.socket.TextMessage;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.socket.TextMessage;
 
 @Controller
 @RequestMapping("/msg")
@@ -36,7 +35,6 @@ public class MsgController {
 		u2.setId(2L);
 		u2.setName("李四");
 		users.put(u2.getId(), u2);
-
 	}
 
 	// 用户登录

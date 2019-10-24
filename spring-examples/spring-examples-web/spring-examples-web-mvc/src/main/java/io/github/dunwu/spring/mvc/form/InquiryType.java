@@ -17,5 +17,4 @@ public enum InquiryType {
 	 * 建议
 	 */
 	suggestion;
-
 }

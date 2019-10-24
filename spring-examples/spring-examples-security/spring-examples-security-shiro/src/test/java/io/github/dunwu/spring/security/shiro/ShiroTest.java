@@ -7,6 +7,7 @@ import io.github.dunwu.spring.security.shiro.realm.UserRealm;
 import io.github.dunwu.spring.security.shiro.service.PermissionService;
 import io.github.dunwu.spring.security.shiro.service.RoleService;
 import io.github.dunwu.spring.security.shiro.service.UserService;
+import javax.sql.DataSource;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
@@ -20,8 +21,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import javax.sql.DataSource;
-
 /**
  * <p>
  * User: Zhang Kaitao
@@ -31,7 +30,7 @@ import javax.sql.DataSource;
  * Version: 1.0
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:spring/spring-beans.xml", "classpath:spring/spring-shiro.xml" })
+@ContextConfiguration(locations = {"classpath:spring/spring-beans.xml", "classpath:spring/spring-shiro.xml"})
 public class ShiroTest {
 
 	private static final Logger log = LoggerFactory.getLogger(ShiroTest.class);
@@ -125,6 +124,24 @@ public class ShiroTest {
 		login(u1.getUsername(), password);
 	}
 
+	private void login(String username, String password) {
+		Subject subject = SecurityUtils.getSubject();
+		UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+		try {
+			subject.login(token);
+			subject.checkRole("admin");
+			subject.checkPermission("user:create");
+			log.debug("username: {}, password: {}，登录成功!", username, password);
+		} catch (Exception e) {
+			log.debug("username: {}, password: {} 登录失败!", username, password);
+		} finally {
+			userRealm.clearAllCache();
+			if (subject.isAuthenticated()) {
+				subject.logout();
+			}
+		}
+	}
+
 	/**
 	 * 用错误的用户名、密码登录
 	 */
@@ -143,26 +160,6 @@ public class ShiroTest {
 		userService.changePassword(u1.getId(), changePassword);
 		log.debug("更改 {} 的密码为 {}", u1.getUsername(), changePassword);
 		login(u1.getUsername(), changePassword);
-	}
-
-	private void login(String username, String password) {
-		Subject subject = SecurityUtils.getSubject();
-		UsernamePasswordToken token = new UsernamePasswordToken(username, password);
-		try {
-			subject.login(token);
-			subject.checkRole("admin");
-			subject.checkPermission("user:create");
-			log.debug("username: {}, password: {}，登录成功!", username, password);
-		}
-		catch (Exception e) {
-			log.debug("username: {}, password: {}; 登录失败!", username, password);
-		}
-		finally {
-			userRealm.clearAllCache();
-			if (subject.isAuthenticated()) {
-				subject.logout();
-			}
-		}
 	}
 
 }

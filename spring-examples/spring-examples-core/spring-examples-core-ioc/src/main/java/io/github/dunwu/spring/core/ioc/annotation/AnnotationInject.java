@@ -3,12 +3,11 @@ package io.github.dunwu.spring.core.ioc.annotation;
 import io.github.dunwu.spring.core.ioc.sample.Apple;
 import io.github.dunwu.spring.core.ioc.sample.Banana;
 import io.github.dunwu.spring.core.ioc.sample.Orange;
+import javax.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import javax.inject.Inject;
 
 /**
  * 展示 @Resource 注解的用法
@@ -39,13 +38,13 @@ public class AnnotationInject {
 		AnnotationInject annotationInject = (AnnotationInject) ctx.getBean("annotationInject");
 
 		log.debug("type: {}, name: {}", annotationInject.getFieldA().getClass(),
-				annotationInject.getFieldA().getName());
+			annotationInject.getFieldA().getName());
 
 		log.debug("type: {}, name: {}", annotationInject.getFieldB().getClass(),
-				annotationInject.getFieldB().getName());
+			annotationInject.getFieldB().getName());
 
 		log.debug("type: {}, name: {}", annotationInject.getFieldC().getClass(),
-				annotationInject.getFieldC().getName());
+			annotationInject.getFieldC().getName());
 
 		ctx.close();
 	}

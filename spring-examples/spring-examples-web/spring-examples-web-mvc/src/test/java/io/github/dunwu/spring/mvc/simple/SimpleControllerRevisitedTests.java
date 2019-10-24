@@ -13,8 +13,8 @@ public class SimpleControllerRevisitedTests {
 	@Test
 	public void simple() throws Exception {
 		standaloneSetup(new SimpleControllerRevisited()).build()
-				.perform(get("/simple/revisited").accept(MediaType.TEXT_PLAIN)).andExpect(status().isOk())
-				.andExpect(content().contentType("text/plain")).andExpect(content().string("Hello world revisited!"));
+			.perform(get("/simple/revisited").accept(MediaType.TEXT_PLAIN)).andExpect(status().isOk())
+			.andExpect(content().contentType("text/plain")).andExpect(content().string("Hello world revisited!"));
 	}
 
 }

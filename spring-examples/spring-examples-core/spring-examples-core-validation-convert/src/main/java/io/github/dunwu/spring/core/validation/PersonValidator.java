@@ -1,15 +1,14 @@
 package io.github.dunwu.spring.core.validation;
 
-import org.springframework.stereotype.Component;
-import org.springframework.validation.Errors;
-import org.springframework.validation.ValidationUtils;
-import org.springframework.validation.Validator;
-
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import org.springframework.stereotype.Component;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.validation.Validator;
 
 @Component
 public class PersonValidator implements Validator {
@@ -42,8 +41,7 @@ public class PersonValidator implements Validator {
 						if (validatorRule != null) {
 							validatorRule.valid(annotation, target, field, errors);
 						}
-					}
-					catch (Exception e) {
+					} catch (Exception e) {
 						e.printStackTrace();
 					}
 				}

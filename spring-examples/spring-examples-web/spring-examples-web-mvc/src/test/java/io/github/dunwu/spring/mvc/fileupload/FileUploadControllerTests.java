@@ -19,7 +19,7 @@ public class FileUploadControllerTests extends AbstractContextControllerTests {
 		MockMultipartFile file = new MockMultipartFile("file", "orig", null, "bar".getBytes());
 
 		webAppContextSetup(this.wac).build().perform(fileUpload("/fileupload").file(file))
-				.andExpect(model().attribute("message", "File 'orig' uploaded successfully"));
+			.andExpect(model().attribute("message", "File 'orig' uploaded successfully"));
 	}
 
 }

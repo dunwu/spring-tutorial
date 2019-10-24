@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * @author Zhang Peng
- * @date 2017/4/13.
+ * @since 2017/4/13.
  */
 @Repository
 public class UserDAOImpl implements UserDAO {

@@ -4,10 +4,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @title App
- * @description 使用xml方式来实现依赖注入
+ * 使用xml方式来实现依赖注入
+ *
  * @author Zhang Peng
- * @date 2016年7月31日
+ * @since 2016年7月31日
  */
 public class App {
 

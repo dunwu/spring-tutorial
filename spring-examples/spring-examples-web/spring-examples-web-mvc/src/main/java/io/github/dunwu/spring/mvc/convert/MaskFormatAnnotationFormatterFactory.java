@@ -1,14 +1,13 @@
 package io.github.dunwu.spring.mvc.convert;
 
-import org.springframework.format.AnnotationFormatterFactory;
-import org.springframework.format.Formatter;
-import org.springframework.format.Parser;
-import org.springframework.format.Printer;
-
 import java.text.ParseException;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
+import org.springframework.format.AnnotationFormatterFactory;
+import org.springframework.format.Formatter;
+import org.springframework.format.Parser;
+import org.springframework.format.Printer;
 
 public class MaskFormatAnnotationFormatterFactory implements AnnotationFormatterFactory<MaskFormat> {
 
@@ -37,8 +36,7 @@ public class MaskFormatAnnotationFormatterFactory implements AnnotationFormatter
 			try {
 				this.delegate = new javax.swing.text.MaskFormatter(mask);
 				this.delegate.setValueContainsLiteralCharacters(false);
-			}
-			catch (ParseException e) {
+			} catch (ParseException e) {
 				throw new IllegalStateException("Mask could not be parsed " + mask, e);
 			}
 		}
@@ -47,8 +45,7 @@ public class MaskFormatAnnotationFormatterFactory implements AnnotationFormatter
 		public String print(String object, Locale locale) {
 			try {
 				return delegate.valueToString(object);
-			}
-			catch (ParseException e) {
+			} catch (ParseException e) {
 				throw new IllegalArgumentException("Unable to print using mask " + delegate.getMask(), e);
 			}
 		}

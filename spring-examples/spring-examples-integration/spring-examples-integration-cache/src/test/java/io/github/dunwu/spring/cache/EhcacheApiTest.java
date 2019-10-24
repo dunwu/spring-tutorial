@@ -1,5 +1,9 @@
 package io.github.dunwu.spring.cache;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.net.URL;
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.Element;
@@ -7,11 +11,6 @@ import net.sf.ehcache.config.CacheConfiguration;
 import net.sf.ehcache.config.PersistenceConfiguration;
 import net.sf.ehcache.store.MemoryStoreEvictionPolicy;
 import org.junit.Test;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.net.URL;
 
 /**
  * Ehcache 原生 Api 测试
@@ -196,9 +195,9 @@ public class EhcacheApiTest {
 
 		// 添加缓存
 		Cache testCache = new Cache(new CacheConfiguration("testCache3", 5000)
-				.memoryStoreEvictionPolicy(MemoryStoreEvictionPolicy.LFU).eternal(false).timeToLiveSeconds(60)
-				.timeToIdleSeconds(30).diskExpiryThreadIntervalSeconds(0)
-				.persistence(new PersistenceConfiguration().strategy(PersistenceConfiguration.Strategy.LOCALTEMPSWAP)));
+			.memoryStoreEvictionPolicy(MemoryStoreEvictionPolicy.LFU).eternal(false).timeToLiveSeconds(60)
+			.timeToIdleSeconds(30).diskExpiryThreadIntervalSeconds(0)
+			.persistence(new PersistenceConfiguration().strategy(PersistenceConfiguration.Strategy.LOCALTEMPSWAP)));
 		manager.addCache(testCache);
 
 		// 打印配置信息和状态

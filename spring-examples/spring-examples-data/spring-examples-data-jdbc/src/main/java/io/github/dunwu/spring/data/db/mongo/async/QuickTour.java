@@ -9,11 +9,10 @@ import com.mongodb.async.client.MongoDatabase;
 import com.mongodb.bulk.BulkWriteResult;
 import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
-import org.bson.Document;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
+import org.bson.Document;
 
 import static com.mongodb.client.model.Accumulators.sum;
 import static com.mongodb.client.model.Aggregates.*;
@@ -26,13 +25,13 @@ import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
 
 /**
- * The QuickTour code example see:
- * https://mongodb.github.io/mongo-java-driver/3.0/getting-started
+ * The QuickTour code example see: https://mongodb.github.io/mongo-java-driver/3.0/getting-started
  */
 public class QuickTour {
 
 	/**
 	 * Run this main method to see the output of this quick example.
+	 *
 	 * @param args takes an optional single argument for the connection string
 	 * @throws InterruptedException if a latch is interrupted
 	 */
@@ -42,8 +41,7 @@ public class QuickTour {
 		if (args.length == 0) {
 			// connect to the local database server
 			mongoClient = MongoClients.create();
-		}
-		else {
+		} else {
 			mongoClient = MongoClients.create(args[0]);
 		}
 
@@ -65,7 +63,7 @@ public class QuickTour {
 
 		// make a document and insert it
 		Document doc = new Document("name", "MongoDB").append("type", "database").append("count", 1).append("info",
-				new Document("x", 203).append("y", 102));
+			new Document("x", 203).append("y", 102));
 
 		collection.insertOne(doc, new SingleResultCallback<Void>() {
 			@Override
@@ -97,7 +95,7 @@ public class QuickTour {
 					@Override
 					public void onResult(final Long count, final Throwable t) {
 						System.out.println(
-								"total # of documents after inserting 100 small ones (should be 101) " + count);
+							"total # of documents after inserting 100 small ones (should be 101) " + count);
 						countLatch.countDown();
 					}
 				});
@@ -111,7 +109,7 @@ public class QuickTour {
 			public void onResult(final Document document, final Throwable t) {
 				System.out.println(document.toJson());
 			}
-		};
+		}
 		collection.find().first(printDocument);
 
 		// lets get all the documents in the collection and print them out
@@ -120,13 +118,13 @@ public class QuickTour {
 			public void apply(final Document document) {
 				System.out.println(document.toJson());
 			}
-		};
+		}
 		SingleResultCallback<Void> callbackWhenFinished = new SingleResultCallback<Void>() {
 			@Override
 			public void onResult(final Void result, final Throwable t) {
 				System.out.println("Operation Finished!");
 			}
-		};
+		}
 
 		collection.find().forEach(printDocumentBlock, callbackWhenFinished);
 
@@ -148,7 +146,7 @@ public class QuickTour {
 
 		// Aggregation
 		collection.aggregate(asList(match(gt("i", 0)), project(Document.parse("{ITimes10: {$multiply: ['$i', 10]}}"))))
-				.forEach(printDocumentBlock, callbackWhenFinished);
+			.forEach(printDocumentBlock, callbackWhenFinished);
 
 		collection.aggregate(singletonList(group(null, sum("total", "$i")))).first(printDocument);
 
@@ -207,7 +205,7 @@ public class QuickTour {
 			public void onResult(final BulkWriteResult result, final Throwable t) {
 				System.out.println(result);
 			}
-		};
+		}
 		collection.bulkWrite(writes, printBatchResult);
 
 		final CountDownLatch dropLatch3 = new CountDownLatch(1);

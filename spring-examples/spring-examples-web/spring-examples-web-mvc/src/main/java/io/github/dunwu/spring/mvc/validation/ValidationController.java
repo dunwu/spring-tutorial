@@ -1,11 +1,10 @@
 package io.github.dunwu.spring.mvc.validation;
 
+import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.validation.Valid;
 
 @Controller
 public class ValidationController {
@@ -14,11 +13,11 @@ public class ValidationController {
 	// classpath
 
 	@RequestMapping("/validate")
-	public @ResponseBody String validate(@Valid JavaBean bean, BindingResult result) {
+	public @ResponseBody
+	String validate(@Valid JavaBean bean, BindingResult result) {
 		if (result.hasErrors()) {
 			return "Object has validation errors";
-		}
-		else {
+		} else {
 			return "No errors";
 		}
 	}

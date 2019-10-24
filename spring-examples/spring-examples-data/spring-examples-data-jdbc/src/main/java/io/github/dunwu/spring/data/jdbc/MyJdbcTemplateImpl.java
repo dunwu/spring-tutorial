@@ -1,10 +1,9 @@
 package io.github.dunwu.spring.data.jdbc;
 
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
-
-import java.util.List;
 
 public class MyJdbcTemplateImpl implements StudentDAO {
 
@@ -26,7 +25,7 @@ public class MyJdbcTemplateImpl implements StudentDAO {
 	@Override
 	public StudentDTO getById(Integer id) {
 		String sql = "select * from Student where id = ?";
-		StudentDTO student = jdbcTemplate.queryForObject(sql, new Object[] { id }, new StudentMapper());
+		StudentDTO student = jdbcTemplate.queryForObject(sql, new Object[] {id}, new StudentMapper());
 		logger.debug("查到Student记录：{}", student.toString());
 		return student;
 	}

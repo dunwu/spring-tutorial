@@ -7,6 +7,7 @@ public interface HelloProvider {
 
 	/**
 	 * 定义接口
+	 *
 	 * @param name
 	 * @return
 	 */

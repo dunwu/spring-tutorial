@@ -1,16 +1,15 @@
 package io.github.dunwu.spring.data.db.mongo.perform;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.UUID;
 import org.bson.Document;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.UUID;
 
 /**
  * Created by zp on 16/9/7.
@@ -21,6 +20,7 @@ public class InsertPerform extends MongoDBConnector {
 	final static int MAX = 10000;
 
 	final static Logger log = LoggerFactory.getLogger(InsertPerform.class);
+
 	static List<Document> list = new ArrayList<Document>();
 
 	/**
@@ -38,6 +38,16 @@ public class InsertPerform extends MongoDBConnector {
 
 		long end = System.currentTimeMillis() - start;
 		log.debug("init耗时：" + end);
+	}
+
+	@Test
+	public void test01_insertMany() {
+		db.getCollection("tmp_collection").insertMany(list);
+	}
+
+	@Test
+	public void test02_insertOne() {
+		db.getCollection("tmp_collection").insertOne(getRandomDocument());
 	}
 
 	private static Document getRandomDocument() {
@@ -62,19 +72,8 @@ public class InsertPerform extends MongoDBConnector {
 	}
 
 	private static String getUUID(int length) {
-		if (length > 32)
-			return null;
+		if (length > 32) { return null; }
 		return UUID.randomUUID().toString().replace("-", "").substring(0, length);
-	}
-
-	@Test
-	public void test01_insertMany() {
-		db.getCollection("tmp_collection").insertMany(list);
-	}
-
-	@Test
-	public void test02_insertOne() {
-		db.getCollection("tmp_collection").insertOne(getRandomDocument());
 	}
 
 }

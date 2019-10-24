@@ -1,17 +1,15 @@
 package io.github.dunwu.spring.mvc.convert;
 
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
-
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 public class JavaBean {
 
 	private Integer primitive;
 
-	@DateTimeFormat(iso = ISO.DATE)
+	@sinceTimeFormat(iso = ISO.DATE)
 	private Date date;
 
 	@MaskFormat("(###) ###-####")
@@ -21,7 +19,7 @@ public class JavaBean {
 	private List<Integer> list;
 
 	// annotation type conversion rule will be applied to each list element
-	@DateTimeFormat(iso = ISO.DATE)
+	@sinceTimeFormat(iso = ISO.DATE)
 	private List<Date> formattedList;
 
 	// map will auto-grow as its dereferenced e.g. map[key]=value

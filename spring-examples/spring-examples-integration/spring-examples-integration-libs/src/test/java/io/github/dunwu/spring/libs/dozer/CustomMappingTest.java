@@ -2,6 +2,9 @@ package io.github.dunwu.spring.libs.dozer;
 
 import com.github.dozermapper.core.Mapper;
 import io.github.dunwu.spring.libs.dozer.vo.*;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
@@ -12,15 +15,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * @author Zhang Peng
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:spring/spring-dozer.xml" })
+@ContextConfiguration(locations = {"classpath:spring/spring-dozer.xml"})
 public class CustomMappingTest extends TestCase {
 
 	@Autowired
@@ -38,7 +37,7 @@ public class CustomMappingTest extends TestCase {
 		SameAttributeB desc = mapper.map(src, SameAttributeB.class);
 		Assert.assertNotNull(desc);
 		log.debug("Source -> Destination success. id={}, name={}, date={}", desc.getId(), desc.getName(),
-				desc.getDate());
+			desc.getDate());
 	}
 
 	@Test
@@ -51,7 +50,7 @@ public class CustomMappingTest extends TestCase {
 		NotSameAttributeB desc = mapper.map(src, NotSameAttributeB.class);
 		Assert.assertNotNull(desc);
 		log.debug("Source -> Destination success. id={}, value={}, date={}", desc.getId(), desc.getValue(),
-				desc.getDate());
+			desc.getDate());
 	}
 
 	/**
@@ -67,7 +66,7 @@ public class CustomMappingTest extends TestCase {
 		TargetBean desc = mapper.map(src, TargetBean.class);
 		Assert.assertNotNull(desc);
 		log.debug("Source -> Destination success. pk={}, name={}, data={}", desc.getPk(), desc.getName(),
-				desc.getBinaryData());
+			desc.getBinaryData());
 	}
 
 	/**
@@ -111,7 +110,6 @@ public class CustomMappingTest extends TestCase {
 		for (UserPrime item : desc.getUsers()) {
 			log.debug("Source -> Destination success. status={}", item.getStatusPrime());
 		}
-
 	}
 
 	/**

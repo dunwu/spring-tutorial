@@ -1,9 +1,8 @@
 package io.github.dunwu.spring.core.validation;
 
-import org.springframework.validation.Errors;
-
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import org.springframework.validation.Errors;
 
 public interface ValidatorRule {
 

@@ -3,6 +3,8 @@
  */
 package io.github.dunwu.spring.data.jdbc;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,9 +15,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.io.IOException;
-import java.sql.SQLException;
-
 /**
  * 测试 Mysql JDBC 操作
  *
@@ -23,7 +22,7 @@ import java.sql.SQLException;
  */
 @SuppressWarnings("all")
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:db/spring-mysql.xml" })
+@ContextConfiguration(locations = {"classpath:db/spring-mysql.xml"})
 public class MysqlJdbcTest {
 
 	@Autowired

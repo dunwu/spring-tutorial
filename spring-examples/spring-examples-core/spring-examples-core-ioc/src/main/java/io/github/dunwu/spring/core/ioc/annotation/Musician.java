@@ -1,11 +1,10 @@
 package io.github.dunwu.spring.core.ioc.annotation;
 
 import io.github.dunwu.spring.core.ioc.annotation.instrument.Instrument;
+import javax.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 
 @Service
 public class Musician implements Performer {

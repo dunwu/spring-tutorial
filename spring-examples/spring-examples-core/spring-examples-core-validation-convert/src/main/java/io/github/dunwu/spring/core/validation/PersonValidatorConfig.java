@@ -1,13 +1,12 @@
 package io.github.dunwu.spring.core.validation;
 
-import org.springframework.beans.BeansException;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
-
 import java.lang.annotation.Annotation;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 public class PersonValidatorConfig implements ApplicationContextAware {
 
@@ -25,8 +24,7 @@ public class PersonValidatorConfig implements ApplicationContextAware {
 		ValidatorRule validatorRule;
 		if (rules.containsKey(annotation)) {
 			validatorRule = rules.get(annotation);
-		}
-		else {
+		} else {
 			ValidatorRule vr = findFormMap(annotation);
 			if (vr != null) {
 				rules.put(annotation, vr);

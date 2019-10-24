@@ -18,6 +18,7 @@ public interface RoleService {
 
 	/**
 	 * 添加角色-权限之间关系
+	 *
 	 * @param roleId
 	 * @param permissionIds
 	 */
@@ -25,6 +26,7 @@ public interface RoleService {
 
 	/**
 	 * 移除角色-权限之间关系
+	 *
 	 * @param roleId
 	 * @param permissionIds
 	 */

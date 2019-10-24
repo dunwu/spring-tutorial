@@ -1,13 +1,12 @@
 package io.github.dunwu.spring.security.shiro.dao;
 
 import io.github.dunwu.spring.security.shiro.entity.Permission;
-import org.springframework.jdbc.core.PreparedStatementCreator;
-import org.springframework.jdbc.core.support.JdbcDaoSupport;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
 
 /**
  * <p>
@@ -27,7 +26,7 @@ public class PermissionDaoImpl extends JdbcDaoSupport implements PermissionDao {
 		getJdbcTemplate().update(new PreparedStatementCreator() {
 			@Override
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				PreparedStatement psst = connection.prepareStatement(sql, new String[] { "id" });
+				PreparedStatement psst = connection.prepareStatement(sql, new String[] {"id"});
 				psst.setString(1, permission.getPermission());
 				psst.setString(2, permission.getDescription());
 				psst.setBoolean(3, permission.getAvailable());

@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @since 2019-09-04
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:spring/spring-hashmap.xml" })
+@ContextConfiguration(locations = {"classpath:spring/spring-hashmap.xml"})
 public class SpringConcurrentHashMapCacheTest {
 
 	@Autowired

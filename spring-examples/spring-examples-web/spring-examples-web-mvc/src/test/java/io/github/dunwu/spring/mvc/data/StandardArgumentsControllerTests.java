@@ -25,45 +25,45 @@ public class StandardArgumentsControllerTests {
 	@Test
 	public void request() throws Exception {
 		this.mockMvc.perform(get("/data/standard/request")).andExpect(
-				content().string(startsWith("request = org.springframework.mock.web.MockHttpServletRequest@")));
+			content().string(startsWith("request = org.springframework.mock.web.MockHttpServletRequest@")));
 	}
 
 	@Test
 	public void requestReader() throws Exception {
 		this.mockMvc.perform(
-				post("/data/standard/request/reader").contentType(MediaType.TEXT_PLAIN).content("foo".getBytes()))
-				.andExpect(content().string("Read char request body = foo"));
+			post("/data/standard/request/reader").contentType(MediaType.TEXT_PLAIN).content("foo".getBytes()))
+			.andExpect(content().string("Read char request body = foo"));
 	}
 
 	@Test
 	public void requestIs() throws Exception {
 		this.mockMvc
-				.perform(post("/data/standard/request/is").contentType(MediaType.TEXT_PLAIN).content("foo".getBytes()))
-				.andExpect(content().string("Read binary request body = foo"));
+			.perform(post("/data/standard/request/is").contentType(MediaType.TEXT_PLAIN).content("foo".getBytes()))
+			.andExpect(content().string("Read binary request body = foo"));
 	}
 
 	@Test
 	public void response() throws Exception {
 		this.mockMvc.perform(get("/data/standard/response")).andExpect(
-				content().string(startsWith("response = org.springframework.mock.web.MockHttpServletResponse@")));
+			content().string(startsWith("response = org.springframework.mock.web.MockHttpServletResponse@")));
 	}
 
 	@Test
 	public void writer() throws Exception {
 		this.mockMvc.perform(get("/data/standard/response/writer"))
-				.andExpect(content().string("Wrote char response using Writer"));
+			.andExpect(content().string("Wrote char response using Writer"));
 	}
 
 	@Test
 	public void os() throws Exception {
 		this.mockMvc.perform(get("/data/standard/response/os"))
-				.andExpect(content().string("Wrote binary response using OutputStream"));
+			.andExpect(content().string("Wrote binary response using OutputStream"));
 	}
 
 	@Test
 	public void session() throws Exception {
 		this.mockMvc.perform(get("/data/standard/session"))
-				.andExpect(content().string(startsWith("session=org.springframework.mock.web.MockHttpSession@")));
+			.andExpect(content().string(startsWith("session=org.springframework.mock.web.MockHttpSession@")));
 	}
 
 }

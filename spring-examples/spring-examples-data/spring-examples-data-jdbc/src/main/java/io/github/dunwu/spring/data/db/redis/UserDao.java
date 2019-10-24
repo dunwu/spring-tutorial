@@ -1,22 +1,20 @@
 /**
- * The Apache License 2.0
- * Copyright (c) 2016 Zhang Peng
+ * The Apache License 2.0 Copyright (c) 2016 Zhang Peng
  */
 package io.github.dunwu.spring.data.db.redis;
 
 import io.github.dunwu.spring.data.db.redis.bean.UserDTO;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.util.Assert;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @author Zhang Peng
- * @date 2017/4/12.
+ * @since 2017/4/12.
  */
 public class UserDao extends AbstractBaseRedisDao<String, UserDTO> implements IUserDao {
 

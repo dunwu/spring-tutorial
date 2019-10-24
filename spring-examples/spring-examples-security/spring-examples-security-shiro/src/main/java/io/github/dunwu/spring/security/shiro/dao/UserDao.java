@@ -1,7 +1,6 @@
 package io.github.dunwu.spring.security.shiro.dao;
 
 import io.github.dunwu.spring.security.shiro.entity.User;
-
 import java.util.Set;
 
 /**

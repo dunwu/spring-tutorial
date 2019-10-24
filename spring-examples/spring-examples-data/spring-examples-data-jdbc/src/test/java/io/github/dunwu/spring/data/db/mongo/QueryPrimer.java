@@ -55,7 +55,7 @@ public class QueryPrimer extends PrimerTestCase {
 		// @begin: logical-and
 		// @code: start
 		FindIterable<Document> iterable = db.getCollection("restaurants")
-				.find(new Document("cuisine", "Italian").append("address.zipcode", "10075"));
+			.find(new Document("cuisine", "Italian").append("address.zipcode", "10075"));
 		// @code: end
 
 		// @pre: Iterate the results and apply a block to each resulting document.
@@ -82,7 +82,7 @@ public class QueryPrimer extends PrimerTestCase {
 		// @begin: logical-or
 		// @code: start
 		FindIterable<Document> iterable = db.getCollection("restaurants").find(new Document("$or",
-				asList(new Document("cuisine", "Italian"), new Document("address.zipcode", "10075"))));
+			asList(new Document("cuisine", "Italian"), new Document("address.zipcode", "10075"))));
 		// @code: end
 
 		// @pre: Iterate the results and apply a block to each resulting document.
@@ -132,7 +132,7 @@ public class QueryPrimer extends PrimerTestCase {
 		// @begin: query-embedded-document
 		// @code: start
 		FindIterable<Document> iterable = db.getCollection("restaurants")
-				.find(new Document("address.zipcode", "10075"));
+			.find(new Document("address.zipcode", "10075"));
 		// @code: end
 
 		// @pre: Iterate the results and apply a block to each resulting document.
@@ -181,7 +181,7 @@ public class QueryPrimer extends PrimerTestCase {
 		// @begin: greater-than
 		// @code: start
 		FindIterable<Document> iterable = db.getCollection("restaurants")
-				.find(new Document("grades.score", new Document("$gt", 30)));
+			.find(new Document("grades.score", new Document("$gt", 30)));
 		// @code: end
 
 		// @pre: Iterate the results and apply a block to each resulting document.
@@ -206,7 +206,7 @@ public class QueryPrimer extends PrimerTestCase {
 		// @begin: less-than
 		// @code: start
 		FindIterable<Document> iterable = db.getCollection("restaurants")
-				.find(new Document("grades.score", new Document("$lt", 10)));
+			.find(new Document("grades.score", new Document("$lt", 10)));
 		// @code: end
 
 		// @pre: Iterate the results and apply a block to each resulting document.
@@ -231,7 +231,7 @@ public class QueryPrimer extends PrimerTestCase {
 		// @begin: sort
 		// @code: start
 		FindIterable<Document> iterable = db.getCollection("restaurants").find()
-				.sort(new Document("borough", 1).append("address.zipcode", 1));
+			.sort(new Document("borough", 1).append("address.zipcode", 1));
 		// @code: end
 
 		// @pre: Iterate the results and apply a block to each resulting document

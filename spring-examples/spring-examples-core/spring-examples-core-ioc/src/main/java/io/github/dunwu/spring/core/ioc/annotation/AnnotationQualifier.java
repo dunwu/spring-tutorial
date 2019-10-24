@@ -21,7 +21,7 @@ public class AnnotationQualifier {
 
 	@Autowired
 	@Qualifier("apple") /** 去除这行，会报异常 */
-	AbstractFruit fieldA;
+		AbstractFruit fieldA;
 
 	AbstractFruit fieldB;
 
@@ -31,10 +31,10 @@ public class AnnotationQualifier {
 		AnnotationQualifier annotationQualifier = (AnnotationQualifier) ctx.getBean("annotationQualifier");
 
 		log.debug("type: {}, name: {}", annotationQualifier.getFieldA().getClass(),
-				annotationQualifier.getFieldA().getName());
+			annotationQualifier.getFieldA().getName());
 
 		log.debug("type: {}, name: {}", annotationQualifier.getFieldB().getClass(),
-				annotationQualifier.getFieldB().getName());
+			annotationQualifier.getFieldB().getName());
 		ctx.close();
 	}
 

@@ -17,13 +17,13 @@ public class CustomArgumentControllerTests {
 	@Before
 	public void setup() throws Exception {
 		this.mockMvc = standaloneSetup(new CustomArgumentController())
-				.setCustomArgumentResolvers(new CustomArgumentResolver()).build();
+			.setCustomArgumentResolvers(new CustomArgumentResolver()).build();
 	}
 
 	@Test
 	public void param() throws Exception {
 		this.mockMvc.perform(get("/data/custom"))
-				.andExpect(content().string("Got 'foo' request attribute value 'bar'"));
+			.andExpect(content().string("Got 'foo' request attribute value 'bar'"));
 	}
 
 }

@@ -34,7 +34,7 @@ public class AggregatePrimer extends PrimerTestCase {
 		// @begin: group-documents-by-a-field-and-calculate-count
 		// @code: start
 		AggregateIterable<Document> iterable = db.getCollection("restaurants").aggregate(asList(
-				new Document("$group", new Document("_id", "$borough").append("count", new Document("$sum", 1)))));
+			new Document("$group", new Document("_id", "$borough").append("count", new Document("$sum", 1)))));
 		// @code: end
 
 		// @pre: Iterate the results and apply a block to each resulting document
@@ -63,10 +63,10 @@ public class AggregatePrimer extends PrimerTestCase {
 		// @begin: filter-and-group-documents
 		// @code: start
 		AggregateIterable<Document> iterable = db.getCollection("restaurants")
-				.aggregate(asList(
-						new Document("$match", new Document("borough", "Queens").append("cuisine", "Brazilian")),
-						new Document("$group",
-								new Document("_id", "$address.zipcode").append("count", new Document("$sum", 1)))));
+			.aggregate(asList(
+				new Document("$match", new Document("borough", "Queens").append("cuisine", "Brazilian")),
+				new Document("$group",
+					new Document("_id", "$address.zipcode").append("count", new Document("$sum", 1)))));
 		// @code: end
 
 		// @pre: Iterate the results and apply a block to each resulting document

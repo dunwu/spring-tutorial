@@ -8,9 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * @description Spring Scheduler实时调度范例
+ * Spring Scheduler实时调度范例
+ *
  * @author Zhang Peng
- * @date 2016年8月31日
+ * @since 2016年8月31日
  */
 @Controller
 @RequestMapping("/scheduler")

@@ -1,10 +1,11 @@
 /**
- * The Apache License 2.0
- * Copyright (c) 2016 Zhang Peng
+ * The Apache License 2.0 Copyright (c) 2016 Zhang Peng
  */
 package io.github.dunwu.spring.data.db.redis;
 
 import io.github.dunwu.spring.data.db.redis.bean.UserDTO;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,15 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @author Zhang Peng
- * @date 2017/4/12.
+ * @since 2017/4/12.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:db/spring-redis.xml" })
+@ContextConfiguration(locations = {"classpath:db/spring-redis.xml"})
 public class RedisTest {
 
 	@Autowired

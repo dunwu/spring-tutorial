@@ -1,12 +1,11 @@
 package io.github.dunwu.spring.data.db.redis;
 
 import io.github.dunwu.spring.data.db.redis.bean.UserDTO;
-
 import java.util.List;
 
 /**
  * @author Zhang Peng
- * @date 2017/4/12.
+ * @since 2017/4/12.
  */
 public interface IUserDao {
 

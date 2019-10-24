@@ -14,24 +14,27 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ResponseController {
 
 	@RequestMapping("/annotation")
-	public @ResponseBody String responseBody() {
+	public @ResponseBody
+	String responseBody() {
 		return "The String ResponseBody";
 	}
 
 	@RequestMapping("/charset/accept")
-	public @ResponseBody String responseAcceptHeaderCharset() {
+	public @ResponseBody
+	String responseAcceptHeaderCharset() {
 		return "\u3053\u3093\u306b\u3061\u306f\u4e16\u754c\uff01 (\"Hello world!\" in Japanese)";
 	}
 
 	@RequestMapping(value = "/charset/produce", produces = "text/plain;charset=UTF-8")
-	public @ResponseBody String responseProducesConditionCharset() {
+	public @ResponseBody
+	String responseProducesConditionCharset() {
 		return "\u3053\u3093\u306b\u3061\u306f\u4e16\u754c\uff01 (\"Hello world!\" in Japanese)";
 	}
 
 	@RequestMapping("/entity/status")
 	public ResponseEntity<String> responseEntityStatusCode() {
 		return new ResponseEntity<String>("The String ResponseBody with custom status code (403 Forbidden)",
-				HttpStatus.FORBIDDEN);
+			HttpStatus.FORBIDDEN);
 	}
 
 	@RequestMapping("/entity/headers")
@@ -39,7 +42,7 @@ public class ResponseController {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.TEXT_PLAIN);
 		return new ResponseEntity<String>("The String ResponseBody with custom header Content-Type=text/plain", headers,
-				HttpStatus.OK);
+			HttpStatus.OK);
 	}
 
 }

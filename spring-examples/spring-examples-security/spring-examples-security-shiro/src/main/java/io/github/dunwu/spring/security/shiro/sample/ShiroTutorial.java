@@ -41,16 +41,13 @@ public class ShiroTutorial {
 			token.setRememberMe(true);
 			try {
 				currentUser.login(token);
-			}
-			catch (UnknownAccountException uae) {
+			} catch (UnknownAccountException uae) {
 				log.info("There is no user with username of " + token.getPrincipal());
-			}
-			catch (IncorrectCredentialsException ice) {
+			} catch (IncorrectCredentialsException ice) {
 				log.info("Password for account " + token.getPrincipal() + " was incorrect!");
-			}
-			catch (LockedAccountException lae) {
+			} catch (LockedAccountException lae) {
 				log.info("The account for username " + token.getPrincipal() + " is locked.  "
-						+ "Please contact your administrator to unlock it.");
+					+ "Please contact your administrator to unlock it.");
 			}
 			// ... catch more exceptions here (maybe custom ones specific to your
 			// application?
@@ -66,25 +63,22 @@ public class ShiroTutorial {
 		// test a role:
 		if (currentUser.hasRole("schwartz")) {
 			log.info("May the Schwartz be with you!");
-		}
-		else {
+		} else {
 			log.info("Hello, mere mortal.");
 		}
 
 		// test a typed permission (not instance-level)
 		if (currentUser.isPermitted("lightsaber:weild")) {
 			log.info("You may use a lightsaber ring.  Use it wisely.");
-		}
-		else {
+		} else {
 			log.info("Sorry, lightsaber rings are for schwartz masters only.");
 		}
 
 		// a (very powerful) Instance Level permission:
 		if (currentUser.isPermitted("winnebago:drive:eagle5")) {
 			log.info("You are permitted to 'drive' the winnebago with license plate (id) 'eagle5'.  "
-					+ "Here are the keys - have fun!");
-		}
-		else {
+				+ "Here are the keys - have fun!");
+		} else {
 			log.info("Sorry, you aren't allowed to drive the 'eagle5' winnebago!");
 		}
 

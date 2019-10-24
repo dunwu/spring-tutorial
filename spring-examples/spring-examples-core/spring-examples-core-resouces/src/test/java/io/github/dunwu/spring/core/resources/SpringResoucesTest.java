@@ -28,7 +28,7 @@ public class SpringResoucesTest {
 	@Test
 	public void testClassPathXmlApplicationContext2() {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
-				new String[] { "spring/spring-beans.xml", "spring/spring-beans2.xml" });
+			new String[] {"spring/spring-beans.xml", "spring/spring-beans2.xml"});
 		Person zhangsan = ctx.getBean("person_zhangsan", Person.class);
 		Assert.assertNotNull(zhangsan);
 		System.out.println(zhangsan);

@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @since 2019-09-04
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:spring/spring-caffeine.xml" })
+@ContextConfiguration(locations = {"classpath:spring/spring-caffeine.xml"})
 public class SpringCaffeineCacheTest {
 
 	@Autowired

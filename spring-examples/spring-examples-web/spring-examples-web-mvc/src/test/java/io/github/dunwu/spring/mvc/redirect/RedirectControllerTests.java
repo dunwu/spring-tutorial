@@ -17,7 +17,7 @@ public class RedirectControllerTests {
 	@Before
 	public void setup() throws Exception {
 		this.mockMvc = standaloneSetup(new RedirectController(new DefaultFormattingConversionService()))
-				.alwaysExpect(status().isMovedTemporarily()).build();
+			.alwaysExpect(status().isMovedTemporarily()).build();
 	}
 
 	@Test
@@ -28,7 +28,7 @@ public class RedirectControllerTests {
 	@Test
 	public void uriComponentsBuilder() throws Exception {
 		this.mockMvc.perform(get("/redirect/uriComponentsBuilder"))
-				.andExpect(redirectedUrl("/redirect/a123?date=12/31/11"));
+			.andExpect(redirectedUrl("/redirect/a123?date=12/31/11"));
 	}
 
 }

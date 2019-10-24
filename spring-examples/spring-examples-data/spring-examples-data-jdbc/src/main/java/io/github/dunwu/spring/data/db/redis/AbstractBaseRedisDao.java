@@ -1,6 +1,5 @@
 /**
- * The Apache License 2.0
- * Copyright (c) 2016 Zhang Peng
+ * The Apache License 2.0 Copyright (c) 2016 Zhang Peng
  */
 package io.github.dunwu.spring.data.db.redis;
 
@@ -10,7 +9,7 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 
 /**
  * @author Zhang Peng
- * @date 2017/4/12.
+ * @since 2017/4/12.
  */
 public abstract class AbstractBaseRedisDao<K, V> {
 

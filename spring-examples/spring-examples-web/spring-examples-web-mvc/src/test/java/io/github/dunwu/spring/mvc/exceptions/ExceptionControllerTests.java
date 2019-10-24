@@ -25,13 +25,13 @@ public class ExceptionControllerTests extends AbstractContextControllerTests {
 	@Test
 	public void controllerExceptionHandler() throws Exception {
 		this.mockMvc.perform(get("/exception")).andExpect(status().isOk())
-				.andExpect(content().string("IllegalStateException handled!"));
+			.andExpect(content().string("IllegalStateException handled!"));
 	}
 
 	@Test
 	public void globalExceptionHandler() throws Exception {
 		this.mockMvc.perform(get("/global-exception")).andExpect(status().isOk())
-				.andExpect(content().string("Handled BusinessException"));
+			.andExpect(content().string("Handled BusinessException"));
 	}
 
 }

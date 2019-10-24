@@ -1,17 +1,17 @@
 package io.github.dunwu.spring.scheduler;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 /**
- * @description 使用@Scheduler注解调度任务范例
+ * 使用@Scheduler注解调度任务范例
+ *
  * @author Zhang Peng
- * @date 2016年8月31日
+ * @since 2016年8月31日
  */
 @Component
 public class ScheduledMgr {

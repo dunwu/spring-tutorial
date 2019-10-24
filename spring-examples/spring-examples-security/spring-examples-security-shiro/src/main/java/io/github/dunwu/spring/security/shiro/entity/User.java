@@ -100,7 +100,7 @@ public class User implements Serializable {
 	@Override
 	public String toString() {
 		return "User{" + "id=" + id + ", username='" + username + '\'' + ", password='" + password + '\'' + ", salt='"
-				+ salt + '\'' + ", locked=" + locked + '}';
+			+ salt + '\'' + ", locked=" + locked + '}';
 	}
 
 }

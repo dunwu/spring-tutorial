@@ -2,20 +2,19 @@ package io.github.dunwu.spring.core.ioc.annotation;
 
 import io.github.dunwu.spring.core.ioc.sample.AbstractFruit;
 import io.github.dunwu.spring.core.ioc.sample.Orange;
+import javax.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import javax.annotation.Resource;
-
 /**
  * 展示 @Resource 注解的用法
  * <p>
  *
- * @Resource 是JSR 250规定的注解。 用于bean属性的setter方法并且它指示，受影响的bean属性必须在配置时被填充在xml配置文件中，
- * 否则容器将抛出BeanInitializationException。 如果没有为@Resource指定名称，它会像@Autowired一样按照类型去寻找匹配。
  * @author Zhang Peng
+ * @Resource 是JSR 250规定的注解。 用于bean属性的setter方法并且它指示，受影响的bean属性必须在配置时被填充在xml配置文件中， 否则容器将抛出BeanInitializationException。
+ * 如果没有为@Resource指定名称，它会像@Autowired一样按照类型去寻找匹配。
  */
 public class AnnotationResource {
 
@@ -34,13 +33,13 @@ public class AnnotationResource {
 		AnnotationResource annotationResource = (AnnotationResource) ctx.getBean("annotationResource");
 
 		log.debug("type: {}, name: {}", annotationResource.getFieldA().getClass(),
-				annotationResource.getFieldA().getName());
+			annotationResource.getFieldA().getName());
 
 		log.debug("type: {}, name: {}", annotationResource.getFieldB().getClass(),
-				annotationResource.getFieldB().getName());
+			annotationResource.getFieldB().getName());
 
 		log.debug("type: {}, name: {}", annotationResource.getFieldC().getClass(),
-				annotationResource.getFieldC().getName());
+			annotationResource.getFieldC().getName());
 
 		ctx.close();
 	}

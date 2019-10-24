@@ -1,5 +1,7 @@
 package io.github.dunwu.spring.mvc.async;
 
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -8,21 +10,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.async.DeferredResult;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
-
 @Controller
 @RequestMapping("/async")
 public class DeferredResultController {
 
 	private final Queue<DeferredResult<String>> responseBodyQueue = new ConcurrentLinkedQueue<DeferredResult<String>>();
 
-	private final Queue<DeferredResult<ModelAndView>> mavQueue = new ConcurrentLinkedQueue<DeferredResult<ModelAndView>>();
+	private final Queue<DeferredResult<ModelAndView>> mavQueue =
+		new ConcurrentLinkedQueue<DeferredResult<ModelAndView>>();
 
 	private final Queue<DeferredResult<String>> exceptionQueue = new ConcurrentLinkedQueue<DeferredResult<String>>();
 
 	@RequestMapping("/deferred-result/response-body")
-	public @ResponseBody DeferredResult<String> deferredResult() {
+	public @ResponseBody
+	DeferredResult<String> deferredResult() {
 		DeferredResult<String> result = new DeferredResult<String>();
 		this.responseBodyQueue.add(result);
 		return result;
@@ -36,14 +37,16 @@ public class DeferredResultController {
 	}
 
 	@RequestMapping("/deferred-result/exception")
-	public @ResponseBody DeferredResult<String> deferredResultWithException() {
+	public @ResponseBody
+	DeferredResult<String> deferredResultWithException() {
 		DeferredResult<String> result = new DeferredResult<String>();
 		this.exceptionQueue.add(result);
 		return result;
 	}
 
 	@RequestMapping("/deferred-result/timeout-value")
-	public @ResponseBody DeferredResult<String> deferredResultWithTimeoutValue() {
+	public @ResponseBody
+	DeferredResult<String> deferredResultWithTimeoutValue() {
 
 		// Provide a default result in case of timeout and override the timeout value
 		// set in src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml

@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class GlobalExceptionHandler {
 
 	@ExceptionHandler
-	public @ResponseBody String handleBusinessException(BusinessException ex) {
+	public @ResponseBody
+	String handleBusinessException(BusinessException ex) {
 		return "Handled BusinessException";
 	}
 

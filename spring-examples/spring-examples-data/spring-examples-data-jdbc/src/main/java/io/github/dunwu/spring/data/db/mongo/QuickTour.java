@@ -1,18 +1,18 @@
 package io.github.dunwu.spring.data.db.mongo;/*
-												* Copyright 2015 MongoDB, Inc.
-												*
-												* Licensed under the Apache License, Version 2.0 (the "License");
-												* you may not use this file except in compliance with the License.
-												* You may obtain a copy of the License at
-												*
-												*   http://www.apache.org/licenses/LICENSE-2.0
-												*
-												* Unless required by applicable law or agreed to in writing, software
-												* distributed under the License is distributed on an "AS IS" BASIS,
-												* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-												* See the License for the specific language governing permissions and
-												* limitations under the License.
-												*/
+ * Copyright 2015 MongoDB, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 import com.mongodb.Block;
 import com.mongodb.MongoClient;
@@ -22,23 +22,22 @@ import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
-import org.bson.Document;
-
 import java.util.ArrayList;
 import java.util.List;
+import org.bson.Document;
 
 import static com.mongodb.client.model.Filters.*;
 import static com.mongodb.client.model.Projections.excludeId;
 import static com.mongodb.client.model.Sorts.descending;
 
 /**
- * The QuickTour code example see:
- * https://mongodb.github.io/mongo-java-driver/3.0/getting-started
+ * The QuickTour code example see: https://mongodb.github.io/mongo-java-driver/3.0/getting-started
  */
 public class QuickTour {
 
 	/**
 	 * Run this main method to see the output of this quick example.
+	 *
 	 * @param args takes an optional single argument for the connection string
 	 */
 	public static void main(final String[] args) {
@@ -47,8 +46,7 @@ public class QuickTour {
 		if (args.length == 0) {
 			// connect to the local database server
 			mongoClient = new MongoClient("localhost", 27017);
-		}
-		else {
+		} else {
 			mongoClient = new MongoClient(new MongoClientURI(args[0]));
 		}
 
@@ -63,7 +61,7 @@ public class QuickTour {
 
 		// make a document and insert it
 		Document doc = new Document("name", "MongoDB").append("type", "database").append("count", 1).append("info",
-				new Document("x", 203).append("y", 102));
+			new Document("x", 203).append("y", 102));
 
 		collection.insertOne(doc);
 
@@ -90,8 +88,7 @@ public class QuickTour {
 			while (cursor.hasNext()) {
 				System.out.println(cursor.next().toJson());
 			}
-		}
-		finally {
+		} finally {
 			cursor.close();
 		}
 
@@ -110,8 +107,7 @@ public class QuickTour {
 			while (cursor.hasNext()) {
 				System.out.println(cursor.next().toJson());
 			}
-		}
-		finally {
+		} finally {
 			cursor.close();
 		}
 
@@ -122,8 +118,7 @@ public class QuickTour {
 			while (cursor.hasNext()) {
 				System.out.println(cursor.next().toJson());
 			}
-		}
-		finally {
+		} finally {
 			cursor.close();
 		}
 
@@ -137,7 +132,7 @@ public class QuickTour {
 			public void apply(final Document document) {
 				System.out.println(document.toJson());
 			}
-		};
+		}
 		collection.find(gt("i", 50)).forEach(printBlock);
 
 		// filter where; 50 < i <= 100

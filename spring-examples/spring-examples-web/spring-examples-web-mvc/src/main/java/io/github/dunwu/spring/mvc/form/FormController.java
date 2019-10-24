@@ -1,6 +1,7 @@
 package io.github.dunwu.spring.mvc.form;
 
 import io.github.dunwu.spring.mvc.extensions.ajax.AjaxUtils;
+import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/form")
@@ -40,7 +39,7 @@ public class FormController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String processSubmit(@Valid FormBean formBean, BindingResult result,
-			@ModelAttribute("ajaxRequest") boolean ajaxRequest, Model model, RedirectAttributes redirectAttrs) {
+		@ModelAttribute("ajaxRequest") boolean ajaxRequest, Model model, RedirectAttributes redirectAttrs) {
 		if (result.hasErrors()) {
 			return null;
 		}
@@ -53,8 +52,7 @@ public class FormController {
 			// prepare model for rendering success message in this request
 			model.addAttribute("message", message);
 			return null;
-		}
-		else {
+		} else {
 			// store a success message for rendering on the next request after redirect
 			// redirect back to the form to render the success message along with newly
 			// bound values

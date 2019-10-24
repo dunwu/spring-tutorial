@@ -35,6 +35,7 @@ public class RoleServiceImpl implements RoleService {
 
 	/**
 	 * 添加角色-权限之间关系
+	 *
 	 * @param roleId
 	 * @param permissionIds
 	 */
@@ -45,6 +46,7 @@ public class RoleServiceImpl implements RoleService {
 
 	/**
 	 * 移除角色-权限之间关系
+	 *
 	 * @param roleId
 	 * @param permissionIds
 	 */

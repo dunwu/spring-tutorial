@@ -24,8 +24,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * <p>
  * 例：http://localhost:8080/spring-examples-integration-swagger/swagger-ui.html
  * <p>
- * 配置参考：<a href=
- * "http://springfox.github.io/springfox/docs/current/#getting-started">SpringFox Docs</a>
+ * 配置参考：<a href= "http://springfox.github.io/springfox/docs/current/#getting-started">SpringFox Docs</a>
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @since 2019-09-06
@@ -33,19 +32,19 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableWebMvc
 @EnableSwagger2
-@ComponentScan(basePackages = { "io.github.dunwu" })
+@ComponentScan(basePackages = {"io.github.dunwu"})
 public class SpringSwaggerConfiguration implements WebMvcConfigurer {
 
 	@Bean
 	public Docket createDocket() {
 		return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select().apis(RequestHandlerSelectors.any())
-				.paths(PathSelectors.any()).build();
+			.paths(PathSelectors.any()).build();
 	}
 
 	private ApiInfo apiInfo() {
 		Contact contact = new Contact("Zhang Peng", "https://github.com/dunwu", "forbreak@163.com");
 		return new ApiInfoBuilder().title("开放 REST API 接口").description("Spring + Swagger 自动生成开放 REST API 接口")
-				.version("1.0.0").termsOfServiceUrl("https://github.com/dunwu").contact(contact).build();
+			.version("1.0.0").termsOfServiceUrl("https://github.com/dunwu").contact(contact).build();
 	}
 
 	@Override

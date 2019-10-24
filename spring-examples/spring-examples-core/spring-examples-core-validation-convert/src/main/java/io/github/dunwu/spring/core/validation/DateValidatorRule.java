@@ -1,10 +1,9 @@
 package io.github.dunwu.spring.core.validation;
 
-import org.springframework.expression.ParseException;
-
 import java.lang.annotation.Annotation;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import org.springframework.expression.ParseException;
 
 @ValidRule
 public class DateValidatorRule extends AbstractValidatorRule {
@@ -26,8 +25,7 @@ public class DateValidatorRule extends AbstractValidatorRule {
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat(pattern);
 			return sdf.parse(property);
-		}
-		catch (ParseException | java.text.ParseException e) {
+		} catch (ParseException | java.text.ParseException e) {
 			e.printStackTrace();
 		}
 		return null;

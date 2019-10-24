@@ -1,17 +1,16 @@
 package io.github.dunwu.spring.security.shiro.dao;
 
 import io.github.dunwu.spring.security.shiro.entity.User;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.PreparedStatementCreator;
-import org.springframework.jdbc.core.support.JdbcDaoSupport;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
 
 /**
  * <p>
@@ -31,7 +30,7 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 		getJdbcTemplate().update(new PreparedStatementCreator() {
 			@Override
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				PreparedStatement psst = connection.prepareStatement(sql, new String[] { "id" });
+				PreparedStatement psst = connection.prepareStatement(sql, new String[] {"id"});
 				psst.setString(1, user.getUsername());
 				psst.setString(2, user.getPassword());
 				psst.setString(3, user.getSalt());
@@ -48,7 +47,7 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 	public void updateUser(User user) {
 		String sql = "update sys_users set username=?, password=?, salt=?, locked=? where id=?";
 		getJdbcTemplate().update(sql, user.getUsername(), user.getPassword(), user.getSalt(), user.getLocked(),
-				user.getId());
+			user.getId());
 	}
 
 	@Override
@@ -70,6 +69,11 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 		}
 	}
 
+	private boolean exists(Long userId, Long roleId) {
+		String sql = "select count(1) from sys_users_roles where user_id=? and role_id=?";
+		return getJdbcTemplate().queryForObject(sql, Integer.class, userId, roleId) != 0;
+	}
+
 	@Override
 	public void uncorrelationRoles(Long userId, Long... roleIds) {
 		if (roleIds == null || roleIds.length == 0) {
@@ -81,11 +85,6 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 				getJdbcTemplate().update(sql, userId, roleId);
 			}
 		}
-	}
-
-	private boolean exists(Long userId, Long roleId) {
-		String sql = "select count(1) from sys_users_roles where user_id=? and role_id=?";
-		return getJdbcTemplate().queryForObject(sql, Integer.class, userId, roleId) != 0;
 	}
 
 	@Override
@@ -110,14 +109,16 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 
 	@Override
 	public Set<String> findRoles(String username) {
-		String sql = "select role from sys_users u, sys_roles r,sys_users_roles ur where u.username=? and u.id=ur.user_id and r.id=ur.role_id";
+		String sql =
+			"select role from sys_users u, sys_roles r,sys_users_roles ur where u.username=? and u.id=ur.user_id and r.id=ur.role_id";
 		return new HashSet(getJdbcTemplate().queryForList(sql, String.class, username));
 	}
 
 	@Override
 	public Set<String> findPermissions(String username) {
 		// TODO 此处可以优化，比如查询到role后，一起获取roleId，然后直接根据roleId获取即可
-		String sql = "select permission from sys_users u, sys_roles r, sys_permissions p, sys_users_roles ur, sys_roles_permissions rp where u.username=? and u.id=ur.user_id and r.id=ur.role_id and r.id=rp.role_id and p.id=rp.permission_id";
+		String sql =
+			"select permission from sys_users u, sys_roles r, sys_permissions p, sys_users_roles ur, sys_roles_permissions rp where u.username=? and u.id=ur.user_id and r.id=ur.role_id and r.id=rp.role_id and p.id=rp.permission_id";
 		return new HashSet(getJdbcTemplate().queryForList(sql, String.class, username));
 	}
 

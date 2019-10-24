@@ -10,8 +10,7 @@ public interface StudentDAO {
 	void create(String name, Integer age);
 
 	/**
-	 * This is the method to be used to list down a record from the Student table
-	 * corresponding to a passed student id.
+	 * This is the method to be used to list down a record from the Student table corresponding to a passed student id.
 	 */
 	StudentDTO getById(Integer id);
 
@@ -21,8 +20,7 @@ public interface StudentDAO {
 	List<StudentDTO> list();
 
 	/**
-	 * This is the method to be used to delete a record from the Student table
-	 * corresponding to a passed student id.
+	 * This is the method to be used to delete a record from the Student table corresponding to a passed student id.
 	 */
 	void delete(Integer id);
 
