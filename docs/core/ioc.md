@@ -1,34 +1,23 @@
----
-title: Spring IoC
-date: 2017-11-08
-categories:
-- spring
-tags:
-- spring
-- core
-- ioc
----
-
-# IoC
+# Spring IoC
 
 <!-- TOC depthFrom:2 depthTo:3 -->
 
 - [IoC 概念](#ioc-概念)
-    - [IoC 是什么](#ioc-是什么)
-    - [IoC 能做什么](#ioc-能做什么)
-    - [依赖注入](#依赖注入)
-    - [IoC 和 DI](#ioc-和-di)
-    - [IoC 容器](#ioc-容器)
-    - [Bean](#bean)
+  - [IoC 是什么](#ioc-是什么)
+  - [IoC 能做什么](#ioc-能做什么)
+  - [依赖注入](#依赖注入)
+  - [IoC 和 DI](#ioc-和-di)
+  - [IoC 容器](#ioc-容器)
+  - [Bean](#bean)
 - [IoC 容器](#ioc-容器-1)
-    - [核心接口](#核心接口)
-    - [IoC 容器工作步骤](#ioc-容器工作步骤)
-    - [Bean 概述](#bean-概述)
-    - [依赖](#依赖)
+  - [核心接口](#核心接口)
+  - [IoC 容器工作步骤](#ioc-容器工作步骤)
+  - [Bean 概述](#bean-概述)
+  - [依赖](#依赖)
 - [IoC 容器配置](#ioc-容器配置)
-    - [Xml 配置](#xml-配置)
-    - [注解配置](#注解配置)
-    - [Java 配置](#java-配置)
+  - [Xml 配置](#xml-配置)
+  - [注解配置](#注解配置)
+  - [Java 配置](#java-配置)
 
 <!-- /TOC -->
 
@@ -243,7 +232,7 @@ IoC 容器的配置有三种方式：
   <bean name="bean2" class=""></bean>
 
   <alias alias="bean3" name="bean2"/>
-  <import resource="resource2.xml" />  
+  <import resource="resource2.xml" />
 </beans>
 ```
 
@@ -262,7 +251,7 @@ IoC 容器的配置有三种方式：
 转化为 Spring 可识别的数据形式（BeanDefinition）
 
 ```java
-ApplicationContext context =  
+ApplicationContext context =
       new ClassPathXmlApplicationContext(new String[] {"services.xml", "daos.xml"});
 ```
 

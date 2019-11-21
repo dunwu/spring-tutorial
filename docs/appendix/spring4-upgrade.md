@@ -1,13 +1,3 @@
----
-title: spring 4 升级踩雷指南
-date: 2017-12-15
-categories:
-- spring
-tags:
-- spring
-- upgrade
----
-
 # spring 4 升级踩雷指南
 
 ## 前言
@@ -97,12 +87,12 @@ spring 的 xml 解析器在解析 xml 时，需要读取 xml schema，schema 定
 
 > **说明**
 >
-> - `xmlns="http://www.springframework.org/schema/beans"` 声明 xml 文件默认的命名空间，表示未使用其他命名空间的所有标签的默认命名空间。  
+> - `xmlns="http://www.springframework.org/schema/beans"` 声明 xml 文件默认的命名空间，表示未使用其他命名空间的所有标签的默认命名空间。
 >
-> - `xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"` 声明XML Schema 实例，声明后就可以使用 schemaLocation 属性了。
+> - `xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"` 声明 XML Schema 实例，声明后就可以使用 schemaLocation 属性了。
 >
 > - `xmlns:mvc="http://www.springframework.org/schema/mvc"`
->   声明前缀为 mvc 的命名空间，后面的 URL 用于标示命名空间的地址不会被解析器用于查找信息。其惟一的作用是赋予命名空间一个惟一的名称。当命名空间被定义在元素的开始标签中时，所有带有相同前缀的子元素都会与同一个命名空间相关联。  其它的类似 `xmlns:context` 、`xmlns:jdbc` 等等同样如此。
+>   声明前缀为 mvc 的命名空间，后面的 URL 用于标示命名空间的地址不会被解析器用于查找信息。其惟一的作用是赋予命名空间一个惟一的名称。当命名空间被定义在元素的开始标签中时，所有带有相同前缀的子元素都会与同一个命名空间相关联。 其它的类似 `xmlns:context` 、`xmlns:jdbc` 等等同样如此。
 >
 > - ```
 >   xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
@@ -124,7 +114,7 @@ spring 的 xml 解析器在解析 xml 时，需要读取 xml schema，schema 定
 - `schemaLocation` 提供了一个 xml namespace 到对应的 xsd 文件的一个映射。
 - 如果不指定 spring xsd 的版本号，spring 取的就是当前本地 jar 里的 xsd 文件，减少了各种风险（比如 xsd 与实际 spring jar 版本不一致）。
 
-更多详细内容可以参考这篇文章：[为什么在Spring的配置里，最好不要配置xsd文件的版本号](http://blog.csdn.net/hengyunabc/article/details/22295749) 
+更多详细内容可以参考这篇文章：[为什么在 Spring 的配置里，最好不要配置 xsd 文件的版本号](http://blog.csdn.net/hengyunabc/article/details/22295749)
 
 ### 修改 spring xml 文件
 
@@ -166,7 +156,7 @@ Caused by: org.xml.sax.SAXParseException: cvc-complex-type.3.2.2: Attribute 'loc
 
 ### 加入 spring support
 
-spring 3 中很多的扩展内容不需要引入support 。但是 spring 4 中分离的更彻底了，如果不分离，会有很多`ClassNotFound` 。
+spring 3 中很多的扩展内容不需要引入 support 。但是 spring 4 中分离的更彻底了，如果不分离，会有很多`ClassNotFound` 。
 
 ```xml
 <dependency>
@@ -178,29 +168,29 @@ spring 3 中很多的扩展内容不需要引入support 。但是 spring 4 中�
 
 ### 更换 spring-mvc jackson
 
-spring mvc 中如果返回结果为 json 需要依赖 jackson 的jar包，但是他升级到了2, 以前是 `codehaus.jackson`，现在换成了 `fasterxml.jackson`
+spring mvc 中如果返回结果为 json 需要依赖 jackson 的 jar 包，但是他升级到了 2, 以前是 `codehaus.jackson`，现在换成了 `fasterxml.jackson`
 
 ```xml
-<dependency>      
+<dependency>
     <groupId>com.fasterxml.jackson.core</groupId>
     <artifactId>jackson-core</artifactId>
     <version>2.7.0</version>
 </dependency>
-<dependency>                
+<dependency>
     <groupId>com.fasterxml.jackson.core</groupId>
     <artifactId>jackson-databind</artifactId>
     <version>2.7.0</version>
 </dependency>
 ```
 
-同时修改spring mvc的配置文件：
+同时修改 spring mvc 的配置文件：
 
 ```xml
 <bean
 	class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 	<property name="messageConverters">
 		<list>
-			 <ref bean="stringHttpMessageConverter" />  
+			 <ref bean="stringHttpMessageConverter" />
 			<bean
 				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
 			</bean>
@@ -242,7 +232,7 @@ spring mvc 中如果返回结果为 json 需要依赖 jackson 的jar包，但是
 
 ### 升级 Dubbo
 
-我们的项目中使用了 soa 框架 Dubbo 。由于 Dubbo 是老版本的，具体来说是（2013年的 2.4.10），而老版本中使用的 spirng 版本为2.x，有兼容性问题。
+我们的项目中使用了 soa 框架 Dubbo 。由于 Dubbo 是老版本的，具体来说是（2013 年的 2.4.10），而老版本中使用的 spirng 版本为 2.x，有兼容性问题。
 
 Dubbo 项目从今年开始恢复维护了，首先把一些落后的库升级到较新版本，比如 jdk8，spring4 等，并修复了一些 bug。所以，我们可以通过升级一下 Dubbo 版本来解决问题。
 
@@ -323,9 +313,9 @@ InvalidURIException: Cannot open Redis connection due invalid URI
 
 查看源码可以发现，初始化 JedisPool 时未指定结构方法参数的类型，导致 host 字符串值被视为 URI 类型，当然类型不匹配。
 
-解决方法是修改上面的host 配置，为：`<constructor-arg type="java.lang.String" value="${redis.host}" />`
+解决方法是修改上面的 host 配置，为：`<constructor-arg type="java.lang.String" value="${redis.host}" />`
 
-------
+---
 
 至此，spring 4 升级结束。后面如果遇到其他升级问题再补充。
 
@@ -333,7 +323,7 @@ InvalidURIException: Cannot open Redis connection due invalid URI
 
 - https://spring.io/blog/2013/05/21/spring-framework-4-0-m1-3-2-3-available/
 - https://docs.spring.io/spring/docs/4.3.14.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/#spring-whats-new
-- [Spring 3.x 升级到Spring 4.x 注意事项和步骤，错误解决方法](http://www.sojson.com/blog/145.html)
+- [Spring 3.x 升级到 Spring 4.x 注意事项和步骤，错误解决方法](http://www.sojson.com/blog/145.html)
 - http://jinnianshilongnian.iteye.com/blog/1995111
-- [为什么在Spring的配置里，最好不要配置xsd文件的版本号](http://blog.csdn.net/hengyunabc/article/details/22295749)
+- [为什么在 Spring 的配置里，最好不要配置 xsd 文件的版本号](http://blog.csdn.net/hengyunabc/article/details/22295749)
 - https://stackoverflow.com/questions/32353286/no-support-for-ibatis-in-spring4-2-0

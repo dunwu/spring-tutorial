@@ -1,29 +1,18 @@
----
-title: Spring AOP
-date: 2017-11-08
-categories:
-- spring
-tags:
-- spring
-- core
-- aop
----
-
-# AOP
+# Spring AOP
 
 <!-- TOC depthFrom:2 depthTo:3 -->
 
 - [概念](#概念)
-    - [什么是 AOP](#什么是-aop)
-    - [术语](#术语)
-    - [advice 的类型](#advice-的类型)
-    - [关于 AOP Proxy](#关于-aop-proxy)
+  - [什么是 AOP](#什么是-aop)
+  - [术语](#术语)
+  - [advice 的类型](#advice-的类型)
+  - [关于 AOP Proxy](#关于-aop-proxy)
 - [彻底理解 aspect, join point, point cut, advice](#彻底理解-aspect-join-point-point-cut-advice)
 - [@AspectJ 支持](#aspectj-支持)
-    - [使能 @AspectJ 支持](#使能-aspectj-支持)
-    - [定义 aspect(切面)](#定义-aspect切面)
-    - [声明 pointcut](#声明-pointcut)
-    - [声明 advice](#声明-advice)
+  - [使能 @AspectJ 支持](#使能-aspectj-支持)
+  - [定义 aspect(切面)](#定义-aspect切面)
+  - [声明 pointcut](#声明-pointcut)
+  - [声明 advice](#声明-advice)
 
 <!-- /TOC -->
 

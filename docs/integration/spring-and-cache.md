@@ -5,12 +5,12 @@
 <!-- TOC depthFrom:2 depthTo:3 -->
 
 - [缓存接口](#缓存接口)
-    - [开启注解](#开启注解)
-    - [缓存注解使用](#缓存注解使用)
+  - [开启注解](#开启注解)
+  - [缓存注解使用](#缓存注解使用)
 - [缓存存储](#缓存存储)
-    - [使用 ConcurrentHashMap 作为缓存](#使用-concurrenthashmap-作为缓存)
-    - [使用 Ehcache 作为缓存](#使用-ehcache-作为缓存)
-    - [使用 Caffeine 作为缓存](#使用-caffeine-作为缓存)
+  - [使用 ConcurrentHashMap 作为缓存](#使用-concurrenthashmap-作为缓存)
+  - [使用 Ehcache 作为缓存](#使用-ehcache-作为缓存)
+  - [使用 Caffeine 作为缓存](#使用-caffeine-作为缓存)
 - [示例代码](#示例代码)
 - [参考资料](#参考资料)
 

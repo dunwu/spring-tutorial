@@ -1,22 +1,14 @@
----
-title: Spring 集成调度器
-date: 2017-11-08
-categories:
-- spring
-tags:
-- spring
-- integration
-- scheduler
-- quartz
----
+# Spring 集成调度器
 
 ## 概述
+
 如果想在Spring中使用任务调度功能，除了集成调度框架Quartz这种方式，也可以使用Spring自己的调度任务框架。
 使用Spring的调度框架，优点是：支持注解`@Scheduler`，可以省去大量的配置。
 
 ## 实时触发调度任务
 
 #### TaskScheduler接口
+
 Spring3引入了`TaskScheduler`接口，这个接口定义了调度任务的抽象方法。
 TaskScheduler接口的声明：
 ```java

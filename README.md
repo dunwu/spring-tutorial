@@ -7,7 +7,7 @@
 > - 🔁 项目同步维护：[Github](https://github.com/dunwu/spring-tutorial/) | [Gitee](https://gitee.com/turnon/spring-tutorial/)
 > - 📖 电子书阅读：[Github Pages](https://dunwu.github.io/spring-tutorial/) | [Gitee Pages](http://turnon.gitee.io/spring-tutorial/)
 
-|      0️⃣       |      1️⃣       |      2️⃣       |     3️⃣      |      4️⃣       |      5️⃣       |
+|      0️⃣      |      1️⃣      |      2️⃣      |     3️⃣     |      4️⃣      |      5️⃣      |
 | :-----------: | :-----------: | :-----------: | :---------: | :-----------: | :-----------: |
 | [综合](#综合) | [核心](#核心) | [数据](#数据) | [Web](#Web) | [集成](#集成) | [安全](#安全) |
 
@@ -104,7 +104,6 @@ $ mvn jetty:run -Dmaven.test.skip=true
 
 ### 规范
 
-- 本项目的文档部分，遵循 [Gitbook](https://github.com/GitbookIO/gitbook) 规范，以便生成电子书。
 - 推荐使用 [IDEA](https://www.jetbrains.com/idea/) 作为 IDE
 - 代码规范使用 [阿里巴巴 Java 开发手册](https://github.com/alibaba/p3c)
   - 如果你使用 IDEA 作为你的 IDE，推荐安装 Alibaba-Java-Coding-Guidelines 插件来做静态检查。

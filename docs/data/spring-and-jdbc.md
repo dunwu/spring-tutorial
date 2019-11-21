@@ -1,8 +1,3 @@
----
-title: Spring 中使用 JDBC 访问数据
-date: 2019-03-06
----
-
 # Spring 中使用 JDBC 访问数据
 
 ## 准备
@@ -21,7 +16,7 @@ date: 2019-03-06
 
 ### 使用 JNDI 数据源
 
-如果 Spring 应用部署在支持 JNDI 的WEB服务器上（如WebSphere、JBoss、Tomcat等），就可以使用JNDI获取数据源。
+如果 Spring 应用部署在支持 JNDI 的 WEB 服务器上（如 WebSphere、JBoss、Tomcat 等），就可以使用 JNDI 获取数据源。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -31,12 +26,12 @@ date: 2019-03-06
             http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
 http://www.springframework.org/schema/jee
 http://www.springframework.org/schema/jee/spring-jee-3.2.xsd">
- 
+
   <!-- 1.使用bean配置jndi数据源 -->
   <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
     <property name="jndiName" value="java:comp/env/jdbc/orclight" />
   </bean>
- 
+
   <!-- 2.使用jee标签配置jndi数据源，与1等价，但是需要引入命名空间 -->
   <jee:jndi-lookup id="dataSource" jndi-name=" java:comp/env/jdbc/orclight" />
 </beans>
@@ -55,7 +50,7 @@ Spring 本身并没有提供数据源连接池的实现。
     <property name="url" value="${jdbc.url}"/>
     <property name="username" value="${jdbc.username}"/>
     <property name="password" value="${jdbc.password}"/>
-  
+
     <!-- 配置初始化大小、最小、最大 -->
     <property name="initialSize" value="1"/>
     <property name="minIdle" value="1"/>
@@ -91,7 +86,7 @@ Spring 本身并没有提供数据源连接池的实现。
   </bean>
 ```
 
-### 基于JDBC驱动的数据源
+### 基于 JDBC 驱动的数据源
 
 ```xml
 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
