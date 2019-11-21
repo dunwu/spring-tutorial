@@ -1,12 +1,4 @@
----
-title: Spring 概述
-date: 2017-11-08
-categories:
-- spring
-tags:
-- spring
-- introduction
----
+# Spring 概述
 
 > Spring 是最受欢迎的企业级 Java 应用程序开发框架。
 >

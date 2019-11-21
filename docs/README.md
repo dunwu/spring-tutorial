@@ -118,3 +118,7 @@ $ mvn jetty:run -Dmaven.test.skip=true
 - 推荐使用 [IDEA](https://www.jetbrains.com/idea/) 作为 IDE
 - 代码规范使用 [阿里巴巴 Java 开发手册](https://github.com/alibaba/p3c)
   - 如果你使用 IDEA 作为你的 IDE，推荐安装 Alibaba-Java-Coding-Guidelines 插件来做静态检查。
+
+## License
+
+本博客所有文章除特别声明外，均采用 [![License: CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议。
