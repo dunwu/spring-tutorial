@@ -19,8 +19,12 @@ insert_final_newline = true
 [*.{bat, cmd}]
 end_of_line = crlf
 
+[*.{yml, yaml}]
+indent_style = space
+
 [*.{java, groovy, kt, sh}]
 indent_size = 4
+indent_style = tab
 
 [*.md]
 max_line_length = 0
