@@ -119,6 +119,6 @@ NamedParameterJdbcTemplate：使用该模板类执行查询时，可以将查询
 
 ## 实例
 
-实例可以参考 [spring-data-jdbc]() 中的实例。
+实例可以参考 spring-data-jdbc 中的实例。
 
 执行 `io.github.dunwu.spring.data.jdbc` 包中的 Test 单元测试，即可看到测试结果。

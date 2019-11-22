@@ -1,4 +1,4 @@
-<div align="center"><img width="100px" src="http://dunwu.test.upcdn.net/common/logo/zp.png"/></div>
+![logo](http://dunwu.test.upcdn.net/common/logo/zp.png)
 
 # Spring Tutorial
 

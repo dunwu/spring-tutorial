@@ -19,7 +19,7 @@ insert_final_newline = true
 [*.{bat, cmd}]
 end_of_line = crlf
 
-[*.{yml, yaml}]
+[*.{md, yml, yaml}]
 indent_style = space
 
 [*.{java, groovy, kt, sh}]
