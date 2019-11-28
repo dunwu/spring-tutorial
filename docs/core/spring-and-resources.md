@@ -154,7 +154,7 @@ ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath*:conf/app
 
 ## 示例代码
 
-我的示例代码地址：[spring-examples-core-resouces](https://github.com/dunwu/spring-tutorial/tree/master/spring-examples/spring-examples-core/spring-examples-core-resouces)
+我的示例代码地址：[spring-tutorial-core-resouces](https://github.com/dunwu/spring-tutorial/tree/master/spring-tutorial/spring-tutorial-core/spring-tutorial-core-resouces)
 
 ## 参考资料
 

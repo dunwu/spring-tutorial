@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>io.github.dunwu.spring</groupId>
+		<artifactId>spring-tutorial-parent</artifactId>
+		<version>1.0.4</version>
+		<relativePath>../spring-tutorial-parent</relativePath>
+	</parent>
+
+	<artifactId>spring-tutorial-web</artifactId>
+	<packaging>pom</packaging>
+	<description>Spring MVC, WebSocket, SockJS, STOMP messaging, Spring WebFlux, WebClient, WebSocket.</description>
+
+	<modules>
+		<module>spring-tutorial-web-helloworld</module>
+		<module>spring-tutorial-web-mvc</module>
+		<module>spring-tutorial-web-websocket</module>
+	</modules>
+</project>

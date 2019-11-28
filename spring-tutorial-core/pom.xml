@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>io.github.dunwu.spring</groupId>
+		<artifactId>spring-tutorial-parent</artifactId>
+		<version>1.0.4</version>
+		<relativePath>../spring-tutorial-parent</relativePath>
+	</parent>
+
+	<artifactId>spring-tutorial-core</artifactId>
+	<packaging>pom</packaging>
+	<description>IoC container, Events, Resources, i18n, Validation, Data Binding, Type Conversion, SpEL, AOP
+	</description>
+
+	<modules>
+		<module>spring-tutorial-core-aop</module>
+		<module>spring-tutorial-core-ioc</module>
+		<module>spring-tutorial-core-resouces</module>
+		<module>spring-tutorial-core-validation-convert</module>
+	</modules>
+</project>

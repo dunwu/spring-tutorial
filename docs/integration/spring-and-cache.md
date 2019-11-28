@@ -218,7 +218,7 @@ ehcache.xml 中的配置内容完全符合 Ehcache 的官方配置标准。
 
 ## 示例代码
 
-我的示例代码地址：[spring-examples-integration-cache](https://github.com/dunwu/spring-tutorial/tree/master/spring-examples/spring-examples-integration/spring-examples-integration-cache)
+我的示例代码地址：[spring-tutorial-integration-cache](https://github.com/dunwu/spring-tutorial/tree/master/spring-tutorial/spring-tutorial-integration/spring-tutorial-integration-cache)
 
 ## 参考资料
 

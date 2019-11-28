@@ -8,36 +8,16 @@
 	<version>1.0.4</version>
 	<packaging>pom</packaging>
 
-	<modules>
-		<module>spring-examples</module>
-	</modules>
-
 	<name>${project.artifactId}</name>
-	<description>spring 学习笔记</description>
-	<url>https://github.com/dunwu/spring-tutorial</url>
-	<inceptionYear>2016-2019</inceptionYear>
-	<licenses>
-		<license>
-			<name>Apache License, Version 2.0</name>
-			<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-			<distribution>repo</distribution>
-			<comments>A business-friendly OSS license</comments>
-		</license>
-	</licenses>
-	<developers>
-		<developer>
-			<name>Zhang Peng</name>
-			<email>forbreak@163.com</email>
-			<timezone>+8</timezone>
-		</developer>
-	</developers>
-	<issueManagement>
-		<system>Github</system>
-		<url>https://github.com/dunwu/spring-tutorial/issues</url>
-	</issueManagement>
-	<scm>
-		<url>https://github.com/dunwu/spring-tutorial</url>
-		<connection>scm:git:git://github.com/dunwu/spring-tutorial.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com:dunwu/spring-tutorial.git</developerConnection>
-	</scm>
+	<description>Spring Tutorial</description>
+
+	<modules>
+		<module>spring-tutorial-parent</module>
+		<module>spring-tutorial-common</module>
+		<module>spring-tutorial-core</module>
+		<module>spring-tutorial-data</module>
+		<module>spring-tutorial-web</module>
+		<module>spring-tutorial-integration</module>
+		<module>spring-tutorial-security</module>
+	</modules>
 </project>
