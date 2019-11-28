@@ -9,6 +9,8 @@
         <img src="https://badgen.net/github/license/dunwu/spring-tutorial">
     </a>
     <img alt="Spring Boot Version" src="https://img.shields.io/badge/spring-5.0.2.RELEASE-blue">
+    <img src="https://img.shields.io/badge/maven-v3.6.0-blue" alt="maven">
+    <img alt="Build" src="https://api.travis-ci.com/dunwu/spring-tutorial.svg?branch=master">
 </p>
 
 <h1 align="center">Spring Tutorial</h1>
@@ -16,9 +18,9 @@
 > **`spring-tutorial`** 是一个以简单范例来展示 spring 在 web 开发中的各种应用的教程。
 >
 > - 🔁 项目同步维护：[Github](https://github.com/dunwu/spring-tutorial/) | [Gitee](https://gitee.com/turnon/spring-tutorial/)
->- 📖 电子书阅读：[Github Pages](https://dunwu.github.io/spring-tutorial/) | [Gitee Pages](http://turnon.gitee.io/spring-tutorial/)
+> - 📖 电子书阅读：[Github Pages](https://dunwu.github.io/spring-tutorial/) | [Gitee Pages](http://turnon.gitee.io/spring-tutorial/)
 
-|      0️⃣      |      1️⃣      |      2️⃣      |     3️⃣     |      4️⃣      |      5️⃣      |
+|      0️⃣       |      1️⃣       |      2️⃣       |     3️⃣      |      4️⃣       |      5️⃣       |
 | :-----------: | :-----------: | :-----------: | :---------: | :-----------: | :-----------: |
 | [综合](#综合) | [核心](#核心) | [数据](#数据) | [Web](#Web) | [集成](#集成) | [安全](#安全) |
 
