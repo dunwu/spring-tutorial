@@ -9,9 +9,9 @@
 
 ## [核心](core/README.md)
 
-- [Spring IoC](core/ioc.md)
-- [Spring AOP](core/aop.md)
-- [Spring Resources](core/spring-and-resources.md)
+- [Spring IoC](core/spring-ioc.md)
+- [Spring AOP](core/spring-aop.md)
+- [Spring Resources](core/spring-resources.md)
 
 ## [数据](data/README.md)
 

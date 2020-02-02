@@ -12,7 +12,7 @@ Spring 支持 DAO 技术主要目的是：使得切换持久化技术十分方�
 - Spring 的数据异常并没有与特定的持久化方式相关联，所以异常对于不同的持久化方式都是一致的。
 - Spring 的数据异常都继承自 DataAccessException，这种异常是非检查型异常。即，不一定非要捕获 Spring 所抛出的数据访问异常。
 
-<div align="center"><img src="assets/images/spring-data-exception-tree.jpg"/></div>
+![img](assets/images/spring-data-exception-tree.jpg)
 
 ## 数据访问模板化
 
@@ -20,11 +20,11 @@ Spring 在数据访问过程中，采用了模板方法设计模式。
 它将数据访问过程分为两块：模板（template）和回调（callback）。模板管理过程中固定的部分，而回调处理自定义的数据访问代码。
 下图中，左边属于模板固定部分，右边属于模板回调部分。
 
-<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-d4b685e27d934b52.png"/></div>
+![img](http://upload-images.jianshu.io/upload_images/3101171-d4b685e27d934b52.png)
 
 **对于不同的持久化平台，Spring 提供了多个可选的模板。**
 
-<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-e98a1fe9635b3f1b.png"/></div>
+![img](http://upload-images.jianshu.io/upload_images/3101171-e98a1fe9635b3f1b.png)
 
 ## 使用 DAO 支持类
 
@@ -32,8 +32,8 @@ Spring 在数据访问过程中，采用了模板方法设计模式。
 
 下图展示了模板类、DAO 支持类以及自定义 DAO 实现之间的关系。
 
-<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-4a9bf6f7ce95428a.png"/></div>
+![img](http://upload-images.jianshu.io/upload_images/3101171-4a9bf6f7ce95428a.png)
 
 Spring 不仅提供了多个数据模板实现类，还为每种模板提供了对应的 DAO 支持类。
 
-<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-373f10dd0d377aed.png"/></div>
+![img](http://upload-images.jianshu.io/upload_images/3101171-373f10dd0d377aed.png)

@@ -40,6 +40,8 @@ build
 dist
 _book
 _jsdoc
+public
+.deploy*/
 
 # temp files
 *.log
@@ -47,6 +49,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 bundle*.js
+.DS_Store
+Thumbs.db
+db.json
+package-lock.json
 
 
 # ------------------------------- intellij -------------------------------

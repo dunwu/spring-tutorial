@@ -18,5 +18,6 @@
 	<modules>
 		<module>spring-tutorial-data-jdbc</module>
 		<module>spring-tutorial-data-mybatis-plus</module>
+		<module>spring-tutorial-data-elasticsearch</module>
 	</modules>
 </project>

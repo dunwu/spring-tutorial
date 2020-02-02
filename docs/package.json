@@ -1,5 +1,11 @@
 {
 	"name": "spring-tutorial",
+	"author": "Zhang Peng",
+	"homepage": "http://dunwu.github.io/spring-tutorial",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:dunwu/spring-tutorial.git"
+	},
 	"scripts": {
 		"start": "docsify serve ./ --port 4000",
 		"clean": "rimraf _book",
@@ -8,13 +14,6 @@
 		"build": "npm run clean & gitbook build",
 		"pdf": "gitbook pdf"
 	},
-	"homepage": "http://dunwu.github.io/spring-tutorial",
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:dunwu/spring-tutorial.git"
-	},
-	"author": "Zhang Peng",
-	"license": "MIT",
 	"dependencies": {
 		"gitbook-plugin-advanced-emoji": "^0.2.2",
 		"gitbook-plugin-anchor-navigation-ex": "^1.0.10",

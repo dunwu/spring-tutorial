@@ -35,9 +35,9 @@
 
 > [核心](core/README.md) 章节主要针对：Spring 框架的核心技术。如；IOC 依赖注入、AOP、数据绑定等。
 
-- [Spring IoC](core/ioc.md)
-- [Spring AOP](core/aop.md)
-- [Spring Resources](core/spring-and-resources.md)
+- [Spring IoC](core/spring-ioc.md)
+- [Spring AOP](core/spring-aop.md)
+- [Spring Resources](core/spring-resources.md)
 
 ### 数据
 
@@ -105,6 +105,11 @@ $ mvn jetty:run -Dmaven.test.skip=true
 - 推荐使用 [IDEA](https://www.jetbrains.com/idea/) 作为 IDE
 - 代码规范使用 [阿里巴巴 Java 开发手册](https://github.com/alibaba/p3c)
   - 如果你使用 IDEA 作为你的 IDE，推荐安装 Alibaba-Java-Coding-Guidelines 插件来做静态检查。
+
+## 资源
+
+- 书籍
+- [《 Spring实战（第4版）》](https://item.jd.com/11899370.html)
 
 ## License
 

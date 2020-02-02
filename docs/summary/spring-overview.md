@@ -67,7 +67,7 @@ Spring 当前框架有**20**个 jar 包，大致可以分为**6**大模块:
 Spring 框架提供了非常丰富的功能，因此整个架构也很庞大。
 在我们实际的应用开发中，并不一定要使用所有的功能，而是可以根据需要选择合适的 Spring 模块。
 
-<div align="center"><img src="http://dunwu.test.upcdn.net/cs/java/spring/spring-framework.png!zp"/></div>
+![img](http://dunwu.test.upcdn.net/cs/java/spring/spring-framework.png!zp)
 
 ### 3.1. Core Container
 

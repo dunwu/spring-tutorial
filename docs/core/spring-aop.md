@@ -16,14 +16,13 @@
 
 <!-- /TOC -->
 
-## 概念
-
-其实, 接触了这么久的 AOP, 我感觉, AOP 给人难以理解的一个关键点是它的概念比较多, 而且坑爹的是, 这些概念经过了中文翻译后, 变得面目全非, 相同的一个术语, 在不同的翻译下, 含义总有着各种莫名其妙的差别. 鉴于此, 我在本章的开头, 着重为为大家介绍一个 Spring AOP 的各项术语的基本含义. 为了术语传达的准确性, 我在接下来的叙述中, 能使用英文术语的地方, 尽量使用英文.
+## AOP 概念
 
 ### 什么是 AOP
 
-AOP(Aspect-Oriented Programming), 即 **面向切面编程**, 它与 OOP( Object-Oriented Programming, 面向对象编程) 相辅相成, 提供了与 OOP 不同的抽象软件结构的视角.
-在 OOP 中, 我们以类(class)作为我们的基本单元, 而 AOP 中的基本单元是 **Aspect(切面)**
+AOP(Aspect-Oriented Programming，即 **面向切面编程**)与 OOP( Object-Oriented Programming，面向对象编程) 相辅相成，提供了与 OOP 不同的抽象软件结构的视角。
+
+在 OOP 中，我们以类(class)作为我们的基本单元，而 AOP 中的基本单元是 **Aspect(切面)**
 
 ### 术语
 
@@ -119,7 +118,8 @@ Spring AOP 默认使用标准的 JDK 动态代理(dynamic proxy)技术来实现 
 
 ## @AspectJ 支持
 
-**@AspectJ** 是一种使用 Java 注解来实现 AOP 的编码风格。
+**`@AspectJ`** 是一种使用 Java 注解来实现 AOP 的编码风格。
+
 @AspectJ 风格的 AOP 是 AspectJ Project 在 AspectJ 5 中引入的, 并且 Spring 也支持 @AspectJ 的 AOP 风格.
 
 ### 使能 @AspectJ 支持
@@ -392,3 +392,7 @@ public class AdviseDefine {
 ```
 
 around advice 和前面的 before advice 差不多, 只是我们把注解 **@Before** 改为了 **@Around** 了.
+
+## 参考资料
+
+- [《 Spring实战（第4版）》](https://item.jd.com/11899370.html)
