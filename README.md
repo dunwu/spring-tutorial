@@ -28,7 +28,7 @@
 >
 > - [Java 教程](https://github.com/dunwu/java-tutorial)
 >   - [JavaCore 教程](https://dunwu.github.io/javacore/)
->   - [JavaWeb 教程](https://dunwu.github.io/javaweb/)
+>   - [JavaTech 教程](https://dunwu.github.io/javatech/)
 >   - [Spring Boot 教程](https://dunwu.github.io/spring-boot-tutorial/)
 
 |       0️⃣       |       1️⃣       |       2️⃣       |      3️⃣      |       4️⃣       |       5️⃣       |

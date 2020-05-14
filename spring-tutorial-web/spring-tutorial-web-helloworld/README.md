@@ -2,7 +2,7 @@
 
 > 第一个 Spring mvc 示例。
 
-![](http://dunwu.test.upcdn.net/snap/20190905225429.png)
+![img](http://dunwu.test.upcdn.net/snap/20190905225429.png)
 
 ## 启动方法
 

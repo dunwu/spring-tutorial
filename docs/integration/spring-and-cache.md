@@ -121,7 +121,7 @@ public class BookRepositoryImpl implements BookRepository {
 
 Spring 允许通过配置方式接入多种不同的缓存存储。用户可以根据实际需要选择。
 
-不同的缓存存储，具有不同的性能和特性，如果想了解具体原理，可以参考：[全面理解缓存原理](https://dunwu.github.io/javaweb/#/technology/cache/cache-theory?id=%e5%85%a8%e9%9d%a2%e7%90%86%e8%a7%a3%e7%bc%93%e5%ad%98%e5%8e%9f%e7%90%86)。这里不再赘述。
+不同的缓存存储，具有不同的性能和特性，如果想了解具体原理，可以参考：[全面理解缓存原理](https://dunwu.github.io/javatech/#/technology/cache/cache-theory?id=%e5%85%a8%e9%9d%a2%e7%90%86%e8%a7%a3%e7%bc%93%e5%ad%98%e5%8e%9f%e7%90%86)。这里不再赘述。
 
 ### 使用 ConcurrentHashMap 作为缓存
 

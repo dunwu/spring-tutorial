@@ -83,14 +83,14 @@ Spring 自带了几种容器的实现，可归纳为两种类型：
 
 由 org.springframework.context.ApplicationContext 接口定义。
 它是基于 BeanFactory 之上构建，并提供面向应用的服务，例如从属性文件解析文本信息的能力，以及发布应用事件给感兴趣的事件监听者的能力。
-**_注：Bean 工厂对于大多数应用来说往往太低级了，所以应用上下文使用更广泛。推荐在开发中使用应用上下文容器。_**
+***注：Bean 工厂对于大多数应用来说往往太低级了，所以应用上下文使用更广泛。推荐在开发中使用应用上下文容器。***
 
 Spring 自带了多种应用上下文，最可能遇到的有以下几种：
 `ClassPathXmlApplicationContext`：从类路径下的 XML 配置文件中加载上下文定义，把应用上下文定义文件当做类资源。
 `FileSystemXmlApplicationContext`：读取文件系统下的 XML 配置文件并加载上下文定义。
 `XmlWebApplicationContext`：读取 Web 应用下的 XML 配置文件并装载上下文定义。
 
-**_范例_**
+***范例***
 
 ```java
 ApplicationContext context = new FileSystemXmlApplicationContext("D:\Temp\build.xml");

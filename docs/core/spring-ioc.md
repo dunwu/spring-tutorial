@@ -347,7 +347,7 @@ public class AnnotationRequired {
 
 可以使用 JSR330 的注解`@Inject`来替代`@Autowired`。
 
-**_范例_**
+***范例***
 
 ```java
 public class AnnotationAutowired {
@@ -424,7 +424,7 @@ xml 中的配置
 
 可以通过`@Qualifier`指定 bean 名称来锁定真正需要的那个 bean。
 
-**_范例_**
+***范例***
 
 ```java
 public class AnnotationQualifier {
@@ -504,7 +504,7 @@ Spring 支持 JSP250 规定的注解`@Resource`。这个注解根据指定的名
 
 在 Spring 中，由`CommonAnnotationBeanPostProcessor`来处理`@Resource`注解。
 
-**_范例_**
+***范例***
 
 ```java
 public class AnnotationResource {
@@ -596,7 +596,7 @@ public class AnnotationPostConstructAndPreDestroy {
 
 `@Inject`和`@Autowired`一样，可以修饰属性、setter 方法、构造方法。
 
-**_范例_**
+***范例***
 
 ```java
 public class AnnotationInject {
