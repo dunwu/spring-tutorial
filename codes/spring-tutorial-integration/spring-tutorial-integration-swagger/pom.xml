@@ -19,7 +19,7 @@
 		<dependency>
 			<groupId>io.github.dunwu.spring</groupId>
 			<artifactId>spring-tutorial-common</artifactId>
-			<version>1.0.4</version>
+			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>

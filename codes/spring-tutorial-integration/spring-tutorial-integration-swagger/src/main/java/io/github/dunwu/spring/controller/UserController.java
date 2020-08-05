@@ -1,6 +1,9 @@
 package io.github.dunwu.spring.controller;
 
-import io.github.dunwu.core.*;
+import io.github.dunwu.data.core.BaseResult;
+import io.github.dunwu.data.core.DataListResult;
+import io.github.dunwu.data.core.DataResult;
+import io.github.dunwu.data.core.constant.ResultStatus;
 import io.github.dunwu.spring.model.User;
 import io.github.dunwu.spring.model.UserList;
 import io.swagger.annotations.Api;
@@ -36,7 +39,7 @@ public class UserController {
 		users.add(user1);
 		users.add(user2);
 		users.add(user3);
-		return ResultUtil.successDataListResult(users);
+		return DataListResult.success(users);
 	}
 
 	@GetMapping(value = "get/{id}")
@@ -45,9 +48,9 @@ public class UserController {
 		@ApiParam(name = "id", value = "用户编号", required = true) @PathVariable("id") Long id) {
 		if (id > 0) {
 			User user = new User(1L, "zhangsan", "zhangsan@163.com");
-			return ResultUtil.successDataResult(user);
+			return DataResult.success(user);
 		}
-		return ResultUtil.failDataResult(AppCode.ERROR_DB);
+		return DataResult.failData(ResultStatus.DATA_ERROR);
 	}
 
 	@ResponseBody
@@ -57,7 +60,7 @@ public class UserController {
 		@ApiParam(name = "email", value = "姓名", required = true) @RequestParam("email") String email) {
 		// 略去数据库操作：插入一条新记录
 		logger.info("添加用户成功。name:{}, email:{}", name, email);
-		return ResultUtil.successBaseResult();
+		return BaseResult.success();
 	}
 
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
@@ -66,7 +69,7 @@ public class UserController {
 		@ApiParam(name = "id", value = "用户编号", required = true) @PathVariable("id") Long id) {
 		// 略去数据库操作：查找并删除一条存在记录
 		logger.info("删除用户成功。id:{}", id);
-		return ResultUtil.successBaseResult();
+		return BaseResult.success();
 	}
 
 }

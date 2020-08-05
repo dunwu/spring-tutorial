@@ -1,9 +1,9 @@
 package io.github.dunwu.spring.websocket.websocket;
 
+import cn.hutool.core.thread.ThreadFactoryBuilder;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import io.github.dunwu.spring.websocket.entity.Message;
-import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -148,8 +148,7 @@ public class MyWebSocketHandler implements WebSocketHandler {
 			for (final WebSocketSession session : item) {
 				if (session.isOpen()) {
 					ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1,
-						new BasicThreadFactory.Builder().namingPattern("socket-schedule-pool-%d").daemon(true)
-							.build());
+						new ThreadFactoryBuilder().setNamePrefix("socket-schedule-pool-%d").setDaemon(true).build());
 					for (int i = 0; i < 3; i++) {
 						executorService.execute(new Runnable() {
 							@Override

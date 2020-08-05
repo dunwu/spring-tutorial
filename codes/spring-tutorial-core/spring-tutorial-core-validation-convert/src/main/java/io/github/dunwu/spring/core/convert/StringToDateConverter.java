@@ -1,10 +1,10 @@
 package io.github.dunwu.spring.core.convert;
 
-import io.github.dunwu.util.time.DateFormatExtUtils;
-import org.apache.commons.lang3.StringUtils;
+import cn.hutool.core.date.DatePattern;
+import cn.hutool.core.util.StrUtil;
+import io.github.dunwu.tool.util.DateUtil;
 import org.springframework.core.convert.converter.Converter;
 
-import java.text.ParseException;
 import java.util.Date;
 
 /**
@@ -15,18 +15,11 @@ public class StringToDateConverter implements Converter<String, Date> {
 
 	@Override
 	public Date convert(String dateString) {
-		if (StringUtils.isBlank(dateString)) {
+		if (StrUtil.isBlank(dateString)) {
 			return null;
 		}
 
-		Date date = null;
-		try {
-			date = DateFormatExtUtils.parseDate(DateFormatExtUtils.DatePattern.PATTERN_DEFAULT_ON_SECOND, dateString);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-
-		return date;
+		return DateUtil.parse(dateString, DatePattern.NORM_DATETIME_PATTERN);
 	}
 
 }

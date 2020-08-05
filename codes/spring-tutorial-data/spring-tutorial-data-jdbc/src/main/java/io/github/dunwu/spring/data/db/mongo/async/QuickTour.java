@@ -7,6 +7,7 @@ import com.mongodb.async.client.MongoClients;
 import com.mongodb.async.client.MongoCollection;
 import com.mongodb.async.client.MongoDatabase;
 import com.mongodb.bulk.BulkWriteResult;
+import com.mongodb.client.model.*;
 import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
@@ -92,7 +93,7 @@ public class QuickTour {
 		collection.insertMany(documents, new SingleResultCallback<Void>() {
 			@Override
 			public void onResult(final Void result, final Throwable t) {
-				collection.count(new SingleResultCallback<Long>() {
+				collection.countDocuments(new SingleResultCallback<Long>() {
 					@Override
 					public void onResult(final Long count, final Throwable t) {
 						System.out.println(
@@ -110,7 +111,7 @@ public class QuickTour {
 			public void onResult(final Document document, final Throwable t) {
 				System.out.println(document.toJson());
 			}
-		}
+		};
 		collection.find().first(printDocument);
 
 		// lets get all the documents in the collection and print them out
@@ -119,13 +120,13 @@ public class QuickTour {
 			public void apply(final Document document) {
 				System.out.println(document.toJson());
 			}
-		}
+		};
 		SingleResultCallback<Void> callbackWhenFinished = new SingleResultCallback<Void>() {
 			@Override
 			public void onResult(final Void result, final Throwable t) {
 				System.out.println("Operation Finished!");
 			}
-		}
+		};
 
 		collection.find().forEach(printDocumentBlock, callbackWhenFinished);
 
@@ -206,7 +207,7 @@ public class QuickTour {
 			public void onResult(final BulkWriteResult result, final Throwable t) {
 				System.out.println(result);
 			}
-		}
+		};
 		collection.bulkWrite(writes, printBatchResult);
 
 		final CountDownLatch dropLatch3 = new CountDownLatch(1);
