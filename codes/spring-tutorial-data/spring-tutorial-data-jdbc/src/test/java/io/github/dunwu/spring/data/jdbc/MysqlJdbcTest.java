@@ -23,7 +23,7 @@ import java.sql.SQLException;
  */
 @SuppressWarnings("all")
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:db/spring-mysql.xml" })
+@ContextConfiguration(locations = { "classpath:data/spring-mysql.xml" })
 public class MysqlJdbcTest {
 
 	@Autowired

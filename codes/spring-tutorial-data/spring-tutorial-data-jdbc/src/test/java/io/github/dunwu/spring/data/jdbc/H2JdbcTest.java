@@ -20,7 +20,7 @@ import java.sql.SQLException;
  */
 @SuppressWarnings("all")
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:db/spring-h2.xml" })
+@ContextConfiguration(locations = { "classpath:data/spring-h2.xml" })
 public class H2JdbcTest {
 
 	@Autowired

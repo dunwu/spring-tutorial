@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
 <!-- logback中一共有5种有效级别，分别是TRACE、DEBUG、INFO、WARN、ERROR，优先级依次从低到高 -->
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
 
-	<property name="FILE_NAME" value="spring-tutorial-core" />
-	<property name="PATTERN"
-		value="%d{HH:mm:ss.SSS} [%boldYellow(%thread)] [%highlight(%-5level)] %boldGreen(%c{36}.%M) - %boldBlue(%m%n)" />
+	<contextName>spring-boot-tutorial</contextName>
+	<property name="LOG_NAME" value="spring-tutorial" />
+	<property name="LOG_DIR" value="${user.dir}/log" />
+	<property name="LOG_MAX_HISTORY" value="14" />
+	<property name="LOG_MAX_FILE_SIZE" value="100MB" />
+	<property name="LOG_MAX_QUEUE_SIZE" value="256" />
+	<property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%contextName] [%-5level] [%thread] %c.%M | %m%n" />
+	<property name="LOG_COLOR_PATTERN"
+		value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%highlight(%-5level)] [%boldYellow(%thread)] %boldGreen(%c{50}.%M) | %boldBlue(%m%n)" />
 
-	<!-- 将记录日志打印到控制台 -->
+	<!-- APPENDER BEGIN -->
 	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
-			<pattern>%d{HH:mm:ss.SSS} [%thread] [%-5p] %c{36}.%M - %m%n</pattern>
+			<pattern>${LOG_COLOR_PATTERN}</pattern>
 		</encoder>
 	</appender>
 
-	<!-- RollingFileAppender begin -->
 	<appender name="ALL" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<!-- 根据时间来制定滚动策略 -->
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${user.dir}/logs/${FILE_NAME}-all.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<fileNamePattern>${LOG_DIR}/${LOG_NAME}.%d{yyyy-MM-dd}.log</fileNamePattern>
 			<maxHistory>30</maxHistory>
 		</rollingPolicy>
 
@@ -28,30 +32,12 @@
 		</triggeringPolicy>
 
 		<encoder>
-			<pattern>${PATTERN}</pattern>
+			<pattern>${LOG_PATTERN}</pattern>
 		</encoder>
 	</appender>
+	<!-- APPENDER END -->
 
-	<appender name="SPRING" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<!-- 根据时间来制定滚动策略 -->
-		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${user.dir}/logs/${FILE_NAME}-spring.%d{yyyy-MM-dd}.log
-			</fileNamePattern>
-			<maxHistory>30</maxHistory>
-		</rollingPolicy>
-
-		<!-- 根据文件大小来制定滚动策略 -->
-		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
-			<maxFileSize>10MB</maxFileSize>
-		</triggeringPolicy>
-
-		<encoder>
-			<pattern>${PATTERN}</pattern>
-		</encoder>
-	</appender>
-	<!-- RollingFileAppender end -->
-
-	<!-- logger begin -->
+	<!-- LOGGER BEGIN -->
 	<!-- 本项目的日志记录，分级打印 -->
 	<logger name="io.github.dunwu.spring" level="DEBUG" additivity="false">
 		<appender-ref ref="CONSOLE" />
@@ -59,14 +45,13 @@
 	</logger>
 
 	<!-- SPRING框架日志 -->
-	<logger name="org.springframework" level="WARN" additivity="false">
+	<logger name="org.springframework" level="INFO" additivity="false">
 		<appender-ref ref="CONSOLE" />
-		<appender-ref ref="SPRING" />
+		<appender-ref ref="ALL" />
 	</logger>
 
 	<root level="WARN">
 		<appender-ref ref="CONSOLE" />
-		<appender-ref ref="ALL" />
 	</root>
 	<!-- logger end -->
 

@@ -16,6 +16,7 @@
 
 	<modules>
 		<module>spring-tutorial-data-jdbc</module>
+		<module>spring-tutorial-data-tx</module>
 		<module>spring-tutorial-data-mybatis-plus</module>
 	</modules>
 </project>

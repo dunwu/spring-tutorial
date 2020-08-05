@@ -20,7 +20,7 @@ import java.sql.SQLException;
  */
 @SuppressWarnings("all")
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:db/spring-druid.xml" })
+@ContextConfiguration(locations = { "classpath:data/spring-druid.xml" })
 public class DruidJdbcTest {
 
 	@Autowired

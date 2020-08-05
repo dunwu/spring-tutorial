@@ -12,15 +12,15 @@ public class JdbcDemo {
 	private static final Logger log = LoggerFactory.getLogger(JdbcDemo.class);
 
 	public static ApplicationContext getH2ApplicationContext() {
-		return new ClassPathXmlApplicationContext("/db/spring-h2.xml");
+		return new ClassPathXmlApplicationContext("/data/spring-h2.xml");
 	}
 
 	public static ApplicationContext getMysqlApplicationContext() {
-		return new ClassPathXmlApplicationContext("/db/spring-mysql.xml");
+		return new ClassPathXmlApplicationContext("/data/spring-mysql.xml");
 	}
 
 	public static ApplicationContext getDruidApplicationContext() {
-		return new ClassPathXmlApplicationContext("/db/spring-druid.xml");
+		return new ClassPathXmlApplicationContext("/data/spring-druid.xml");
 	}
 
 	public static void execJdbcOper(MyJdbcTemplateImpl jdbcTemplateDemo) {
@@ -32,21 +32,19 @@ public class JdbcDemo {
 		log.debug("------Listing Multiple Records--------");
 		int lastId = 0;
 		List<StudentDTO> students = jdbcTemplateDemo.list();
+		StringBuilder sb = new StringBuilder();
 		for (StudentDTO record : students) {
-			System.out.print("ID : " + record.getId());
-			System.out.println(", Name : " + record.getName());
-			log.debug(", Age : " + record.getAge());
+			sb.append(record.toString()).append("\n");
 			lastId = record.getId();
 		}
+		log.debug(sb.toString());
 
 		log.debug("----Updating Record with ID = 2 -----");
 		jdbcTemplateDemo.update(lastId, 20);
 
 		log.debug("----Listing Record with ID = 2 -----");
 		StudentDTO student = jdbcTemplateDemo.getById(lastId);
-		System.out.print("ID : " + student.getId());
-		System.out.println(", Name : " + student.getName());
-		log.debug(", Age : " + student.getAge());
+		log.debug(student.toString());
 	}
 
 }

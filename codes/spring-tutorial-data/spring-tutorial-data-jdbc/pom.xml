@@ -16,6 +16,12 @@
 	<description>[spring][data][jdbc]本项目展示 Spring 中如何使用 JDBC 访问数据</description>
 
 	<dependencies>
+		<dependency>
+			<groupId>io.github.dunwu.spring</groupId>
+			<artifactId>spring-tutorial-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
 		<!-- db start -->
 		<dependency>
 			<groupId>org.mongodb</groupId>

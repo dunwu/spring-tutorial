@@ -19,7 +19,7 @@ import java.util.List;
  * @since 2017/4/12.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:db/spring-redis.xml" })
+@ContextConfiguration(locations = { "classpath:data/spring-redis.xml" })
 public class RedisTest {
 
 	@Autowired
