@@ -185,7 +185,7 @@ class B {
 
 ## 三、IoC 依赖查找
 
-依赖查找是主动或手动的依赖查找方式，通常需要依赖容器或标准 API 实现。
+**依赖查找是主动或手动的依赖查找方式，通常需要依赖容器或标准 API 实现**。
 
 - 根据 Bean 名称查找
   - 实时查找
@@ -262,9 +262,7 @@ public class BeanFactoryDemo {
 
 ## 四、IoC 依赖注入
 
-DI，是 Dependency Injection 的缩写，即依赖注入。
-
-依赖注入是 IoC 的最常见形式。依赖注入是手动或自动绑定的方式，无需依赖特定的容器或 API。
+DI，是 Dependency Injection 的缩写，即依赖注入。依赖注入是 IoC 的最常见形式。依赖注入是手动或自动绑定的方式，无需依赖特定的容器或 API。
 
 **容器全权负责组件的装配，它会把符合依赖关系的对象通过 JavaBean 属性或者构造函数传递给需要的对象**。
 
@@ -761,12 +759,12 @@ Java 配置
     @Configuration
     public class AnnotationConfiguration {
         private static final Logger log = LoggerFactory.getLogger(JavaComponentScan.class);
-
+    
         @Bean
         public Job getPolice() {
             return new Police();
         }
-
+    
         public static void main(String[] args) {
             AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AnnotationConfiguration.class);
             ctx.scan("org.zp.notes.spring.beans");
@@ -775,11 +773,11 @@ Java 配置
             log.debug("job: {}, work: {}", job.getClass(), job.work());
         }
     }
-
+    
     public interface Job {
         String work();
     }
-
+    
     @Component("police")
     public class Police implements Job {
         @Override

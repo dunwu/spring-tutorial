@@ -1,4 +1,4 @@
-# 说明
+# Spring 核心特性示例源码
 
 > IoC container, Events, Resources, i18n, Validation, Data Binding, Type Conversion, SpEL, AOP.
 

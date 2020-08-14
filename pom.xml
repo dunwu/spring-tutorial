@@ -9,7 +9,7 @@
 	<packaging>pom</packaging>
 
 	<name>${project.artifactId}</name>
-	<description>Spring Tutorial</description>
+	<description>Spring Tutorial 示例源码</description>
 
 	<modules>
 		<module>codes/spring-tutorial-parent</module>

@@ -1,6 +1,6 @@
 <p align="center">
-    <a href="https://spring.io/projects/spring-framework" target="_blank" rel="noopener noreferrer">
-        <img src="http://dunwu.test.upcdn.net/common/logo/spring.png" alt="spring-logo">
+    <a href="https://dunwu.github.io/spring-framework/" target="_blank" rel="noopener noreferrer">
+        <img src="http://dunwu.test.upcdn.net/common/logo/dunwu-logo.png" alt="logo" width="150px"/>
     </a>
 </p>
 
@@ -15,23 +15,14 @@
 
 <h1 align="center">Spring Tutorial</h1>
 
-> **`spring-tutorial`** 是一个以简单范例来展示 spring 在 web 开发中的各种应用的教程。
+> **spring-tutorial** 是一个以简单范例来展示 spring 在 web 开发中的各种应用的教程。
 >
 > - 🔁 项目同步维护：[Github](https://github.com/dunwu/spring-tutorial/) | [Gitee](https://gitee.com/turnon/spring-tutorial/)
 > - 📖 电子书阅读：[Github Pages](https://dunwu.github.io/spring-tutorial/) | [Gitee Pages](http://turnon.gitee.io/spring-tutorial/)
 
-## 文档
+## 📖 内容
 
-> 📖 [**spring-tutorial 文档在线阅读**](https://dunwu.github.io/spring-tutorial/)
->
-> 扩展学习：
->
-> - [Java 教程](https://github.com/dunwu/java-tutorial)
->   - [JavaCore 教程](https://dunwu.github.io/javacore/)
->   - [JavaTech 教程](https://dunwu.github.io/javatech/)
->   - [Spring Boot 教程](https://dunwu.github.io/spring-boot-tutorial/)
-
-|       0️⃣       |       1️⃣       |       2️⃣       |      3️⃣      |       4️⃣       |       5️⃣       |
+|      0️⃣       |      1️⃣       |      2️⃣       |     3️⃣      |      4️⃣       |      5️⃣       |
 | :-----------: | :-----------: | :-----------: | :---------: | :-----------: | :-----------: |
 | [综合](#综合) | [核心](#核心) | [数据](#数据) | [Web](#Web) | [集成](#集成) | [安全](#安全) |
 
@@ -73,23 +64,20 @@
 ### 其他
 
 - [spring 4 升级踩雷指南](docs/others/spring4-upgrade.md)
-- [资源](docs/others/resources.md)
 
-## 示例
+## 👨‍💻 示例
 
-### 说明
+### 重要库版本
 
-#### 重要库版本
-
-| 库或工具             | 版本            | 说明                                                         |
-| -------------------- | --------------- | ------------------------------------------------------------ |
-| Spring Framework     | 5.0.2.RELEASE   |                                                              |
-| JDK                  | 1.8+            | Spring5 开始，要求 JDK8+                                     |
-| Maven                | 3.5.2           | 本项目使用 [maven](https://maven.apache.org/index.html) 作为构建工具。 |
-| jetty-maven-plugin   | 9.4.8.v20171121 | [Jetty](http://www.eclipse.org/jetty/) 可作为 web 服务器和 servlet 容器。此插件可以免部署启动 web app。 |
+| 库或工具             | 版本            | 说明                                                                                                                                                                                                          |
+| -------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Spring Framework     | 5.0.2.RELEASE   |                                                                                                                                                                                                               |
+| JDK                  | 1.8+            | Spring5 开始，要求 JDK8+                                                                                                                                                                                      |
+| Maven                | 3.5.2           | 本项目使用 [maven](https://maven.apache.org/index.html) 作为构建工具。                                                                                                                                        |
+| jetty-maven-plugin   | 9.4.8.v20171121 | [Jetty](http://www.eclipse.org/jetty/) 可作为 web 服务器和 servlet 容器。此插件可以免部署启动 web app。                                                                                                       |
 | tomcat7-maven-plugin | 2.2             | [Tomcat](https://tomcat.apache.org/index.html) 可作为 web 服务器和 servlet 容器。此插件可以免部署启动 web app。Tomcat 早已经发布 Tomcat8，但是 maven 插件 一直没有提供 tomcat8 的支持（最后更新为 2013 年）。 |
 
-#### 启动
+### 启动
 
 为了便于展示示例，所有 war 包形式的项目都可以使用 maven 插件快速启动嵌入式服务器，支持 Tomcat 和 Jetty 两种方式。
 
@@ -109,11 +97,42 @@ $ mvn jetty:run -Dmaven.test.skip=true
 
 启动成功后，访问 http://localhost:8089 。
 
-#### 规范
+### 规范
 
 - 推荐使用 [IDEA](https://www.jetbrains.com/idea/) 作为 IDE
 - 代码规范使用 [阿里巴巴 Java 开发手册](https://github.com/alibaba/p3c)
   - 如果你使用 IDEA 作为你的 IDE，推荐安装 Alibaba-Java-Coding-Guidelines 插件来做静态检查。
+
+## 📚 资料
+
+- **官方**
+
+  - [Spring 官网](https://spring.io/)
+  - [Spring Framework 官方文档](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/index.html)
+  - [spring-framework Github](https://github.com/spring-projects/spring-framework)
+
+- **书籍**
+  - [《Spring In Action》](https://item.jd.com/12622829.html)
+- **教程**
+  - [小马哥讲 Spring 核心编程思想](https://time.geekbang.org/course/intro/265)
+  - [geekbang-lessons](https://github.com/geektime-geekbang/geekbang-lessons)
+  - [跟我学 Spring3](http://jinnianshilongnian.iteye.com/blog/1482071)
+
+## 🚪 传送
+
+◾ 🏠 [spring-tutorial 首页](https://dunwu.github.io/spring-tutorial/) ◾ 🎯 [我的博客](https://github.com/dunwu/blog) ◾
+
+> 你可能会感兴趣：
+
+- [Java 教程](https://github.com/dunwu/java-tutorial) 📚
+- [JavaCore 教程](https://dunwu.github.io/javacore/) 📚
+- [JavaTech 教程](https://dunwu.github.io/javatech/) 📚
+- [Spring 教程](https://dunwu.github.io/spring-tutorial/) 📚
+- [Spring Boot 教程](https://dunwu.github.io/spring-boot-tutorial/) 📚
+- [数据库教程](https://dunwu.github.io/db-tutorial/) 📚
+- [数据结构和算法教程](https://dunwu.github.io/algorithm-tutorial/) 📚
+- [Linux 教程](https://dunwu.github.io/linux-tutorial/) 📚
+- [Nginx 教程](https://github.com/dunwu/nginx-tutorial/) 📚
 
 ## License
 
