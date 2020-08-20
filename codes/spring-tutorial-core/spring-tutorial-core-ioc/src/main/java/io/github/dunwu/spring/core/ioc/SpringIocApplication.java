@@ -9,5 +9,6 @@ public class SpringIocApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringIocApplication.class, args);
     }
+
 }
 

@@ -1,7 +1,7 @@
 package io.github.dunwu.spring.core.ioc.annotation;
 
-import io.github.dunwu.spring.core.ioc.sample.AbstractFruit;
-import io.github.dunwu.spring.core.ioc.sample.Orange;
+import io.github.dunwu.spring.core.ioc.sample.fruit.Fruit;
+import io.github.dunwu.spring.core.ioc.sample.fruit.Orange;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.AbstractApplicationContext;
@@ -19,55 +19,55 @@ import javax.annotation.Resource;
  */
 public class AnnotationResource {
 
-	private static final Logger log = LoggerFactory.getLogger(AnnotationResource.class);
+    private static final Logger log = LoggerFactory.getLogger(AnnotationResource.class);
 
-	@Resource(name = "apple")
-	AbstractFruit fieldA;
+    @Resource(name = "apple")
+    Fruit fieldA;
 
-	AbstractFruit fieldB;
+    Fruit fieldB;
 
-	@Resource
-	Orange fieldC;
+    @Resource
+    Orange fieldC;
 
-	public static void main(String[] args) throws Exception {
-		AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
-		AnnotationResource annotationResource = (AnnotationResource) ctx.getBean("annotationResource");
+    public static void main(String[] args) throws Exception {
+        AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
+        AnnotationResource annotationResource = (AnnotationResource) ctx.getBean("annotationResource");
 
-		log.debug("type: {}, name: {}", annotationResource.getFieldA().getClass(),
-			annotationResource.getFieldA().getName());
+        log.debug("type: {}, name: {}", annotationResource.getFieldA().getClass(),
+            annotationResource.getFieldA().getName());
 
-		log.debug("type: {}, name: {}", annotationResource.getFieldB().getClass(),
-			annotationResource.getFieldB().getName());
+        log.debug("type: {}, name: {}", annotationResource.getFieldB().getClass(),
+            annotationResource.getFieldB().getName());
 
-		log.debug("type: {}, name: {}", annotationResource.getFieldC().getClass(),
-			annotationResource.getFieldC().getName());
+        log.debug("type: {}, name: {}", annotationResource.getFieldC().getClass(),
+            annotationResource.getFieldC().getName());
 
-		ctx.close();
-	}
+        ctx.close();
+    }
 
-	public AbstractFruit getFieldA() {
-		return fieldA;
-	}
+    public Fruit getFieldA() {
+        return fieldA;
+    }
 
-	public void setFieldA(AbstractFruit fieldA) {
-		this.fieldA = fieldA;
-	}
+    public void setFieldA(Fruit fieldA) {
+        this.fieldA = fieldA;
+    }
 
-	public AbstractFruit getFieldB() {
-		return fieldB;
-	}
+    public Fruit getFieldB() {
+        return fieldB;
+    }
 
-	@Resource(name = "banana")
-	public void setFieldB(AbstractFruit fieldB) {
-		this.fieldB = fieldB;
-	}
+    @Resource(name = "banana")
+    public void setFieldB(Fruit fieldB) {
+        this.fieldB = fieldB;
+    }
 
-	public AbstractFruit getFieldC() {
-		return fieldC;
-	}
+    public Fruit getFieldC() {
+        return fieldC;
+    }
 
-	public void setFieldC(Orange fieldC) {
-		this.fieldC = fieldC;
-	}
+    public void setFieldC(Orange fieldC) {
+        this.fieldC = fieldC;
+    }
 
 }

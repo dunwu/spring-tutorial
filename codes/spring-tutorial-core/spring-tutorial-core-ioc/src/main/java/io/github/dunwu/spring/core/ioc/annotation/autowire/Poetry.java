@@ -2,18 +2,18 @@ package io.github.dunwu.spring.core.ioc.annotation.autowire;
 
 public class Poetry {
 
-	String name;
+    String name;
 
-	public Poetry(String name) {
-		this.name = name;
-	}
+    public Poetry(String name) {
+        this.name = name;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
 }

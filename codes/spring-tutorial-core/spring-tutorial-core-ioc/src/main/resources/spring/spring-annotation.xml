@@ -38,8 +38,8 @@
 		class="io.github.dunwu.spring.core.ioc.annotation.AnnotationInject" />
 
 	<!-- 测试bean -->
-	<bean id="apple" class="io.github.dunwu.spring.core.ioc.sample.Apple" />
-	<bean id="banana" class="io.github.dunwu.spring.core.ioc.sample.Banana" />
-	<bean id="orange" class="io.github.dunwu.spring.core.ioc.sample.Orange" />
+	<bean id="apple" class="io.github.dunwu.spring.core.ioc.sample.fruit.Apple" />
+	<bean id="banana" class="io.github.dunwu.spring.core.ioc.sample.fruit.Banana" />
+	<bean id="orange" class="io.github.dunwu.spring.core.ioc.sample.fruit.Orange" />
 
 </beans>

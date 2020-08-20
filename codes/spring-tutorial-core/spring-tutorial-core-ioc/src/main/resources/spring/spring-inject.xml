@@ -6,17 +6,17 @@
 	<!-- Bean declarations go here -->
 
 	<!-- 构造注入 -->
-	<bean id="poetry" class="io.github.dunwu.spring.core.ioc.annotation.inject.Poetry">
+	<bean id="poetry" class="io.github.dunwu.spring.core.ioc.inject.Poetry">
 		<constructor-arg value="将进酒" />
 	</bean>
-	<bean id="libai" class="io.github.dunwu.spring.core.ioc.annotation.inject.Poet">
+	<bean id="libai" class="io.github.dunwu.spring.core.ioc.inject.Poet">
 		<constructor-arg value="李白" />
 		<constructor-arg ref="poetry" />
 	</bean>
 
 	<!-- setter注入 -->
-	<bean id="piano" class="io.github.dunwu.spring.core.ioc.annotation.inject.instrument.Piano" />
-	<bean id="chopin" class="io.github.dunwu.spring.core.ioc.annotation.inject.Musician">
+	<bean id="piano" class="io.github.dunwu.spring.core.ioc.sample.instrument.Piano" />
+	<bean id="chopin" class="io.github.dunwu.spring.core.ioc.inject.Musician">
 		<property name="song" value="夜曲" />
 		<property name="name" value="肖邦" />
 		<property name="instrument" ref="piano" />

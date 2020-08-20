@@ -14,21 +14,21 @@ import java.util.List;
 @RequestMapping("beansingletonandorder")
 public class BeanSingletonAndOrderController {
 
-	@Autowired
-	List<SayService> sayServiceList;
-	@Autowired
-	private ApplicationContext applicationContext;
+    @Autowired
+    List<SayService> sayServiceList;
+    @Autowired
+    private ApplicationContext applicationContext;
 
-	@GetMapping("test")
-	public void test() {
-		log.info("====================");
-		sayServiceList.forEach(SayService::say);
-	}
+    @GetMapping("test")
+    public void test() {
+        log.info("====================");
+        sayServiceList.forEach(SayService::say);
+    }
 
-	@GetMapping("test2")
-	public void test2() {
-		log.info("====================");
-		applicationContext.getBeansOfType(SayService.class).values().forEach(SayService::say);
-	}
+    @GetMapping("test2")
+    public void test2() {
+        log.info("====================");
+        applicationContext.getBeansOfType(SayService.class).values().forEach(SayService::say);
+    }
 
 }

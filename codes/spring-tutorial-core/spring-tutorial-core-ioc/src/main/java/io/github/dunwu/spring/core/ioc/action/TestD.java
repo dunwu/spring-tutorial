@@ -6,11 +6,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TestD {
+
     @Getter
-    private TestC testC;
+    private final TestC testC;
 
     @Autowired
     public TestD(TestC testC) {
         this.testC = testC;
     }
+
 }

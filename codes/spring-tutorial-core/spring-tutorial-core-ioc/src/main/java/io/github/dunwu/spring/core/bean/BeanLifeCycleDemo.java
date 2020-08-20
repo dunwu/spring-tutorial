@@ -2,19 +2,21 @@ package io.github.dunwu.spring.core.bean;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/**
+ * Spring Bean 在 IoC 容器的生命周期示例
+ */
 public class BeanLifeCycleDemo {
 
-	public static void main(String[] args) {
-		System.out.println("现在开始初始化容器");
-
-		ClassPathXmlApplicationContext factory = new ClassPathXmlApplicationContext("spring-beans.xml");
-		System.out.println("容器初始化成功");
-
-		Person person = factory.getBean("person", Person.class);
-		System.out.println(person);
-
-		System.out.println("现在开始关闭容器！");
-		factory.registerShutdownHook();
-	}
+    public static void main(String[] args) {
+        // 创建 BeanFactory 容器
+        ClassPathXmlApplicationContext applicationContext =
+            new ClassPathXmlApplicationContext("spring/spring-beans.xml");
+        // 依赖查找
+        Person person = applicationContext.getBean("person", Person.class);
+        System.out.println(person);
+        // 关闭应用上下文
+        applicationContext.refresh();
+        applicationContext.close();
+    }
 
 }

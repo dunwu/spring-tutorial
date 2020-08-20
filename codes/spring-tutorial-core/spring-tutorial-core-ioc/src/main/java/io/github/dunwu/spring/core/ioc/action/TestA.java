@@ -6,7 +6,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TestA {
+
     @Autowired
     @Getter
     private TestB testB;
+
 }

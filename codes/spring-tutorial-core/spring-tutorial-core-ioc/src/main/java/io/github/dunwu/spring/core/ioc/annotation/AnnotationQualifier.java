@@ -1,6 +1,6 @@
 package io.github.dunwu.spring.core.ioc.annotation;
 
-import io.github.dunwu.spring.core.ioc.sample.AbstractFruit;
+import io.github.dunwu.spring.core.ioc.sample.fruit.Fruit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,42 +17,42 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class AnnotationQualifier {
 
-	private static final Logger log = LoggerFactory.getLogger(AnnotationQualifier.class);
+    private static final Logger log = LoggerFactory.getLogger(AnnotationQualifier.class);
 
-	@Autowired
-	@Qualifier("apple") /** 去除这行，会报异常 */
-		AbstractFruit fieldA;
+    @Autowired
+    @Qualifier("apple") /** 去除这行，会报异常 */
+        Fruit fieldA;
 
-	AbstractFruit fieldB;
+    Fruit fieldB;
 
-	public static void main(String[] args) throws Exception {
-		AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
+    public static void main(String[] args) throws Exception {
+        AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
 
-		AnnotationQualifier annotationQualifier = (AnnotationQualifier) ctx.getBean("annotationQualifier");
+        AnnotationQualifier annotationQualifier = (AnnotationQualifier) ctx.getBean("annotationQualifier");
 
-		log.debug("type: {}, name: {}", annotationQualifier.getFieldA().getClass(),
-			annotationQualifier.getFieldA().getName());
+        log.debug("type: {}, name: {}", annotationQualifier.getFieldA().getClass(),
+            annotationQualifier.getFieldA().getName());
 
-		log.debug("type: {}, name: {}", annotationQualifier.getFieldB().getClass(),
-			annotationQualifier.getFieldB().getName());
-		ctx.close();
-	}
+        log.debug("type: {}, name: {}", annotationQualifier.getFieldB().getClass(),
+            annotationQualifier.getFieldB().getName());
+        ctx.close();
+    }
 
-	public AbstractFruit getFieldA() {
-		return fieldA;
-	}
+    public Fruit getFieldA() {
+        return fieldA;
+    }
 
-	public void setFieldA(AbstractFruit fieldA) {
-		this.fieldA = fieldA;
-	}
+    public void setFieldA(Fruit fieldA) {
+        this.fieldA = fieldA;
+    }
 
-	public AbstractFruit getFieldB() {
-		return fieldB;
-	}
+    public Fruit getFieldB() {
+        return fieldB;
+    }
 
-	@Autowired
-	public void setFieldB(@Qualifier("banana") AbstractFruit fieldB) {
-		this.fieldB = fieldB;
-	}
+    @Autowired
+    public void setFieldB(@Qualifier("banana") Fruit fieldB) {
+        this.fieldB = fieldB;
+    }
 
 }

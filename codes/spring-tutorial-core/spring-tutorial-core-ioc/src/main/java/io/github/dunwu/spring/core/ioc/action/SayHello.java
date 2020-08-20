@@ -12,10 +12,10 @@ import org.springframework.stereotype.Service;
 @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class SayHello extends SayService {
 
-	@Override
-	public void say() {
-		super.say();
-		log.info("hello");
-	}
+    @Override
+    public void say() {
+        super.say();
+        log.info("hello");
+    }
 
 }

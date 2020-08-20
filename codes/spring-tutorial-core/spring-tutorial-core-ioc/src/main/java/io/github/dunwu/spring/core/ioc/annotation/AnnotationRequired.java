@@ -15,35 +15,35 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class AnnotationRequired {
 
-	private static final Logger log = LoggerFactory.getLogger(AnnotationRequired.class);
+    private static final Logger log = LoggerFactory.getLogger(AnnotationRequired.class);
 
-	private String name;
+    private String name;
 
-	private String sex;
+    private String sex;
 
-	public static void main(String[] args) throws Exception {
-		AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
+    public static void main(String[] args) throws Exception {
+        AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
 
-		AnnotationRequired annotationRequired = (AnnotationRequired) ctx.getBean("annotationRequired");
-		log.debug("name: {}", annotationRequired.getName());
-		ctx.close();
-	}
+        AnnotationRequired annotationRequired = (AnnotationRequired) ctx.getBean("annotationRequired");
+        log.debug("name: {}", annotationRequired.getName());
+        ctx.close();
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	@Required
-	public void setName(String name) {
-		this.name = name;
-	}
+    @Required
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getSex() {
-		return sex;
-	}
+    public String getSex() {
+        return sex;
+    }
 
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 
 }

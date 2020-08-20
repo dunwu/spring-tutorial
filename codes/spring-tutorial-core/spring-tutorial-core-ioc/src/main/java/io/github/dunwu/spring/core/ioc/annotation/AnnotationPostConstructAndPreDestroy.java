@@ -17,25 +17,25 @@ import javax.annotation.PreDestroy;
  */
 public class AnnotationPostConstructAndPreDestroy {
 
-	private static final Logger log = LoggerFactory.getLogger(AnnotationPostConstructAndPreDestroy.class);
+    private static final Logger log = LoggerFactory.getLogger(AnnotationPostConstructAndPreDestroy.class);
 
-	public static void main(String[] args) throws Exception {
-		AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
-		AnnotationPostConstructAndPreDestroy annotationPostConstructAndPreDestroy =
-			(AnnotationPostConstructAndPreDestroy) ctx
-				.getBean("annotationPostConstructAndPreDestroy");
-		log.debug("call main method");
-		ctx.close();
-	}
+    public static void main(String[] args) throws Exception {
+        AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
+        AnnotationPostConstructAndPreDestroy annotationPostConstructAndPreDestroy =
+            (AnnotationPostConstructAndPreDestroy) ctx
+                .getBean("annotationPostConstructAndPreDestroy");
+        log.debug("call main method");
+        ctx.close();
+    }
 
-	@PostConstruct
-	public void init() {
-		log.debug("call @PostConstruct method");
-	}
+    @PostConstruct
+    public void init() {
+        log.debug("call @PostConstruct method");
+    }
 
-	@PreDestroy
-	public void destroy() {
-		log.debug("call @PreDestroy method");
-	}
+    @PreDestroy
+    public void destroy() {
+        log.debug("call @PreDestroy method");
+    }
 
 }
