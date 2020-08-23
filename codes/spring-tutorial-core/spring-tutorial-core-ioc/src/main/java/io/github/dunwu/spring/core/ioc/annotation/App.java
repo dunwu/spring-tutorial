@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App {
 
     public static void main(String[] args) throws Exception {
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("META-INF/spring-annotation.xml");
 
         // 自动装配：byName
         Musician musician = (Musician) ctx.getBean("musician");

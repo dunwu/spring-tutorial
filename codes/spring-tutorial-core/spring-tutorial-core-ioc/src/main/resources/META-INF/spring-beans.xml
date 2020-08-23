@@ -6,14 +6,14 @@
             http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-  <bean id="beanPostProcessor" class="io.github.dunwu.spring.core.bean.MyBeanPostProcessor" />
+  <bean id="beanPostProcessor" class="io.github.dunwu.spring.core.bean.life.MyBeanPostProcessor" />
 
   <bean id="instantiationAwareBeanPostProcessor"
-    class="io.github.dunwu.spring.core.bean.MyInstantiationAwareBeanPostProcessor" />
+    class="io.github.dunwu.spring.core.bean.life.MyInstantiationAwareBeanPostProcessor" />
 
-  <bean id="beanFactoryPostProcessor" class="io.github.dunwu.spring.core.bean.MyBeanFactoryPostProcessor" />
+  <bean id="beanFactoryPostProcessor" class="io.github.dunwu.spring.core.bean.life.MyBeanFactoryPostProcessor" />
 
-  <bean id="person" class="io.github.dunwu.spring.core.bean.Person" init-method="myInit"
+  <bean id="person" class="io.github.dunwu.spring.core.bean.life.Person" init-method="myInit"
     destroy-method="myDestory" scope="singleton"
     p:name="张三"
     p:address="广州"

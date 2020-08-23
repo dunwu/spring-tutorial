@@ -20,7 +20,7 @@ public class AnnotationPostConstructAndPreDestroy {
     private static final Logger log = LoggerFactory.getLogger(AnnotationPostConstructAndPreDestroy.class);
 
     public static void main(String[] args) throws Exception {
-        AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
+        AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("META-INF/spring-annotation.xml");
         AnnotationPostConstructAndPreDestroy annotationPostConstructAndPreDestroy =
             (AnnotationPostConstructAndPreDestroy) ctx
                 .getBean("annotationPostConstructAndPreDestroy");

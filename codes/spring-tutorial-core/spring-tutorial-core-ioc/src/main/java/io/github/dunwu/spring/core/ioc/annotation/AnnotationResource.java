@@ -30,7 +30,7 @@ public class AnnotationResource {
     Orange fieldC;
 
     public static void main(String[] args) throws Exception {
-        AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
+        AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("META-INF/spring-annotation.xml");
         AnnotationResource annotationResource = (AnnotationResource) ctx.getBean("annotationResource");
 
         log.debug("type: {}, name: {}", annotationResource.getFieldA().getClass(),

@@ -1,4 +1,4 @@
-package io.github.dunwu.spring.core.bean;
+package io.github.dunwu.spring.core.bean.life;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter;

@@ -35,7 +35,7 @@ public class AnnotationInject {
     }
 
     public static void main(String[] args) throws Exception {
-        AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
+        AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("META-INF/spring-annotation.xml");
         AnnotationInject annotationInject = (AnnotationInject) ctx.getBean("annotationInject");
 
         log.debug("type: {}, name: {}", annotationInject.getFieldA().getClass(),

@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class InjectBeanDemo02 {
 
     public static void main(String[] args) throws Exception {
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("/spring/spring-collection.xml");
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("/META-INF/spring-collection.xml");
 
         // 构造注入
         Band band = (Band) ctx.getBean("band");

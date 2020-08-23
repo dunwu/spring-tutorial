@@ -42,7 +42,7 @@ public class AnnotationAutowired {
     }
 
     public static void main(String[] args) throws Exception {
-        AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
+        AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("META-INF/spring-annotation.xml");
 
         AnnotationAutowired annotationAutowired = (AnnotationAutowired) ctx.getBean("annotationAutowired");
 

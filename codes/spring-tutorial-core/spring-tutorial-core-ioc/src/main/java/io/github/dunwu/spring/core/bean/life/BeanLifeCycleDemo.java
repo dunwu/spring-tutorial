@@ -1,4 +1,4 @@
-package io.github.dunwu.spring.core.bean;
+package io.github.dunwu.spring.core.bean.life;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -10,7 +10,7 @@ public class BeanLifeCycleDemo {
     public static void main(String[] args) {
         // 创建 BeanFactory 容器
         ClassPathXmlApplicationContext applicationContext =
-            new ClassPathXmlApplicationContext("spring/spring-beans.xml");
+            new ClassPathXmlApplicationContext("META-INF/spring-beans.xml");
         // 依赖查找
         Person person = applicationContext.getBean("person", Person.class);
         System.out.println(person);

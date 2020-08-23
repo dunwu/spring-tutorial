@@ -14,7 +14,7 @@ public class App {
 
         // 创建 BeanFactory 容器
         ClassPathXmlApplicationContext applicationContext =
-            new ClassPathXmlApplicationContext("spring/spring-autowire.xml");
+            new ClassPathXmlApplicationContext("META-INF/spring-autowire.xml");
 
         // 自动装配：byName
         Musician chopinbyName = (Musician) applicationContext.getBean("chopinbyName");

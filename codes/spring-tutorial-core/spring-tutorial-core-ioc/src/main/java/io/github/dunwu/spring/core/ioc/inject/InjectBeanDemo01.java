@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class InjectBeanDemo01 {
 
     public static void main(String[] args) throws Exception {
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-inject.xml");
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("META-INF/spring-inject.xml");
 
         // 构造注入
         Poet libai = (Poet) ctx.getBean("libai");

@@ -26,7 +26,7 @@ public class AnnotationQualifier {
     Fruit fieldB;
 
     public static void main(String[] args) throws Exception {
-        AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
+        AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("META-INF/spring-annotation.xml");
 
         AnnotationQualifier annotationQualifier = (AnnotationQualifier) ctx.getBean("annotationQualifier");
 

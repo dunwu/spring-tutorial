@@ -22,7 +22,7 @@ public class AnnotationRequired {
     private String sex;
 
     public static void main(String[] args) throws Exception {
-        AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-annotation.xml");
+        AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("META-INF/spring-annotation.xml");
 
         AnnotationRequired annotationRequired = (AnnotationRequired) ctx.getBean("annotationRequired");
         log.debug("name: {}", annotationRequired.getName());
