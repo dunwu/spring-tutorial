@@ -4,7 +4,7 @@ Spring 针对 Java Transaction API (JTA)、JDBC、Hibernate 和 Java Persistence
 
 ## Spring 事务最佳实践
 
-![](http://dunwu.test.upcdn.net/snap/20200805171418.png)
+![img](http://dunwu.test.upcdn.net/snap/20200805171418.png)
 
 ### Spring 事务未生效
 
@@ -12,7 +12,7 @@ Spring 针对 Java Transaction API (JTA)、JDBC、Hibernate 和 Java Persistence
 
 `@Transactional` 生效原则：
 
-#### @Transactional方法必须是public
+#### @Transactional 方法必须是 public
 
 原则一：除非特殊配置（比如使用 AspectJ 静态织入实现 AOP），否则**只有定义在 `public` 方法上的 `@Transactional` 才能生效**。原因是，Spring 默认通过动态代理的方式实现 AOP，对目标方法进行增强，private 方法无法代理到，Spring 自然也无法动态增强事务处理逻辑。
 
