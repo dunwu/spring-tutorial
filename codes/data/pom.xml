@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.github.dunwu.spring</groupId>
+  <artifactId>spring-data</artifactId>
+  <version>1.0.5</version>
+  <packaging>pom</packaging>
+  <name>${project.artifactId}</name>
+  <description>Spring Data</description>
+
+  <modules>
+    <module>spring-data-jdbc</module>
+    <module>spring-data-tx</module>
+
+    <!-- 存储示例 -->
+    <module>spring-boot-data-jdbc</module>
+    <module>spring-boot-data-jdbc-multi-datasource</module>
+    <module>spring-boot-data-druid</module>
+    <module>spring-boot-data-jpa</module>
+    <module>spring-boot-data-mybatis-plus</module>
+    <module>spring-boot-data-mybatis-multi-datasource</module>
+    <module>spring-boot-data-mybatis-sharding</module>
+    <module>spring-boot-data-flyway</module>
+    <module>spring-boot-data-hdfs</module>
+    <module>spring-boot-data-cache</module>
+    <module>spring-boot-data-cache-j2cache</module>
+    <module>spring-boot-data-cache-jetcache</module>
+    <module>spring-boot-data-redis</module>
+    <module>spring-boot-data-redis-cluster</module>
+    <module>spring-boot-data-mongodb</module>
+    <module>spring-boot-data-elasticsearch</module>
+    <module>spring-boot-data-elasticsearch-jest</module>
+  </modules>
+</project>

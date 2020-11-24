@@ -12,10 +12,10 @@
 	<description>Spring Tutorial 示例源码</description>
 
 	<modules>
-		<module>codes/spring-tutorial-parent</module>
-		<module>codes/spring-tutorial-common</module>
-		<module>codes/spring-tutorial-core</module>
-		<module>codes/spring-tutorial-data</module>
+    <module>codes/spring-tutorial-parent</module>
+    <module>codes/data</module>
+    <module>codes/spring-tutorial-common</module>
+    <module>codes/spring-tutorial-core</module>
 		<module>codes/spring-tutorial-web</module>
 		<module>codes/spring-tutorial-integration</module>
 		<module>codes/spring-tutorial-security</module>
