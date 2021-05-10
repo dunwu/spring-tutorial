@@ -1,16 +1,13 @@
--- -------------------------------------------------------------------
--- 运行本项目的初始化 DDL 脚本
--- Mysql 知识点可以参考：
--- https://dunwu.github.io/db-tutorial/#/sql/mysql/README
--- -------------------------------------------------------------------
+-- -------------------------------------------
+-- 运行本项目的 DDL 脚本
+-- -------------------------------------------
 
--- 强制新建用户表
-DROP TABLE IF EXISTS user;
-CREATE TABLE user (
-    id       BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
-    username VARCHAR(255)     NOT NULL COMMENT '用户名',
-    password VARCHAR(255)     NOT NULL COMMENT '密码',
-    email    VARCHAR(255)     NOT NULL COMMENT '邮箱',
-    PRIMARY KEY (id),
-    UNIQUE KEY uk_username(username)
-) COMMENT ='用户表';
+-- 创建数据表 user
+CREATE TABLE IF NOT EXISTS user (
+    id      BIGINT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Id',
+    name    VARCHAR(255)         NOT NULL DEFAULT '' COMMENT '用户名',
+    age     TINYINT(3)          NOT NULL DEFAULT 0 COMMENT '年龄',
+    address VARCHAR(255)         NOT NULL DEFAULT '' COMMENT '地址',
+    email   VARCHAR(255)         NOT NULL DEFAULT '' COMMENT '邮件',
+    PRIMARY KEY (id)
+) COMMENT = '用户表';

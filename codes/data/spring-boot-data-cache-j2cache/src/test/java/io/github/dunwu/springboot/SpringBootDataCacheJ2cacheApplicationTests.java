@@ -1,8 +1,8 @@
 package io.github.dunwu.springboot;
 
-import io.github.dunwu.springboot.autoconfigure.J2CacheAutoConfiguration;
-import io.github.dunwu.springboot.autoconfigure.J2CacheSpringCacheAutoConfiguration;
-import io.github.dunwu.springboot.autoconfigure.J2CacheSpringRedisAutoConfiguration;
+import io.github.dunwu.springboot.data.config.J2CacheAutoConfiguration;
+import io.github.dunwu.springboot.data.config.J2CacheSpringCacheAutoConfiguration;
+import io.github.dunwu.springboot.data.config.J2CacheSpringRedisAutoConfiguration;
 import io.github.dunwu.springboot.bean.TestBean;
 import io.github.dunwu.springboot.service.TestService;
 import net.oschina.j2cache.CacheChannel;

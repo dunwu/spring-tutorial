@@ -1,7 +1,7 @@
 package io.github.dunwu.springboot;
 
-import io.github.dunwu.spring.data.User;
-import io.github.dunwu.spring.data.UserService;
+import io.github.dunwu.springboot.data.User;
+import io.github.dunwu.springboot.data.UserService;
 import io.github.dunwu.tool.util.RandomUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

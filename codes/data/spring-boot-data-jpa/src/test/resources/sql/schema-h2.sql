@@ -7,10 +7,11 @@
 -- 强制新建用户表
 DROP TABLE IF EXISTS user;
 CREATE TABLE user (
-    id       BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
-    username VARCHAR(30)         NOT NULL COMMENT '用户名',
-    password VARCHAR(60)         NOT NULL COMMENT '密码',
-    email    VARCHAR(100)        NOT NULL COMMENT '邮箱',
+    id      BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+    name    VARCHAR(255)         NOT NULL DEFAULT '' COMMENT '用户名',
+    age     INT(3)              NOT NULL DEFAULT 0 COMMENT '年龄',
+    address VARCHAR(255)         NOT NULL DEFAULT '' COMMENT '地址',
+    email   VARCHAR(255)         NOT NULL DEFAULT '' COMMENT '邮件',
     PRIMARY KEY (id),
-    UNIQUE (username)
+    UNIQUE (name)
 )

@@ -10,7 +10,7 @@
        http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<context:component-scan base-package="io.github.dunwu.spring" />
+	<context:component-scan base-package="io.github.dunwu" />
 	<mvc:annotation-driven />
 	<!-- 视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

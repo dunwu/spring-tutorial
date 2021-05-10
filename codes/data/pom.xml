@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.github.dunwu.spring</groupId>
-  <artifactId>spring-data</artifactId>
-  <version>1.0.5</version>
+  <artifactId>spring-tutorial-data</artifactId>
+  <version>1.0.4</version>
   <packaging>pom</packaging>
-  <name>${project.artifactId}</name>
-  <description>Spring Data</description>
 
   <modules>
     <module>spring-data-jdbc</module>
-    <module>spring-data-tx</module>
+    <module>spring-data-mybatis</module>
+    <module>spring-data-nosql</module>
 
     <!-- 存储示例 -->
     <module>spring-boot-data-jdbc</module>
@@ -22,6 +21,7 @@
     <module>spring-boot-data-mybatis-plus</module>
     <module>spring-boot-data-mybatis-multi-datasource</module>
     <module>spring-boot-data-mybatis-sharding</module>
+    <module>spring-boot-data-tx</module>
     <module>spring-boot-data-flyway</module>
     <module>spring-boot-data-hdfs</module>
     <module>spring-boot-data-cache</module>
@@ -33,4 +33,131 @@
     <module>spring-boot-data-elasticsearch</module>
     <module>spring-boot-data-elasticsearch-jest</module>
   </modules>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+
+    <!-- 核心库版本 -->
+    <dunwu.version>0.5.7</dunwu.version>
+    <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>
+    <jetty-maven-plugin.version>9.4.12.v20180830</jetty-maven-plugin.version>
+    <shiro.version>1.5.1</shiro.version>
+    <swagger.version>2.9.2</swagger.version>
+    <dubbo.version>2.5.6</dubbo.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.github.dunwu</groupId>
+        <artifactId>dunwu-dependencies</artifactId>
+        <version>${dunwu.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>dubbo</artifactId>
+        <version>${dubbo.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.logback-extensions</groupId>
+        <artifactId>logback-ext-spring</artifactId>
+        <version>0.1.5</version>
+      </dependency>
+<!--      <dependency>-->
+<!--        <groupId>org.apache.shiro</groupId>-->
+<!--        <artifactId>shiro-core</artifactId>-->
+<!--        <version>${shiro.version}</version>-->
+<!--      </dependency>-->
+<!--      <dependency>-->
+<!--        <groupId>org.apache.shiro</groupId>-->
+<!--        <artifactId>shiro-web</artifactId>-->
+<!--        <version>${shiro.version}</version>-->
+<!--      </dependency>-->
+<!--      <dependency>-->
+<!--        <groupId>org.apache.shiro</groupId>-->
+<!--        <artifactId>shiro-ehcache</artifactId>-->
+<!--        <version>${shiro.version}</version>-->
+<!--      </dependency>-->
+<!--      <dependency>-->
+<!--        <groupId>org.apache.shiro</groupId>-->
+<!--        <artifactId>shiro-quartz</artifactId>-->
+<!--        <version>${shiro.version}</version>-->
+<!--      </dependency>-->
+<!--      <dependency>-->
+<!--        <groupId>org.apache.shiro</groupId>-->
+<!--        <artifactId>shiro-spring</artifactId>-->
+<!--        <version>${shiro.version}</version>-->
+<!--      </dependency>-->
+
+<!--      <dependency>-->
+<!--        <groupId>io.springfox</groupId>-->
+<!--        <artifactId>springfox-swagger2</artifactId>-->
+<!--        <version>${swagger.version}</version>-->
+<!--      </dependency>-->
+<!--      <dependency>-->
+<!--        <groupId>io.springfox</groupId>-->
+<!--        <artifactId>springfox-swagger-ui</artifactId>-->
+<!--        <version>${swagger.version}</version>-->
+<!--      </dependency>-->
+      <dependency>
+        <groupId>dom4j</groupId>
+        <artifactId>dom4j</artifactId>
+        <version>1.6</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.12</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <version>${tomcat7-maven-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.jetty</groupId>
+          <artifactId>jetty-maven-plugin</artifactId>
+          <version>${jetty-maven-plugin.version}</version>
+        </plugin>
+        <!--本插件为mybatis-generator，使用mvn mybatis-generator:generate命令可自动生成mybatis代码-->
+        <plugin>
+          <groupId>org.mybatis.generator</groupId>
+          <artifactId>mybatis-generator-maven-plugin</artifactId>
+          <version>1.3.5</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.mybatis.generator</groupId>
+              <artifactId>mybatis-generator-core</artifactId>
+              <version>1.3.5</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
 </project>

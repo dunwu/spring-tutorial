@@ -1,8 +1,8 @@
 package io.github.dunwu.springboot;
 
-import io.github.dunwu.springboot.entity.User;
-import io.github.dunwu.springboot.mapper.Db1UserMapper;
-import io.github.dunwu.springboot.mapper.Db2UserMapper;
+import io.github.dunwu.springboot.data.entity.User;
+import io.github.dunwu.springboot.data.mapper.Db1UserMapper;
+import io.github.dunwu.springboot.data.mapper.Db2UserMapper;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

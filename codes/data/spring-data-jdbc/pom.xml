@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>io.github.dunwu.spring</groupId>
-    <artifactId>spring-tutorial-parent</artifactId>
+    <artifactId>spring-tutorial-data</artifactId>
     <version>1.0.4</version>
-    <relativePath>../../spring-tutorial-parent</relativePath>
+    <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>spring-data-jdbc</artifactId>
   <packaging>jar</packaging>
-  <name>${project.artifactId}</name>
-  <description>[spring][data][jdbc]本项目展示 Spring 中如何使用 JDBC 访问数据</description>
 
   <dependencies>
-    <dependency>
-      <groupId>io.github.dunwu.spring</groupId>
-      <artifactId>spring-tutorial-common</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>druid</artifactId>
