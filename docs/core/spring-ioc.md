@@ -112,7 +112,7 @@ BeanFactory beanFactory = new FileSystemXmlApplicationContext("fileSystemConfig.
 2.  **实例化容器**：由 IoC 容器解析配置的元数据。IoC 容器的 Bean Reader 读取并解析配置文件，根据定义生成 BeanDefinition 配置元数据对象，IoC 容器根据 BeanDefinition 进行实例化、配置及组装 Bean。
 3.  **使用容器**：由客户端实例化容器，获取需要的 Bean。
 
-![img](http://dunwu.test.upcdn.net/snap/20200723102456.png)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200723102456.png)
 
 ### 配置元数据
 

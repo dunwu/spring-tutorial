@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://dunwu.github.io/spring-framework/" target="_blank" rel="noopener noreferrer">
-        <img src="http://dunwu.test.upcdn.net/common/logo/dunwu-logo.png" alt="logo" width="150px"/>
+        <img src="https://raw.githubusercontent.com/dunwu/images/dev/common/dunwu-logo-200.png" alt="logo" width="150px"/>
     </a>
 </p>
 
@@ -22,50 +22,47 @@
 
 ## 📖 内容
 
-|      0️⃣       |      1️⃣       |      2️⃣       |     3️⃣      |      4️⃣       |      5️⃣       |
-| :-----------: | :-----------: | :-----------: | :---------: | :-----------: | :-----------: |
-| [综合](#综合) | [核心](#核心) | [数据](#数据) | [Web](#Web) | [集成](#集成) | [安全](#安全) |
-
 ### 综合
 
-- [Spring 面经](docs/summary/spring-interview.md)
-- [Spring 概述](docs/summary/spring-overview.md)
+- [Spring 概述](docs/summary/Spring概述.md)
+- [Spring 常见面试题](docs/summary/Spring常见面试题.md)
 
 ### 核心
 
 > [核心](docs/core/README.md) 章节主要针对：Spring 框架的核心技术。如；IOC 依赖注入、AOP、数据绑定等。
 
+- [Spring Bean](docs/core/spring-bean.md)
 - [Spring IoC](docs/core/spring-ioc.md)
 - [Spring AOP](docs/core/spring-aop.md)
-- [Spring Resources](docs/core/spring-resources.md)
+- [Spring 资源管理](docs/core/Spring资源管理.md)
 
 ### 数据
 
 > [数据](docs/data/README.md) 章节主要针对：Spring 在数据库领域的应用。如：JDBC、ORM、事务等。
 
-- [Spring 的数据访问策略](docs/data/data-access-in-spring.md)
-- [Spring 中使用 JDBC 访问数据](docs/data/spring-and-jdbc.md)
-- [事务管理](docs/data/transaction.md)
+- [Spring 的数据访问策略](docs/data/Spring数据访问策略.md)
+- [Spring 中使用 JDBC 访问数据](docs/data/Spring中使用JDBC访问数据.md)
+- [Spring 事务管理](docs/data/Spring事务管理.md)
 
 ### Web
 
 > [Web](docs/web/README.md) 章节主要针对：Spring 在 web 领域的应用。如：Spring MVC、WebSocket 等。
 
-- [SpringMVC 简介](docs/web/spring-mvc.md)
+- [Spring MVC](docs/web/spring-mvc.md)
 
 ### 集成
 
 > [集成](docs/integration/README.md) 章节主要针对：Spring 与第三方框架、库集成。如：Cache、Scheduling、JMS、JMX 等。
 
-- [Spring 集成 Dubbo](docs/integration/spring-and-dubbo.md)
-- [Spring 集成缓存](docs/integration/spring-and-cache.md)
-- [Spring 集成调度器](docs/integration/spring-and-scheduler.md)
+- [Spring 集成 Dubbo](docs/integration/Spring集成Dubbo.md)
+- [Spring 集成缓存中间件](docs/integration/Spring集成缓存中间件.md)
+- [Spring 集成定时任务中间件](docs/integration/Spring集成定时任务中间件.md)
 
 ### 其他
 
-- [spring 4 升级踩雷指南](docs/others/spring4-upgrade.md)
+- [Spring4 升级踩雷指南](docs/others/spring4-upgrade.md)
 
-## 👨‍💻 示例
+## 💻 示例
 
 ### 重要库版本
 
@@ -106,21 +103,19 @@ $ mvn jetty:run -Dmaven.test.skip=true
 ## 📚 资料
 
 - **官方**
-
   - [Spring 官网](https://spring.io/)
   - [Spring Framework 官方文档](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/index.html)
   - [spring-framework Github](https://github.com/spring-projects/spring-framework)
-
 - **书籍**
-  - [《Spring In Action》](https://item.jd.com/12622829.html)
+  - [《 Spring 实战（第 5 版）》](https://book.douban.com/subject/34949443/)
 - **教程**
-  - [小马哥讲 Spring 核心编程思想](https://time.geekbang.org/course/intro/265)
+  - [《小马哥讲 Spring 核心编程思想》](https://time.geekbang.org/course/intro/265)
   - [geekbang-lessons](https://github.com/geektime-geekbang/geekbang-lessons)
   - [跟我学 Spring3](http://jinnianshilongnian.iteye.com/blog/1482071)
 
 ## 🚪 传送
 
-◾ 🏠 [spring-tutorial 首页](https://dunwu.github.io/spring-tutorial/) ◾ 🎯 [我的博客](https://github.com/dunwu/blog) ◾
+◾ 🏠 [SPRING-TUTORIAL 首页](https://github.com/dunwu/spring-tutorial) ◾ 🎯 [我的博客](https://github.com/dunwu/blog) ◾
 
 > 你可能会感兴趣：
 
