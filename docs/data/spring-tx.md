@@ -1,10 +1,10 @@
-# Spring 事务
+# Spring 事务管理
 
 Spring 针对 Java Transaction API (JTA)、JDBC、Hibernate 和 Java Persistence API(JPA) 等事务 API，实现了一致的编程模型，而 Spring 的声明式事务功能更是提供了极其方便的事务配置方式，配合 Spring Boot 的自动配置，大多数 Spring Boot 项目只需要在方法上标记 @Transactional 注解，即可一键开启方法的事务性配置。
 
 ## Spring 事务最佳实践
 
-![img](http://dunwu.test.upcdn.net/snap/20200805171418.png)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200805171418.png)
 
 ### Spring 事务未生效
 
@@ -159,4 +159,4 @@ public void createSubUserWithExceptionRight(UserEntity entity) {
 
 ## 参考资料
 
-- [Java 业务开发常见错误 100 例](https://time.geekbang.org/column/intro/100047701)
+- [《Java 业务开发常见错误 100 例》](https://time.geekbang.org/column/intro/100047701)

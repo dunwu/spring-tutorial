@@ -58,7 +58,7 @@
 		<appender-ref ref="SPRING" />
 	</logger>
 
-	<root level="WARN">
+	<root level="INFO">
 		<appender-ref ref="STDOUT" />
 	</root>
 	<!-- LOGGER END -->

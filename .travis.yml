@@ -1,17 +1,24 @@
-language: java
-jdk:
-  - openjdk8
+# 持续集成 CI
+# @see https://docs.travis-ci.com/user/tutorial/
 
-script:
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+language: node_js
+
+sudo: required
+
+node_js: stable
 
 branches:
   only:
     - master
 
+before_install:
+  - export TZ=Asia/Shanghai
+
+script: bash ./scripts/deploy.sh
+
 notifications:
   email:
     recipients:
       - forbreak@163.com
-    on_success: change # default: change
-    on_failure: always # default: always
+    on_success: change
+    on_failure: always
