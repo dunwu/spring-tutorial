@@ -18,7 +18,6 @@ package io.github.dunwu.spring.core.bean.define.definition;
 
 import io.github.dunwu.spring.core.bean.define.factory.DefaultUserFactory;
 import io.github.dunwu.spring.core.bean.define.factory.UserFactory;
-import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.config.SingletonBeanRegistry;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

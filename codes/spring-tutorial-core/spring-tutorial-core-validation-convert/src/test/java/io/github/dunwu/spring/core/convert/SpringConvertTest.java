@@ -11,13 +11,13 @@ import java.util.Date;
  */
 public class SpringConvertTest {
 
-	@Test
-	public void testDateConverter() {
-		String str = "2019-06-14 12:00:00";
-		StringToDateConverter converter = new StringToDateConverter();
-		Date date = converter.convert(str);
-		Assert.assertNotNull(date);
-		System.out.println("Date: " + date);
-	}
+    @Test
+    public void testDateConverter() {
+        String str = "2019-06-14 12:00:00";
+        StringToDateConverter converter = new StringToDateConverter();
+        Date date = converter.convert(str);
+        Assert.assertNotNull(date);
+        System.out.println("Date: " + date);
+    }
 
 }

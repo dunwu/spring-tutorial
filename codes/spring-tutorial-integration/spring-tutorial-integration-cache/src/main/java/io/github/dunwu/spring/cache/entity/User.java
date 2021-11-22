@@ -4,36 +4,36 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private int id;
+    private int id;
 
-	private String name;
+    private String name;
 
-	public User(int id, String name) {
-		this.id = id;
-		this.name = name;
-	}
+    public User(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
-	@Override
-	public String toString() {
-		return "id=" + this.id + ", name=" + this.name;
-	}
+    @Override
+    public String toString() {
+        return "id=" + this.id + ", name=" + this.name;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
 }

@@ -8,22 +8,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class ExceptionController {
 
-	@RequestMapping("/exception")
-	public @ResponseBody
-	String exception() {
-		throw new IllegalStateException("Sorry!");
-	}
+    @RequestMapping("/exception")
+    public @ResponseBody
+    String exception() {
+        throw new IllegalStateException("Sorry!");
+    }
 
-	@RequestMapping("/global-exception")
-	public @ResponseBody
-	String businessException() throws BusinessException {
-		throw new BusinessException();
-	}
+    @RequestMapping("/global-exception")
+    public @ResponseBody
+    String businessException() throws BusinessException {
+        throw new BusinessException();
+    }
 
-	@ExceptionHandler
-	public @ResponseBody
-	String handle(IllegalStateException e) {
-		return "IllegalStateException handled!";
-	}
+    @ExceptionHandler
+    public @ResponseBody
+    String handle(IllegalStateException e) {
+        return "IllegalStateException handled!";
+    }
 
 }

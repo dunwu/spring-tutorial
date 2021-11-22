@@ -26,7 +26,7 @@ import java.lang.annotation.*;
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
  * @since
  */
-@Target({ElementType.CONSTRUCTOR, ElementType.METHOD, ElementType.FIELD})
+@Target({ ElementType.CONSTRUCTOR, ElementType.METHOD, ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Autowired
@@ -37,4 +37,5 @@ public @interface MyAutowired {
      * <p>Defaults to {@code true}.
      */
     boolean required() default true;
+
 }

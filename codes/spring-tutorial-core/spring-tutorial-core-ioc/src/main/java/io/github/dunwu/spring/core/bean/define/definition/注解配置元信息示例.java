@@ -84,6 +84,7 @@ public class 注解配置元信息示例 {
     public static class Config {
 
         // 1. 通过 @Bean 方式
+
         /**
          * 通过 Java 注解的方式（@Bean），定义了一个 Bean
          */

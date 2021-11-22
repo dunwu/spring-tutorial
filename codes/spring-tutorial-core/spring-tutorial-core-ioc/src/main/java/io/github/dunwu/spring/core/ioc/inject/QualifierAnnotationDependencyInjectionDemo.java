@@ -71,7 +71,6 @@ public class QualifierAnnotationDependencyInjectionDemo {
     @Qualifier // 进行逻辑分组
     public static User user2() {
         return createUser(8L);
-
     }
 
     @Bean
@@ -109,7 +108,8 @@ public class QualifierAnnotationDependencyInjectionDemo {
         applicationContext.refresh();
 
         // 依赖查找 QualifierAnnotationDependencyInjectionDemo Bean
-        QualifierAnnotationDependencyInjectionDemo demo = applicationContext.getBean(QualifierAnnotationDependencyInjectionDemo.class);
+        QualifierAnnotationDependencyInjectionDemo demo =
+            applicationContext.getBean(QualifierAnnotationDependencyInjectionDemo.class);
 
         // 期待输出 superUser Bean
         System.out.println("demo.user = " + demo.user);
@@ -121,7 +121,6 @@ public class QualifierAnnotationDependencyInjectionDemo {
         System.out.println("demo.qualifiedUsers = " + demo.qualifiedUsers);
         // 期待输出 user3 user4
         System.out.println("demo.groupedUsers = " + demo.groupedUsers);
-
 
         // 显示地关闭 Spring 应用上下文
         applicationContext.close();

@@ -66,15 +66,15 @@ public class AnnotationDependencyInjectionResolutionDemo {
     @InjectedUser
     private User myInjectedUser;
 
-//    @Bean(name = AUTOWIRED_ANNOTATION_PROCESSOR_BEAN_NAME)
-//    public static AutowiredAnnotationBeanPostProcessor beanPostProcessor() {
-//        AutowiredAnnotationBeanPostProcessor beanPostProcessor = new AutowiredAnnotationBeanPostProcessor();
-//        // @Autowired + @Inject +  新注解 @InjectedUser
-//        Set<Class<? extends Annotation>> autowiredAnnotationTypes =
-//                new LinkedHashSet<>(asList(Autowired.class, Inject.class, InjectedUser.class));
-//        beanPostProcessor.setAutowiredAnnotationTypes(autowiredAnnotationTypes);
-//        return beanPostProcessor;
-//    }
+    //    @Bean(name = AUTOWIRED_ANNOTATION_PROCESSOR_BEAN_NAME)
+    //    public static AutowiredAnnotationBeanPostProcessor beanPostProcessor() {
+    //        AutowiredAnnotationBeanPostProcessor beanPostProcessor = new AutowiredAnnotationBeanPostProcessor();
+    //        // @Autowired + @Inject +  新注解 @InjectedUser
+    //        Set<Class<? extends Annotation>> autowiredAnnotationTypes =
+    //                new LinkedHashSet<>(asList(Autowired.class, Inject.class, InjectedUser.class));
+    //        beanPostProcessor.setAutowiredAnnotationTypes(autowiredAnnotationTypes);
+    //        return beanPostProcessor;
+    //    }
 
     @Bean
     @Order(Ordered.LOWEST_PRECEDENCE - 3)
@@ -102,7 +102,8 @@ public class AnnotationDependencyInjectionResolutionDemo {
         applicationContext.refresh();
 
         // 依赖查找 QualifierAnnotationDependencyInjectionDemo Bean
-        AnnotationDependencyInjectionResolutionDemo demo = applicationContext.getBean(AnnotationDependencyInjectionResolutionDemo.class);
+        AnnotationDependencyInjectionResolutionDemo demo =
+            applicationContext.getBean(AnnotationDependencyInjectionResolutionDemo.class);
 
         // 期待输出 superUser Bean
         System.out.println("demo.user = " + demo.user);
@@ -114,7 +115,6 @@ public class AnnotationDependencyInjectionResolutionDemo {
         System.out.println("demo.userOptional = " + demo.userOptional);
         // 期待输出 superUser Bean
         System.out.println("demo.myInjectedUser = " + demo.myInjectedUser);
-
 
         // 显示地关闭 Spring 应用上下文
         applicationContext.close();

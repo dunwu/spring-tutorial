@@ -15,23 +15,23 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 @RunWith(SpringJUnit4ClassRunner.class)
 public class ExceptionControllerTests extends AbstractContextControllerTests {
 
-	private MockMvc mockMvc;
+    private MockMvc mockMvc;
 
-	@Before
-	public void setup() throws Exception {
-		this.mockMvc = webAppContextSetup(this.wac).build();
-	}
+    @Before
+    public void setup() throws Exception {
+        this.mockMvc = webAppContextSetup(this.wac).build();
+    }
 
-	@Test
-	public void controllerExceptionHandler() throws Exception {
-		this.mockMvc.perform(get("/exception")).andExpect(status().isOk())
-			.andExpect(content().string("IllegalStateException handled!"));
-	}
+    @Test
+    public void controllerExceptionHandler() throws Exception {
+        this.mockMvc.perform(get("/exception")).andExpect(status().isOk())
+                    .andExpect(content().string("IllegalStateException handled!"));
+    }
 
-	@Test
-	public void globalExceptionHandler() throws Exception {
-		this.mockMvc.perform(get("/global-exception")).andExpect(status().isOk())
-			.andExpect(content().string("Handled BusinessException"));
-	}
+    @Test
+    public void globalExceptionHandler() throws Exception {
+        this.mockMvc.perform(get("/global-exception")).andExpect(status().isOk())
+                    .andExpect(content().string("Handled BusinessException"));
+    }
 
 }

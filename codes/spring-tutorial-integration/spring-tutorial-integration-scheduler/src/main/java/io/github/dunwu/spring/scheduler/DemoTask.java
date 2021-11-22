@@ -11,11 +11,11 @@ import org.slf4j.LoggerFactory;
  */
 public class DemoTask implements Runnable {
 
-	final Logger logger = LoggerFactory.getLogger(this.getClass());
+    final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@Override
-	public void run() {
-		logger.info("call DemoTask.run");
-	}
+    @Override
+    public void run() {
+        logger.info("call DemoTask.run");
+    }
 
 }

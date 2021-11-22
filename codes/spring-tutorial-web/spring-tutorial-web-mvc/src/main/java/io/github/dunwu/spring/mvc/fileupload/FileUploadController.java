@@ -16,18 +16,18 @@ import java.io.IOException;
 @RequestMapping("/fileupload")
 public class FileUploadController {
 
-	@ModelAttribute
-	public void ajaxAttribute(WebRequest request, Model model) {
-		model.addAttribute("ajaxRequest", AjaxUtils.isAjaxRequest(request));
-	}
+    @ModelAttribute
+    public void ajaxAttribute(WebRequest request, Model model) {
+        model.addAttribute("ajaxRequest", AjaxUtils.isAjaxRequest(request));
+    }
 
-	@RequestMapping(method = RequestMethod.GET)
-	public void fileUploadForm() {
-	}
+    @RequestMapping(method = RequestMethod.GET)
+    public void fileUploadForm() {
+    }
 
-	@RequestMapping(method = RequestMethod.POST)
-	public void processUpload(@RequestParam MultipartFile file, Model model) throws IOException {
-		model.addAttribute("message", "File '" + file.getOriginalFilename() + "' uploaded successfully");
-	}
+    @RequestMapping(method = RequestMethod.POST)
+    public void processUpload(@RequestParam MultipartFile file, Model model) throws IOException {
+        model.addAttribute("message", "File '" + file.getOriginalFilename() + "' uploaded successfully");
+    }
 
 }

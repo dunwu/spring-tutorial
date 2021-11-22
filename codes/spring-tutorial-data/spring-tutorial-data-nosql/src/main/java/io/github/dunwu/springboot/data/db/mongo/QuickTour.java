@@ -25,6 +25,7 @@ public class QuickTour {
 
     /**
      * Run this main method to see the output of this quick example.
+     *
      * @param args takes an optional single argument for the connection string
      */
     public static void main(final String[] args) {

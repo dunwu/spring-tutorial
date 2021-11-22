@@ -1,84 +1,84 @@
 <?xml version="1.0"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0">
-	<modelVersion>4.0.0</modelVersion>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+    xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
 
 
-	<!-- [Part 1] BASIC SETTINGS BEGIN -->
+    <!-- [Part 1] BASIC SETTINGS BEGIN -->
 
-	<!-- MAVEN COORDINATE BEGIN -->
-	<artifactId>spring-tutorial-integration-libs</artifactId>
-	<packaging>jar</packaging>
-	<!-- MAVEN COORDINATE END -->
+    <!-- MAVEN COORDINATE BEGIN -->
+    <artifactId>spring-tutorial-integration-libs</artifactId>
+    <packaging>jar</packaging>
+    <!-- MAVEN COORDINATE END -->
 
-	<!-- RELATIONSHIP SETTINGS BEGIN -->
-	<parent>
-		<groupId>io.github.dunwu.spring</groupId>
-		<artifactId>spring-tutorial-parent</artifactId>
-		<version>1.0.0</version>
-		<relativePath>../../spring-tutorial-parent</relativePath>
-	</parent>
+    <!-- RELATIONSHIP SETTINGS BEGIN -->
+    <parent>
+        <groupId>io.github.dunwu.spring</groupId>
+        <artifactId>spring-tutorial-parent</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../../spring-tutorial-parent</relativePath>
+    </parent>
 
-	<dependencies>
-		<!-- log begin -->
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.logback-extensions</groupId>
-			<artifactId>logback-ext-spring</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jcl-over-slf4j</artifactId>
-		</dependency>
-		<!-- logback 接入 elk 的工具 -->
-		<dependency>
-			<groupId>net.logstash.logback</groupId>
-			<artifactId>logstash-logback-encoder</artifactId>
-			<version>4.11</version>
-		</dependency>
-		<!-- log end -->
+    <dependencies>
+        <!-- log begin -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.logback-extensions</groupId>
+            <artifactId>logback-ext-spring</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+        </dependency>
+        <!-- logback 接入 elk 的工具 -->
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>4.11</version>
+        </dependency>
+        <!-- log end -->
 
-		<!-- bean begin -->
-		<dependency>
-			<groupId>com.github.dozermapper</groupId>
-			<artifactId>dozer-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.github.dozermapper</groupId>
-			<artifactId>dozer-spring4</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-		</dependency>
-		<!-- bean end -->
+        <!-- bean begin -->
+        <dependency>
+            <groupId>com.github.dozermapper</groupId>
+            <artifactId>dozer-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.dozermapper</groupId>
+            <artifactId>dozer-spring4</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <!-- bean end -->
 
-		<!-- spring begin -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context-support</artifactId>
-		</dependency>
-		<!-- spring end -->
+        <!-- spring begin -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+        <!-- spring end -->
 
-	</dependencies>
-	<!-- RELATIONSHIP SETTINGS END -->
+    </dependencies>
+    <!-- RELATIONSHIP SETTINGS END -->
 
-	<!-- PROPERTIES BEGIN -->
-	<properties>
-	</properties>
-	<!-- PROPERTIES END -->
+    <!-- PROPERTIES BEGIN -->
+    <properties>
+    </properties>
+    <!-- PROPERTIES END -->
 
-	<!-- [Part 1] BASIC SETTINGS END -->
+    <!-- [Part 1] BASIC SETTINGS END -->
 
 
-	<!-- [Part 3] PROJECT INFO BEGIN -->
-	<name>${project.artifactId}</name>
-	<description>Spring 集成第三方库</description>
-	<!-- [Part 3] PROJECT INFO END -->
+    <!-- [Part 3] PROJECT INFO BEGIN -->
+    <name>${project.artifactId}</name>
+    <description>Spring 集成第三方库</description>
+    <!-- [Part 3] PROJECT INFO END -->
 
 
 </project>

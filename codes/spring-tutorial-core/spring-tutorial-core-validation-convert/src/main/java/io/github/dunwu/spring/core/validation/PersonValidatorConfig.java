@@ -11,37 +11,37 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class PersonValidatorConfig implements ApplicationContextAware {
 
-	Map<String, Object> ruleMap = null;
+    Map<String, Object> ruleMap = null;
 
-	private Map<Annotation, ValidatorRule> rules = new ConcurrentHashMap<>();
+    private Map<Annotation, ValidatorRule> rules = new ConcurrentHashMap<>();
 
-	@Override
-	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-		ruleMap = applicationContext.getBeansWithAnnotation(ValidRule.class);
-		// System.out.println(ruleMap);
-	}
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        ruleMap = applicationContext.getBeansWithAnnotation(ValidRule.class);
+        // System.out.println(ruleMap);
+    }
 
-	public ValidatorRule findRule(Annotation annotation) {
-		ValidatorRule validatorRule;
-		if (rules.containsKey(annotation)) {
-			validatorRule = rules.get(annotation);
-		} else {
-			ValidatorRule vr = findFormMap(annotation);
-			if (vr != null) {
-				rules.put(annotation, vr);
-			}
-			validatorRule = vr;
-		}
-		return validatorRule;
-	}
+    public ValidatorRule findRule(Annotation annotation) {
+        ValidatorRule validatorRule;
+        if (rules.containsKey(annotation)) {
+            validatorRule = rules.get(annotation);
+        } else {
+            ValidatorRule vr = findFormMap(annotation);
+            if (vr != null) {
+                rules.put(annotation, vr);
+            }
+            validatorRule = vr;
+        }
+        return validatorRule;
+    }
 
-	private ValidatorRule findFormMap(Annotation annotation) {
-		for (Entry<String, Object> entry : ruleMap.entrySet()) {
-			if (entry.getValue() != null && ((ValidatorRule) entry.getValue()).support(annotation)) {
-				return (ValidatorRule) entry.getValue();
-			}
-		}
-		return null;
-	}
+    private ValidatorRule findFormMap(Annotation annotation) {
+        for (Entry<String, Object> entry : ruleMap.entrySet()) {
+            if (entry.getValue() != null && ((ValidatorRule) entry.getValue()).support(annotation)) {
+                return (ValidatorRule) entry.getValue();
+            }
+        }
+        return null;
+    }
 
 }

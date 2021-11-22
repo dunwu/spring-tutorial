@@ -18,8 +18,8 @@ public abstract class SayService {
 
     public void say() {
         data.add(IntStream.rangeClosed(1, 1000000)
-            .mapToObj(__ -> "a")
-            .collect(Collectors.joining("")) + UUID.randomUUID().toString());
+                          .mapToObj(__ -> "a")
+                          .collect(Collectors.joining("")) + UUID.randomUUID().toString());
         log.info("I'm {} size:{}", this, data.size());
     }
 

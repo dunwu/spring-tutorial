@@ -15,31 +15,31 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 @RunWith(SpringJUnit4ClassRunner.class)
 public class ViewsControllerTests extends AbstractContextControllerTests {
 
-	private MockMvc mockMvc;
+    private MockMvc mockMvc;
 
-	@Before
-	public void setup() throws Exception {
-		this.mockMvc = webAppContextSetup(this.wac).alwaysExpect(status().isOk()).build();
-	}
+    @Before
+    public void setup() throws Exception {
+        this.mockMvc = webAppContextSetup(this.wac).alwaysExpect(status().isOk()).build();
+    }
 
-	@Test
-	public void htmlView() throws Exception {
-		this.mockMvc.perform(get("/views/html")).andExpect(view().name(containsString("views/html")))
-			.andExpect(model().attribute("foo", "bar")).andExpect(model().attribute("fruit", "apple"))
-			.andExpect(model().size(2));
-	}
+    @Test
+    public void htmlView() throws Exception {
+        this.mockMvc.perform(get("/views/html")).andExpect(view().name(containsString("views/html")))
+                    .andExpect(model().attribute("foo", "bar")).andExpect(model().attribute("fruit", "apple"))
+                    .andExpect(model().size(2));
+    }
 
-	@Test
-	public void viewName() throws Exception {
-		this.mockMvc.perform(get("/views/viewName")).andExpect(view().name(containsString("views/viewName")))
-			.andExpect(model().attribute("foo", "bar")).andExpect(model().attribute("fruit", "apple"))
-			.andExpect(model().size(2));
-	}
+    @Test
+    public void viewName() throws Exception {
+        this.mockMvc.perform(get("/views/viewName")).andExpect(view().name(containsString("views/viewName")))
+                    .andExpect(model().attribute("foo", "bar")).andExpect(model().attribute("fruit", "apple"))
+                    .andExpect(model().size(2));
+    }
 
-	@Test
-	public void uriTemplate() throws Exception {
-		this.mockMvc.perform(get("/views/pathVariables/bar/apple"))
-			.andExpect(view().name(containsString("views/html")));
-	}
+    @Test
+    public void uriTemplate() throws Exception {
+        this.mockMvc.perform(get("/views/pathVariables/bar/apple"))
+                    .andExpect(view().name(containsString("views/html")));
+    }
 
 }

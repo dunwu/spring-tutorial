@@ -10,24 +10,24 @@ import java.lang.reflect.Method;
 
 public abstract class AbstractValidatorRule implements ValidatorRule {
 
-	@Override
-	public abstract boolean support(Annotation annotation);
+    @Override
+    public abstract boolean support(Annotation annotation);
 
-	@Override
-	public void valid(Annotation annotation, Object target, final Field field, final Errors errors) throws Exception {
-		PropertyDescriptor propertyDescriptor = BeanUtils.getPropertyDescriptor(target.getClass(), field.getName());
-		Method reader = propertyDescriptor.getReadMethod();
-		Object property = reader.invoke(target);
-		validProperty(annotation, property,
-			(errorCode, message) -> errors.rejectValue(field.getName(), errorCode, message));
-	}
+    @Override
+    public void valid(Annotation annotation, Object target, final Field field, final Errors errors) throws Exception {
+        PropertyDescriptor propertyDescriptor = BeanUtils.getPropertyDescriptor(target.getClass(), field.getName());
+        Method reader = propertyDescriptor.getReadMethod();
+        Object property = reader.invoke(target);
+        validProperty(annotation, property,
+            (errorCode, message) -> errors.rejectValue(field.getName(), errorCode, message));
+    }
 
-	public abstract void validProperty(Annotation annotation, Object property, PostHandler postHandler);
+    public abstract void validProperty(Annotation annotation, Object property, PostHandler postHandler);
 
-	interface PostHandler {
+    interface PostHandler {
 
-		void postHanle(String errorCode, String message);
+        void postHanle(String errorCode, String message);
 
-	}
+    }
 
 }

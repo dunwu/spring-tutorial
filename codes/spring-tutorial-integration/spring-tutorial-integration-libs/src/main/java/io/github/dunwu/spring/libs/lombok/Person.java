@@ -10,10 +10,10 @@ import lombok.ToString;
 @ToString(exclude = "age")
 public class Person {
 
-	private String name;
+    private String name;
 
-	private Integer age;
+    private Integer age;
 
-	private String sex;
+    private String sex;
 
 }

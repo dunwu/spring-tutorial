@@ -68,7 +68,8 @@ public class AnnotationDependencyMethodInjectionDemo {
         applicationContext.refresh();
 
         // 依赖查找 AnnotationDependencyFieldInjectionDemo Bean
-        AnnotationDependencyMethodInjectionDemo demo = applicationContext.getBean(AnnotationDependencyMethodInjectionDemo.class);
+        AnnotationDependencyMethodInjectionDemo demo =
+            applicationContext.getBean(AnnotationDependencyMethodInjectionDemo.class);
 
         // @Autowired 字段关联
         UserHolder userHolder = demo.userHolder;
@@ -76,7 +77,6 @@ public class AnnotationDependencyMethodInjectionDemo {
         System.out.println(demo.userHolder2);
 
         System.out.println(userHolder == demo.userHolder2);
-
 
         // 显示地关闭 Spring 应用上下文
         applicationContext.close();

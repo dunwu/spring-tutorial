@@ -36,7 +36,6 @@ public class AwareInterfaceDependencyInjectionDemo implements BeanFactoryAware, 
 
     private static ApplicationContext applicationContext;
 
-
     public static void main(String[] args) {
 
         // 创建 BeanFactory 容器
@@ -63,4 +62,5 @@ public class AwareInterfaceDependencyInjectionDemo implements BeanFactoryAware, 
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         AwareInterfaceDependencyInjectionDemo.applicationContext = applicationContext;
     }
+
 }

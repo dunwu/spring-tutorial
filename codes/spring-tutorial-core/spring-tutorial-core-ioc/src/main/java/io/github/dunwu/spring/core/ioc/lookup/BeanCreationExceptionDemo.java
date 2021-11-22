@@ -57,5 +57,7 @@ public class BeanCreationExceptionDemo {
         public void afterPropertiesSet() throws Exception {
             throw new Exception("afterPropertiesSet() : For purposes...");
         }
+
     }
+
 }

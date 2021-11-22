@@ -18,15 +18,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 @ApiModel(value = "用户列表", description = "用户列表")
 public class UserList implements Serializable {
 
-	@XmlElement(name = "user")
-	private List<User> users = new ArrayList<>();
+    @XmlElement(name = "user")
+    private List<User> users = new ArrayList<>();
 
-	public List<User> getUsers() {
-		return users;
-	}
+    public List<User> getUsers() {
+        return users;
+    }
 
-	public void setUsers(List<User> users) {
-		this.users = users;
-	}
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
 
 }

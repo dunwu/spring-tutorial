@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0">
-	<modelVersion>4.0.0</modelVersion>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+    xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>io.github.dunwu.spring</groupId>
-		<artifactId>spring-tutorial-parent</artifactId>
-		<version>1.0.0</version>
-		<relativePath>../spring-tutorial-parent</relativePath>
-	</parent>
+    <parent>
+        <groupId>io.github.dunwu.spring</groupId>
+        <artifactId>spring-tutorial-parent</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../spring-tutorial-parent</relativePath>
+    </parent>
 
-	<artifactId>spring-tutorial-security</artifactId>
-	<packaging>pom</packaging>
-	<description>spring 学习笔记之 security</description>
+    <artifactId>spring-tutorial-security</artifactId>
+    <packaging>pom</packaging>
+    <description>spring 学习笔记之 security</description>
 
-	<modules>
-		<module>spring-tutorial-security-shiro</module>
-	</modules>
+    <modules>
+        <module>spring-tutorial-security-shiro</module>
+    </modules>
 </project>

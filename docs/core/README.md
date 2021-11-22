@@ -4,7 +4,7 @@
 
 ## 📖 内容
 
-### [Spring Bean](spring-bean.md)
+### [Spring Bean 生命周期](spring-bean.md)
 
 ### [Spring IoC](spring-ioc.md)
 

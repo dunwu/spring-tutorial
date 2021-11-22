@@ -9,7 +9,7 @@ import org.springframework.web.context.WebApplicationContext;
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml")
 public class AbstractContextControllerTests {
 
-	@Autowired
-	protected WebApplicationContext wac;
+    @Autowired
+    protected WebApplicationContext wac;
 
 }

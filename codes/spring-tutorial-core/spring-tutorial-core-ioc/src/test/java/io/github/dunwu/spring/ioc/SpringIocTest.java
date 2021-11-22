@@ -12,14 +12,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration("/META-INF/spring-annotation.xml")
 public class SpringIocTest {
 
-	@Autowired
-	private Musician musician;
+    @Autowired
+    private Musician musician;
 
-	@Test
-	public void test01() throws Exception {
-		musician.setName("艺术家");
-		musician.setSong("夜曲");
-		Assert.assertEquals("艺术家演绎夜曲", musician.perform());
-	}
+    @Test
+    public void test01() throws Exception {
+        musician.setName("艺术家");
+        musician.setSong("夜曲");
+        Assert.assertEquals("艺术家演绎夜曲", musician.perform());
+    }
 
 }

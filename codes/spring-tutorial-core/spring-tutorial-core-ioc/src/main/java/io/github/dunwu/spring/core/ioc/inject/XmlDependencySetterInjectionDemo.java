@@ -39,6 +39,6 @@ public class XmlDependencySetterInjectionDemo {
         // 依赖查找并且创建 Bean
         UserHolder userHolder = beanFactory.getBean(UserHolder.class);
         System.out.println(userHolder);
-
     }
+
 }

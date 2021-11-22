@@ -55,4 +55,5 @@ public class Bean初始化示例 {
     public UserFactory userFactory() {
         return new DefaultUserFactory();
     }
+
 }

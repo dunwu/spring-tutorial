@@ -7,6 +7,6 @@ import java.lang.annotation.*;
 @Documented
 public @interface MaskFormat {
 
-	String value();
+    String value();
 
 }

@@ -5,16 +5,16 @@ package io.github.dunwu.spring.mvc.form;
  */
 public enum InquiryType {
 
-	/**
-	 * 注释
-	 */
-	comment,
-	/**
-	 * 反馈
-	 */
-	feedback,
-	/**
-	 * 建议
-	 */
-	suggestion;
+    /**
+     * 注释
+     */
+    comment,
+    /**
+     * 反馈
+     */
+    feedback,
+    /**
+     * 建议
+     */
+    suggestion;
 }

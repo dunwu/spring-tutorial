@@ -59,4 +59,5 @@ public class AnnotationDependencySetterInjectionDemo {
         userHolder.setUser(user);
         return userHolder;
     }
+
 }

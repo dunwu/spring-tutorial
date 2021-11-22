@@ -1,6 +1,7 @@
 package io.github.dunwu.spring.orm.entity;
 
 public class User {
+
     private Long id;
 
     private String name;
@@ -50,4 +51,5 @@ public class User {
     public void setEmail(String email) {
         this.email = email == null ? null : email.trim();
     }
+
 }

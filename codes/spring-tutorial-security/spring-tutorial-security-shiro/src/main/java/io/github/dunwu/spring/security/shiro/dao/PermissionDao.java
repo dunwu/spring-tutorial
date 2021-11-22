@@ -12,8 +12,8 @@ import io.github.dunwu.spring.security.shiro.entity.Permission;
  */
 public interface PermissionDao {
 
-	public Permission createPermission(Permission permission);
+    public Permission createPermission(Permission permission);
 
-	public void deletePermission(Long permissionId);
+    public void deletePermission(Long permissionId);
 
 }

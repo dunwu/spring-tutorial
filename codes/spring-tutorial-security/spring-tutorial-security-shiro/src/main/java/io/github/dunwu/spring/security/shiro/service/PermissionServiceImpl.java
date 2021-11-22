@@ -13,20 +13,20 @@ import io.github.dunwu.spring.security.shiro.entity.Permission;
  */
 public class PermissionServiceImpl implements PermissionService {
 
-	private PermissionDao permissionDao;
+    private PermissionDao permissionDao;
 
-	@Override
-	public Permission createPermission(Permission permission) {
-		return permissionDao.createPermission(permission);
-	}
+    @Override
+    public Permission createPermission(Permission permission) {
+        return permissionDao.createPermission(permission);
+    }
 
-	@Override
-	public void deletePermission(Long permissionId) {
-		permissionDao.deletePermission(permissionId);
-	}
+    @Override
+    public void deletePermission(Long permissionId) {
+        permissionDao.deletePermission(permissionId);
+    }
 
-	public void setPermissionDao(PermissionDao permissionDao) {
-		this.permissionDao = permissionDao;
-	}
+    public void setPermissionDao(PermissionDao permissionDao) {
+        this.permissionDao = permissionDao;
+    }
 
 }

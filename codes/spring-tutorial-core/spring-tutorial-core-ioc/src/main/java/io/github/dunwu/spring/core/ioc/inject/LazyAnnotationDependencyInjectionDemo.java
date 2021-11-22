@@ -64,7 +64,8 @@ public class LazyAnnotationDependencyInjectionDemo {
         applicationContext.refresh();
 
         // 依赖查找 QualifierAnnotationDependencyInjectionDemo Bean
-        LazyAnnotationDependencyInjectionDemo demo = applicationContext.getBean(LazyAnnotationDependencyInjectionDemo.class);
+        LazyAnnotationDependencyInjectionDemo demo =
+            applicationContext.getBean(LazyAnnotationDependencyInjectionDemo.class);
 
         // 期待输出 superUser Bean
         System.out.println("demo.user = " + demo.user);
@@ -74,7 +75,6 @@ public class LazyAnnotationDependencyInjectionDemo {
         System.out.println("demo.usersObjectFactory = " + demo.usersObjectFactory.getObject());
 
         demo.userObjectProvider.forEach(System.out::println);
-
 
         // 显示地关闭 Spring 应用上下文
         applicationContext.close();

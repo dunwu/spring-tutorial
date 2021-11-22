@@ -1,6 +1,7 @@
 package io.github.dunwu.spring.orm.entity;
 
 public class Order {
+
     private Integer id;
 
     private Integer userId;
@@ -50,4 +51,5 @@ public class Order {
     public void setStatu(Integer statu) {
         this.statu = statu;
     }
+
 }

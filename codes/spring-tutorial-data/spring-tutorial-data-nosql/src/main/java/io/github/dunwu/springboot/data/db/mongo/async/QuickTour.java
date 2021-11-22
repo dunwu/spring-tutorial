@@ -33,6 +33,7 @@ public class QuickTour {
 
     /**
      * Run this main method to see the output of this quick example.
+     *
      * @param args takes an optional single argument for the connection string
      * @throws InterruptedException if a latch is interrupted
      */
@@ -147,7 +148,7 @@ public class QuickTour {
 
         // Aggregation
         collection.aggregate(asList(match(gt("i", 0)), project(Document.parse("{ITimes10: {$multiply: ['$i', 10]}}"))))
-            .forEach(printDocumentBlock, callbackWhenFinished);
+                  .forEach(printDocumentBlock, callbackWhenFinished);
 
         collection.aggregate(singletonList(group(null, sum("total", "$i")))).first(printDocument);
 

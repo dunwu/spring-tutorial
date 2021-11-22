@@ -1,4 +1,4 @@
-# Spring Bean
+# Spring Bean 生命周期
 
 <!-- TOC depthFrom:2 depthTo:3 -->
 
@@ -26,9 +26,11 @@
 
 通过 BeanDefinition 和外部单体对象来注册
 
-## BeanDefinition
+## Spring Bean 基本用法
 
-### 什么是 BeanDefinition
+### BeanDefinition
+
+#### 什么是 BeanDefinition
 
 `BeanDefinition` 是 Spring Framework 中定义 Bean 的配置元信息接口，包含：
 
@@ -37,7 +39,7 @@
 - 其他 Bean 引用
 - 配置设置，如 Bean 属性（Properties）
 
-### BeanDefinition 元信息
+#### BeanDefinition 元信息
 
 `BeanDefinition` 元信息如下：
 
@@ -53,7 +55,7 @@
 | Initialization method Bean    | 初始化回调方法名称                       |
 | Destruction method Bean       | 销毁回调方法名称                         |
 
-### BeanDefinition 构建
+#### BeanDefinition 构建
 
 BeanDefinition 构建方式：
 
@@ -87,9 +89,9 @@ propertyValues
 genericBeanDefinition.setPropertyValues(propertyValues);
 ```
 
-## 命名 Spring Bean
+### 命名 Spring Bean
 
-### Spring Bean 命名规则
+#### Spring Bean 命名规则
 
 每个 Bean 拥有一个或多个标识符（identifiers），这些标识符在 Bean 所在的容器必须是唯一的。通常，一个 Bean 仅有一个标识符，如果需要额外的，可考虑使用别名（Alias）来扩充。
 
@@ -97,7 +99,7 @@ genericBeanDefinition.setPropertyValues(propertyValues);
 
 Bean 的 id 或 name 属性并非必须制定，如果留空的话，容器会为 Bean 自动生成一个唯一的名称。Bean 的命名尽管没有限制，不过官方建议采用驼峰的方式，更符合 Java 的命名约定。
 
-### Spring Bean 命名生成器
+#### Spring Bean 命名生成器
 
 Spring 提供了两种 Spring Bean 命名生成器：
 
@@ -110,7 +112,7 @@ public interface BeanNameGenerator {
 }
 ```
 
-### Spring Bean 别名
+#### Spring Bean 别名
 
 可能存在这样的场景，不同系统中对于同一 bean 的命名方式不一样。
 为了适配，Spring 支持 `<alias>` 为 bean 添加别名的功能。
@@ -129,7 +131,7 @@ Bean 别名（Alias）的作用：
   - `<alias name="myApp-dataSource" alias="subsystemA-dataSource"/>`
   - `<alias name="myApp-dataSource" alias="subsystemB-dataSource"/>`
 
-## 注册 Spring Bean
+### 注册 Spring Bean
 
 注册 Spring Bean 实际上是将 BeanDefinition 注册到 IoC 容器中。
 
@@ -200,7 +202,7 @@ public class AnnotationComponentScan {
 }
 ```
 
-## 实例化 Spring Bean
+### 实例化 Spring Bean
 
 Spring Bean 实例化方式：
 
@@ -214,20 +216,21 @@ Spring Bean 实例化方式：
   - 通过 `AutowireCapableBeanFactory#createBean(java.lang.Class, int, boolean)`
   - 通过 `BeanDefinitionRegistry#registerBeanDefinition(String,BeanDefinition)`
 
-## 初始化 Spring Bean
+### 初始化 Spring Bean
 
 初始化 Spring Bean 的方式有以下几种：
 
 1. `@PostConstruct` 标注方法
 2. 实现 `InitializingBean` 接口的 `afterPropertiesSet()` 方法
 3. 自定义初始化方法
-  - XML 配置：`<bean init-method=”init” ... />`
-  - Java 注解：`@Bean(initMethod=”init”)`
-  - Java API：`AbstractBeanDefinition#setInitMethodName(String)`
+
+- XML 配置：`<bean init-method=”init” ... />`
+- Java 注解：`@Bean(initMethod=”init”)`
+- Java API：`AbstractBeanDefinition#setInitMethodName(String)`
 
 注意：如果同时存在，执行顺序会按照序列执行。
 
-## 销毁 Spring Bean
+### 销毁 Spring Bean
 
 销毁 Spring Bean 的方式有以下几种：
 
@@ -240,13 +243,17 @@ Spring Bean 实例化方式：
 
 注意：如果同时存在，执行顺序会按照序列执行。
 
-## Spring Bean 垃圾回收
+### Spring Bean 垃圾回收
 
 Spring Bean 垃圾回收步骤：
 
 1. 关闭 Spring 容器（应用上下文）
 2. 执行 GC
 3. Spring Bean 覆盖的 finalize() 方法被回调
+
+## Spring Bean 生命周期
+
+Spring Bean的生命周期是指：Bean从创建到销毁的过程，这个过程由 Spring 的 IOC 机制控制。
 
 ## 参考资料
 

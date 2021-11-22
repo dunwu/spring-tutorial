@@ -1,6 +1,7 @@
 package io.github.dunwu.spring.orm.entity;
 
 public class Product {
+
     private Integer id;
 
     private String name;
@@ -30,4 +31,5 @@ public class Product {
     public void setPrice(Float price) {
         this.price = price;
     }
+
 }

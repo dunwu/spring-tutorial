@@ -7,8 +7,8 @@ import java.lang.reflect.Field;
 
 public interface ValidatorRule {
 
-	boolean support(Annotation annotation);
+    boolean support(Annotation annotation);
 
-	void valid(Annotation annotation, Object object, Field field, Errors errors) throws Exception;
+    void valid(Annotation annotation, Object object, Field field, Errors errors) throws Exception;
 
 }

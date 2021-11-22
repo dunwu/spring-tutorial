@@ -11,15 +11,15 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class CustomArgumentController {
 
-	@RequestMapping(value = "/data/custom", method = RequestMethod.GET)
-	public @ResponseBody
-	String custom(@RequestAttribute("foo") String foo) {
-		return "Got 'foo' request attribute value '" + foo + "'";
-	}
+    @RequestMapping(value = "/data/custom", method = RequestMethod.GET)
+    public @ResponseBody
+    String custom(@RequestAttribute("foo") String foo) {
+        return "Got 'foo' request attribute value '" + foo + "'";
+    }
 
-	@ModelAttribute
-	void beforeInvokingHandlerMethod(HttpServletRequest request) {
-		request.setAttribute("foo", "bar");
-	}
+    @ModelAttribute
+    void beforeInvokingHandlerMethod(HttpServletRequest request) {
+        request.setAttribute("foo", "bar");
+    }
 
 }

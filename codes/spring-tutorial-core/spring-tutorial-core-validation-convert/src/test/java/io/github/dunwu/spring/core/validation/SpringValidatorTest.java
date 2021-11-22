@@ -18,33 +18,33 @@ import org.springframework.validation.BindException;
 @ContextConfiguration(locations = "classpath:spring-validation.xml")
 public class SpringValidatorTest {
 
-	@Autowired
-	private PersonValidator personValidator;
+    @Autowired
+    private PersonValidator personValidator;
 
-	@Test
-	public void testValidateSuccess() {
-		Person person = new Person();
-		person.setBirthday("2015-11-11 18:00:00");
-		BindException errors = new BindException(person, "target");
-		personValidator.validate(person, errors);
-		Assert.assertEquals(0, errors.getFieldErrors().size());
-	}
+    @Test
+    public void testValidateSuccess() {
+        Person person = new Person();
+        person.setBirthday("2015-11-11 18:00:00");
+        BindException errors = new BindException(person, "target");
+        personValidator.validate(person, errors);
+        Assert.assertEquals(0, errors.getFieldErrors().size());
+    }
 
-	@Test
-	public void testValidateFailed() {
-		Person person = new Person();
-		BindException errors = new BindException(person, "target");
-		personValidator.validate(person, errors);
-		Assert.assertNotEquals(0, errors.getFieldErrors().size());
-	}
+    @Test
+    public void testValidateFailed() {
+        Person person = new Person();
+        BindException errors = new BindException(person, "target");
+        personValidator.validate(person, errors);
+        Assert.assertNotEquals(0, errors.getFieldErrors().size());
+    }
 
-	@Test
-	public void testValidateFailed2() {
-		Person form = new Person();
-		form.setBirthday("2015-11-11 18-00-00");
-		BindException errors = new BindException(form, "target");
-		personValidator.validate(form, errors);
-		Assert.assertNotEquals(0, errors.getFieldErrors().size());
-	}
+    @Test
+    public void testValidateFailed2() {
+        Person form = new Person();
+        form.setBirthday("2015-11-11 18-00-00");
+        BindException errors = new BindException(form, "target");
+        personValidator.validate(form, errors);
+        Assert.assertNotEquals(0, errors.getFieldErrors().size());
+    }
 
 }
