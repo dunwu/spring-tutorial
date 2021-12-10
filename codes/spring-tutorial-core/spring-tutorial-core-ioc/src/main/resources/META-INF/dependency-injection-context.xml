@@ -6,7 +6,7 @@
     <!-- 通过导入复用 dependency-lookup-context.xml -->
     <import resource="dependency-lookup-context.xml" />
 
-    <bean id="userRepository" class="io.github.dunwu.spring.core.ioc.overview.UserRepository"
+    <bean id="userRepository" class="io.github.dunwu.spring.core.bean.overview.UserRepository"
         autowire="byType"> <!-- Auto-Wiring -->
         <!-- 手动配置 -->
         <!--        <property name="users">-->

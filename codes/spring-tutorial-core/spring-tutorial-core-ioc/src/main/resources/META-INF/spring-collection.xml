@@ -5,12 +5,12 @@
 
     <!-- Bean declarations go here -->
 
-    <bean id="piano" class="io.github.dunwu.spring.core.ioc.sample.instrument.Piano" />
-    <bean id="guitar" class="io.github.dunwu.spring.core.ioc.sample.instrument.Guitar" />
-    <bean id="violin" class="io.github.dunwu.spring.core.ioc.sample.instrument.Violin" />
+    <bean id="piano" class="io.github.dunwu.spring.core.bean.entity.job.Piano" />
+    <bean id="guitar" class="io.github.dunwu.spring.core.bean.entity.job.Guitar" />
+    <bean id="violin" class="io.github.dunwu.spring.core.bean.entity.job.Violin" />
 
     <!-- 装配Collection/List -->
-    <bean id="band" class="io.github.dunwu.spring.core.ioc.inject.Band">
+    <bean id="band" class="io.github.dunwu.spring.core.bean.entity.job.Band">
         <!-- 装配list -->
         <property name="collections">
             <list>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 构造注入 -->
+    <bean id="poetry" class="io.github.dunwu.spring.core.bean.entity.job.Poetry">
+        <constructor-arg value="将进酒" />
+    </bean>
+    <bean id="libai" class="io.github.dunwu.spring.core.bean.entity.job.Poet">
+        <constructor-arg value="李白" />
+        <constructor-arg ref="poetry" />
+    </bean>
+
+    <!-- setter注入 -->
+    <bean id="piano" class="io.github.dunwu.spring.core.bean.entity.job.Piano" />
+    <bean id="chopin" class="io.github.dunwu.spring.core.bean.entity.job.Musician">
+        <property name="song" value="夜曲" />
+        <property name="name" value="肖邦" />
+        <property name="instrument" ref="piano" />
+    </bean>
+
+</beans>

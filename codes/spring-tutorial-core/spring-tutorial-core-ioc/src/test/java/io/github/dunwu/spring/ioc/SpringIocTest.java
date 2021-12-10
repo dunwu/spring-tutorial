@@ -1,6 +1,6 @@
 package io.github.dunwu.spring.ioc;
 
-import io.github.dunwu.spring.core.ioc.annotation.Musician;
+import io.github.dunwu.spring.core.bean.annotation.Musician;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

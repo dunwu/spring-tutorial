@@ -6,6 +6,6 @@
 
     <bean id="userFactoryServiceLoader"
         class="org.springframework.beans.factory.serviceloader.ServiceLoaderFactoryBean">
-        <property name="serviceType" value="org.geekbang.thinking.in.spring.bean.factory.UserFactory" />
+        <property name="serviceType" value="io.github.dunwu.spring.core.bean.define.factory.UserFactory" />
     </bean>
 </beans>

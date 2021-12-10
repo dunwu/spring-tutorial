@@ -8,7 +8,6 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
     public MyBeanFactoryPostProcessor() {
-        super();
         System.out.println("[BeanFactoryPostProcessor] construct");
     }
 

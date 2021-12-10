@@ -98,7 +98,7 @@ Advice 是和特定的 point cut 关联的, 并且在 point cut 相匹配的 joi
 Spring AOP 默认使用标准的 JDK 动态代理(dynamic proxy)技术来实现 AOP 代理, 通过它, 我们可以为任意的接口实现代理.
 `如果需要为一个类实现代理, 那么可以使用 CGLIB 代理.` 当一个业务逻辑对象没有实现接口时, 那么 Spring AOP 就默认使用 CGLIB 来作为 AOP 代理了. 即如果我们需要为一个方法织入 advice, 但是这个方法不是一个接口所提供的方法, 则此时 Spring AOP 会使用 CGLIB 来实现动态代理. 鉴于此, Spring AOP 建议基于接口编程, 对接口进行 AOP 而不是类.
 
-## 彻底理解 aspect, join point, point cut, advice
+### 彻底理解 aspect, join point, point cut, advice
 
 看完了上面的理论部分知识, 我相信还是会有不少朋友感觉到 AOP 的概念还是很模糊, 对 AOP 中的各种概念理解的还不是很透彻. 其实这很正常, 因为 AOP 中的概念是在是太多了, 我当时也是花了老大劲才梳理清楚的.
 下面我以一个简单的例子来比喻一下 AOP 中 aspect, jointpoint, pointcut 与 advice 之间的关系.
@@ -395,4 +395,4 @@ around advice 和前面的 before advice 差不多, 只是我们把注解 **@Bef
 
 ## 参考资料
 
-- [《 Spring实战（第4版）》](https://item.jd.com/11899370.html)
+- [《 Spring 实战（第 4 版）》](https://item.jd.com/11899370.html)

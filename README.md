@@ -31,8 +31,8 @@
 
 > [核心](docs/core/README.md) 章节主要针对：Spring 框架的核心技术。如；IOC 依赖注入、AOP、数据绑定等。
 
-- [Spring Bean](docs/core/spring-bean.md)
-- [Spring IoC](docs/core/spring-ioc.md)
+- [Spring 依赖注入（IoC）](docs/core/Spring依赖注入.md)
+- [Spring 生命周期](docs/core/Spring生命周期.md)
 - [Spring AOP](docs/core/spring-aop.md)
 - [Spring 资源管理](docs/core/Spring资源管理.md)
 

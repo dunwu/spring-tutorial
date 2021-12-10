@@ -6,7 +6,7 @@
 
     <import resource="classpath:/META-INF/dependency-lookup-context.xml" />
 
-    <bean class="io.github.dunwu.spring.core.ioc.inject.UserHolder"
+    <bean class="io.github.dunwu.spring.core.bean.inject.UserHolder"
         autowire="byType"
     >
         <!--        <property name="user" ref="superUser" /> 替换成 autowiring 模式 -->

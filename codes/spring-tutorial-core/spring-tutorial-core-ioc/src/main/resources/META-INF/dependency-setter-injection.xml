@@ -6,7 +6,7 @@
 
     <import resource="classpath:/META-INF/dependency-lookup-context.xml" />
 
-    <bean class="io.github.dunwu.spring.core.ioc.inject.UserHolder">
+    <bean class="io.github.dunwu.spring.core.bean.inject.UserHolder">
         <property name="user" ref="superUser" />
     </bean>
 

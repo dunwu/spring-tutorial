@@ -26,8 +26,8 @@ footer: CC-BY-SA-4.0 Licensed | Copyright © 2018-Now Dunwu
 
 > [核心](core/README.md) 章节主要针对：Spring 框架的核心技术。如；IOC 依赖注入、AOP、数据绑定等。
 
-- [Spring Bean](core/spring-bean.md)
-- [Spring IoC](core/spring-ioc.md)
+- [Spring 依赖注入（IoC）](core/Spring依赖注入.md)
+- [Spring 生命周期](core/Spring生命周期.md)
 - [Spring AOP](core/spring-aop.md)
 - [Spring 资源管理](core/Spring资源管理.md)
 

@@ -106,10 +106,10 @@ AbstractApplicationContext 内建可查找的依赖
 
 BeansException 子类型
 
-| 异常类型                        | 触发条件（举例）                          | 场景举例                                   |
-| ------------------------------- | ----------------------------------------- | ------------------------------------------ |
-| NoSuchBeanDefinitionException   | 当查找Bean 不存在于IoC 容器时             | BeanFactory#getBeanObjectFactory#getObject |
-| NoUniqueBeanDefinitionException | 类型依赖查找时，IoC 容器存在多个Bean 实例 | BeanFactory#getBean(Class)                 |
-| BeanInstantiationException      | 当Bean 所对应的类型非具体类时             | BeanFactory#getBean                        |
-| BeanCreationException           | 当Bean 初始化过程中                       | Bean 初始化方法执行异常时                  |
-| BeanDefinitionStoreException    | 当BeanDefinition 配置元信息非法时         | XML 配置资源无法打开时                     |
+| 异常类型                        | 触发条件（举例）                           | 场景举例                                   |
+| ------------------------------- | ------------------------------------------ | ------------------------------------------ |
+| NoSuchBeanDefinitionException   | 当查找 Bean 不存在于 IoC 容器时            | BeanFactory#getBeanObjectFactory#getObject |
+| NoUniqueBeanDefinitionException | 类型依赖查找时，IoC 容器存在多个 Bean 实例 | BeanFactory#getBean(Class)                 |
+| BeanInstantiationException      | 当 Bean 所对应的类型非具体类时             | BeanFactory#getBean                        |
+| BeanCreationException           | 当 Bean 初始化过程中                       | Bean 初始化方法执行异常时                  |
+| BeanDefinitionStoreException    | 当 BeanDefinition 配置元信息非法时         | XML 配置资源无法打开时                     |

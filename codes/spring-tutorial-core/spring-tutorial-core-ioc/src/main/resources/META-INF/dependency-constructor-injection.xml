@@ -6,7 +6,7 @@
 
     <import resource="classpath:/*" />
 
-    <bean class="io.github.dunwu.spring.core.ioc.inject.UserHolder">
+    <bean class="io.github.dunwu.spring.core.bean.inject.UserHolder">
         <constructor-arg name="user" ref="superUser" />
     </bean>
 

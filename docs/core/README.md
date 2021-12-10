@@ -4,9 +4,11 @@
 
 ## 📖 内容
 
-### [Spring Bean 生命周期](spring-bean.md)
+### [Spring 依赖注入（IoC）](Spring依赖注入.md)
 
-### [Spring IoC](spring-ioc.md)
+### [Spring Bean 生命周期](Spring生命周期.md)
+
+### Spring 循环依赖
 
 ### [Spring AOP](spring-aop.md)
 
