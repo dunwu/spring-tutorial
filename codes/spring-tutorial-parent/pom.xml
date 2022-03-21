@@ -25,7 +25,7 @@
         <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>
         <jetty-maven-plugin.version>9.4.12.v20180830</jetty-maven-plugin.version>
         <shiro.version>1.5.1</shiro.version>
-        <dubbo.version>2.5.6</dubbo.version>
+        <dubbo.version>2.6.9</dubbo.version>
     </properties>
 
     <dependencies>
