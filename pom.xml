@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>io.github.dunwu.spring</groupId>
-  <artifactId>spring-tutorial</artifactId>
-  <version>1.0.0</version>
-  <packaging>pom</packaging>
+    <groupId>io.github.dunwu.spring</groupId>
+    <artifactId>spring-tutorial</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
 
-  <name>${project.artifactId}</name>
-  <description>Spring Tutorial 示例源码</description>
+    <name>${project.artifactId}</name>
 
-  <modules>
-    <module>codes/spring-tutorial-parent</module>
-    <module>codes/spring-tutorial-data</module>
-    <module>codes/spring-tutorial-common</module>
-    <module>codes/spring-tutorial-core</module>
-    <module>codes/spring-tutorial-web</module>
-    <module>codes/spring-tutorial-integration</module>
-    <module>codes/spring-tutorial-security</module>
-  </modules>
+    <modules>
+        <module>codes/parent</module>
+        <module>codes/common</module>
+        <module>codes/core</module>
+        <module>codes/data</module>
+        <module>codes/web</module>
+        <module>codes/integration</module>
+        <module>codes/security</module>
+    </modules>
 </project>

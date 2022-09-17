@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.github.dunwu.spring</groupId>
+        <artifactId>spring-parent</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>spring-integration</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>spring-integration-cache</module>
+        <module>spring-integration-libs</module>
+        <module>spring-integration-rmi</module>
+        <module>spring-integration-rpc</module>
+        <module>spring-integration-scheduler</module>
+        <module>spring-integration-swagger</module>
+    </modules>
+
+<!--    <properties>-->
+<!--        &lt;!&ndash; 核心库版本 &ndash;&gt;-->
+<!--        <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>-->
+<!--        <jetty-maven-plugin.version>9.4.12.v20180830</jetty-maven-plugin.version>-->
+<!--        <shiro.version>1.5.1</shiro.version>-->
+<!--        <swagger.version>2.9.2</swagger.version>-->
+<!--        <dubbo.version>2.5.6</dubbo.version>-->
+<!--    </properties>-->
+
+<!--    <dependencies>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-test</artifactId>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>junit</groupId>-->
+<!--            <artifactId>junit</artifactId>-->
+<!--            <version>4.12</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
+<!--    </dependencies>-->
+<!--    <dependencyManagement>-->
+<!--        <dependencies>-->
+<!--            <dependency>-->
+<!--                <groupId>com.alibaba</groupId>-->
+<!--                <artifactId>dubbo</artifactId>-->
+<!--                <version>${dubbo.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.logback-extensions</groupId>-->
+<!--                <artifactId>logback-ext-spring</artifactId>-->
+<!--                <version>0.1.5</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>dom4j</groupId>-->
+<!--                <artifactId>dom4j</artifactId>-->
+<!--                <version>1.6</version>-->
+<!--            </dependency>-->
+<!--        </dependencies>-->
+<!--    </dependencyManagement>-->
+
+</project>
