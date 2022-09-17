@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.2.1.RELEASE</version>
+  </parent>
+
+  <groupId>io.github.dunwu.springboot</groupId>
+  <artifactId>spring-boot-docker</artifactId>
+  <name>spring-boot-docker</name>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>com.spotify</groupId>
+        <artifactId>dockerfile-maven-plugin</artifactId>
+        <version>1.4.3</version>
+        <!-- 如果环境中没有安装 docker，构建可能会导致失败，所以暂时注掉-->
+        <!--<executions>
+          <execution>
+            <id>default</id>
+            <phase>install</phase>
+            <goals>
+              <goal>build</goal>
+            </goals>
+          </execution>
+        </executions>-->
+        <configuration>
+          <repository>dunwu/${project.artifactId}</repository>
+          <tag>${project.version}</tag>
+          <buildArgs>
+            <JAR_FILE>${project.build.finalName}.${project.packaging}</JAR_FILE>
+            <NAME>${project.artifactId}</NAME>
+            <VERSION>${project.version}</VERSION>
+          </buildArgs>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

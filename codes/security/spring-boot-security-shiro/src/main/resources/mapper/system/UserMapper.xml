@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.github.dunwu.springboot.security.system.mapper.UserMapper">
+    <sql id="findUserDetailSql">
+        SELECT
+        u.user_id userId,
+        u.username,
+        u.email,
+        u.mobile,
+        u.status,
+        u.create_time createTime,
+        u.ssex sex,
+        u.dept_id deptId,
+        u.last_login_time lastLoginTime,
+        u.modify_time modifyTime,
+        u.description,
+        u.avatar,
+        d.dept_name deptName,
+        GROUP_CONCAT(r.role_id) roleId,
+        GROUP_CONCAT(r.ROLE_NAME) roleName
+        FROM
+        t_user u
+        LEFT JOIN t_dept d ON (u.dept_id = d.dept_id)
+        LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id)
+        LEFT JOIN t_role r ON r.role_id = ur.role_id
+        WHERE 1 = 1
+        <if test="user.username != null and user.username != ''">
+            AND u.username = #{user.username}
+        </if>
+        <if test="user.deptId != null and user.deptId != ''">
+            AND d.dept_id = #{user.deptId}
+        </if>
+        <if test="user.sex != null and user.sex != ''">
+            AND u.ssex = #{user.sex}
+        </if>
+        <if test="user.status != null and user.status != ''">
+            AND u.status = #{user.status}
+        </if>
+        <if test="user.mobile != null and user.mobile != ''">
+            AND u.mobile = #{user.mobile}
+        </if>
+        <if test="user.createTimeFrom != null and user.createTimeFrom !=''">
+            And u.create_time &gt; #{user.createTimeFrom}
+        </if>
+        <if test="user.createTimeTo!= null and user.createTimeTo !=''">
+            And u.create_time &lt; #{user.createTimeTo}
+        </if>
+        GROUP BY
+            u.username,
+            u.user_id,
+            u.email,
+            u.mobile,
+            u.status,
+            u.create_time,
+            u.ssex,
+            u.dept_id,
+            u.last_login_time,
+            u.modify_time,
+            u.description,
+            u.avatar
+    </sql>
+    <select id="findUserDetailPage" parameterType="user" resultType="user">
+        <include refid="findUserDetailSql"/>
+    </select>
+
+    <select id="findUserDetail" parameterType="user" resultType="user">
+        <include refid="findUserDetailSql"/>
+    </select>
+
+    <select id="findByName" parameterType="string" resultType="user">
+        SELECT
+        u.user_id userId,
+        u.username,
+        u.email,
+        u.mobile,
+        u.password,
+        u.status,
+        u.create_time createTime,
+        u.ssex sex,
+        u.dept_id deptId,
+        u.last_login_time lastLoginTime,
+        u.modify_time modifyTime,
+        u.description,
+        u.avatar,
+        u.theme,
+        u.is_tab isTab,
+        d.dept_name deptName,
+        GROUP_CONCAT(r.role_id) roleId,
+        GROUP_CONCAT(r.ROLE_NAME) roleName
+        FROM
+        t_user u
+        LEFT JOIN t_dept d ON (u.dept_id = d.dept_id)
+        LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id)
+        LEFT JOIN t_role r ON r.role_id = ur.role_id
+        WHERE  u.username = #{username}
+        GROUP BY
+            u.username,
+            u.user_id,
+            u.email,
+            u.mobile,
+            u.password,
+            u.status,
+            u.create_time,
+            u.ssex,
+            u.dept_id,
+            u.last_login_time,
+            u.modify_time,
+            u.description,
+            u.avatar,
+            u.theme,
+            u.is_tab
+    </select>
+</mapper>

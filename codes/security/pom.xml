@@ -15,5 +15,11 @@
 
     <modules>
         <module>spring-security-shiro</module>
+
+        <module>spring-boot-security-authentication</module>
+        <module>spring-boot-security-checkcode</module>
+        <module>spring-boot-security-session</module>
+        <!--        <module>spring-boot-security-shiro</module>-->
+        <module>spring-boot-security-ldap</module>
     </modules>
 </project>

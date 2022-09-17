@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- logback中一共有5种有效级别，分别是TRACE、DEBUG、INFO、WARN、ERROR，优先级依次从低到高 -->
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+
+  <contextName>spring-boot-tutorial</contextName>
+  <property name="APP_NAME" value="spring-boot-tutorial" />
+  <property name="LOG_DIR" value="${SPRING_BOOT_TUTORIAL_LOG_DIR:-${user.dir}/log}" />
+  <property name="LOG_MAX_HISTORY" value="14" />
+  <property name="LOG_MAX_FILE_SIZE" value="100MB" />
+  <property name="LOG_MAX_QUEUE_SIZE" value="256" />
+  <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%contextName] [%-5level] [%thread] %c.%M | %m%n" />
+  <property name="LOG_COLOR_PATTERN"
+    value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%highlight(%-5level)] [%boldYellow(%thread)] %boldGreen(%c{50}.%M) | %boldBlue(%m%n)" />
+
+  <!-- 控制台输出 -->
+  <appender name="CONSOLE_APPENDER" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>${LOG_COLOR_PATTERN}</pattern>
+    </encoder>
+  </appender>
+
+  <!-- 滚动日志输出 -->
+  <appender name="DEBUG_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!-- 根据时间、文件大小自动分割日志 -->
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <fileNamePattern>${LOG_DIR}/%d{yyyy-MM,aux}/${APP_NAME}_debug.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+      <!-- 日志文件保留最长天数 -->
+      <maxHistory>${LOG_MAX_HISTORY}</maxHistory>
+      <!-- 日志文件最大尺寸 -->
+      <maxFileSize>${LOG_MAX_FILE_SIZE}</maxFileSize>
+    </rollingPolicy>
+    <!-- 输出形式 -->
+    <encoder>
+      <pattern>${LOG_PATTERN}</pattern>
+    </encoder>
+    <!-- 过滤级别 -->
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>DEBUG</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
+  </appender>
+
+  <!-- 滚动日志输出 -->
+  <appender name="INFO_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!-- 根据时间、文件大小自动分割日志 -->
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <fileNamePattern>${LOG_DIR}/%d{yyyy-MM,aux}/${APP_NAME}_info.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+      <!-- 日志文件保留最长天数 -->
+      <maxHistory>${LOG_MAX_HISTORY}</maxHistory>
+      <!-- 日志文件最大尺寸 -->
+      <maxFileSize>${LOG_MAX_FILE_SIZE}</maxFileSize>
+    </rollingPolicy>
+    <!-- 输出形式 -->
+    <encoder>
+      <pattern>${LOG_PATTERN}</pattern>
+    </encoder>
+    <!-- 过滤级别 -->
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>INFO</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
+  </appender>
+
+  <!-- 滚动日志输出 -->
+  <appender name="WARN_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!-- 根据时间、文件大小自动分割日志 -->
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <fileNamePattern>${LOG_DIR}/%d{yyyy-MM,aux}/${APP_NAME}_warn.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+      <!-- 日志文件保留最长天数 -->
+      <maxHistory>${LOG_MAX_HISTORY}</maxHistory>
+      <!-- 日志文件最大尺寸 -->
+      <maxFileSize>${LOG_MAX_FILE_SIZE}</maxFileSize>
+    </rollingPolicy>
+    <!-- 输出形式 -->
+    <encoder>
+      <pattern>${LOG_PATTERN}</pattern>
+    </encoder>
+    <!-- 过滤级别 -->
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>WARN</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
+  </appender>
+
+  <!-- 滚动日志输出 -->
+  <appender name="ERROR_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!-- 根据时间、文件大小自动分割日志 -->
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <fileNamePattern>${LOG_DIR}/%d{yyyy-MM,aux}/${APP_NAME}_error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+      <!-- 日志文件保留最长天数 -->
+      <maxHistory>${LOG_MAX_HISTORY}</maxHistory>
+      <!-- 日志文件最大尺寸 -->
+      <maxFileSize>${LOG_MAX_FILE_SIZE}</maxFileSize>
+    </rollingPolicy>
+    <!-- 输出形式 -->
+    <encoder>
+      <pattern>${LOG_PATTERN}</pattern>
+    </encoder>
+    <!-- 过滤级别 -->
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>ERROR</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
+  </appender>
+
+  <!-- 异步日志输出 -->
+  <appender name="ASYNC_DEBUG_APPENDER" class="ch.qos.logback.classic.AsyncAppender">
+    <!-- 不丢失日志。默认的，如果队列的 80% 已满，则会丢弃 TRACE、DEBUG、INFO 级别的日志 -->
+    <discardingThreshold>0</discardingThreshold>
+    <!-- 更改默认的队列的深度，该值会影响性能。默认值为 256 -->
+    <queueSize>${LOG_MAX_QUEUE_SIZE}</queueSize>
+    <appender-ref ref="DEBUG_APPENDER" />
+  </appender>
+
+  <!-- 异步日志输出 -->
+  <appender name="ASYNC_INFO_APPENDER" class="ch.qos.logback.classic.AsyncAppender">
+    <!-- 不丢失日志。默认的，如果队列的 80% 已满，则会丢弃 TRACE、DEBUG、INFO 级别的日志 -->
+    <discardingThreshold>0</discardingThreshold>
+    <!-- 更改默认的队列的深度，该值会影响性能。默认值为 256 -->
+    <queueSize>${LOG_MAX_QUEUE_SIZE}</queueSize>
+    <appender-ref ref="INFO_APPENDER" />
+  </appender>
+
+  <!-- 异步日志输出 -->
+  <appender name="ASYNC_WARN_APPENDER" class="ch.qos.logback.classic.AsyncAppender">
+    <!-- 不丢失日志。默认的，如果队列的 80% 已满，则会丢弃 TRACE、DEBUG、INFO 级别的日志 -->
+    <discardingThreshold>0</discardingThreshold>
+    <!-- 更改默认的队列的深度，该值会影响性能。默认值为 256 -->
+    <queueSize>${LOG_MAX_QUEUE_SIZE}</queueSize>
+    <appender-ref ref="WARN_APPENDER" />
+  </appender>
+
+  <!-- 异步日志输出 -->
+  <appender name="ASYNC_ERROR_APPENDER" class="ch.qos.logback.classic.AsyncAppender">
+    <!-- 不丢失日志。默认的，如果队列的 80% 已满，则会丢弃 TRACE、DEBUG、INFO 级别的日志 -->
+    <discardingThreshold>0</discardingThreshold>
+    <!-- 更改默认的队列的深度，该值会影响性能。默认值为 256 -->
+    <queueSize>${LOG_MAX_QUEUE_SIZE}</queueSize>
+    <appender-ref ref="ERROR_APPENDER" />
+  </appender>
+
+  <logger name="io.github.dunwu" level="DEBUG" additivity="false">
+    <appender-ref ref="CONSOLE_APPENDER" />
+    <appender-ref ref="ASYNC_DEBUG_APPENDER" />
+    <appender-ref ref="ASYNC_INFO_APPENDER" />
+    <appender-ref ref="ASYNC_WARN_APPENDER" />
+    <appender-ref ref="ASYNC_ERROR_APPENDER" />
+  </logger>
+
+  <root level="WARN">
+    <appender-ref ref="CONSOLE_APPENDER" />
+  </root>
+</configuration>

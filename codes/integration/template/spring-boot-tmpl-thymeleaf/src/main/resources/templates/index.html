@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <title>Thymeleaf 模板引擎</title>
+</head>
+<body>
+<div style="text-align: center;margin:0 auto;width: 1000px; ">
+  <h1>Thymeleaf 模板引擎</h1>
+  <table border="1" cellpadding="0" cellspacing="1" width="100%">
+    <tr>
+      <td>姓名</td>
+      <td>年龄</td>
+      <td>地址</td>
+    </tr>
+    <tr th:each="student : ${list}">
+      <td th:text="${student.name}"></td>
+      <td th:text="${student.age}"></td>
+      <td th:text="${student.address}"></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

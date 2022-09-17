@@ -14,8 +14,19 @@
     <packaging>pom</packaging>
 
     <modules>
+        <!--SPRING 项目-->
         <module>spring-web-helloworld</module>
         <module>spring-web-mvc</module>
         <module>spring-web-websocket</module>
+
+        <!--SPRING BOOT 项目-->
+        <module>spring-boot-web-fastjson</module>
+        <module>spring-boot-web-form</module>
+        <module>spring-boot-web-helloworld</module>
+        <module>spring-boot-web-https</module>
+        <module>spring-boot-web-multi-connectors</module>
+        <module>spring-boot-web-ui</module>
+        <module>spring-boot-web-uploading</module>
+        <module>spring-boot-web-websocket</module>
     </modules>
 </project>

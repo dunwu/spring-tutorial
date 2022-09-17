@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Complex Layout - jQuery EasyUI Demo</title>
+  <meta charset="UTF-8">
+  <link href="../lib/easyui/themes/bootstrap/easyui.css" rel="stylesheet" type="text/css">
+  <link href="../lib/easyui/themes/icon.css" rel="stylesheet" type="text/css">
+  <link href="../lib/easyui/themes/color.css" rel="stylesheet" type="text/css">
+  <script src="../lib/easyui/jquery.min.js" type="text/javascript"></script>
+  <script src="../lib/easyui/jquery.easyui.min.js" type="text/javascript"></script>
+  <script src="../lib/easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
+  <style type="text/css">
+    body {
+      font-family: microsoft yahei;
+    }
+  </style>
+</head>
+<body>
+<div style="width:100%">
+  <h2>基本的 CRUD 应用</h2>
+  <p>数据来源于后台系统</p>
+
+  <table class="easyui-datagrid" fitColumns="true" id="dg"
+         pagination="true"
+         rownumbers="true" singleSelect="true"
+         title="Custom List" toolbar="#toolbar" url="/user/list">
+    <thead>
+    <tr>
+      <th field="id" width="50">ID</th>
+      <th field="firstName" width="50">First Name</th>
+      <th field="lastName" width="50">Last Name</th>
+      <th field="phone" width="50">Phone</th>
+      <th field="email" width="50">Email</th>
+    </tr>
+    </thead>
+  </table>
+  <div id="toolbar">
+    <a class="easyui-linkbutton" href="javascript:void(0)" iconCls="icon-add" onclick="newUser()" plain="true">添加</a>
+    <a class="easyui-linkbutton" href="javascript:void(0)" iconCls="icon-edit" onclick="editUser()" plain="true">修改</a>
+    <a class="easyui-linkbutton" href="javascript:void(0)" iconCls="icon-remove" onclick="destroyUser()"
+       plain="true">删除</a>
+  </div>
+
+  <div class="easyui-dialog" data-options="closed:true,modal:true,border:'thin',buttons:'#dlg-buttons'" id="dlg"
+       style="width:400px">
+    <form id="fm" method="post" novalidate style="margin:0;padding:20px 50px">
+      <h3>User Information</h3>
+      <div style="margin-bottom:10px">
+        <input class="easyui-textbox" label="First Name:" name="firstName" required="true" style="width:100%">
+      </div>
+      <div style="margin-bottom:10px">
+        <input class="easyui-textbox" label="Last Name:" name="lastName" required="true" style="width:100%">
+      </div>
+      <div style="margin-bottom:10px">
+        <input class="easyui-textbox" label="Phone:" name="phone" required="true" style="width:100%">
+      </div>
+      <div style="margin-bottom:10px">
+        <input class="easyui-textbox" label="Email:" name="email" required="true" style="width:100%" validType="email">
+      </div>
+    </form>
+  </div>
+  <div id="dlg-buttons">
+    <a class="easyui-linkbutton c6" href="javascript:void(0)" iconCls="icon-ok" onclick="saveUser()" style="width:90px">Save</a>
+    <a class="easyui-linkbutton" href="javascript:void(0)" iconCls="icon-cancel"
+       onclick="$('#dlg').dialog('close')" style="width:90px">Cancel</a>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var url;
+
+  function newUser() {
+    $('#dlg').dialog('open').dialog('center').dialog('setTitle', 'New User');
+    $('#fm').form('clear');
+    url = '/user/add'
+  }
+
+  function editUser() {
+    var row = $('#dg').datagrid('getSelected');
+    if (row) {
+      $('#dlg').dialog('open').dialog('center').dialog('setTitle', 'Edit User');
+      $('#fm').form('load', row);
+      url = '/user/save'
+    }
+  }
+
+  function saveUser() {
+    $('#fm').form('submit', {
+      url: url, onSubmit: function () {
+        return $(this).form('validate')
+      }, success: function (result) {
+        var result = eval('(' + result + ')');
+        if (result.errorMsg) {
+          $.messager.show({
+            title: 'Error', msg: result.errorMsg
+          })
+        } else {
+          $('#dlg').dialog('close');		// close the dialog
+          $('#dg').datagrid('reload')	// reload the user data
+        }
+      }
+    })
+  }
+
+  function destroyUser() {
+    var row = $('#dg').datagrid('getSelected');
+    if (row) {
+      $.messager.confirm('Confirm', 'Are you sure you want to destroy this user?', function (r) {
+        if (r) {
+          $.post('/user/delete', {id: row.id}, function (result) {
+            if (result.success) {
+              $('#dg').datagrid('reload')	// reload the user data
+            } else {
+              $.messager.show({	// show error message
+                title: 'Error', msg: result.errorMsg
+              })
+            }
+          }, 'json')
+        }
+      })
+    }
+  }
+</script>
+</body>
+</html>

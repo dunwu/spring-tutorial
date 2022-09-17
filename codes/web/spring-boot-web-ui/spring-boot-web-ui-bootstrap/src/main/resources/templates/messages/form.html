@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head(title=~{::title/text()})">
+  <title th:text="#{form.title}">Messages : Create</title>
+</head>
+<body>
+<div class="container">
+  <div th:replace="fragments :: navbar"></div>
+  <div class="float-right mt-2">
+    <a class="btn btn-primary btn-sm" href="messages.html" th:href="@{/}" th:text="#{form.messages}"> Messages </a>
+  </div>
+  <h4 class="float-left mt-2" th:text="#{form.title}">Messages : Create</h4>
+  <div class="clearfix"></div>
+  <form action="#" id="messageForm" method="post" th:action="@{/(form)}" th:object="${message}">
+    <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('*')}">
+      <p class="m-0" th:each="error : ${#fields.errors('*')}" th:text="${error}">Validation error</p>
+    </div>
+    <input th:class="${'form-control' + (#fields.hasErrors('id') ? ' is-invalid' : '')}" th:field="*{id}"
+           type="hidden" />
+    <div class="form-group">
+      <label for="summary" th:text="#{form.summary}">Summary</label>
+      <input th:class="${'form-control' + (#fields.hasErrors('summary') ? ' is-invalid' : '')}" th:field="*{summary}"
+             type="text">
+    </div>
+    <div class="form-group">
+      <label for="text" th:text="#{form.message}">Message</label>
+      <textarea th:class="${'form-control' + (#fields.hasErrors('text') ? ' is-invalid' : '')}"
+                th:field="*{text}"></textarea>
+    </div>
+    <button class="btn btn-primary" th:text="#{form.submit}" type="submit">Submit</button>
+  </form>
+</div>
+</body>
+</html>

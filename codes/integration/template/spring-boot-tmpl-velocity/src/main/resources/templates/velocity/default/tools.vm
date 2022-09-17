@@ -1,0 +1,10 @@
+<div>\${esc.javascript("http://www.alibaba-inc.com")} : ${esc.javascript("http://www.alibaba-inc.com")}</div>
+<p />
+<div>\${esc.xml("http://www.alibaba-inc.com")} : ${esc.xml("http://www.alibaba-inc.com")}</div>
+<p />
+<div>\${esc.html("http://www.alibaba-inc.com")} : ${esc.html("http://www.alibaba-inc.com")}</div>
+<p />
+<div>\${convert.toDouble("1")} : ${convert.toDouble("1")}</div>
+
+${echo.echo("Hello,World")}
+${echo2.echo("Hello,World")}

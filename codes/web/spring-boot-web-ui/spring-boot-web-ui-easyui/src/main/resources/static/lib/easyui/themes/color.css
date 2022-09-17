@@ -1,0 +1,253 @@
+.c1, .c1:hover, .c1 > .panel-header {
+  color: #FFFFFF;
+  border-color: #3C8B3C;
+  background: #4CAE4C;
+  background: -webkit-linear-gradient(top, #4CAE4C 0, #449D44 100%);
+  background: -moz-linear-gradient(top, #4CAE4C 0, #449D44 100%);
+  background: -o-linear-gradient(top, #4CAE4C 0, #449D44 100%);
+  background: linear-gradient(to bottom, #4CAE4C 0, #449D44 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4CAE4C, endColorstr=#449D44, GradientType=0);
+}
+
+a.c1:hover {
+  background: #449D44;
+  filter: none;
+}
+
+.c1 > .panel-body {
+  border-color: #3C8B3C;
+}
+
+.c1 > .dialog-toolbar, .c1 > .dialog-button {
+  border-left-color: #3C8B3C;
+  border-right-color: #3C8B3C;
+}
+
+.c1 > .dialog-button {
+  border-bottom-color: #3C8B3C;
+}
+
+.c2, .c2:hover, .c2 > .panel-header {
+  color: #FFFFFF;
+  border-color: #5F5F5F;
+  background: #747474;
+  background: -webkit-linear-gradient(top, #747474 0, #676767 100%);
+  background: -moz-linear-gradient(top, #747474 0, #676767 100%);
+  background: -o-linear-gradient(top, #747474 0, #676767 100%);
+  background: linear-gradient(to bottom, #747474 0, #676767 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#747474, endColorstr=#676767, GradientType=0);
+}
+
+a.c2:hover {
+  background: #676767;
+  filter: none;
+}
+
+.c2 > .panel-body {
+  border-color: #5F5F5F;
+}
+
+.c2 > .dialog-toolbar, .c2 > .dialog-button {
+  border-left-color: #5F5F5F;
+  border-right-color: #5F5F5F;
+}
+
+.c2 > .dialog-button {
+  border-bottom-color: #5F5F5F;
+}
+
+.c3, .c3:hover, .c3 > .panel-header {
+  color: #333333;
+  border-color: #FF8080;
+  background: #FFB3B3;
+  background: -webkit-linear-gradient(top, #FFB3B3 0, #FF9999 100%);
+  background: -moz-linear-gradient(top, #FFB3B3 0, #FF9999 100%);
+  background: -o-linear-gradient(top, #FFB3B3 0, #FF9999 100%);
+  background: linear-gradient(to bottom, #FFB3B3 0, #FF9999 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFB3B3, endColorstr=#FF9999, GradientType=0);
+}
+
+a.c3:hover {
+  background: #FF9999;
+  filter: none;
+}
+
+.c3 > .panel-body {
+  border-color: #FF8080;
+}
+
+.c3 > .dialog-toolbar, .c3 > .dialog-button {
+  border-left-color: #FF8080;
+  border-right-color: #FF8080;
+}
+
+.c3 > .dialog-button {
+  border-bottom-color: #FF8080;
+}
+
+.c4, .c4:hover, .c4 > .panel-header {
+  color: #333333;
+  border-color: #52D689;
+  background: #B8EECF;
+  background: -webkit-linear-gradient(top, #B8EECF 0, #A4E9C1 100%);
+  background: -moz-linear-gradient(top, #B8EECF 0, #A4E9C1 100%);
+  background: -o-linear-gradient(top, #B8EECF 0, #A4E9C1 100%);
+  background: linear-gradient(to bottom, #B8EECF 0, #A4E9C1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B8EECF, endColorstr=#A4E9C1, GradientType=0);
+}
+
+a.c4:hover {
+  background: #A4E9C1;
+  filter: none;
+}
+
+.c4 > .panel-body {
+  border-color: #52D689;
+}
+
+.c4 > .dialog-toolbar, .c4 > .dialog-button {
+  border-left-color: #52D689;
+  border-right-color: #52D689;
+}
+
+.c4 > .dialog-button {
+  border-bottom-color: #52D689;
+}
+
+.c5, .c5:hover, .c5 > .panel-header {
+  color: #FFFFFF;
+  border-color: #B52B27;
+  background: #D84F4B;
+  background: -webkit-linear-gradient(top, #D84F4B 0, #C9302C 100%);
+  background: -moz-linear-gradient(top, #D84F4B 0, #C9302C 100%);
+  background: -o-linear-gradient(top, #D84F4B 0, #C9302C 100%);
+  background: linear-gradient(to bottom, #D84F4B 0, #C9302C 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#D84F4B, endColorstr=#C9302C, GradientType=0);
+}
+
+a.c5:hover {
+  background: #C9302C;
+  filter: none;
+}
+
+.c5 > .panel-body {
+  border-color: #B52B27;
+}
+
+.c5 > .dialog-toolbar, .c5 > .dialog-button {
+  border-left-color: #B52B27;
+  border-right-color: #B52B27;
+}
+
+.c5 > .dialog-button {
+  border-bottom-color: #B52B27;
+}
+
+.c6, .c6:hover, .c6 > .panel-header {
+  color: #FFFFFF;
+  border-color: #1F637B;
+  background: #2984A4;
+  background: -webkit-linear-gradient(top, #2984A4 0, #24748F 100%);
+  background: -moz-linear-gradient(top, #2984A4 0, #24748F 100%);
+  background: -o-linear-gradient(top, #2984A4 0, #24748F 100%);
+  background: linear-gradient(to bottom, #2984A4 0, #24748F 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#2984A4, endColorstr=#24748F, GradientType=0);
+}
+
+a.c6:hover {
+  background: #24748F;
+  filter: none;
+}
+
+.c6 > .panel-body {
+  border-color: #1F637B;
+}
+
+.c6 > .dialog-toolbar, .c6 > .dialog-button {
+  border-left-color: #1F637B;
+  border-right-color: #1F637B;
+}
+
+.c6 > .dialog-button {
+  border-bottom-color: #1F637B;
+}
+
+.c7, .c7:hover, .c7 > .panel-header {
+  color: #333333;
+  border-color: #E68900;
+  background: #FFAB2E;
+  background: -webkit-linear-gradient(top, #FFAB2E 0, #FF9900 100%);
+  background: -moz-linear-gradient(top, #FFAB2E 0, #FF9900 100%);
+  background: -o-linear-gradient(top, #FFAB2E 0, #FF9900 100%);
+  background: linear-gradient(to bottom, #FFAB2E 0, #FF9900 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFAB2E, endColorstr=#FF9900, GradientType=0);
+}
+
+a.c7:hover {
+  background: #FF9900;
+  filter: none;
+}
+
+.c7 > .panel-body {
+  border-color: #E68900;
+}
+
+.c7 > .dialog-toolbar, .c7 > .dialog-button {
+  border-left-color: #E68900;
+  border-right-color: #E68900;
+}
+
+.c7 > .dialog-button {
+  border-bottom-color: #E68900;
+}
+
+.c8, .c8:hover, .c8 > .panel-header {
+  color: #FFFFFF;
+  border-color: #4B72A4;
+  background: #698CBA;
+  background: -webkit-linear-gradient(top, #698CBA 0, #577EB2 100%);
+  background: -moz-linear-gradient(top, #698CBA 0, #577EB2 100%);
+  background: -o-linear-gradient(top, #698CBA 0, #577EB2 100%);
+  background: linear-gradient(to bottom, #698CBA 0, #577EB2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#698CBA, endColorstr=#577EB2, GradientType=0);
+}
+
+a.c8:hover {
+  background: #577EB2;
+  filter: none;
+}
+
+.c8 > .panel-body {
+  border-color: #4B72A4;
+}
+
+.c8 > .dialog-toolbar, .c8 > .dialog-button {
+  border-left-color: #4B72A4;
+  border-right-color: #4B72A4;
+}
+
+.c8 > .dialog-button {
+  border-bottom-color: #4B72A4;
+}
+
+.c1 > .panel-header > .panel-title, .c2 > .panel-header > .panel-title,
+.c5 > .panel-header > .panel-title, .c6 > .panel-header > .panel-title, .c8 > .panel-header > .panel-title {
+  color: #FFFFFF;
+}
+
+.c-plain {
+  border-color: #FFFFFF;
+  background: #FFFFFF;
+}
+
+.c-plain > .panel-header,
+.c-plain > .panel-body,
+.c-plain > .dialog-button,
+.c-plain > .dialog-toolbar {
+  border-color: transparent;
+  background: transparent;
+}
+
+.c-raised {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}

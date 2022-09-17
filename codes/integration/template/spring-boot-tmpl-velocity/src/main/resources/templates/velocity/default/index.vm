@@ -1,0 +1,23 @@
+<div>Demos:</div>
+<div>
+  <ul>
+    <li>
+      <div><a href="/layout">Layout Demo</a></div>
+    </li>
+    <li>
+      <div><a href="/layout2">Layout 2 Demo</a></div>
+    </li>
+    <li>
+      <div><a href="/layout3">Layout3 Demo</a></div>
+    </li>
+    <li>
+      <div><a href="/tools">Tools Demo</a></div>
+    </li>
+    <li>
+      <div><a href="/mail/send">试着发送一封 Velocity 模板邮件</a></div>
+    </li>
+  </ul>
+
+  中文测试
+</div>
+

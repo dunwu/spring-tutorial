@@ -1,0 +1,133 @@
+<html id="sixapart-standard" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta content="Movable Type 5.2.2" name="generator" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../css/theme.css" rel="stylesheet" type="text/css" />
+  <canvas
+    height="990"
+    id="c_n9"
+    style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.5;"
+    width="1920"
+  ></canvas>
+  <title>Dunwu - Dunwu's Website</title>
+</head>
+
+<body
+  class="mt-main-index one-column"
+  id="classic-website"
+>
+<div id="container">
+  <div id="container-inner">
+    <div id="header">
+      <div id="header-inner">
+        <div id="header-content">
+          <h1>登录</h1>
+        </div>
+      </div>
+    </div>
+
+    <div id="content">
+      <div id="content-inner">
+        <div id="alpha">
+          <div id="alpha-inner">
+            <div id="page-alpha" style="margin-bottom:2em;">
+              <form action="/login" class="my-login-validation" method="POST" novalidate="">
+                <div class="form-group">
+                  <label for="username">用户名</label>
+                  <input
+                    autofocus
+                    class="form-control"
+                    id="username"
+                    name="username"
+                    placeholder="用户名"
+                    required
+                    type="text"
+                    value=""
+                  />
+                  <div class="invalid-feedback">
+                    用户名无效
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="password"
+                  >密码
+                    <a class="float-right" href="forgot.html">
+                      忘记密码？
+                    </a>
+                  </label>
+                  <input
+                    class="form-control"
+                    data-eye
+                    id="password"
+                    name="password"
+                    placeholder="密码"
+                    required
+                    type="password"
+                  />
+                  <div class="invalid-feedback">
+                    Password is required
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="checkCode">验证码</label>
+                  <div class="form-control-checkcode-group">
+                    <input
+                      autofocus
+                      class="form-control-checkcode"
+                      id="checkCode"
+                      name="checkCode"
+                      placeholder="验证码"
+                      required
+                      type="text"
+                      value=""
+                    />
+                    <img alt="checkcode" src="http://localhost:8080/login/checkcode" width="100px">
+                  </div>
+
+                  <div class="invalid-feedback">
+                    验证码错误
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="custom-checkbox custom-control">
+                    <input class="custom-control-input" id="remember" name="remember" type="checkbox" />
+                    <label class="custom-control-label" for="remember">记住我</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <button class="btn btn-primary btn-block" type="submit">
+                    登录
+                  </button>
+                </div>
+                <div class="mt-4 text-center">没有账户吗？ <a href="register.html">注册新账户</a></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div id="footer-inner">
+        <div id="footer-content">
+          <p>
+            <a href="mailto:forbreak@163.com">📧 Mail</a> | <a href="https://github.com/dunwu">@Dunwu</a>
+            <span id="img_placer">
+							<span></span>
+						</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://files.cnblogs.com/files/jingmoxukong/canvas-nest.min.js"></script>
+</body>
+</html>

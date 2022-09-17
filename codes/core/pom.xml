@@ -18,5 +18,13 @@
         <module>spring-core-ioc</module>
         <module>spring-core-resouces</module>
         <module>spring-core-validation-convert</module>
+
+        <module>spring-boot-aop</module>
+        <module>spring-boot-async</module>
+        <module>spring-boot-banner</module>
+        <module>spring-boot-bean</module>
+        <module>spring-boot-property</module>
+        <module>spring-boot-profile</module>
+        <module>spring-boot-actuator</module>
     </modules>
 </project>

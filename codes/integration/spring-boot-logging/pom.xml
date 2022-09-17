@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.2.1.RELEASE</version>
+  </parent>
+
+  <groupId>io.github.dunwu.springboot</groupId>
+  <artifactId>spring-boot-logging</artifactId>
+  <name>spring-boot-logging</name>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>logback</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-test</artifactId>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+
+    <profile>
+      <id>log4j2</id>
+      <dependencies>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-web</artifactId>
+          <exclusions>
+            <exclusion>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-logging</artifactId>
+            </exclusion>
+          </exclusions>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-aop</artifactId>
+          <exclusions>
+            <exclusion>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-logging</artifactId>
+            </exclusion>
+          </exclusions>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-test</artifactId>
+          <scope>test</scope>
+          <exclusions>
+            <exclusion>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-logging</artifactId>
+            </exclusion>
+          </exclusions>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+      </dependencies>
+    </profile>
+
+    <profile>
+      <id>log4j</id>
+      <dependencies>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-web</artifactId>
+          <exclusions>
+            <exclusion>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-logging</artifactId>
+            </exclusion>
+          </exclusions>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-aop</artifactId>
+          <exclusions>
+            <exclusion>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-logging</artifactId>
+            </exclusion>
+          </exclusions>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-test</artifactId>
+          <scope>test</scope>
+          <exclusions>
+            <exclusion>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-logging</artifactId>
+            </exclusion>
+          </exclusions>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-log4j12</artifactId>
+        </dependency>
+        <!--				<dependency>-->
+        <!--					<groupId>log4j</groupId>-->
+        <!--					<artifactId>log4j</artifactId>-->
+        <!--					<version>1.2.17</version>-->
+        <!--				</dependency>-->
+      </dependencies>
+    </profile>
+  </profiles>
+</project>

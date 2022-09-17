@@ -1,0 +1,27 @@
+# @see https://docs.spring.io/spring-boot/docs/2.1.1.RELEASE/reference/htmlsingle/#boot-features-external-config
+io:
+  github:
+    dunwu:
+      profile: yaml
+      address:
+        - China
+        - Jiangsu
+        - Nanjing
+      author: forbreak
+      id: 1
+      info-map[career]: programmer
+      info-map[education]: master's degree
+      interest-list:
+        - Music
+        - Game
+        - Reading
+      mail: ${io.github.dunwu.author}@163.com
+      sex: MALE
+      date: 2019-11-20 12:00:00
+      skill-map[JavaCore]:
+        - JDK
+        - JVM
+      skill-map[JavaWeb]:
+        - Spring
+        - Spring Boot
+        - MyBatis
