@@ -11,7 +11,7 @@ tags:
   - 框架
   - Spring
   - SpringBoot
-  - 数据
+  - 数据库
 permalink: /pages/b912d1/
 hidden: true
 ---
@@ -22,7 +22,8 @@ hidden: true
 
 ## 📖 内容
 
-- [SpringBoot 之 JDBC](21.SpringBoot之JDBC.md)
+- [Spring 连接数据源](01.Spring连接数据源.md)
+- [Spring 之 JDBC](02.Spring之JDBC.md)
 - [SpringBoot 之 Mybatis](22.SpringBoot之Mybatis.md)
 - [SpringBoot 之 MongoDB](23.SpringBoot之MongoDB.md)
 - [SpringBoot 之 Elasticsearch](24.SpringBoot之Elasticsearch.md)

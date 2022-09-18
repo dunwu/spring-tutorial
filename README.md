@@ -41,7 +41,8 @@
 
 ### 数据
 
-- [SpringBoot 之 JDBC](docs/01.Java/13.框架/01.Spring/02.Spring数据/21.SpringBoot之JDBC.md)
+- [Spring 连接数据源](docs/01.Java/13.框架/01.Spring/02.Spring数据/01.Spring连接数据源.md)
+- [Spring 之 JDBC](docs/01.Java/13.框架/01.Spring/02.Spring数据/02.Spring之JDBC.md)
 - [SpringBoot 之 Mybatis](docs/01.Java/13.框架/01.Spring/02.Spring数据/22.SpringBoot之Mybatis.md)
 - [SpringBoot 之 MongoDB](docs/01.Java/13.框架/01.Spring/02.Spring数据/23.SpringBoot之MongoDB.md)
 - [SpringBoot 之 Elasticsearch](docs/01.Java/13.框架/01.Spring/02.Spring数据/24.SpringBoot之Elasticsearch.md)
@@ -111,8 +112,9 @@ $ mvn jetty:run -Dmaven.test.skip=true
 
 - **官方**
   - [Spring 官网](https://spring.io/)
-  - [Spring Framework 官方文档](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/index.html)
   - [Spring Github](https://github.com/spring-projects/spring-framework)
+  - [Spring Framework 官方文档](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/index.html)
+  - [Spring Boot 官方文档](https://docs.spring.io/spring-boot/docs/current/reference/html/data.html)
 - **书籍**
   - [《 Spring 实战（第 5 版）》](https://book.douban.com/subject/34949443/)
 - **教程**
