@@ -24,43 +24,50 @@
 
 ### 综合
 
-- [Spring 概述](docs/summary/Spring概述.md)
-- [Spring 常见面试题](docs/summary/Spring常见面试题.md)
+- [Spring 概述](docs/01.Java/13.框架/01.Spring/00.Spring综合/01.Spring概述.md)
+- [SpringBoot 知识图谱](docs/01.Java/13.框架/01.Spring/00.Spring综合/21.SpringBoot知识图谱.md)
+- [SpringBoot 基本原理](docs/01.Java/13.框架/01.Spring/00.Spring综合/22.SpringBoot基本原理.md)
+- [Spring 常见面试题](docs/01.Java/13.框架/01.Spring/00.Spring综合/99.Spring常见面试题.md)
 
 ### 核心
 
-> [核心](docs/core/README.md) 章节主要针对：Spring 框架的核心技术。如；IOC 依赖注入、AOP、数据绑定等。
-
-- [Spring 依赖注入（IoC）](docs/core/Spring依赖注入.md)
-- [Spring 生命周期](docs/core/Spring生命周期.md)
-- [Spring AOP](docs/core/spring-aop.md)
-- [Spring 资源管理](docs/core/Spring资源管理.md)
+- [Spring 依赖注入（IoC）](docs/01.Java/13.框架/01.Spring/01.Spring核心/01.Spring依赖注入.md)
+- [Spring Bean 生命周期](docs/01.Java/13.框架/01.Spring/01.Spring核心/02.Spring生命周期.md)
+- [Spring AOP](docs/01.Java/13.框架/01.Spring/01.Spring核心/03.SpringAop.md)
+- [Spring 资源管理](docs/01.Java/13.框架/01.Spring/01.Spring核心/04.Spring资源管理.md)
+- [SpringBoot 教程之快速入门](docs/01.Java/13.框架/01.Spring/01.Spring核心/21.SpringBoot之快速入门.md)
+- [SpringBoot 之属性加载](docs/01.Java/13.框架/01.Spring/01.Spring核心/22.SpringBoot之属性加载.md)
+- [SpringBoot 之 Profile](docs/01.Java/13.框架/01.Spring/01.Spring核心/23.SpringBoot之Profile.md)
 
 ### 数据
 
-> [数据](docs/data/README.md) 章节主要针对：Spring 在数据库领域的应用。如：JDBC、ORM、事务等。
-
-- [Spring 的数据访问策略](docs/data/Spring数据访问策略.md)
-- [Spring 中使用 JDBC 访问数据](docs/data/Spring中使用JDBC访问数据.md)
-- [Spring 事务管理](docs/data/Spring事务管理.md)
+- [SpringBoot 之 JDBC](docs/01.Java/13.框架/01.Spring/02.Spring数据/21.SpringBoot之JDBC.md)
+- [SpringBoot 之 Mybatis](docs/01.Java/13.框架/01.Spring/02.Spring数据/22.SpringBoot之Mybatis.md)
+- [SpringBoot 之 MongoDB](docs/01.Java/13.框架/01.Spring/02.Spring数据/23.SpringBoot之MongoDB.md)
+- [SpringBoot 之 Elasticsearch](docs/01.Java/13.框架/01.Spring/02.Spring数据/24.SpringBoot之Elasticsearch.md)
 
 ### Web
 
-> [Web](docs/web/README.md) 章节主要针对：Spring 在 web 领域的应用。如：Spring MVC、WebSocket 等。
+- [Spring WebMvc](docs/01.Java/13.框架/01.Spring/03.SpringWeb/01.SpringWebMvc.md)
+- [SpringBoot 之应用 EasyUI](docs/01.Java/13.框架/01.Spring/03.SpringWeb/21.SpringBoot之应用EasyUI.md)
 
-- [Spring MVC](docs/web/spring-mvc.md)
+### IO
+
+- [SpringBoot 之异步请求](docs/01.Java/13.框架/01.Spring/04.SpringIO/01.SpringBoot之异步请求.md)
+- [SpringBoot 之 Json](docs/01.Java/13.框架/01.Spring/04.SpringIO/02.SpringBoot之Json.md)
+- [SpringBoot 之邮件](docs/01.Java/13.框架/01.Spring/04.SpringIO/03.SpringBoot之邮件.md)
 
 ### 集成
 
-> [集成](docs/integration/README.md) 章节主要针对：Spring 与第三方框架、库集成。如：Cache、Scheduling、JMS、JMX 等。
-
-- [Spring 集成 Dubbo](docs/integration/Spring集成Dubbo.md)
-- [Spring 集成缓存中间件](docs/integration/Spring集成缓存中间件.md)
-- [Spring 集成定时任务中间件](docs/integration/Spring集成定时任务中间件.md)
+- [Spring 集成缓存中间件](docs/01.Java/13.框架/01.Spring/05.Spring集成/01.Spring集成缓存.md)
+- [Spring 集成定时任务中间件](docs/01.Java/13.框架/01.Spring/05.Spring集成/02.Spring集成调度器.md)
+- [Spring 集成 Dubbo](docs/01.Java/13.框架/01.Spring/05.Spring集成/03.Spring集成Dubbo.md)
 
 ### 其他
 
-- [Spring4 升级踩雷指南](docs/others/spring4-upgrade.md)
+- [Spring4 升级](docs/01.Java/13.框架/01.Spring/99.Spring其他/01.Spring4升级.md)
+- [SpringBoot 之 banner](docs/01.Java/13.框架/01.Spring/99.Spring其他/21.SpringBoot之banner.md)
+- [SpringBoot 之 Actuator](docs/01.Java/13.框架/01.Spring/99.Spring其他/22.SpringBoot之Actuator.md)
 
 ## 💻 示例
 
@@ -105,7 +112,7 @@ $ mvn jetty:run -Dmaven.test.skip=true
 - **官方**
   - [Spring 官网](https://spring.io/)
   - [Spring Framework 官方文档](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/index.html)
-  - [spring-framework Github](https://github.com/spring-projects/spring-framework)
+  - [Spring Github](https://github.com/spring-projects/spring-framework)
 - **书籍**
   - [《 Spring 实战（第 5 版）》](https://book.douban.com/subject/34949443/)
 - **教程**
@@ -115,20 +122,4 @@ $ mvn jetty:run -Dmaven.test.skip=true
 
 ## 🚪 传送
 
-◾ 🏠 [SPRING-TUTORIAL 首页](https://github.com/dunwu/spring-tutorial) ◾ 🎯 [我的博客](https://github.com/dunwu/blog) ◾
-
-> 你可能会感兴趣：
-
-- [Java 教程](https://github.com/dunwu/java-tutorial) 📚
-- [JavaCore 教程](https://dunwu.github.io/javacore/) 📚
-- [JavaTech 教程](https://dunwu.github.io/javatech/) 📚
-- [Spring 教程](https://dunwu.github.io/spring-tutorial/) 📚
-- [Spring Boot 教程](https://dunwu.github.io/spring-boot-tutorial/) 📚
-- [数据库教程](https://dunwu.github.io/db-tutorial/) 📚
-- [数据结构和算法教程](https://dunwu.github.io/algorithm-tutorial/) 📚
-- [Linux 教程](https://dunwu.github.io/linux-tutorial/) 📚
-- [Nginx 教程](https://github.com/dunwu/nginx-tutorial/) 📚
-
-## License
-
-本博客所有文章除特别声明外，均采用 [![License: CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议。
+◾ 💧 [钝悟的 IT 知识图谱](https://dunwu.github.io/waterdrop/) ◾ 🎯 [钝悟的博客](https://dunwu.github.io/blog/) ◾
