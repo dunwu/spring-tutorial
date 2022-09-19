@@ -1,54 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>io.github.dunwu.spring</groupId>
-        <artifactId>spring-parent</artifactId>
-        <version>1.0.0</version>
-        <relativePath>../parent/pom.xml</relativePath>
-    </parent>
+  <parent>
+    <groupId>io.github.dunwu.spring</groupId>
+    <artifactId>spring-parent</artifactId>
+    <version>1.0.0</version>
+    <relativePath>../parent/pom.xml</relativePath>
+  </parent>
 
-    <artifactId>spring-data</artifactId>
-    <packaging>pom</packaging>
+  <artifactId>spring-data</artifactId>
+  <packaging>pom</packaging>
 
-    <modules>
+  <modules>
 
-        <!--SPRING 项目-->
-        <module>spring-data-jdbc</module>
-        <module>spring-data-mybatis</module>
-        <module>spring-data-nosql</module>
+    <!--SPRING 项目-->
+    <module>spring-data-jdbc</module>
+    <module>spring-data-nosql</module>
 
-        <!--SPRING BOOT 项目-->
-        <!--JDBC-->
-        <module>spring-boot-data-jdbc</module>
-        <module>spring-boot-data-jdbc-multi-datasource</module>
-        <module>spring-boot-data-druid</module>
-        <module>spring-boot-data-tx</module>
+    <!--SPRING BOOT 项目-->
+    <!--JDBC-->
+    <module>spring-boot-data-jdbc</module>
+    <module>spring-boot-data-jdbc-multi-datasource</module>
+    <module>spring-boot-data-druid</module>
+    <module>spring-boot-data-tx</module>
 
-        <!--ORM-->
-        <module>spring-boot-data-jpa</module>
-        <module>spring-boot-data-mybatis-plus</module>
-        <module>spring-boot-data-mybatis-multi-datasource</module>
+    <!--ORM-->
+    <module>spring-boot-data-jpa</module>
+    <module>mybatis/spring-data-mybatis</module>
+    <module>mybatis/spring-boot-data-mybatis-mapper</module>
+    <module>mybatis/spring-boot-data-mybatis-plus</module>
+    <module>mybatis/spring-boot-data-mybatis-multi-datasource</module>
 
-        <!--中间件-->
-        <module>spring-boot-data-mybatis-sharding</module>
-        <module>spring-boot-data-flyway</module>
+    <!--中间件-->
+    <module>spring-boot-data-flyway</module>
+    <module>spring-boot-data-mybatis-sharding</module>
 
-        <!--CACHE-->
-        <module>spring-boot-data-cache</module>
-        <module>spring-boot-data-cache-j2cache</module>
-        <module>spring-boot-data-cache-jetcache</module>
+    <!--CACHE-->
+    <module>spring-boot-data-cache</module>
+    <module>spring-boot-data-cache-j2cache</module>
+    <module>spring-boot-data-cache-jetcache</module>
 
-        <!--NOSQL-->
-        <module>spring-boot-data-redis</module>
-        <module>spring-boot-data-redis-cluster</module>
-        <module>spring-boot-data-mongodb</module>
-        <module>spring-boot-data-elasticsearch</module>
-        <module>spring-boot-data-elasticsearch-jest</module>
+    <!--NOSQL-->
+    <module>spring-boot-data-redis</module>
+    <module>spring-boot-data-redis-cluster</module>
+    <module>spring-boot-data-mongodb</module>
+    <module>spring-boot-data-elasticsearch</module>
+    <module>spring-boot-data-elasticsearch-jest</module>
 
-        <!--存储-->
-        <module>spring-boot-data-hdfs</module>
-    </modules>
+    <!--存储-->
+    <module>spring-boot-data-hdfs</module>
+  </modules>
 </project>
