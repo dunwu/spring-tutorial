@@ -26,7 +26,7 @@ CREATE DATABASE spring_boot_tutorial;
 > 注意：Mysql8 和 Mysql5 客户端驱动的驱动类是不同的。
 
 ```properties
-spring.datasource.url = jdbc:mysql://localhost:3306/spring_boot_tutorial?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+spring.datasource.url = jdbc:mysql://localhost:3306/spring_tutorial?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
 spring.datasource.driver-class-name = com.mysql.cj.jdbc.Driver
 spring.datasource.username = root
 spring.datasource.password = root
@@ -51,7 +51,7 @@ java -jar spring-boot-data-jdbc-1.0.0.jar
 
 ```java
 ... ...
-18:11:21.895 [main] [INFO ] i.g.d.s.SpringBootDataJdbcApplication$$EnhancerBySpringCGLIB$$605038c2.printDataSourceInfo - DataSource Url: jdbc:mysql://localhost:3306/spring_boot_tutorial?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+18:11:21.895 [main] [INFO ] i.g.d.s.SpringBootDataJdbcApplication$$EnhancerBySpringCGLIB$$605038c2.printDataSourceInfo - DataSource Url: jdbc:mysql://localhost:3306/spring_tutorial?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
 18:11:21.896 [main] [INFO ] i.g.d.s.SpringBootDataJdbcApplication$$EnhancerBySpringCGLIB$$605038c2.run - Connect to datasource success.
 18:11:21.960 [main] [INFO ] i.g.d.s.SpringBootDataJdbcApplication$$EnhancerBySpringCGLIB$$605038c2.lambda$run$0 - User(id=1, username=admin, password=$2a$10$Y9uV9YjFuNlATDGz5MeTZeuo8LbebbpP6jRgtZYQcgiCZRlf8rJYG, email=admin@xxx.com)
 18:11:21.960 [main] [INFO ] i.g.d.s.SpringBootDataJdbcApplication$$EnhancerBySpringCGLIB$$605038c2.lambda$run$0 - User(id=2, username=user, password=$2a$10$Y9uV9YjFuNlATDGz5MeTZeuo8LbebbpP6jRgtZYQcgiCZRlf8rJYG, email=user@xxx.com)
@@ -64,8 +64,4 @@ java -jar spring-boot-data-jdbc-1.0.0.jar
 
 ### 单元测试
 
-执行 `SpringBootDataJdbcTest` 可以更直观的看到 JDBC 模式下的 CRUD 操作。
-
-## 扩展学习
-
-- [Mysql 教程](https://dunwu.github.io/db-tutorial/#/sql/mysql/README)
+执行 `SpringBootDataJdbcTest` 可以更直观的看到 JDBC 模式下的 CRUD 操作。``

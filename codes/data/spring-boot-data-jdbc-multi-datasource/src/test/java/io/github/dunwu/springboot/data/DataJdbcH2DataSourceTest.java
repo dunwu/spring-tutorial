@@ -1,15 +1,13 @@
 package io.github.dunwu.springboot.data;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +15,6 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Rollback
-@RunWith(SpringRunner.class)
 @SpringBootTest(classes = { SpringBootDataJdbcMultiDataSourceApplication.class })
 public class DataJdbcH2DataSourceTest {
 
@@ -27,7 +24,7 @@ public class DataJdbcH2DataSourceTest {
     @Qualifier("h2UserDao")
     private UserDao userDAO;
 
-    @Before
+    @BeforeEach
     public void before() {
         userDAO.recreateTable();
     }

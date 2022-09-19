@@ -14,10 +14,10 @@
     <packaging>jar</packaging>
 
     <dependencies>
-        <dependency>
-            <groupId>io.github.dunwu.spring</groupId>
-            <artifactId>spring-common</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.github.dunwu.spring</groupId>-->
+<!--            <artifactId>spring-common</artifactId>-->
+<!--        </dependency>-->
 
         <!-- db start -->
         <dependency>
@@ -83,5 +83,9 @@
         </dependency>
         <!-- spring data end -->
 
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+      </dependency>
     </dependencies>
 </project>

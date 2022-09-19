@@ -26,7 +26,7 @@ CREATE DATABASE spring_boot_tutorial;
 > 注意：Mysql8 和 Mysql5 客户端驱动的驱动类是不同的。
 
 ```properties
-spring.datasource.url = jdbc:mysql://localhost:3306/spring_boot_tutorial?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+spring.datasource.url = jdbc:mysql://localhost:3306/spring_tutorial?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
 spring.datasource.driver-class-name = com.mysql.cj.jdbc.Driver
 spring.datasource.username = root
 spring.datasource.password = root
@@ -51,7 +51,7 @@ java -jar spring-boot-data-jpa-1.0.0.jar
 
 ```java
 ... ...
-20:22:33.401 [main] [INFO ] i.g.d.s.SpringBootDataJpaApplication$$EnhancerBySpringCGLIB$$a0a040c6.printDataSourceInfo - DataSource Url: jdbc:mysql://localhost:3306/spring_boot_tutorial?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
+20:22:33.401 [main] [INFO ] i.g.d.s.SpringBootDataJpaApplication$$EnhancerBySpringCGLIB$$a0a040c6.printDataSourceInfo - DataSource Url: jdbc:mysql://localhost:3306/spring_tutorial?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
 20:22:33.402 [main] [INFO ] i.g.d.s.SpringBootDataJpaApplication$$EnhancerBySpringCGLIB$$a0a040c6.run - Connect to datasource success.
   ... ...
 ```

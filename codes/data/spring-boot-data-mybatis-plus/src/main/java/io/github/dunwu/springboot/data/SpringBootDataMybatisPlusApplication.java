@@ -32,7 +32,7 @@ public class SpringBootDataMybatisPlusApplication implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
 
         if (userMapper == null) {
             log.error("连接数据源失败");

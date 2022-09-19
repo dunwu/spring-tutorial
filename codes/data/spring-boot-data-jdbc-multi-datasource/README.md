@@ -31,7 +31,7 @@ CREATE DATABASE spring_boot_tutorial;
 
 ```properties
 # datasource01
-spring.datasource.mysql.jdbc-url = jdbc:mysql://localhost:3306/spring_boot_tutorial?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
+spring.datasource.mysql.jdbc-url = jdbc:mysql://localhost:3306/spring_tutorial?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
 spring.datasource.mysql.driver-class-name = com.mysql.cj.jdbc.Driver
 spring.datasource.mysql.username = root
 spring.datasource.mysql.password = root
