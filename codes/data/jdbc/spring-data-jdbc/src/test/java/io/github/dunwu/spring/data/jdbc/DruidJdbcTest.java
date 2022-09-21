@@ -1,27 +1,34 @@
-package io.github.dunwu.springboot.data;
+package io.github.dunwu.spring.data.jdbc;
 
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 测试 Druid JDBC 操作
+ *
+ * @author Zhang Peng
+ */
 @Slf4j
-@Rollback
-@SpringBootTest(classes = { DataJdbcMultiDataSourceApplication.class })
-public class DataJdbcMysqlDataSourceTests {
+@SuppressWarnings("all")
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = { "classpath:data/spring-druid.xml" })
+public class DruidJdbcTest {
 
     @Autowired
     @Qualifier("mysqlUserDao")
     private UserDao userDao;
 
-    @BeforeEach
+    @Before
     public void before() {
         userDao.recreateTable();
     }

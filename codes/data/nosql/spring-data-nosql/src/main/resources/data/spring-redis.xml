@@ -17,5 +17,5 @@
     <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate"
         p:connection-factory-ref="connectionFactory" />
 
-    <bean id="userDao" class="io.github.dunwu.spring.data.db.redis.UserDao" />
+    <bean id="userDao" class="io.github.dunwu.spring.data.redis.UserDao" />
 </beans>
