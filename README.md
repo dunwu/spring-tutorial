@@ -42,7 +42,8 @@
 ### 数据
 
 - [Spring 连接数据源](docs/01.Java/13.框架/01.Spring/02.Spring数据/01.Spring连接数据源.md)
-- [Spring 之 JDBC](docs/01.Java/13.框架/01.Spring/02.Spring数据/02.Spring之JDBC.md)
+- [Spring 和数据库连接池](docs/01.Java/13.框架/01.Spring/02.Spring数据/02.Spring和数据库连接池.md)
+- [Spring 之 JDBC](docs/01.Java/13.框架/01.Spring/02.Spring数据/03.Spring之JDBC.md)
 - [SpringBoot 之 Mybatis](docs/01.Java/13.框架/01.Spring/02.Spring数据/22.SpringBoot之Mybatis.md)
 - [SpringBoot 之 MongoDB](docs/01.Java/13.框架/01.Spring/02.Spring数据/23.SpringBoot之MongoDB.md)
 - [SpringBoot 之 Elasticsearch](docs/01.Java/13.框架/01.Spring/02.Spring数据/24.SpringBoot之Elasticsearch.md)
