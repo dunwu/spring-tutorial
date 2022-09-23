@@ -73,41 +73,19 @@
 
 ## 💻 示例
 
-### 重要库版本
+### 数据示例
 
-| 库或工具             | 版本            | 说明                                                                                                                                                                                                          |
-| -------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Spring Framework     | 5.0.2.RELEASE   |                                                                                                                                                                                                               |
-| JDK                  | 1.8+            | Spring5 开始，要求 JDK8+                                                                                                                                                                                      |
-| Maven                | 3.5.2           | 本项目使用 [maven](https://maven.apache.org/index.html) 作为构建工具。                                                                                                                                        |
-| jetty-maven-plugin   | 9.4.8.v20171121 | [Jetty](http://www.eclipse.org/jetty/) 可作为 web 服务器和 servlet 容器。此插件可以免部署启动 web app。                                                                                                       |
-| tomcat7-maven-plugin | 2.2             | [Tomcat](https://tomcat.apache.org/index.html) 可作为 web 服务器和 servlet 容器。此插件可以免部署启动 web app。Tomcat 早已经发布 Tomcat8，但是 maven 插件 一直没有提供 tomcat8 的支持（最后更新为 2013 年）。 |
-
-### 启动
-
-为了便于展示示例，所有 war 包形式的项目都可以使用 maven 插件快速启动嵌入式服务器，支持 Tomcat 和 Jetty 两种方式。
-
-Tomcat7 嵌入式服务器启动：
-
-```bash
-$ mvn tomcat7:run -Dmaven.test.skip=true
-```
-
-Jetty 嵌入式服务器启动：
-
-```bash
-$ mvn jetty:run -Dmaven.test.skip=true
-```
-
-如果子项目中无特殊说明，默认端口配置为 8089，当然，你可以自己指定。
-
-启动成功后，访问 http://localhost:8089 。
-
-### 规范
-
-- 推荐使用 [IDEA](https://www.jetbrains.com/idea/) 作为 IDE
-- 代码规范使用 [阿里巴巴 Java 开发手册](https://github.com/alibaba/p3c)
-  - 如果你使用 IDEA 作为你的 IDE，推荐安装 Alibaba-Java-Coding-Guidelines 插件来做静态检查。
+| 项目类型   | 示例                                                         | 说明                                                         |
+| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Spring     | [spring-data-jdbc](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/jdbc/spring-data-jdbc) | Spring 以 JDBC 方式访问关系型数据库，通过 `JdbcTemplate` 执行基本的 CRUD 操作。 |
+| SpringBoot | [spring-boot-data-jdbc](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/jdbc/spring-boot-data-jdbc) | Spring Boot 以 JDBC 方式访问关系型数据库，通过 `JdbcTemplate` 执行基本的 CRUD 操作。 |
+| SpringBoot | [spring-boot-data-jdbc-druid](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/jdbc/spring-boot-data-jdbc-druid) | SpringBoot 使用 Druid 作为数据库连接池。                     |
+| SpringBoot | [spring-boot-data-jdbc-multi-datasource](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/jdbc/spring-boot-data-jdbc-multi-datasource) | SpringBoot 连接多数据源。本示例中同时连接 Mysql 和 H2。      |
+| Spring     |                                                              |                                                              |
+|            |                                                              |                                                              |
+|            |                                                              |                                                              |
+|            |                                                              |                                                              |
+|            |                                                              |                                                              |
 
 ## 📚 资料
 
