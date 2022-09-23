@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.util.Objects;
+import javax.persistence.*;
 
 /**
  * 用户实体，对应 user 表
@@ -13,14 +14,18 @@ import java.util.Objects;
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @since 2019-11-18
  */
+@Entity
 @Data
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(unique = true)
     private String name;
 
     private Integer age;

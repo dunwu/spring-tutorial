@@ -1,5 +1,7 @@
 package io.github.dunwu.springboot.data;
 
+import cn.hutool.json.JSONUtil;
+import com.alibaba.druid.pool.DruidDataSource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -36,6 +38,10 @@ public class DataJdbcDruidApplication implements CommandLineRunner {
         Connection connection;
         if (dataSource != null) {
             connection = dataSource.getConnection();
+            if (dataSource instanceof DruidDataSource) {
+                DruidDataSource druidDataSource = (DruidDataSource) dataSource;
+                log.info("Druid 连接配置：\n{}", JSONUtil.toJsonPrettyStr(druidDataSource));
+            }
         } else {
             log.error("连接数据源失败！");
             return;

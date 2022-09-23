@@ -15,20 +15,19 @@
 
   <modules>
 
-    <module>spring-boot-data-tx</module>
-    <module>spring-boot-data-jpa</module>
-
     <!--JDBC-->
     <module>jdbc/spring-data-jdbc</module>
     <module>jdbc/spring-boot-data-jdbc</module>
     <module>jdbc/spring-boot-data-jdbc-multi-datasource</module>
     <module>jdbc/spring-boot-data-jdbc-druid</module>
+    <module>jdbc/spring-boot-data-jdbc-tx</module>
 
     <!--ORM-->
-    <module>mybatis/spring-data-mybatis</module>
-    <module>mybatis/spring-boot-data-mybatis-mapper</module>
-    <module>mybatis/spring-boot-data-mybatis-plus</module>
-    <module>mybatis/spring-boot-data-mybatis-multi-datasource</module>
+    <module>orm/spring-data-mybatis</module>
+    <module>orm/spring-boot-data-jpa</module>
+    <module>orm/spring-boot-data-mybatis-mapper</module>
+    <module>orm/spring-boot-data-mybatis-plus</module>
+    <module>orm/spring-boot-data-mybatis-multi-datasource</module>
 
     <!--缓存-->
     <module>cache/spring-boot-data-cache</module>

@@ -1,12 +1,6 @@
 # spring-boot-data-jdbc
 
-> **本项目演示 Spring Boot + JDBC 访问关系型数据库，执行基本的 CRUD 操作。**
->
-> **_本项目只适用于 Mysql_**，其他关系型数据库可能会因为 SQL 语法问题不能访问。
->
-> 依赖环境：
->
-> ![mysql](https://img.shields.io/badge/mysql-8.0-blue) ![jdk](https://img.shields.io/badge/jdk-1.8.0__181-blue) ![maven](https://img.shields.io/badge/maven-v3.6.0-blue)
+[//]: # '> **本项目演示 Spring Boot 以 JDBC 方式访问关系型数据库，通过 `JdbcTemplate` 执行基本的 CRUD 操作。**'
 
 ## 使用说明
 

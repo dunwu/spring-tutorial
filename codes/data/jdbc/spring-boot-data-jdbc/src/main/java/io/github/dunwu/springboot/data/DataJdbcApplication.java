@@ -1,5 +1,7 @@
 package io.github.dunwu.springboot.data;
 
+import cn.hutool.json.JSONUtil;
+import com.zaxxer.hikari.HikariDataSource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -36,6 +38,10 @@ public class DataJdbcApplication implements CommandLineRunner {
         Connection connection;
         if (dataSource != null) {
             connection = dataSource.getConnection();
+            if (dataSource instanceof HikariDataSource) {
+                HikariDataSource hikariDataSource = (HikariDataSource) dataSource;
+                log.info("Hikari 连接配置：\n{}", JSONUtil.toJsonPrettyStr(hikariDataSource));
+            }
         } else {
             log.error("连接数据源失败！");
             return;
