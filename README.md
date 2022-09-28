@@ -75,17 +75,17 @@
 
 ### 数据示例
 
-| 项目类型   | 示例                                                         | 说明                                                         |
-| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Spring     | [spring-data-jdbc](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/jdbc/spring-data-jdbc) | Spring 以 JDBC 方式访问关系型数据库，通过 `JdbcTemplate` 执行基本的 CRUD 操作。 |
-| SpringBoot | [spring-boot-data-jdbc](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/jdbc/spring-boot-data-jdbc) | Spring Boot 以 JDBC 方式访问关系型数据库，通过 `JdbcTemplate` 执行基本的 CRUD 操作。 |
-| SpringBoot | [spring-boot-data-jdbc-druid](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/jdbc/spring-boot-data-jdbc-druid) | SpringBoot 使用 Druid 作为数据库连接池。                     |
-| SpringBoot | [spring-boot-data-jdbc-multi-datasource](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/jdbc/spring-boot-data-jdbc-multi-datasource) | SpringBoot 连接多数据源。本示例中同时连接 Mysql 和 H2。      |
-| Spring     |                                                              |                                                              |
-|            |                                                              |                                                              |
-|            |                                                              |                                                              |
-|            |                                                              |                                                              |
-|            |                                                              |                                                              |
+| 项目类型   | 示例                                                                                                                                                  | 说明                                                                                 |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Spring     | [spring-data-jdbc](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/jdbc/spring-data-jdbc)                                             | Spring 以 JDBC 方式访问关系型数据库，通过 `JdbcTemplate` 执行基本的 CRUD 操作。      |
+| SpringBoot | [spring-boot-data-jdbc](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/jdbc/spring-boot-data-jdbc)                                   | Spring Boot 以 JDBC 方式访问关系型数据库，通过 `JdbcTemplate` 执行基本的 CRUD 操作。 |
+| SpringBoot | [spring-boot-data-jdbc-druid](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/jdbc/spring-boot-data-jdbc-druid)                       | SpringBoot 使用 Druid 作为数据库连接池。                                             |
+| SpringBoot | [spring-boot-data-jdbc-multi-datasource](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/jdbc/spring-boot-data-jdbc-multi-datasource) | SpringBoot 连接多数据源。本示例中同时连接 Mysql 和 H2。                              |
+| SpringBoot |                                                                                                                                                       |                                                                                      |
+|            |                                                                                                                                                       |                                                                                      |
+|            |                                                                                                                                                       |                                                                                      |
+|            |                                                                                                                                                       |                                                                                      |
+|            |                                                                                                                                                       |                                                                                      |
 
 ## 📚 资料
 
