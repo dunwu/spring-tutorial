@@ -1,7 +1,7 @@
 package io.github.dunwu.springboot;
 
-import io.github.dunwu.springboot.service.GitHubLookupService;
-import io.github.dunwu.springboot.service.User;
+import io.github.dunwu.springboot.data.elasticsearch.service.GitHubLookupService;
+import io.github.dunwu.springboot.data.elasticsearch.service.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;

@@ -4,7 +4,7 @@ import io.github.dunwu.springboot.bean.TestBean;
 import io.github.dunwu.springboot.data.config.J2CacheAutoConfiguration;
 import io.github.dunwu.springboot.data.config.J2CacheSpringCacheAutoConfiguration;
 import io.github.dunwu.springboot.data.config.J2CacheSpringRedisAutoConfiguration;
-import io.github.dunwu.springboot.service.TestService;
+import io.github.dunwu.springboot.data.elasticsearch.service.TestService;
 import net.oschina.j2cache.CacheChannel;
 import net.oschina.j2cache.CacheObject;
 import org.junit.Test;

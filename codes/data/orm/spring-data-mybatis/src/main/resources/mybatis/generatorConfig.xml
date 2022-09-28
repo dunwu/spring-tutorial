@@ -15,7 +15,7 @@
     <!-- 数据库驱动-->
     <!--  <classPathEntry location="C:\Program Files (x86)\MySQL\Connector.J 5.1\mysql-connector-java-5.1.39-bin.jar" />-->
     <classPathEntry
-        location="C:\Users\11123558\.m2\repository\mysql\mysql-connector-java\8.0.22\mysql-connector-java-8.0.22.jar" />
+        location="C:\Users\<a href="mailto:forbreak@163.com">Zhang Peng</a>\.m2\repository\mysql\mysql-connector-java\8.0.22\mysql-connector-java-8.0.22.jar" />
 
     <!--需要注意context的子标签的顺序，如果顺序不对会抛出异常-->
     <context id="DB2Tables" targetRuntime="MyBatis3Simple" defaultModelType="flat">

@@ -20,7 +20,6 @@
     <module>jdbc/spring-boot-data-jdbc</module>
     <module>jdbc/spring-boot-data-jdbc-multi-datasource</module>
     <module>jdbc/spring-boot-data-jdbc-druid</module>
-    <module>jdbc/spring-boot-data-jdbc-tx</module>
 
     <!--ORM-->
     <module>orm/spring-data-mybatis</module>

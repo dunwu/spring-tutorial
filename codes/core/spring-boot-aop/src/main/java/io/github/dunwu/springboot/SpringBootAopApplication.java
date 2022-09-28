@@ -1,6 +1,6 @@
 package io.github.dunwu.springboot;
 
-import io.github.dunwu.springboot.service.WelcomeService;
+import io.github.dunwu.springboot.data.elasticsearch.service.WelcomeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
