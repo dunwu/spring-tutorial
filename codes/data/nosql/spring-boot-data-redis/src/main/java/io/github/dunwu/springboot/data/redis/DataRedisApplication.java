@@ -1,15 +1,18 @@
 package io.github.dunwu.springboot.data.redis;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import io.github.dunwu.tool.util.RandomUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
+@Slf4j
 @SpringBootApplication
 public class DataRedisApplication implements CommandLineRunner {
-
-    private static final Logger log = LoggerFactory.getLogger(DataRedisApplication.class);
 
     private final UserService userService;
 
@@ -22,18 +25,39 @@ public class DataRedisApplication implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) {
+    public void run(String... args) throws InterruptedException {
 
-        User user = new User(1L, "张三", 21, "南京", "xxx@163.com");
-        User user2 = new User(2L, "李四", 28, "上海", "xxx@163.com");
-        userService.setUser(user);
-        userService.setUser(user2);
+        Map<String, User> map = new HashMap<>();
+        for (long i = 0L; i < 1000L; i++) {
+            User user = new User(i, RandomUtil.randomChineseName(),
+                RandomUtil.randomInt(1, 100),
+                RandomUtil.randomEnum(Location.class).name(),
+                RandomUtil.randomEmail());
+            map.put(String.valueOf(i), user);
+        }
+        userService.batchSetUsers(map);
 
-        User result = userService.getUser(user.getId());
-        User result2 = userService.getUser(user2.getId());
+        for (int i = 0; i < 100; i++) {
+            long id = RandomUtil.randomLong(0, 1000);
+            User user = userService.getUser(id);
+            log.info("user-{}: {}", id, user.toString());
+        }
 
-        log.info(result.toString());
-        log.info(result2.toString());
+        while (true) {
+            long id = RandomUtil.randomLong(0, 1000);
+            User user = userService.getUser(id);
+            log.info("user-{}: {}", id, user.toString());
+            TimeUnit.SECONDS.sleep(5);
+        }
+    }
+
+    enum Location {
+        Nanjing,
+        Beijing,
+        Shanghai,
+        Hangzhou,
+        Guangzhou,
+        Shenzhen
     }
 
 }

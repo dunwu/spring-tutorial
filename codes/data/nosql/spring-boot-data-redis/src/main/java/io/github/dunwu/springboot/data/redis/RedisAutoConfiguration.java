@@ -39,9 +39,9 @@ public class RedisAutoConfiguration {
 
         // 指定要序列化的域，field,get和set,以及修饰符范围，ANY是都有包括private和public
         objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
-        // 指定序列化输入的类型，类必须是非final修饰的，final修饰的类，比如String,Integer等会跑出异常
-        objectMapper.activateDefaultTyping(new DefaultBaseTypeLimitingValidator(),
-            ObjectMapper.DefaultTyping.NON_FINAL);
+        // // 指定序列化输入的类型，类必须是非final修饰的，final修饰的类，比如String,Integer等会跑出异常
+        // objectMapper.activateDefaultTyping(new DefaultBaseTypeLimitingValidator(),
+        //     ObjectMapper.DefaultTyping.NON_FINAL);
 
         // 使用Jackson2JsonRedisSerializer来序列化和反序列化redis的value值（默认使用JDK的序列化方式）
         Jackson2JsonRedisSerializer<Object> serializer = new Jackson2JsonRedisSerializer<>(Object.class);

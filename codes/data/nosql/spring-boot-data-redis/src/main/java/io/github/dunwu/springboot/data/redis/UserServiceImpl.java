@@ -1,5 +1,6 @@
 package io.github.dunwu.springboot.data.redis;
 
+import cn.hutool.core.bean.BeanUtil;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -14,15 +15,16 @@ public class UserServiceImpl implements UserService {
 
     public static final String DEFAULT_KEY = "spring-boot:user";
 
-    private final RedisTemplate redisTemplate;
+    private final RedisTemplate<String, Object> redisTemplate;
 
-    public UserServiceImpl(RedisTemplate redisTemplate) {
+    public UserServiceImpl(RedisTemplate<String, Object> redisTemplate) {
         this.redisTemplate = redisTemplate;
     }
 
     @Override
     public User getUser(Long id) {
-        return (User) redisTemplate.opsForHash().get(DEFAULT_KEY, id.toString());
+        Object obj = redisTemplate.opsForHash().get(DEFAULT_KEY, id.toString());
+        return BeanUtil.toBean(obj, User.class);
     }
 
     @Override
