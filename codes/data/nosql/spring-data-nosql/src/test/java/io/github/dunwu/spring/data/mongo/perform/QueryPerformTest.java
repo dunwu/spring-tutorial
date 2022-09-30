@@ -1,4 +1,4 @@
-package io.github.dunwu.springboot.data.mongo.perform;
+package io.github.dunwu.spring.data.mongo.perform;
 
 import com.mongodb.Block;
 import com.mongodb.client.FindIterable;

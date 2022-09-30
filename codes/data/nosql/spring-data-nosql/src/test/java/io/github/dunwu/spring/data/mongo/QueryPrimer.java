@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.github.dunwu.springboot.data.mongo;
+package io.github.dunwu.spring.data.mongo;
 
 import com.mongodb.Block;
 import com.mongodb.client.FindIterable;

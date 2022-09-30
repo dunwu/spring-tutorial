@@ -26,5 +26,6 @@
     </property>
   </bean>
 
-  <import resource="data/spring-redis.xml" />
+  <import resource="config/spring-redis.xml" />
+  <import resource="config/spring-elasticsearch.xml" />
 </beans>

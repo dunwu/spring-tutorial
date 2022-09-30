@@ -1,9 +1,5 @@
-/**
- * The Apache License 2.0 Copyright (c) 2016 Zhang Peng
- */
-package io.github.dunwu.springboot.data.redis;
+package io.github.dunwu.spring.data.redis;
 
-import io.github.dunwu.spring.data.redis.IUserDao;
 import io.github.dunwu.spring.data.redis.bean.UserDTO;
 import org.junit.Assert;
 import org.junit.Test;
@@ -20,7 +16,7 @@ import java.util.List;
  * @since 2017/4/12.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:data/spring-redis.xml" })
+@ContextConfiguration(locations = { "classpath:config/spring-redis.xml" })
 public class RedisTest {
 
     @Autowired

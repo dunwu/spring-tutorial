@@ -1,4 +1,4 @@
-package io.github.dunwu.springboot.data.mongo.perform;
+package io.github.dunwu.spring.data.mongo.perform;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
