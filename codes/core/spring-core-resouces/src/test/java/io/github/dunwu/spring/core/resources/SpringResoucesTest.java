@@ -1,7 +1,7 @@
 package io.github.dunwu.spring.core.resources;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
@@ -20,7 +20,7 @@ public class SpringResoucesTest {
     public void testClassPathXmlApplicationContext() {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("spring/spring-beans.xml");
         Person person = ctx.getBean("person_zhangsan", Person.class);
-        Assert.assertNotNull(person);
+        Assertions.assertNotNull(person);
         System.out.println(person);
         ((ClassPathXmlApplicationContext) ctx).close();
     }
@@ -30,10 +30,10 @@ public class SpringResoucesTest {
         ApplicationContext ctx = new ClassPathXmlApplicationContext(
             new String[] { "spring/spring-beans.xml", "spring/spring-beans2.xml" });
         Person zhangsan = ctx.getBean("person_zhangsan", Person.class);
-        Assert.assertNotNull(zhangsan);
+        Assertions.assertNotNull(zhangsan);
         System.out.println(zhangsan);
         Person lisi = ctx.getBean("person_lisi", Person.class);
-        Assert.assertNotNull(lisi);
+        Assertions.assertNotNull(lisi);
         System.out.println(lisi);
         ((ClassPathXmlApplicationContext) ctx).close();
     }
@@ -42,10 +42,10 @@ public class SpringResoucesTest {
     public void testClassPathXmlApplicationContext3() {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("spring/*.xml");
         Person zhangsan = ctx.getBean("person_zhangsan", Person.class);
-        Assert.assertNotNull(zhangsan);
+        Assertions.assertNotNull(zhangsan);
         System.out.println(zhangsan);
         Person lisi = ctx.getBean("person_lisi", Person.class);
-        Assert.assertNotNull(lisi);
+        Assertions.assertNotNull(lisi);
         System.out.println(lisi);
         ((ClassPathXmlApplicationContext) ctx).close();
     }
@@ -54,7 +54,7 @@ public class SpringResoucesTest {
     public void testFileSystemXmlApplicationContext() {
         ApplicationContext ctx = new FileSystemXmlApplicationContext("classpath:spring/spring-beans.xml");
         Person person = ctx.getBean("person_zhangsan", Person.class);
-        Assert.assertNotNull(person);
+        Assertions.assertNotNull(person);
         System.out.println(person);
         ((FileSystemXmlApplicationContext) ctx).close();
     }
@@ -63,7 +63,7 @@ public class SpringResoucesTest {
     public void testFileSystemXmlApplicationContext2() {
         ApplicationContext ctx = new FileSystemXmlApplicationContext("classpath*:*/*.xml");
         Person person = ctx.getBean("person_zhangsan", Person.class);
-        Assert.assertNotNull(person);
+        Assertions.assertNotNull(person);
         System.out.println(person);
         ((FileSystemXmlApplicationContext) ctx).close();
     }
@@ -72,7 +72,7 @@ public class SpringResoucesTest {
     public void testGetResource() {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("spring/*.xml");
         Resource resource = ctx.getResource("spring/spring-beans.xml");
-        Assert.assertNotNull(resource);
+        Assertions.assertNotNull(resource);
         ((ClassPathXmlApplicationContext) ctx).close();
     }
 

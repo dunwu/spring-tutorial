@@ -16,9 +16,9 @@
  */
 package io.github.dunwu.spring.core.bean.inject;
 
+import io.github.dunwu.spring.core.bean.entity.person.User;
 import io.github.dunwu.spring.core.bean.inject.annotation.InjectedUser;
 import io.github.dunwu.spring.core.bean.inject.annotation.MyAutowired;
-import io.github.dunwu.spring.core.bean.entity.person.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -94,7 +94,7 @@ public class AnnotationDependencyInjectionResolutionDemo {
 
         XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(applicationContext);
 
-        String xmlResourcePath = "classpath:/META-INF/dependency-lookup-context.xml";
+        String xmlResourcePath = "classpath:/META-INF/ioc/DependencyInject.xml";
         // 加载 XML 资源，解析并且生成 BeanDefinition
         beanDefinitionReader.loadBeanDefinitions(xmlResourcePath);
 

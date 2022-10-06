@@ -20,7 +20,6 @@ package io.github.dunwu.spring.core.bean.entity.person;
  * 公司类
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
- * @since
  */
 public class Company {
 

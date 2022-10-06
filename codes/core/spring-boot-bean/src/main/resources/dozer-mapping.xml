@@ -10,8 +10,8 @@
   </configuration>
 
   <mapping>
-    <class-a>io.github.dunwu.springboot.bean.UserDO</class-a>
-    <class-b>io.github.dunwu.springboot.bean.UserDTO</class-b>
+    <class-a>io.github.dunwu.springboot.core.bean.User</class-a>
+    <class-b>io.github.dunwu.springboot.core.bean.UserDto</class-b>
     <field>
       <a>info</a>
       <b>infoDTO.content</b>

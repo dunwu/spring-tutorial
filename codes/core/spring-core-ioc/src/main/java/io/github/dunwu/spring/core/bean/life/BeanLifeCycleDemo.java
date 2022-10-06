@@ -5,28 +5,12 @@ import org.springframework.beans.factory.*;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
 
 /**
  * Spring Bean 一个较为完整的生命周期流程走向
  */
-@Component
 public class BeanLifeCycleDemo {
-
-    public static void main(String[] args) {
-        // 注解配置方式
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(BeanLifeCycleDemo.class);
-        System.out.println("BeanLifeCycleDemo 示例结束");
-
-        // XML 配置方式
-        // String path = "META-INF/bean/life/BeanLifeCycleDemo.xml";
-        // ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(path);
-
-        // 关闭应用上下文容器
-        context.close();
-    }
 
     @Bean(initMethod = "initMethod", destroyMethod = "destroyMethod")
     public BeanLifecycle beanLifecycle() {

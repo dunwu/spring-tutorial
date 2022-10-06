@@ -6,7 +6,6 @@ import io.github.dunwu.spring.core.bean.annotation.Super;
  * 超级用户
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
- * @since
  */
 @Super
 public class SuperUser extends User {

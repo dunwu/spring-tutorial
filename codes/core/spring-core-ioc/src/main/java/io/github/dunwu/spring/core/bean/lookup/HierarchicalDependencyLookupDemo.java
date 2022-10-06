@@ -86,7 +86,7 @@ public class HierarchicalDependencyLookupDemo {
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
         // XML 配置文件 ClassPath 路径
-        String location = "classpath:/META-INF/dependency-lookup-context.xml";
+        String location = "classpath:/META-INF/ioc/DependencyInject.xml";
         // 加载配置
         reader.loadBeanDefinitions(location);
         return beanFactory;

@@ -1,7 +1,7 @@
 package io.github.dunwu.spring.core.convert;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.util.Date;
 
@@ -16,7 +16,7 @@ public class SpringConvertTest {
         String str = "2019-06-14 12:00:00";
         StringToDateConverter converter = new StringToDateConverter();
         Date date = converter.convert(str);
-        Assert.assertNotNull(date);
+        Assertions.assertNotNull(date);
         System.out.println("Date: " + date);
     }
 
