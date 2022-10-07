@@ -14,14 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.dunwu.spring.core.bean.inject.annotation;
-
-import org.springframework.beans.factory.annotation.Autowired;
+package io.github.dunwu.spring.core.ioc.inject.annotation;
 
 import java.lang.annotation.*;
 
 /**
- * 自定义注解（元标注 @Autowired）
+ * 自定义依赖注入注解
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
  * @since
@@ -29,13 +27,5 @@ import java.lang.annotation.*;
 @Target({ ElementType.CONSTRUCTOR, ElementType.METHOD, ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Autowired
-public @interface MyAutowired {
-
-    /**
-     * Declares whether the annotated dependency is required.
-     * <p>Defaults to {@code true}.
-     */
-    boolean required() default true;
-
+public @interface InjectedUser {
 }

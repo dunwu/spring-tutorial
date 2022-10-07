@@ -1,20 +1,4 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-package io.github.dunwu.spring.core.bean.inject;
+package io.github.dunwu.spring.core.ioc.inject;
 
 import io.github.dunwu.spring.core.bean.entity.person.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,27 +9,37 @@ import org.springframework.context.annotation.Bean;
 import javax.annotation.Resource;
 
 /**
- * 基于 Java 注解的依赖字段注入示例
+ * 基于 Java 注解的依赖方法注入示例
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
- * @since
  */
-public class AnnotationDependencyFieldInjectionDemo {
+public class AnnotationDependencyMethodInjectionDemo {
+
+    UserHolder userHolder;
+
+    UserHolder userHolder2;
 
     @Autowired
-    private
-    //    static // @Autowired 会忽略掉静态字段
-        UserHolder userHolder;
+    public void init1(UserHolder userHolder) {
+        this.userHolder = userHolder;
+    }
 
     @Resource
-    private UserHolder userHolder2;
+    public void init2(UserHolder userHolder2) {
+        this.userHolder2 = userHolder2;
+    }
+
+    @Bean
+    public UserHolder userHolder(User user) {
+        return new UserHolder(user);
+    }
 
     public static void main(String[] args) {
 
         // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类） -> Spring Bean
-        applicationContext.register(AnnotationDependencyFieldInjectionDemo.class);
+        applicationContext.register(AnnotationDependencyMethodInjectionDemo.class);
 
         XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(applicationContext);
 
@@ -57,8 +51,8 @@ public class AnnotationDependencyFieldInjectionDemo {
         applicationContext.refresh();
 
         // 依赖查找 AnnotationDependencyFieldInjectionDemo Bean
-        AnnotationDependencyFieldInjectionDemo demo =
-            applicationContext.getBean(AnnotationDependencyFieldInjectionDemo.class);
+        AnnotationDependencyMethodInjectionDemo demo =
+            applicationContext.getBean(AnnotationDependencyMethodInjectionDemo.class);
 
         // @Autowired 字段关联
         UserHolder userHolder = demo.userHolder;
@@ -69,11 +63,6 @@ public class AnnotationDependencyFieldInjectionDemo {
 
         // 显示地关闭 Spring 应用上下文
         applicationContext.close();
-    }
-
-    @Bean
-    public UserHolder userHolder(User user) {
-        return new UserHolder(user);
     }
 
 }

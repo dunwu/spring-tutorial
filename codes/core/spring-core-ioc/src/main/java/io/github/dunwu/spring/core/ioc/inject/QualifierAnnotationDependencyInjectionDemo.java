@@ -1,23 +1,7 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-package io.github.dunwu.spring.core.bean.inject;
+package io.github.dunwu.spring.core.ioc.inject;
 
 import io.github.dunwu.spring.core.bean.entity.person.User;
-import io.github.dunwu.spring.core.bean.inject.annotation.UserGroup;
+import io.github.dunwu.spring.core.ioc.inject.annotation.UserGroup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
@@ -32,34 +16,33 @@ import java.util.Collection;
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
  * @see Qualifier
- * @since
  */
 @Configuration
 public class QualifierAnnotationDependencyInjectionDemo {
 
     @Autowired
-    private User user; // superUser -> primary =true
+    User user; // superUser -> primary =true
 
     @Autowired
     @Qualifier("user") // 指定 Bean 名称或 ID
-    private User namedUser;
+    User namedUser;
 
-    // 整体应用上下文存在 4 个 User 类型的 Bean:
+    // 整体应用上下文存在 5 个 User 类型的 Bean:
     // superUser
     // user
     // user1 -> @Qualifier
     // user2 -> @Qualifier
 
     @Autowired
-    private Collection<User> allUsers; // 2 Beans = user + superUser
+    Collection<User> allUsers; // 2 Beans = user + superUser
 
     @Autowired
     @Qualifier
-    private Collection<User> qualifiedUsers; // 2 Beans = user1 + user2 -> 4 Beans = user1 + user2 + user3 + user4
+    Collection<User> qualifiedUsers; // 3 Beans = user2 user3 user4
 
     @Autowired
     @UserGroup
-    private Collection<User> groupedUsers; // 2 Beans = user3 + user4
+    Collection<User> groupedUsers; // 2 Beans = user3 + user4
 
     @Bean
     @Qualifier // 进行逻辑分组
@@ -85,7 +68,7 @@ public class QualifierAnnotationDependencyInjectionDemo {
         return createUser(10L);
     }
 
-    private static User createUser(Long id) {
+    static User createUser(Long id) {
         User user = new User();
         user.setId(id);
         return user;

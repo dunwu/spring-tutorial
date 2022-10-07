@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.dunwu.spring.core.bean.inject.annotation;
+package io.github.dunwu.spring.core.ioc.inject.annotation;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 

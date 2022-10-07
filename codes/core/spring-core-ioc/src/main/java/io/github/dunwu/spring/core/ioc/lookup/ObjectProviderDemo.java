@@ -1,20 +1,4 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-package io.github.dunwu.spring.core.bean.lookup;
+package io.github.dunwu.spring.core.ioc.lookup;
 
 import io.github.dunwu.spring.core.bean.entity.person.User;
 import org.springframework.beans.factory.ObjectProvider;
@@ -23,10 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 
 /**
- * 通过 {@link ObjectProvider} 进行依赖查找
+ * 通过 {@link ObjectProvider} 进行延迟依赖查找
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
- * @since
  */
 public class ObjectProviderDemo { // @Configuration 是非必须注解
 
@@ -46,20 +29,25 @@ public class ObjectProviderDemo { // @Configuration 是非必须注解
         applicationContext.close();
     }
 
-    private static void lookupByStreamOps(AnnotationConfigApplicationContext applicationContext) {
+    static void lookupByStreamOps(AnnotationConfigApplicationContext applicationContext) {
         ObjectProvider<String> objectProvider = applicationContext.getBeanProvider(String.class);
-        //        Iterable<String> stringIterable = objectProvider;
-        //        for (String string : stringIterable) {
-        //            System.out.println(string);
-        //        }
+        Iterable<String> stringIterable = objectProvider;
+        for (String string : stringIterable) {
+            System.out.println(string);
+        }
         // Stream -> Method reference
         objectProvider.stream().forEach(System.out::println);
     }
 
-    private static void lookupIfAvailable(AnnotationConfigApplicationContext applicationContext) {
+    static void lookupIfAvailable(AnnotationConfigApplicationContext applicationContext) {
         ObjectProvider<User> userObjectProvider = applicationContext.getBeanProvider(User.class);
         User user = userObjectProvider.getIfAvailable(User::createUser);
         System.out.println("当前 User 对象：" + user);
+    }
+
+    static void lookupByObjectProvider(AnnotationConfigApplicationContext applicationContext) {
+        ObjectProvider<String> objectProvider = applicationContext.getBeanProvider(String.class);
+        System.out.println(objectProvider.getObject());
     }
 
     @Bean
@@ -71,11 +59,6 @@ public class ObjectProviderDemo { // @Configuration 是非必须注解
     @Bean
     public String message() {
         return "Message";
-    }
-
-    private static void lookupByObjectProvider(AnnotationConfigApplicationContext applicationContext) {
-        ObjectProvider<String> objectProvider = applicationContext.getBeanProvider(String.class);
-        System.out.println(objectProvider.getObject());
     }
 
 }

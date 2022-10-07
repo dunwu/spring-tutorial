@@ -1,4 +1,4 @@
-package io.github.dunwu.spring.core.bean.inject;
+package io.github.dunwu.spring.core.ioc.inject;
 
 import io.github.dunwu.spring.core.bean.entity.person.User;
 

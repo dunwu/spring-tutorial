@@ -10,7 +10,7 @@
     <!-- 导入其他 Spring XML 配置文件 -->
     <import resource="classpath:/META-INF/ioc/DependencyLookup.xml" />
 
-    <bean id="userRepository" class="io.github.dunwu.spring.core.bean.inject.UserRepository">
+    <bean id="userRepository" class="io.github.dunwu.spring.core.ioc.inject.UserRepository">
         <!-- 手动配置 -->
         <property name="users">
             <util:list>
@@ -20,7 +20,7 @@
         </property>
     </bean>
 
-    <bean id="userRepository2" class="io.github.dunwu.spring.core.bean.inject.UserRepository"
+    <bean id="userRepository2" class="io.github.dunwu.spring.core.ioc.inject.UserRepository"
         autowire="byType">
     </bean>
 </beans>

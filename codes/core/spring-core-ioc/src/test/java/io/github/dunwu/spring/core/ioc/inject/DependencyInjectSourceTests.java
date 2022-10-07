@@ -1,15 +1,12 @@
-package io.github.dunwu.spring.core.ioc;
+package io.github.dunwu.spring.core.ioc.inject;
 
-import io.github.dunwu.spring.core.bean.inject.UserRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.env.Environment;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * 测试依赖注入来源
@@ -18,7 +15,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
  * @since 2022-10-05
  */
 @DisplayName("测试依赖注入来源")
-@ExtendWith(SpringExtension.class)
 public class DependencyInjectSourceTests {
 
     @Test

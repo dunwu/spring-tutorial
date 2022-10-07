@@ -1,20 +1,4 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-package io.github.dunwu.spring.core.bean.inject;
+package io.github.dunwu.spring.core.ioc.inject;
 
 import io.github.dunwu.spring.core.bean.entity.person.User;
 import org.springframework.beans.factory.ObjectFactory;
@@ -32,20 +16,19 @@ import java.util.Set;
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
  * @see Qualifier
- * @since
  */
 @Configuration
 public class LazyAnnotationDependencyInjectionDemo {
 
     @Autowired
     @Qualifier("user")
-    private User user; // 实时注入
+    User user; // 实时注入
 
     @Autowired
-    private ObjectProvider<User> userObjectProvider; // 延迟注入
+    ObjectProvider<User> userObjectProvider; // 延迟注入
 
     @Autowired
-    private ObjectFactory<Set<User>> usersObjectFactory;
+    ObjectFactory<Set<User>> usersObjectFactory;
 
     public static void main(String[] args) {
 
@@ -54,11 +37,9 @@ public class LazyAnnotationDependencyInjectionDemo {
         // 注册 Configuration Class（配置类） -> Spring Bean
         applicationContext.register(LazyAnnotationDependencyInjectionDemo.class);
 
-        XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(applicationContext);
-
-        String xmlResourcePath = "classpath:/META-INF/ioc/DependencyInject.xml";
         // 加载 XML 资源，解析并且生成 BeanDefinition
-        beanDefinitionReader.loadBeanDefinitions(xmlResourcePath);
+        XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(applicationContext);
+        beanDefinitionReader.loadBeanDefinitions("classpath:/META-INF/ioc/DependencyInject.xml");
 
         // 启动 Spring 应用上下文
         applicationContext.refresh();

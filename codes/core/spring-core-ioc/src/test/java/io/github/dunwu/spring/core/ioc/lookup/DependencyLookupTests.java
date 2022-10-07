@@ -1,4 +1,4 @@
-package io.github.dunwu.spring.core.ioc;
+package io.github.dunwu.spring.core.ioc.lookup;
 
 import io.github.dunwu.spring.core.bean.annotation.Super;
 import io.github.dunwu.spring.core.bean.entity.person.User;
