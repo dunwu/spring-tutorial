@@ -17,14 +17,16 @@ hidden: true
 
 # Spring 核心
 
-> 章节主要针对：Spring 框架的核心技术。如；IOC 依赖注入、AOP、数据绑定等。
+> 章节主要针对：Spring & Spring Boot 框架的核心技术。如；Spring Bean、IoC、依赖查找、依赖注入、AOP、数据绑定、资源管理等。
 
 ## 📖 内容
 
-- [Spring 依赖注入（IoC）](01.Spring依赖注入.md)
-- [Spring Bean 生命周期](02.Spring生命周期.md)
-- [Spring AOP](03.SpringAop.md)
-- [Spring 资源管理](04.Spring资源管理.md)
+- [Spring Bean](01.SpringBean.md)
+- [Spring IoC](02.SpringIoC.md)
+- [Spring 依赖查找](03.Spring依赖查找.md)
+- [Spring 依赖注入](04.Spring依赖注入.md)
+- [Spring AOP](10.SpringAop.md)
+- [Spring 资源管理](11.Spring资源管理.md)
 - [SpringBoot 教程之快速入门](21.SpringBoot之快速入门.md)
 - [SpringBoot 之属性加载](22.SpringBoot之属性加载.md)
 - [SpringBoot 之 Profile](23.SpringBoot之Profile.md)

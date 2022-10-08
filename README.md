@@ -15,7 +15,7 @@
 
 <h1 align="center">Spring Tutorial</h1>
 
-> **spring-tutorial** 是一个以简单范例来展示 spring 在 web 开发中的各种应用的教程。
+> 🍃 **`spring-tutorial`** 是一个 Spring & Spring Boot 教程。
 >
 > - 🔁 项目同步维护：[Github](https://github.com/dunwu/spring-tutorial/) | [Gitee](https://gitee.com/turnon/spring-tutorial/)
 > - 📖 电子书阅读：[Github Pages](https://dunwu.github.io/spring-tutorial/) | [Gitee Pages](http://turnon.gitee.io/spring-tutorial/)
@@ -27,14 +27,16 @@
 - [Spring 概述](docs/01.Java/13.框架/01.Spring/00.Spring综合/01.Spring概述.md)
 - [SpringBoot 知识图谱](docs/01.Java/13.框架/01.Spring/00.Spring综合/21.SpringBoot知识图谱.md)
 - [SpringBoot 基本原理](docs/01.Java/13.框架/01.Spring/00.Spring综合/22.SpringBoot基本原理.md)
-- [Spring 常见面试题](docs/01.Java/13.框架/01.Spring/00.Spring综合/99.Spring常见面试题.md)
+- [Spring 面试](docs/01.Java/13.框架/01.Spring/00.Spring综合/99.Spring面试.md)
 
 ### 核心
 
-- [Spring 依赖注入（IoC）](docs/01.Java/13.框架/01.Spring/01.Spring核心/01.Spring依赖注入.md)
-- [Spring Bean 生命周期](docs/01.Java/13.框架/01.Spring/01.Spring核心/02.Spring生命周期.md)
-- [Spring AOP](docs/01.Java/13.框架/01.Spring/01.Spring核心/03.SpringAop.md)
-- [Spring 资源管理](docs/01.Java/13.框架/01.Spring/01.Spring核心/04.Spring资源管理.md)
+- [Spring Bean](docs/01.Java/13.框架/01.Spring/01.Spring核心/01.SpringBean.md)
+- [Spring IoC](docs/01.Java/13.框架/01.Spring/01.Spring核心/02.SpringIoC.md)
+- [Spring 依赖查找](docs/01.Java/13.框架/01.Spring/01.Spring核心/03.Spring依赖查找.md)
+- [Spring 依赖注入](docs/01.Java/13.框架/01.Spring/01.Spring核心/04.Spring依赖注入.md)
+- [Spring AOP](docs/01.Java/13.框架/01.Spring/01.Spring核心/10.SpringAop.md)
+- [Spring 资源管理](docs/01.Java/13.框架/01.Spring/01.Spring核心/11.Spring资源管理.md)
 - [SpringBoot 教程之快速入门](docs/01.Java/13.框架/01.Spring/01.Spring核心/21.SpringBoot之快速入门.md)
 - [SpringBoot 之属性加载](docs/01.Java/13.框架/01.Spring/01.Spring核心/22.SpringBoot之属性加载.md)
 - [SpringBoot 之 Profile](docs/01.Java/13.框架/01.Spring/01.Spring核心/23.SpringBoot之Profile.md)
@@ -72,6 +74,17 @@
 - [SpringBoot 之 Actuator](docs/01.Java/13.框架/01.Spring/99.Spring其他/22.SpringBoot之Actuator.md)
 
 ## 💻 示例
+
+### 核心篇示例
+
+| 项目类型   | 示例                                                                                                         | 说明                                  |
+| ---------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------- |
+| Spring     | [spring-core-ioc](https://github.com/dunwu/spring-tutorial/tree/master/codes/core/spring-core-ioc)           | Spring IoC、Spring Bean 丰富示例      |
+| Spring     | [spring-core-aop](https://github.com/dunwu/spring-tutorial/tree/master/codes/core/spring-core-aop)           | Spring AOP 示例                       |
+| Spring     | [spring-core-resouces](https://github.com/dunwu/spring-tutorial/tree/master/codes/core/spring-core-resouces) | Spring 资源管理示例                   |
+| SpringBoot | [spring-boot-property](https://github.com/dunwu/spring-tutorial/tree/master/codes/core/spring-boot-property) | SpringBoot Property 加载示例          |
+| SpringBoot | [spring-boot-profile](https://github.com/dunwu/spring-tutorial/tree/master/codes/core/spring-boot-profile)   | SpringBoot Profile 示例               |
+| SpringBoot | [spring-boot-actuator](https://github.com/dunwu/spring-tutorial/tree/master/codes/core/spring-boot-actuator) | SpringBoot 内置监控模块 Actuator 示例 |
 
 ### 数据篇示例
 

@@ -2,7 +2,7 @@
 home: true
 heroImage: img/bg.gif
 heroText: SPRING-TUTORIAL
-tagline: ☕ spring-tutorial 是一个以简单范例来展示 spring 在 web 开发中的各种应用的教程。
+tagline: 🍃 spring-tutorial 是一个 Spring & Spring Boot 教程。
 bannerBg: none
 postList: none
 footer: CC-BY-SA-4.0 Licensed | Copyright © 2018-Now Dunwu
@@ -11,7 +11,7 @@ footer: CC-BY-SA-4.0 Licensed | Copyright © 2018-Now Dunwu
 ![license](https://badgen.net/github/license/dunwu/spring-tutorial)
 ![build](https://travis-ci.com/dunwu/spring-tutorial.svg?branch=master)
 
-> **`spring-tutorial`** 是一个以简单范例来展示 spring 在 web 开发中的各种应用的教程。
+> 🍃 spring-tutorial 是一个 Spring & Spring Boot 教程。
 >
 > - 🔁 项目同步维护：[Github](https://github.com/dunwu/spring-tutorial/) | [Gitee](https://gitee.com/turnon/spring-tutorial/)
 > - 📖 电子书阅读：[Github Pages](https://dunwu.github.io/spring-tutorial/) | [Gitee Pages](http://turnon.gitee.io/spring-tutorial/)
@@ -23,14 +23,16 @@ footer: CC-BY-SA-4.0 Licensed | Copyright © 2018-Now Dunwu
 - [Spring 概述](01.Java/13.框架/01.Spring/00.Spring综合/01.Spring概述.md)
 - [SpringBoot 知识图谱](01.Java/13.框架/01.Spring/00.Spring综合/21.SpringBoot知识图谱.md)
 - [SpringBoot 基本原理](01.Java/13.框架/01.Spring/00.Spring综合/22.SpringBoot基本原理.md)
-- [Spring 常见面试题](01.Java/13.框架/01.Spring/00.Spring综合/99.Spring常见面试题.md)
+- [Spring 面试](01.Java/13.框架/01.Spring/00.Spring综合/99.Spring面试.md)
 
 ### 核心
 
-- [Spring 依赖注入（IoC）](01.Java/13.框架/01.Spring/01.Spring核心/01.Spring依赖注入.md)
-- [Spring Bean 生命周期](01.Java/13.框架/01.Spring/01.Spring核心/02.Spring生命周期.md)
-- [Spring AOP](01.Java/13.框架/01.Spring/01.Spring核心/03.SpringAop.md)
-- [Spring 资源管理](01.Java/13.框架/01.Spring/01.Spring核心/04.Spring资源管理.md)
+- [Spring Bean](01.Java/13.框架/01.Spring/01.Spring核心/01.SpringBean.md)
+- [Spring IoC](01.Java/13.框架/01.Spring/01.Spring核心/02.SpringIoC.md)
+- [Spring 依赖查找](01.Java/13.框架/01.Spring/01.Spring核心/03.Spring依赖查找.md)
+- [Spring 依赖注入](01.Java/13.框架/01.Spring/01.Spring核心/04.Spring依赖注入.md)
+- [Spring AOP](01.Java/13.框架/01.Spring/01.Spring核心/10.SpringAop.md)
+- [Spring 资源管理](01.Java/13.框架/01.Spring/01.Spring核心/11.Spring资源管理.md)
 - [SpringBoot 教程之快速入门](01.Java/13.框架/01.Spring/01.Spring核心/21.SpringBoot之快速入门.md)
 - [SpringBoot 之属性加载](01.Java/13.框架/01.Spring/01.Spring核心/22.SpringBoot之属性加载.md)
 - [SpringBoot 之 Profile](01.Java/13.框架/01.Spring/01.Spring核心/23.SpringBoot之Profile.md)
@@ -38,8 +40,8 @@ footer: CC-BY-SA-4.0 Licensed | Copyright © 2018-Now Dunwu
 ### 数据
 
 - [Spring 连接数据源](01.Java/13.框架/01.Spring/02.Spring数据/01.Spring连接数据源.md)
-- [Spring 和数据库连接池](01.Java/13.框架/01.Spring/02.Spring数据/02.Spring和数据库连接池.md)
-- [Spring 之 JDBC](01.Java/13.框架/01.Spring/02.Spring数据/03.Spring之JDBC.md)
+- [Spring 之 JDBC](01.Java/13.框架/01.Spring/02.Spring数据/02.Spring之JDBC.md)
+- [Spring 之事务](01.Java/13.框架/01.Spring/02.Spring数据/03.Spring之事务.md)
 - [SpringBoot 之 Mybatis](01.Java/13.框架/01.Spring/02.Spring数据/22.SpringBoot之Mybatis.md)
 - [SpringBoot 之 MongoDB](01.Java/13.框架/01.Spring/02.Spring数据/23.SpringBoot之MongoDB.md)
 - [SpringBoot 之 Elasticsearch](01.Java/13.框架/01.Spring/02.Spring数据/24.SpringBoot之Elasticsearch.md)
@@ -69,48 +71,52 @@ footer: CC-BY-SA-4.0 Licensed | Copyright © 2018-Now Dunwu
 
 ## 💻 示例
 
-### 重要库版本
+### 数据篇示例
 
-| 库或工具             | 版本            | 说明                                                                                                                                                                                                          |
-| -------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Spring Framework     | 5.0.2.RELEASE   |                                                                                                                                                                                                               |
-| JDK                  | 1.8+            | Spring5 开始，要求 JDK8+                                                                                                                                                                                      |
-| Maven                | 3.5.2           | 本项目使用 [maven](https://maven.apache.org/index.html) 作为构建工具。                                                                                                                                        |
-| jetty-maven-plugin   | 9.4.8.v20171121 | [Jetty](http://www.eclipse.org/jetty/) 可作为 web 服务器和 servlet 容器。此插件可以免部署启动 web app。                                                                                                       |
-| tomcat7-maven-plugin | 2.2             | [Tomcat](https://tomcat.apache.org/index.html) 可作为 web 服务器和 servlet 容器。此插件可以免部署启动 web app。Tomcat 早已经发布 Tomcat8，但是 maven 插件 一直没有提供 tomcat8 的支持（最后更新为 2013 年）。 |
+（1）JDBC
 
-### 启动
+| 项目类型   | 示例                                                                                                                                                  | 说明                                                                                 |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Spring     | [spring-data-jdbc](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/jdbc/spring-data-jdbc)                                             | Spring 以 JDBC 方式访问关系型数据库，通过 `JdbcTemplate` 执行基本的 CRUD 操作。      |
+| SpringBoot | [spring-boot-data-jdbc](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/jdbc/spring-boot-data-jdbc)                                   | Spring Boot 以 JDBC 方式访问关系型数据库，通过 `JdbcTemplate` 执行基本的 CRUD 操作。 |
+| SpringBoot | [spring-boot-data-jdbc-druid](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/jdbc/spring-boot-data-jdbc-druid)                       | SpringBoot 使用 [Druid](https://github.com/alibaba/druid) 作为数据库连接池。         |
+| SpringBoot | [spring-boot-data-jdbc-multi-datasource](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/jdbc/spring-boot-data-jdbc-multi-datasource) | SpringBoot 连接多数据源。本示例中同时连接 Mysql 和 H2。                              |
 
-为了便于展示示例，所有 war 包形式的项目都可以使用 maven 插件快速启动嵌入式服务器，支持 Tomcat 和 Jetty 两种方式。
+（2）ORM
 
-Tomcat7 嵌入式服务器启动：
+| 项目类型   | 示例                                                                                                                                                       | 说明                                                                                                                                                                                                         |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Spring     | [spring-data-mybatis](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/orm/spring-data-mybatis)                                             | Spring 使用 [MyBatis](https://github.com/mybatis/mybatis-3) 作为 ORM 框架访问数据库示例。                                                                                                                    |
+| SpringBoot | [spring-boot-data-mybatis-mapper](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/orm/spring-boot-data-mybatis-mapper)                     | SpringBoot 使用 [MyBatis](https://github.com/mybatis/mybatis-3) + [Mapper](https://github.com/abel533/Mapper) + [PageHelper](https://github.com/pagehelper/Mybatis-PageHelper) 作为 ORM 框架访问数据库示例。 |
+| SpringBoot | [spring-boot-data-mybatis-plus](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/orm/spring-boot-data-mybatis-plus)                         | SpringBoot 使用 [MyBatis Plus](https://github.com/baomidou/mybatis-plus) 作为 ORM 框架访问数据库示例。                                                                                                       |
+| SpringBoot | [spring-boot-data-mybatis-multi-datasource](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/orm/spring-boot-data-mybatis-multi-datasource) | SpringBoot 连接多数据源，并使用 [MyBatis Plus](https://github.com/baomidou/mybatis-plus) 作为 ORM 框架访问数据库示例。                                                                                       |
+| SpringBoot | [spring-boot-data-jpa](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/orm/spring-boot-data-jpa)                                           | SpringBoot 使用 JPA 作为 ORM 框架访问数据库示例。                                                                                                                                                            |
 
-```bash
-$ mvn tomcat7:run -Dmaven.test.skip=true
-```
+（3）Nosql 数据库
 
-Jetty 嵌入式服务器启动：
+| 项目类型   | 示例                                                                                                                                   | 说明                                                                              |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Spring     | [spring-data-nosql](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/nosql/spring-data-nosql)                           | Spring 访问各种 NoSQL 的示例。                                                    |
+| SpringBoot | [spring-boot-data-redis](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/nosql/spring-boot-data-redis)                 | SpringBoot 访问 [Redis](https://redis.io/) 单节点、集群的示例。                   |
+| SpringBoot | [spring-boot-data-mongodb](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/nosql/spring-boot-data-mongodb)             | SpringBoot 访问 [MongoDB](https://www.mongodb.com/) 的示例。                      |
+| SpringBoot | [spring-boot-data-elasticsearch](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/nosql/spring-boot-data-elasticsearch) | SpringBoot 访问 [Elasticsearch](https://www.elastic.co/guide/index.html) 的示例。 |
+| SpringBoot | [spring-boot-data-hdfs](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/nosql/spring-boot-data-hdfs)                   | SpringBoot 访问 HDFS 的示例。                                                     |
 
-```bash
-$ mvn jetty:run -Dmaven.test.skip=true
-```
+（4）缓存
 
-如果子项目中无特殊说明，默认端口配置为 8089，当然，你可以自己指定。
-
-启动成功后，访问 http://localhost:8089 。
-
-### 规范
-
-- 推荐使用 [IDEA](https://www.jetbrains.com/idea/) 作为 IDE
-- 代码规范使用 [阿里巴巴 Java 开发手册](https://github.com/alibaba/p3c)
-  - 如果你使用 IDEA 作为你的 IDE，推荐安装 Alibaba-Java-Coding-Guidelines 插件来做静态检查。
+| 项目类型   | 示例                                                                                                                                     | 说明                                                                                 |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| SpringBoot | [spring-boot-data-cache](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/cache/spring-boot-data-cache)                   | SpringBoot 默认缓存框架的示例。                                                      |
+| SpringBoot | [spring-boot-data-cache-j2cache](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/cache/spring-boot-data-cache-j2cache)   | SpringBoot 使用 [j2cache](https://gitee.com/ld/J2Cache) 作为缓存框架的示例。         |
+| SpringBoot | [spring-boot-data-cache-jetcache](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/cache/spring-boot-data-cache-jetcache) | SpringBoot 使用 [jetcache](https://github.com/alibaba/jetcache) 作为缓存框架的示例。 |
 
 ## 📚 资料
 
 - **官方**
   - [Spring 官网](https://spring.io/)
-  - [Spring Framework 官方文档](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/index.html)
   - [Spring Github](https://github.com/spring-projects/spring-framework)
+  - [Spring Framework 官方文档](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/index.html)
+  - [Spring Boot 官方文档](https://docs.spring.io/spring-boot/docs/current/reference/html/data.html)
 - **书籍**
   - [《 Spring 实战（第 5 版）》](https://book.douban.com/subject/34949443/)
 - **教程**
