@@ -10,15 +10,15 @@ import io.github.dunwu.spring.security.shiro.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import javax.sql.DataSource;
 
@@ -30,7 +30,7 @@ import javax.sql.DataSource;
  * <p>
  * Version: 1.0
  */
-@RunWith(SpringJUnit4ClassRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(locations = { "classpath:spring/spring-beans.xml", "classpath:spring/spring-shiro.xml" })
 public class ShiroTest {
 
@@ -70,14 +70,14 @@ public class ShiroTest {
     @Autowired
     private UserRealm userRealm;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         // 0、清空表数据
-        jdbcTemplate.update("delete from sys_users");
-        jdbcTemplate.update("delete from sys_roles");
-        jdbcTemplate.update("delete from sys_permissions");
-        jdbcTemplate.update("delete from sys_users_roles");
-        jdbcTemplate.update("delete from sys_roles_permissions");
+        jdbcTemplate.update("DELETE FROM `sys_users`");
+        jdbcTemplate.update("DELETE FROM `sys_roles`");
+        jdbcTemplate.update("DELETE FROM `sys_permissions`");
+        jdbcTemplate.update("DELETE FROM `sys_users_roles`");
+        jdbcTemplate.update("DELETE FROM `sys_roles_permissions`");
 
         // 1、新增权限
         p1 = new Permission("user:create", "用户模块新增", Boolean.TRUE);

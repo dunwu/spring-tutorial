@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringShellApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringShellApplication.class);
+        SpringApplication.run(SpringShellApplication.class, args);
     }
 
 }

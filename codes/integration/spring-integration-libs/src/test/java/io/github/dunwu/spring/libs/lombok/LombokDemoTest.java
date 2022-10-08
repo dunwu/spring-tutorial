@@ -1,7 +1,7 @@
 package io.github.dunwu.spring.libs.lombok;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Zhang Peng
@@ -15,7 +15,7 @@ public class LombokDemoTest {
         person.setAge(20);
         person.setSex("男");
         String expected = "Person(name=张三, sex=男)";
-        Assert.assertEquals(expected, person.toString());
+        Assertions.assertEquals(expected, person.toString());
     }
 
 }

@@ -15,36 +15,35 @@
     <description>spring + swagger 自动生成 REST API 在线文档</description>
 
     <dependencies>
-        <dependency>
-            <groupId>io.github.dunwu.spring</groupId>
-            <artifactId>spring-common</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context-support</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-        </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context-support</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger2</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger-ui</artifactId>
+      </dependency>
 
-        <dependency>
-            <groupId>io.github.dunwu.tool</groupId>
-            <artifactId>dunwu-tool-data</artifactId>
-        </dependency>
+      <dependency>
+        <groupId>io.github.dunwu.tool</groupId>
+        <artifactId>dunwu-tool-web</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>io.github.dunwu.tool</groupId>
+        <artifactId>dunwu-tool-data</artifactId>
+      </dependency>
     </dependencies>
 
     <build>

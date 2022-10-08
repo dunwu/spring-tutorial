@@ -1,51 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.github.dunwu.spring</groupId>
-    <artifactId>spring-core</artifactId>
-    <version>1.0.0</version>
-    <packaging>pom</packaging>
+  <groupId>io.github.dunwu.spring</groupId>
+  <artifactId>spring-core</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
 
-    <properties>
-        <java.version>1.8</java.version>
-        <resource.delimiter>@</resource.delimiter>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    </properties>
+  <properties>
+    <java.version>1.8</java.version>
+    <resource.delimiter>@</resource.delimiter>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
 
-    <modules>
-        <module>spring-core-aop</module>
-        <module>spring-core-ioc</module>
-        <module>spring-core-resouces</module>
-        <module>spring-core-validation-convert</module>
+  <modules>
+    <module>spring-core-aop</module>
+    <module>spring-core-ioc</module>
+    <module>spring-core-resouces</module>
+    <module>spring-core-validation-convert</module>
 
-        <module>spring-boot-aop</module>
-        <module>spring-boot-async</module>
-        <module>spring-boot-banner</module>
-        <module>spring-boot-bean</module>
-        <module>spring-boot-property</module>
-        <module>spring-boot-profile</module>
-        <module>spring-boot-actuator</module>
-    </modules>
+    <module>spring-boot-aop</module>
+    <module>spring-boot-async</module>
+    <module>spring-boot-banner</module>
+    <module>spring-boot-bean</module>
+    <module>spring-boot-property</module>
+    <module>spring-boot-profile</module>
+    <module>spring-boot-actuator</module>
+  </modules>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.7.4</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>cn.hutool</groupId>
-                <artifactId>hutool-all</artifactId>
-                <version>5.8.7</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>2.7.4</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>io.github.dunwu</groupId>
+        <artifactId>dunwu-dependencies</artifactId>
+        <version>1.1.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.github.dunwu.tool</groupId>
+        <artifactId>dunwu-tool</artifactId>
+        <version>1.1.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>cn.hutool</groupId>
+        <artifactId>hutool-all</artifactId>
+        <version>5.8.8</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 </project>

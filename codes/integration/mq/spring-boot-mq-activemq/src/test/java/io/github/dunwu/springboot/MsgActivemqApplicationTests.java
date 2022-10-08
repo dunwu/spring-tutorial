@@ -1,30 +1,25 @@
 package io.github.dunwu.springboot;
 
-import org.junit.ClassRule;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.rule.OutputCapture;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.boot.test.system.CapturedOutput;
+import org.springframework.boot.test.system.OutputCaptureExtension;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
+@ExtendWith(value = { OutputCaptureExtension.class })
 @SpringBootTest
-@RunWith(SpringRunner.class)
 public class MsgActivemqApplicationTests {
-
-    @ClassRule
-    public static final OutputCapture output = new OutputCapture();
 
     @Autowired
     private Producer producer;
 
     @Test
-    public void sendSimpleMessage() throws InterruptedException {
+    public void sendSimpleMessage(CapturedOutput output) throws InterruptedException {
         this.producer.send("Hello World");
         Thread.sleep(1000L);
-        assertThat(output.toString().contains("Hello World")).isTrue();
+        Assertions.assertThat(output.getOut().contains("Hello World")).isTrue();
     }
 
 }

@@ -31,8 +31,8 @@
   <name>${project.artifactId}</name>
 
   <properties>
-    <spring-boot.version>2.2.1.RELEASE</spring-boot.version>
-    <dubbo.version>2.7.5</dubbo.version>
+    <spring-boot.version>2.7.4</spring-boot.version>
+    <dubbo.version>3.1.1</dubbo.version>
 
     <java.version>1.8</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

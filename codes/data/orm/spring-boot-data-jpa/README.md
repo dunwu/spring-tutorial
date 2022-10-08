@@ -66,7 +66,10 @@ java -jar spring-boot-data-jpa-1.0.0.jar
 
 ![image-20191118203305320](https://raw.githubusercontent.com/dunwu/images/dev/snap/image-20191118203305320.png)
 
-这个 REST 接口是根据本项目中的 `io.github.dunwu.springboot.data.UserRepository` 类中的如下代码定义自动生成的：
+这个
+REST
+接口是根据本项目中的 `io.github.dunwu.springboot.data.AccountRepository`
+类中的如下代码定义自动生成的：
 
 ```java
 @RepositoryRestResource(collectionResourceRel = "user", path = "user")public interface UserRepository extends JpaRepository<User, Long> {

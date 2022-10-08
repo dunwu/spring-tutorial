@@ -3,8 +3,7 @@ package io.github.dunwu.springboot;
 import com.alibaba.fastjson.JSON;
 import io.github.dunwu.tool.io.AnsiColorUtil;
 import org.apache.kafka.clients.producer.RecordMetadata;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.ProducerListener;
 import org.springframework.kafka.support.SendResult;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Date;
 import java.util.concurrent.ExecutionException;
@@ -24,7 +22,6 @@ import java.util.concurrent.ExecutionException;
  * @author Zhang Peng
  * @since 2018-11-29
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest(classes = SpringBootMsgKafkaApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class KafkaProducerTest {
 
@@ -91,13 +88,11 @@ public class KafkaProducerTest {
     public void asyncSendWithCallback() {
         // 消息发送的监听器，用于回调返回信息
         kafkaTemplate.setProducerListener(new ProducerListener<String, String>() {
-            @Override
             public void onSuccess(String topic, Integer partition, String key, String value,
                 RecordMetadata recordMetadata) {
                 log.info("发送数据完成。topic = {}, partition = {}, key = {}, value = {}", topic, partition, key, value);
             }
 
-            @Override
             public void onError(String topic, Integer partition, String key, String value, Exception exception) {
                 log.error("发送数据出错！topic = {}, partition = {}, key = {}, value = {}", topic, partition, key, value);
                 log.error(">>>> 错误原因：{}", exception.getMessage());

@@ -2,18 +2,18 @@ package io.github.dunwu.spring.data.mongo.perform;
 
 import com.mongodb.Block;
 import com.mongodb.client.FindIterable;
+import org.assertj.core.api.Assertions;
 import org.bson.Document;
-import org.junit.Assert;
-import org.junit.FixMethodOrder;
-import org.junit.Test;
-import org.junit.runners.MethodSorters;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * Created by zp on 16/9/7.
  */
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@ExtendWith(SpringExtension.class)
 public class QueryPerformTest extends MongoDBConnector {
 
     final static Logger log = LoggerFactory.getLogger(QueryPerformTest.class);
@@ -28,7 +28,7 @@ public class QueryPerformTest extends MongoDBConnector {
                 log.debug(document.getString("itemid"));
             }
         });
-        Assert.assertNotNull(iterable);
+        Assertions.assertThat(iterable).isNotNull();
     }
 
     @Test
@@ -40,7 +40,7 @@ public class QueryPerformTest extends MongoDBConnector {
                 log.debug(document.toJson());
             }
         });
-        Assert.assertNotNull(iterable);
+        Assertions.assertThat(iterable).isNotNull();
     }
 
 }

@@ -1,9 +1,7 @@
 package io.github.dunwu.spring.data.mongo.perform;
 
 import org.bson.Document;
-import org.junit.FixMethodOrder;
-import org.junit.Test;
-import org.junit.runners.MethodSorters;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,7 +13,6 @@ import java.util.UUID;
 /**
  * Created by zp on 16/9/7.
  */
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class InsertPerform extends MongoDBConnector {
 
     final static int MAX = 10000;

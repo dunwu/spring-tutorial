@@ -50,7 +50,7 @@ public class DunwuKafkaConfig {
 
     @Bean
     public AdminClient kafkaAdminClient() {
-        return AdminClient.create(kafkaAdmin().getConfig());
+        return AdminClient.create(kafkaAdmin().getConfigurationProperties());
     }
 
     @Bean

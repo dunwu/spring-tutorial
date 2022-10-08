@@ -1,8 +1,8 @@
 package io.github.dunwu.springboot.security.config;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import io.github.dunwu.springboot.security.domain.User;
-import io.github.dunwu.springboot.security.mapper.UserMapper;
+import io.github.dunwu.springboot.security.domain.Account;
+import io.github.dunwu.springboot.security.mapper.AccountMapper;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -12,17 +12,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserDetailsManagerImpl implements UserDetailsManager {
 
-    private final UserMapper userMapper;
+    private final AccountMapper accountMapper;
 
-    public UserDetailsManagerImpl(UserMapper userMapper) {
-        this.userMapper = userMapper;
+    public UserDetailsManagerImpl(AccountMapper accountMapper) {
+        this.accountMapper = accountMapper;
     }
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        QueryWrapper<User> query = new QueryWrapper<>();
-        User user = userMapper.selectOne(query.eq("userName", userName));
-        return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
+        QueryWrapper<Account> query = new QueryWrapper<>();
+        Account account = accountMapper.selectOne(query.eq("userName", userName));
+        return new org.springframework.security.core.userdetails.User(account.getUsername(), account.getPassword(),
             true, true, true, true, AuthorityUtils.commaSeparatedStringToAuthorityList("admin"));
     }
 

@@ -26,16 +26,11 @@ import javax.sql.DataSource;
 public class DunwuSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private final DataSource dataSource;
-
     private final UserDetailsManager userDetailsManager;
-
-    private final DunwuSecurityProperties dunwuSecurityProperties;
-
     private final ValidateCodeFilter validateCodeFilter;
-
     private final DunwuAuthenticationSucessHandler authenticationSucessHandler;
-
     private final DunwuAuthenticationFailureHandler authenticationFailureHandler;
+    private final DunwuSecurityProperties dunwuSecurityProperties;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {

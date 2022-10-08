@@ -1,11 +1,11 @@
 package io.github.dunwu.spring.orm.dao;
 
 import io.github.dunwu.spring.orm.entity.User;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import java.util.List;
  * @author Zhang Peng
  * @since 2017/4/13.
  */
-@RunWith(SpringJUnit4ClassRunner.class) // 表示继承了SpringJUnit4ClassRunner类
+@ExtendWith(value = { SpringExtension.class })
 @ContextConfiguration(locations = { "classpath:mybatis/mybatis-spring.xml" })
 public class UserDaoTest {
 

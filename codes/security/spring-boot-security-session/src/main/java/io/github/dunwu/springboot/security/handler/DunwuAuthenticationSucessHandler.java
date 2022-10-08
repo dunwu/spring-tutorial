@@ -18,7 +18,7 @@ public class DunwuAuthenticationSucessHandler implements AuthenticationSuccessHa
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
         Authentication authentication) throws IOException {
-        redirectStrategy.sendRedirect(request, response, "/index");
+        redirectStrategy.sendRedirect(request, response, "/");
     }
 
 }

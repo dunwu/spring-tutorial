@@ -7,7 +7,7 @@ import io.github.dunwu.springboot.data.config.J2CacheSpringRedisAutoConfiguratio
 import io.github.dunwu.springboot.data.elasticsearch.service.TestService;
 import net.oschina.j2cache.CacheChannel;
 import net.oschina.j2cache.CacheObject;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

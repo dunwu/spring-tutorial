@@ -2,15 +2,14 @@ package io.github.dunwu.spring.libs.dozer;
 
 import com.github.dozermapper.core.Mapper;
 import io.github.dunwu.spring.libs.dozer.vo.*;
-import junit.framework.TestCase;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.Date;
 import java.util.HashSet;
@@ -19,9 +18,9 @@ import java.util.Set;
 /**
  * @author Zhang Peng
  */
-@RunWith(SpringJUnit4ClassRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(locations = { "classpath:spring/spring-dozer.xml" })
-public class CustomMappingTest extends TestCase {
+public class CustomMappingTest {
 
     @Autowired
     Mapper mapper;
@@ -36,7 +35,7 @@ public class CustomMappingTest extends TestCase {
         src.setDate(new Date());
 
         SameAttributeB desc = mapper.map(src, SameAttributeB.class);
-        Assert.assertNotNull(desc);
+        Assertions.assertNotNull(desc);
         log.debug("Source -> Destination success. id={}, name={}, date={}", desc.getId(), desc.getName(),
             desc.getDate());
     }
@@ -49,7 +48,7 @@ public class CustomMappingTest extends TestCase {
         src.setDate(new Date());
 
         NotSameAttributeB desc = mapper.map(src, NotSameAttributeB.class);
-        Assert.assertNotNull(desc);
+        Assertions.assertNotNull(desc);
         log.debug("Source -> Destination success. id={}, value={}, date={}", desc.getId(), desc.getValue(),
             desc.getDate());
     }
@@ -65,7 +64,7 @@ public class CustomMappingTest extends TestCase {
         src.setData("00000111");
 
         TargetBean desc = mapper.map(src, TargetBean.class);
-        Assert.assertNotNull(desc);
+        Assertions.assertNotNull(desc);
         log.debug("Source -> Destination success. pk={}, name={}, data={}", desc.getPk(), desc.getName(),
             desc.getBinaryData());
     }
@@ -79,7 +78,7 @@ public class CustomMappingTest extends TestCase {
         src.setStatus(Status.SUCCESS);
         UserPrime desc = mapper.map(src, UserPrime.class);
 
-        Assert.assertNotNull(desc);
+        Assertions.assertNotNull(desc);
         log.debug("Source -> Destination success. status={}", desc.getStatusPrime());
     }
 
@@ -107,7 +106,7 @@ public class CustomMappingTest extends TestCase {
 
         UserGroupPrime desc = mapper.map(src, UserGroupPrime.class);
 
-        Assert.assertNotNull(desc);
+        Assertions.assertNotNull(desc);
         for (UserPrime item : desc.getUsers()) {
             log.debug("Source -> Destination success. status={}", item.getStatusPrime());
         }
@@ -123,7 +122,7 @@ public class CustomMappingTest extends TestCase {
         src.setInfo("深度映射");
         Dest dest = mapper.map(src, Dest.class);
 
-        Assert.assertNotNull(dest);
+        Assertions.assertNotNull(dest);
         log.debug("Source -> Destination success. id={}, info={}", dest.getId(), dest.getInfo().getContent());
     }
 

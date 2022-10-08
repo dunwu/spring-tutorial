@@ -1,12 +1,12 @@
 package io.github.dunwu.spring.data.redis;
 
 import io.github.dunwu.spring.data.redis.bean.UserDTO;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.List;
  * @author Zhang Peng
  * @since 2017/4/12.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(locations = { "classpath:config/spring-redis.xml" })
 public class RedisTest {
 
@@ -31,7 +31,7 @@ public class RedisTest {
         UserDTO.setId("user1");
         UserDTO.setName("redis-test");
         boolean result = userDao.add(UserDTO);
-        Assert.assertTrue(result);
+        Assertions.assertTrue(result);
     }
 
     /**
@@ -68,7 +68,7 @@ public class RedisTest {
         long begin = System.currentTimeMillis();
         boolean result = userDao.add(list);
         System.out.println(System.currentTimeMillis() - begin);
-        Assert.assertTrue(result);
+        Assertions.assertTrue(result);
     }
 
     /**
@@ -80,7 +80,7 @@ public class RedisTest {
         UserDTO.setId("user1");
         UserDTO.setName("new_password");
         boolean result = userDao.update(UserDTO);
-        Assert.assertTrue(result);
+        Assertions.assertTrue(result);
     }
 
     /**
@@ -111,8 +111,8 @@ public class RedisTest {
     public void testGetUser() {
         String id = "user1";
         UserDTO UserDTO = userDao.get(id);
-        Assert.assertNotNull(UserDTO);
-        Assert.assertEquals(UserDTO.getName(), "redis-test");
+        Assertions.assertNotNull(UserDTO);
+        Assertions.assertEquals(UserDTO.getName(), "redis-test");
     }
 
     /**

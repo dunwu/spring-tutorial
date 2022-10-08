@@ -1,19 +1,5 @@
 # SpringBootTutorial :: Lib :: Mail
 
-<!-- TOC depthFrom:2 depthTo:3 -->
-
-- [简介](#简介)
-- [API](#api)
-- [配置](#配置)
-- [实战](#实战)
-  - [引入依赖](#引入依赖)
-  - [配置邮件属性](#配置邮件属性)
-  - [Java 代码](#java-代码)
-- [完整示例](#完整示例)
-- [引申和引用](#引申和引用)
-
-<!-- /TOC -->
-
 ## 简介
 
 Spring Boot 收发邮件最简便方式是通过 `spring-boot-starter-mail`。

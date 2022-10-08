@@ -1,7 +1,7 @@
 package io.github.dunwu.springboot.web;
 
-import io.github.dunwu.springboot.data.User;
-import io.github.dunwu.springboot.data.UserDAO;
+import io.github.dunwu.springboot.core.data.User;
+import io.github.dunwu.springboot.core.data.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

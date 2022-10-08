@@ -79,9 +79,8 @@ public class User {
 #### Api
 
 ```java
-import com.google.common.collect.Iterables;
-import io.github.dunwu.springboot.data.User;
-import io.github.dunwu.springboot.data.UserRepository;
+
+import io.github.dunwu.springboot.core.data.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -97,32 +96,32 @@ import javax.validation.Valid;
 @RestController
 public class UserController {
 
-	// ...
+    // ...
 
-	@ApiOperation("创建用户")
-	@PostMapping("save")
-	public ResponseDTO<User> save(@RequestBody @Valid User user) {
-		User save = repository.save(user);
-		return new ResponseDTO<>(true, ResponseDTO.CodeEn.SUCCESS, save);
-	}
+    @ApiOperation("创建用户")
+    @PostMapping("save")
+    public ResponseDTO<User> save(@RequestBody @Valid User user) {
+        User save = repository.save(user);
+        return new ResponseDTO<>(true, ResponseDTO.CodeEn.SUCCESS, save);
+    }
 
-	@ApiIgnore
-	@DeleteMapping("delete/{id}")
-	public ResponseDTO deleteById(@PathVariable Long id) {
-		repository.deleteById(id);
-		return new ResponseDTO<>(true, ResponseDTO.CodeEn.SUCCESS, null);
-	}
-  
-  @ApiOperation("用户列表分页展示")
-	@GetMapping("page")
-	public ResponseDTO<Page<User>> page(@ApiParam("查看第几页") @RequestParam int page,
-		@ApiParam("每页多少条") @RequestParam int size) {
-		PageRequest pageRequest = PageRequest.of(page, size);
-		Page<User> userPage = repository.findAll(pageRequest);
-		return new ResponseDTO<>(true, ResponseDTO.CodeEn.SUCCESS, userPage);
-	}
-  
-  // ...
+    @ApiIgnore
+    @DeleteMapping("delete/{id}")
+    public ResponseDTO deleteById(@PathVariable Long id) {
+        repository.deleteById(id);
+        return new ResponseDTO<>(true, ResponseDTO.CodeEn.SUCCESS, null);
+    }
+
+    @ApiOperation("用户列表分页展示")
+    @GetMapping("page")
+    public ResponseDTO<Page<User>> page(@ApiParam("查看第几页") @RequestParam int page,
+        @ApiParam("每页多少条") @RequestParam int size) {
+        PageRequest pageRequest = PageRequest.of(page, size);
+        Page<User> userPage = repository.findAll(pageRequest);
+        return new ResponseDTO<>(true, ResponseDTO.CodeEn.SUCCESS, userPage);
+    }
+
+    // ...
 }
 ```
 

@@ -2,7 +2,7 @@ package io.github.dunwu.spring.cache;
 
 import io.github.dunwu.spring.cache.entity.User;
 import io.github.dunwu.spring.cache.service.UserService;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Component;

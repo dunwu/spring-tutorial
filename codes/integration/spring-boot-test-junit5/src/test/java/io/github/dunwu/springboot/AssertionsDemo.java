@@ -1,6 +1,6 @@
 package io.github.dunwu.springboot;
 
-import io.github.dunwu.springboot.bean.Person;
+import io.github.dunwu.springboot.core.bean.Person;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
