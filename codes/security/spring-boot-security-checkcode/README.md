@@ -3,7 +3,6 @@
 示例使用说明：
 
 1.
-
 执行
 maven
 构建
@@ -16,7 +15,7 @@ localhost:
 ![](https://raw.githubusercontent.com/dunwu/images/dev/snap/20221008183704.png)
 4.
 使用以下账户可以完成登录：
--
-admin/123456
--
-user/123456
+  -
+  admin/123456
+  -
+  user1/123456
