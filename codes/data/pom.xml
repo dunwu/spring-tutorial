@@ -38,7 +38,6 @@
     <module>nosql/spring-boot-data-redis</module>
     <module>nosql/spring-boot-data-mongodb</module>
     <module>nosql/spring-boot-data-elasticsearch</module>
-    <module>nosql/spring-boot-data-elasticsearch-jest</module>
     <module>nosql/spring-boot-data-hdfs</module>
 
     <!--中间件-->
