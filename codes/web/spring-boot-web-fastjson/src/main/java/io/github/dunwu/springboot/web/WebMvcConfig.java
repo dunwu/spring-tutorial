@@ -1,13 +1,12 @@
 package io.github.dunwu.springboot.web;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.parser.Feature;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
-import io.github.dunwu.springboot.dto.BaseResponse;
-import io.github.dunwu.springboot.dto.CodeEn;
+import io.github.dunwu.springboot.web.constant.StatusEnum;
+import io.github.dunwu.springboot.web.entity.BaseResponse;
+import io.github.dunwu.springboot.web.exception.AppException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
@@ -77,13 +76,13 @@ public class WebMvcConfig implements WebMvcConfigurer {
         exceptionResolvers
             .add((HttpServletRequest request, HttpServletResponse response, Object handler, Exception e) -> {
                 StringBuilder sb = new StringBuilder();
-                CodeEn code;
+                StatusEnum code;
                 if (e instanceof AppException) {
-                    code = CodeEn.APP_ERROR;
-                    sb.append(CodeEn.APP_ERROR.message());
+                    code = StatusEnum.APP_ERROR;
+                    sb.append(StatusEnum.APP_ERROR.message());
                 } else {
-                    code = CodeEn.OTHER_ERROR;
-                    sb.append(CodeEn.OTHER_ERROR.message());
+                    code = StatusEnum.OTHER_ERROR;
+                    sb.append(StatusEnum.OTHER_ERROR.message());
                 }
                 sb.append("，详细错误原因：");
                 sb.append(e.getMessage());

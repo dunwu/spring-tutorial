@@ -1,7 +1,7 @@
 package io.github.dunwu.spring.mvc.redirect;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -14,7 +14,7 @@ public class RedirectControllerTests {
 
     private MockMvc mockMvc;
 
-    @Before
+    @BeforeEach
     public void setup() throws Exception {
         this.mockMvc = standaloneSetup(new RedirectController(new DefaultFormattingConversionService()))
             .alwaysExpect(status().isMovedTemporarily()).build();

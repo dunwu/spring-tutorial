@@ -15,7 +15,7 @@
             block tag
         </description>
         <name>block</name>
-        <tag-class>io.github.dunwu.web.jsp.BlockTag</tag-class>
+        <tag-class>io.github.dunwu.tool.web.jsp.BlockTag</tag-class>
         <body-content>JSP</body-content>
         <attribute>
             <description>
@@ -32,7 +32,7 @@
             override desc
         </description>
         <name>override</name>
-        <tag-class>io.github.dunwu.web.jsp.OverrideTag</tag-class>
+      <tag-class>io.github.dunwu.tool.web.jsp.OverrideTag</tag-class>
         <body-content>JSP</body-content>
         <attribute>
             <description>

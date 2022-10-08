@@ -1,32 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>io.github.dunwu.spring</groupId>
-        <artifactId>spring-parent</artifactId>
-        <version>1.0.0</version>
-        <relativePath>../parent/pom.xml</relativePath>
-    </parent>
+  <groupId>io.github.dunwu.spring</groupId>
+  <artifactId>spring-web</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
 
-    <artifactId>spring-web</artifactId>
-    <packaging>pom</packaging>
+  <properties>
+    <java.version>1.8</java.version>
+    <resource.delimiter>@</resource.delimiter>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
 
-    <modules>
-        <!--SPRING 项目-->
-        <module>spring-web-helloworld</module>
-        <module>spring-web-mvc</module>
-        <module>spring-web-websocket</module>
+  <modules>
+    <!--SPRING 项目-->
+    <module>spring-web-helloworld</module>
+    <module>spring-web-mvc</module>
+    <module>spring-web-websocket</module>
 
-        <!--SPRING BOOT 项目-->
-        <module>spring-boot-web-fastjson</module>
-        <module>spring-boot-web-form</module>
-        <module>spring-boot-web-helloworld</module>
-        <module>spring-boot-web-https</module>
-        <module>spring-boot-web-multi-connectors</module>
-        <module>spring-boot-web-ui</module>
-        <module>spring-boot-web-uploading</module>
-        <module>spring-boot-web-websocket</module>
-    </modules>
+    <!--SPRING BOOT 项目-->
+    <module>spring-boot-web-fastjson</module>
+    <module>spring-boot-web-form</module>
+    <module>spring-boot-web-helloworld</module>
+    <module>spring-boot-web-https</module>
+    <module>spring-boot-web-multi-connectors</module>
+    <module>spring-boot-web-ui</module>
+    <module>spring-boot-web-uploading</module>
+    <module>spring-boot-web-websocket</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>2.7.4</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>io.github.dunwu</groupId>
+        <artifactId>dunwu-dependencies</artifactId>
+        <version>1.1.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.github.dunwu.tool</groupId>
+        <artifactId>dunwu-tool</artifactId>
+        <version>1.1.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>cn.hutool</groupId>
+        <artifactId>hutool-all</artifactId>
+        <version>5.8.8</version>
+      </dependency>
+      <dependency>
+        <groupId>org.logback-extensions</groupId>
+        <artifactId>logback-ext-spring</artifactId>
+        <version>0.1.5</version>
+      </dependency>
+
+      <dependency>
+        <groupId>javax.servlet.jsp</groupId>
+        <artifactId>javax.servlet.jsp-api</artifactId>
+        <version>2.3.3</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 </project>

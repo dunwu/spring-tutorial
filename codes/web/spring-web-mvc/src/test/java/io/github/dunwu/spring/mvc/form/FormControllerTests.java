@@ -1,7 +1,7 @@
 package io.github.dunwu.spring.mvc.form;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
@@ -18,7 +18,7 @@ public class FormControllerTests {
 
     private MockMvc mockMvc;
 
-    @Before
+    @BeforeEach
     public void setup() throws Exception {
 
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();

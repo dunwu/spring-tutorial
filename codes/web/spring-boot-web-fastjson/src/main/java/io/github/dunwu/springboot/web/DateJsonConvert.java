@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.node.TextNode;
-import io.github.dunwu.springboot.dto.InfoDTO;
+import io.github.dunwu.springboot.web.entity.InfoDto;
 import org.springframework.boot.jackson.JsonComponent;
 
 import java.io.IOException;
@@ -37,14 +37,14 @@ public class DateJsonConvert {
     }
 
     /**
-     * InfoDTO 类的反序列化做特殊处理
+     * InfoDto 类的反序列化做特殊处理
      */
-    public static class InfoDTOJsonDeserializer extends JsonDeserializer<InfoDTO> {
+    public static class InfoDTOJsonDeserializer extends JsonDeserializer<InfoDto> {
 
         @Override
-        public InfoDTO deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
+        public InfoDto deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
             throws IOException {
-            InfoDTO infoDTO = new InfoDTO();
+            InfoDto infoDTO = new InfoDto();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
             TreeNode treeNode = jsonParser.getCodec().readTree(jsonParser);

@@ -2,8 +2,8 @@ package io.github.dunwu.spring.mvc.data;
 
 import io.github.dunwu.spring.mvc.data.custom.CustomArgumentController;
 import io.github.dunwu.spring.mvc.data.custom.CustomArgumentResolver;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -14,7 +14,7 @@ public class CustomArgumentControllerTests {
 
     private MockMvc mockMvc;
 
-    @Before
+    @BeforeEach
     public void setup() throws Exception {
         this.mockMvc = standaloneSetup(new CustomArgumentController())
             .setCustomArgumentResolvers(new CustomArgumentResolver()).build();

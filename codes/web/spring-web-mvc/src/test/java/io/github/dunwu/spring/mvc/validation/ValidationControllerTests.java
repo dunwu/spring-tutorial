@@ -1,7 +1,7 @@
 package io.github.dunwu.spring.mvc.validation;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -13,7 +13,7 @@ public class ValidationControllerTests {
 
     private MockMvc mockMvc;
 
-    @Before
+    @BeforeEach
     public void setup() throws Exception {
         this.mockMvc = standaloneSetup(new ValidationController()).alwaysExpect(status().isOk()).build();
     }
@@ -25,7 +25,7 @@ public class ValidationControllerTests {
 
     @Test
     public void validateErrors() throws Exception {
-        this.mockMvc.perform(get("/validate?number=3&date=2010-07-01"))
+        this.mockMvc.perform(get("/validate?number=&date=2010-07-01"))
                     .andExpect(content().string("Object has validation errors"));
     }
 

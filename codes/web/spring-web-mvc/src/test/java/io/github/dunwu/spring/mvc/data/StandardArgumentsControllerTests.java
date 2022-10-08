@@ -1,8 +1,8 @@
 package io.github.dunwu.spring.mvc.data;
 
 import io.github.dunwu.spring.mvc.data.standard.StandardArgumentsController;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -17,7 +17,7 @@ public class StandardArgumentsControllerTests {
 
     private MockMvc mockMvc;
 
-    @Before
+    @BeforeEach
     public void setup() throws Exception {
         this.mockMvc = standaloneSetup(new StandardArgumentsController()).alwaysExpect(status().isOk()).build();
     }
@@ -31,7 +31,7 @@ public class StandardArgumentsControllerTests {
     @Test
     public void requestReader() throws Exception {
         this.mockMvc.perform(
-            post("/data/standard/request/reader").contentType(MediaType.TEXT_PLAIN).content("foo".getBytes()))
+                post("/data/standard/request/reader").contentType(MediaType.TEXT_PLAIN).content("foo".getBytes()))
                     .andExpect(content().string("Read char request body = foo"));
     }
 

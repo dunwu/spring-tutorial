@@ -1,7 +1,7 @@
 package io.github.dunwu.spring.mvc.convert;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
 import org.springframework.test.web.servlet.MockMvc;
@@ -20,7 +20,7 @@ public class ConvertControllerTests {
 
     private MockMvc mockMvc;
 
-    @Before
+    @BeforeEach
     public void setup() throws Exception {
         FormattingConversionService cs = new DefaultFormattingConversionService();
         cs.addFormatterForFieldAnnotation(new MaskFormatAnnotationFormatterFactory());
@@ -77,7 +77,8 @@ public class ConvertControllerTests {
     @Test
     public void valueOf() throws Exception {
         this.mockMvc.perform(get("/convert/value?value=123456789"))
-                    .andExpect(content().string(startsWith("Converted value object SocialSecurityNumber")));
+                    .andExpect(content().string(
+                        startsWith("Converted value object io.github.dunwu.spring.mvc.convert.SocialSecurityNumber")));
     }
 
     @Test

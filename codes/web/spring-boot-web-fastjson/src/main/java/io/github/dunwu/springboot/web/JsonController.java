@@ -1,7 +1,8 @@
 package io.github.dunwu.springboot.web;
 
-import io.github.dunwu.springboot.dto.BaseResponse;
-import io.github.dunwu.springboot.dto.InfoDTO;
+import io.github.dunwu.springboot.web.entity.BaseResponse;
+import io.github.dunwu.springboot.web.entity.InfoDto;
+import io.github.dunwu.springboot.web.exception.AppException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -37,24 +38,24 @@ public class JsonController {
     }
 
     @RequestMapping(name = "/postInfo", method = RequestMethod.POST)
-    public void postInfo(@RequestBody InfoDTO infoDTO) {
+    public void postInfo(@RequestBody InfoDto infoDTO) {
         log.info("infoDTO = [{}]", infoDTO);
     }
 
     @RequestMapping("/success")
-    public BaseResponse<InfoDTO> success() {
-        InfoDTO systemInfoDTO = new InfoDTO();
+    public BaseResponse<InfoDto> success() {
+        InfoDto systemInfoDTO = new InfoDto();
         systemInfoDTO.setAppName("JSON测试应用");
         systemInfoDTO.setVersion("1.0.0");
         return BaseResponse.success(systemInfoDTO);
     }
 
     @RequestMapping(name = "/getInfo", method = RequestMethod.GET)
-    public InfoDTO getInfo() {
+    public InfoDto getInfo() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        InfoDTO infoDTO = null;
+        InfoDto infoDTO = null;
         try {
-            infoDTO = new InfoDTO("JSON测试应用", "1.0.0", sdf.parse("2019-01-01 12:00:00"));
+            infoDTO = new InfoDto("JSON测试应用", "1.0.0", sdf.parse("2019-01-01 12:00:00"));
         } catch (ParseException e) {
             e.printStackTrace();
         }

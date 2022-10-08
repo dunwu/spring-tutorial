@@ -1,11 +1,9 @@
 package io.github.dunwu.spring.mvc.messageconverters;
 
 import io.github.dunwu.spring.mvc.AbstractContextControllerTests;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -14,7 +12,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
-@RunWith(SpringJUnit4ClassRunner.class)
 public class MessageConvertersControllerTests extends AbstractContextControllerTests {
 
     private static String URI = "/messageconverters/{action}";
@@ -27,7 +24,7 @@ public class MessageConvertersControllerTests extends AbstractContextControllerT
 
     private MockMvc mockMvc;
 
-    @Before
+    @BeforeEach
     public void setup() {
         this.mockMvc = webAppContextSetup(this.wac).alwaysExpect(status().isOk()).build();
     }
@@ -53,7 +50,8 @@ public class MessageConvertersControllerTests extends AbstractContextControllerT
 
     @Test
     public void writeForm() throws Exception {
-        this.mockMvc.perform(get(URI, "form")).andExpect(content().contentType(MediaType.APPLICATION_FORM_URLENCODED))
+        this.mockMvc.perform(get(URI, "form"))
+                    .andExpect(content().contentType("application/x-www-form-urlencoded;charset=UTF-8"))
                     .andExpect(content().string("foo=bar&fruit=apple"));
     }
 

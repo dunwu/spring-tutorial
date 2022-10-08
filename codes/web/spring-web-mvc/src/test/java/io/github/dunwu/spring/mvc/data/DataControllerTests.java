@@ -1,11 +1,9 @@
 package io.github.dunwu.spring.mvc.data;
 
 import io.github.dunwu.spring.mvc.AbstractContextControllerTests;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.startsWith;
@@ -16,12 +14,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
-@RunWith(SpringJUnit4ClassRunner.class)
 public class DataControllerTests extends AbstractContextControllerTests {
 
     private MockMvc mockMvc;
 
-    @Before
+    @BeforeEach
     public void setup() throws Exception {
         this.mockMvc = webAppContextSetup(this.wac).alwaysExpect(status().isOk()).build();
     }
@@ -35,7 +32,8 @@ public class DataControllerTests extends AbstractContextControllerTests {
     @Test
     public void group() throws Exception {
         this.mockMvc.perform(get("/data/group?param1=foo&param2=bar&param3=baz"))
-                    .andExpect(content().string(startsWith("Obtained parameter group JavaBean")));
+                    .andExpect(content().string(
+                        startsWith("Obtained parameter group io.github.dunwu.spring.mvc.data.JavaBean")));
     }
 
     @Test
@@ -72,7 +70,7 @@ public class DataControllerTests extends AbstractContextControllerTests {
     public void requestBodyAndHeaders() throws Exception {
         this.mockMvc.perform(post("/data/entity").contentType(MediaType.TEXT_PLAIN).content("foo".getBytes()))
                     .andExpect(content().string(
-                        "Posted request body 'foo'; headers = {Content-Type=[text/plain], Content-Length=[3]}"));
+                        "Posted request body 'foo'; headers = [Content-Type:\"text/plain\", Content-Length:\"3\"]"));
     }
 
 }
