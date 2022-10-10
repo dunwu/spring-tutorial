@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <body>
+    <form action="#" th:action="@{/}" th:object="${user}" method="post">
+      <table>
+        <tr>
+          <td>姓名：</td>
+          <td><input type="text" th:field="*{name}" /></td>
+          <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">姓名输入错误</td>
+        </tr>
+        <tr>
+          <td>年龄：</td>
+          <td><input type="text" th:field="*{age}" /></td>
+          <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}">年龄输入错误</td>
+        </tr>
+        <tr>
+          <td>昵称：</td>
+          <td><input type="text" th:field="*{nickname}" /></td>
+          <td th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}">昵称输入错误</td>
+        </tr>
+        <tr>
+          <td>邮箱：</td>
+          <td><input type="text" th:field="*{email}" /></td>
+          <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">邮箱输入错误</td>
+        </tr>
+        <tr>
+          <td>手机：</td>
+          <td><input type="text" th:field="*{mobile}" /></td>
+          <td th:if="${#fields.hasErrors('mobile')}" th:errors="*{mobile}">手机输入错误</td>
+        </tr>
+        <tr>
+          <td>收入：</td>
+          <td><input type="text" th:field="*{income}" /></td>
+          <td th:if="${#fields.hasErrors('income')}" th:errors="*{income}">收入输入错误</td>
+        </tr>
+        <tr>
+          <td>
+            <button type="submit">Submit</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

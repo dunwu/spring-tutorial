@@ -1,5 +1,7 @@
-package io.github.dunwu.springboot.web;
+package io.github.dunwu.springboot.web.form;
 
+import io.github.dunwu.springboot.web.form.entity.Greeting;
+import io.github.dunwu.springboot.web.form.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,15 +19,22 @@ public class WebController implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/results").setViewName("results");
+        registry.addViewController("/welcome").setViewName("welcome");
     }
 
-    @PostMapping("/")
-    public String checkPersonInfo(@Valid PersonForm personForm, BindingResult bindingResult) {
+    @GetMapping("/")
+    public String showForm(User user) {
+        return "form";
+    }
 
+    /**
+     * 表单校验示例
+     */
+    @PostMapping("/")
+    public String checkPersonInfo(@Valid User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "form";
         }
-
         return "redirect:/welcome";
     }
 
@@ -35,14 +44,12 @@ public class WebController implements WebMvcConfigurer {
         return "greeting";
     }
 
+    /**
+     * 表单提交示例
+     */
     @PostMapping("/greeting")
     public String greetingSubmit(@ModelAttribute Greeting greeting) {
-        return "result";
-    }
-
-    @GetMapping("/")
-    public String showForm(PersonForm personForm) {
-        return "form";
+        return "results";
     }
 
 }
