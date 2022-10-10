@@ -12,7 +12,12 @@ import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
+import org.apache.catalina.Context;
+import org.apache.catalina.connector.Connector;
+import org.apache.tomcat.util.descriptor.web.SecurityCollection;
+import org.apache.tomcat.util.descriptor.web.SecurityConstraint;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -25,14 +30,14 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
- * 自定义配置
+ * 自定义 Web 相关配置
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @see <a href="https://mybatis.plus/">MyBatis-Plus</a>
  * @since 2019-04-27
  */
 @Configuration
-public class CustomConfig {
+public class CustomWebConfig {
 
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
@@ -84,6 +89,33 @@ public class CustomConfig {
         objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
                     .registerModule(timeModule).registerModule(new ParameterNamesModule())
                     .registerModule(new Jdk8Module());
+    }
+
+    @Bean
+    TomcatServletWebServerFactory tomcatServletWebServerFactory() {
+        TomcatServletWebServerFactory factory = new TomcatServletWebServerFactory() {
+            @Override
+            protected void postProcessContext(Context context) {
+                SecurityConstraint constraint = new SecurityConstraint();
+                constraint.setUserConstraint("CONFIDENTIAL");
+                SecurityCollection collection = new SecurityCollection();
+                collection.addPattern("/*");
+                constraint.addCollection(collection);
+                context.addConstraint(constraint);
+            }
+        };
+        factory.addAdditionalTomcatConnectors(createTomcatConnector());
+        return factory;
+    }
+
+    private Connector createTomcatConnector() {
+        Connector connector = new
+            Connector("org.apache.coyote.http11.Http11NioProtocol");
+        connector.setScheme("http");
+        connector.setPort(8000);
+        connector.setSecure(false);
+        connector.setRedirectPort(8443);
+        return connector;
     }
 
 }

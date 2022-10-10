@@ -1,4 +1,8 @@
-# Spring Boot 项目中使用 HTTPS
+# spring-boot-web-https
+
+> 本项目展示 SpringBoot 如何提供一个 [HTTPS](https://en.wikipedia.org/wiki/HTTPS) 服务示例。
+>
+> 本项目的功能几乎和 [spring-boot-web-helloworld](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/spring-boot-web-helloworld) 完全相同，只是支持的 HTTP 协议不同。
 
 ## 数字证书
 
@@ -72,7 +76,7 @@ server.ssl.key-store-password = 123456
 
 具体配置如下：
 
-```
+```java
 @Configuration
 public class TomcatConfig {
     @Bean

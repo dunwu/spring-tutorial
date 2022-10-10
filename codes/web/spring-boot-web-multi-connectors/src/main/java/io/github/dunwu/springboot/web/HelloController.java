@@ -1,17 +1,35 @@
 package io.github.dunwu.springboot.web;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import io.github.dunwu.springboot.web.entity.Weather;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Slf4j
 @RestController
 public class HelloController {
 
-    @GetMapping({ "/", "/hello" })
-    public String helloWorld() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("本服务同时支持 HTTP 和 HTTPS 服务。");
-        sb.append("请尝试访问 http://localhost:8080/ 和 https://localhost:8443/");
-        return sb.toString();
+    private final WeatherService weatherService;
+
+    public HelloController(WeatherService weatherService) {
+        this.weatherService = weatherService;
+    }
+
+    @RequestMapping("hello")
+    public String index() {
+        return "Hello World";
+    }
+
+    @RequestMapping("weather")
+    public Weather weather() {
+        log.info("查询南京市天气：");
+        Weather weather = weatherService.getWeather("101190101");
+        if (weather == null) {
+            log.info("未查到数据！");
+            return null;
+        }
+        weatherService.printBasicWeatherInfo(weather);
+        return weather;
     }
 
 }

@@ -1,15 +1,13 @@
 package io.github.dunwu.springboot.web;
 
 import io.github.dunwu.springboot.web.entity.Weather;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Slf4j
 @RestController
 public class HelloController {
-
-    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     private final WeatherService weatherService;
 
@@ -17,7 +15,7 @@ public class HelloController {
         this.weatherService = weatherService;
     }
 
-    @RequestMapping({ "/", "hello" })
+    @RequestMapping("hello")
     public String index() {
         return "Hello World";
     }

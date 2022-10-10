@@ -125,6 +125,17 @@
 | SpringBoot | [spring-boot-data-cache-j2cache](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/cache/spring-boot-data-cache-j2cache)   | SpringBoot 使用 [j2cache](https://gitee.com/ld/J2Cache) 作为缓存框架的示例。         |
 | SpringBoot | [spring-boot-data-cache-jetcache](https://github.com/dunwu/spring-tutorial/tree/master/codes/data/cache/spring-boot-data-cache-jetcache) | SpringBoot 使用 [jetcache](https://github.com/alibaba/jetcache) 作为缓存框架的示例。 |
 
+### Web 篇示例
+
+| 项目类型   | 示例                                                         | 说明                                                         |
+| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| SpringBoot | [spring-boot-web-helloworld](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/spring-boot-web-helloworld) | SpringBoot 入门级 Web MVC 项目示例。展示如何发送、接受 HTTP 请求。 |
+| SpringBoot | [spring-boot-web-form](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/spring-boot-web-form) | SpringBoot 表单提交、表单校验示例。                          |
+| SpringBoot | [spring-boot-web-uploading](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/spring-boot-web-uploading) | SpringBoot 文件上传、下载示例。                              |
+| SpringBoot | [spring-boot-web-websocket](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/spring-boot-web-websocket) | SpringBoot 使用 [WebSocket](https://en.wikipedia.org/wiki/WebSocket) 技术实现交互式应用示例。 |
+| SpringBoot | [spring-boot-web-https](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/spring-boot-web-https) | SpringBoot 如何提供一个 [HTTPS](https://en.wikipedia.org/wiki/HTTPS) 服务示例。 |
+| SpringBoot | [spring-boot-web-multi-connectors](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/spring-boot-web-multi-connectors) | SpringBoot 如何同时提供 HTTP 和 [HTTPS](https://en.wikipedia.org/wiki/HTTPS) 服务示例。 |
+
 ## 📚 资料
 
 - **官方**
