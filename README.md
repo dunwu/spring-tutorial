@@ -35,11 +35,21 @@
 - [Spring IoC](docs/01.Java/13.框架/01.Spring/01.Spring核心/02.SpringIoC.md)
 - [Spring 依赖查找](docs/01.Java/13.框架/01.Spring/01.Spring核心/03.Spring依赖查找.md)
 - [Spring 依赖注入](docs/01.Java/13.框架/01.Spring/01.Spring核心/04.Spring依赖注入.md)
+- [Spring IoC 依赖来源](docs/01.Java/13.框架/01.Spring/01.Spring核心/05.SpringIoC依赖来源.md)
+- [Spring Bean 作用域](docs/01.Java/13.框架/01.Spring/01.Spring核心/06.SpringBean作用域.md)
+- [Spring Bean 生命周期](docs/01.Java/13.框架/01.Spring/01.Spring核心/07.SpringBean生命周期.md)
+- [Spring 配置元数据](docs/01.Java/13.框架/01.Spring/01.Spring核心/08.Spring配置元数据.md)
 - [Spring AOP](docs/01.Java/13.框架/01.Spring/01.Spring核心/10.SpringAop.md)
-- [Spring 资源管理](docs/01.Java/13.框架/01.Spring/01.Spring核心/11.Spring资源管理.md)
-- [SpringBoot 教程之快速入门](docs/01.Java/13.框架/01.Spring/01.Spring核心/21.SpringBoot之快速入门.md)
-- [SpringBoot 之属性加载](docs/01.Java/13.框架/01.Spring/01.Spring核心/22.SpringBoot之属性加载.md)
-- [SpringBoot 之 Profile](docs/01.Java/13.框架/01.Spring/01.Spring核心/23.SpringBoot之Profile.md)
+- [Spring 资源管理](docs/01.Java/13.框架/01.Spring/01.Spring核心/21.Spring资源管理.md)
+- [Spring 国际化](docs/01.Java/13.框架/01.Spring/01.Spring核心/22.Spring国际化.md)
+- [Spring 校验](docs/01.Java/13.框架/01.Spring/01.Spring核心/23.Spring校验.md)
+- [Spring 数据绑定](docs/01.Java/13.框架/01.Spring/01.Spring核心/24.Spring数据绑定.md)
+- [Spring 类型转换](docs/01.Java/13.框架/01.Spring/01.Spring核心/25.Spring类型转换.md)
+- [Spring 泛型处理](docs/01.Java/13.框架/01.Spring/01.Spring核心/26.Spring泛型处理.md)
+- [Spring 事件](docs/01.Java/13.框架/01.Spring/01.Spring核心/27.Spring事件.md)
+- [SpringBoot 教程之快速入门](docs/01.Java/13.框架/01.Spring/01.Spring核心/31.SpringBoot之快速入门.md)
+- [SpringBoot 之属性加载](docs/01.Java/13.框架/01.Spring/01.Spring核心/32.SpringBoot之属性加载.md)
+- [SpringBoot 之 Profile](docs/01.Java/13.框架/01.Spring/01.Spring核心/33.SpringBoot之Profile.md)
 
 ### 数据
 
@@ -127,14 +137,14 @@
 
 ### Web 篇示例
 
-| 项目类型   | 示例                                                         | 说明                                                         |
-| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| SpringBoot | [spring-boot-web-helloworld](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/spring-boot-web-helloworld) | SpringBoot 入门级 Web MVC 项目示例。展示如何发送、接受 HTTP 请求。 |
-| SpringBoot | [spring-boot-web-form](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/spring-boot-web-form) | SpringBoot 表单提交、表单校验示例。                          |
-| SpringBoot | [spring-boot-web-uploading](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/spring-boot-web-uploading) | SpringBoot 文件上传、下载示例。                              |
-| SpringBoot | [spring-boot-web-websocket](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/spring-boot-web-websocket) | SpringBoot 使用 [WebSocket](https://en.wikipedia.org/wiki/WebSocket) 技术实现交互式应用示例。 |
-| SpringBoot | [spring-boot-web-https](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/spring-boot-web-https) | SpringBoot 如何提供一个 [HTTPS](https://en.wikipedia.org/wiki/HTTPS) 服务示例。 |
-| SpringBoot | [spring-boot-web-multi-connectors](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/spring-boot-web-multi-connectors) | SpringBoot 如何同时提供 HTTP 和 [HTTPS](https://en.wikipedia.org/wiki/HTTPS) 服务示例。 |
+| 项目类型   | 示例                                                                                                                                | 说明                                                                                          |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| SpringBoot | [spring-boot-web-helloworld](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/spring-boot-web-helloworld)             | SpringBoot 入门级 Web MVC 项目示例。展示如何发送、接受 HTTP 请求。                            |
+| SpringBoot | [spring-boot-web-form](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/spring-boot-web-form)                         | SpringBoot 表单提交、表单校验示例。                                                           |
+| SpringBoot | [spring-boot-web-uploading](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/spring-boot-web-uploading)               | SpringBoot 文件上传、下载示例。                                                               |
+| SpringBoot | [spring-boot-web-websocket](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/spring-boot-web-websocket)               | SpringBoot 使用 [WebSocket](https://en.wikipedia.org/wiki/WebSocket) 技术实现交互式应用示例。 |
+| SpringBoot | [spring-boot-web-https](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/spring-boot-web-https)                       | SpringBoot 如何提供一个 [HTTPS](https://en.wikipedia.org/wiki/HTTPS) 服务示例。               |
+| SpringBoot | [spring-boot-web-multi-connectors](https://github.com/dunwu/spring-tutorial/tree/master/codes/web/spring-boot-web-multi-connectors) | SpringBoot 如何同时提供 HTTP 和 [HTTPS](https://en.wikipedia.org/wiki/HTTPS) 服务示例。       |
 
 ## 📚 资料
 
