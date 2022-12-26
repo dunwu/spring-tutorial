@@ -20,7 +20,7 @@
   <modules>
     <module>spring-core-aop</module>
     <module>spring-core-ioc</module>
-    <module>spring-core-resouces</module>
+    <module>spring-core-resource</module>
     <module>spring-core-validation-convert</module>
 
     <module>spring-boot-aop</module>
@@ -30,6 +30,7 @@
     <module>spring-boot-property</module>
     <module>spring-boot-profile</module>
     <module>spring-boot-actuator</module>
+    <module>spring-core-i18n</module>
   </modules>
 
   <dependencyManagement>
@@ -54,11 +55,6 @@
         <version>1.1.0</version>
         <type>pom</type>
         <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>cn.hutool</groupId>
-        <artifactId>hutool-all</artifactId>
-        <version>5.8.8</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
