@@ -21,7 +21,8 @@
     <module>spring-core-aop</module>
     <module>spring-core-ioc</module>
     <module>spring-core-resource</module>
-    <module>spring-core-validation-convert</module>
+    <module>spring-validation</module>
+    <module>spring-conversion</module>
 
     <module>spring-boot-aop</module>
     <module>spring-boot-async</module>
