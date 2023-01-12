@@ -23,6 +23,7 @@
     <module>spring-core-resource</module>
     <module>spring-validation</module>
     <module>spring-conversion</module>
+    <module>spring-data-binding</module>
 
     <module>spring-boot-aop</module>
     <module>spring-boot-async</module>
