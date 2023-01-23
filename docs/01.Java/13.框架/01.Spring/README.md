@@ -58,10 +58,11 @@ hidden: true
 
 ### 数据
 
-- [Spring 连接数据源](02.Spring数据/01.Spring连接数据源.md)
+- [Spring 之数据源](02.Spring数据/01.Spring之数据源.md)
 - [Spring 之 JDBC](02.Spring数据/02.Spring之JDBC.md)
 - [Spring 之事务](02.Spring数据/03.Spring之事务.md)
-- [SpringBoot 之 Mybatis](02.Spring数据/22.SpringBoot之Mybatis.md)
+- [Spring 之 JPA](02.Spring数据/04.Spring之JPA.md)
+- [Spring 集成 Mybatis](02.Spring数据/10.Spring集成Mybatis.md)
 - [SpringBoot 之 MongoDB](02.Spring数据/23.SpringBoot之MongoDB.md)
 - [SpringBoot 之 Elasticsearch](02.Spring数据/24.SpringBoot之Elasticsearch.md)
 

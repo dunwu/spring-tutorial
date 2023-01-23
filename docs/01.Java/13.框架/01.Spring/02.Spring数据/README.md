@@ -22,10 +22,11 @@ hidden: true
 
 ## 📖 内容
 
-- [Spring 连接数据源](01.Spring连接数据源.md)
-- [Spring 和数据库连接池](02.Spring和数据库连接池.md)
-- [Spring 之 JDBC](03.Spring之JDBC.md)
-- [SpringBoot 之 Mybatis](22.SpringBoot之Mybatis.md)
+- [Spring 之数据源](01.Spring之数据源.md)
+- [Spring 之 JDBC](02.Spring之JDBC.md)
+- [Spring 之事务](03.Spring之事务.md)
+- [Spring 之 JPA](04.Spring之JPA.md)
+- [Spring 集成 Mybatis](10.Spring集成Mybatis.md)
 - [SpringBoot 之 MongoDB](23.SpringBoot之MongoDB.md)
 - [SpringBoot 之 Elasticsearch](24.SpringBoot之Elasticsearch.md)
 
