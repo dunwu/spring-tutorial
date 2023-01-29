@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns="http://www.springframework.org/schema/beans"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+
+
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 启用注解 -->
+    <!--<mvc:annotation-driven/>-->
+
+    <!-- 设置后，将查找使用@Component(@Controller是它的一种具体化)注解的类并将其注册为Bean -->
+    <context:component-scan base-package="io.github.dunwu.spring.core.bean.annotation" />
+
+    <!-- 测试@Reuquired -->
+    <bean id="annotationRequired" class="example.spring.core.bean.annotation.AnnotationRequired">
+        <!-- AnnotationRequired的name属性的setter方法被@Required修饰，如果不初始化name，会报异常 -->
+        <property name="name" value="zhangsan" />
+    </bean>
+
+    <!-- 测试@Autowired -->
+    <bean id="annotationAutowired" class="example.spring.core.bean.annotation.AnnotationAutowired" />
+
+    <!-- 测试@Qualifier -->
+    <bean id="annotationQualifier" class="example.spring.core.bean.annotation.AnnotationQualifier" />
+
+    <!-- 测试@Resource -->
+    <bean id="annotationResource" class="example.spring.core.bean.annotation.AnnotationResource" />
+
+    <!-- 测试@PostConstruct和@PreDestroy -->
+    <bean id="annotationPostConstructAndPreDestroy"
+        class="example.spring.core.bean.annotation.AnnotationPostConstructAndPreDestroy" />
+
+    <bean id="annotationInject"
+        class="example.spring.core.bean.annotation.AnnotationInject" />
+
+    <!-- 测试bean -->
+    <bean id="apple" class="example.spring.core.bean.entity.fruit.Apple" />
+    <bean id="banana" class="example.spring.core.bean.entity.fruit.Banana" />
+    <bean id="orange" class="example.spring.core.bean.entity.fruit.Orange" />
+
+</beans>

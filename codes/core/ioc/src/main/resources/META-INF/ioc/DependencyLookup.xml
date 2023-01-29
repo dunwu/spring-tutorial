@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Root BeanDefinition 不需要合并，不存在 parent -->
+    <!-- 普通 beanDefinition GenericBeanDefinition -->
+    <!-- 经过合并后 GenericBeanDefinition 变成 RootBeanDefinition -->
+    <bean id="user" class="example.spring.core.bean.entity.person.User">
+        <property name="id" value="1" />
+        <property name="name" value="钝悟" />
+        <property name="city" value="SHANGHAI" />
+        <property name="workCities" value="BEIJING,SHANGHAI" />
+        <property name="lifeCities">
+            <list>
+                <value>BEIJING</value>
+                <value>SHANGHAI</value>
+            </list>
+        </property>
+        <property name="configFileLocation" value="classpath:/META-INF/user-config.properties" />
+    </bean>
+
+    <!-- 普通 beanDefinition GenericBeanDefinition -->
+    <!-- 合并后 GenericBeanDefinition 变成 RootBeanDefinition，并且覆盖 parent 相关配置-->
+    <!-- primary = true , 增加了一个 address 属性 -->
+    <bean id="superUser" class="example.spring.core.bean.entity.person.SuperUser" parent="user"
+        primary="true">
+        <property name="address" value="杭州" />
+    </bean>
+
+    <bean id="objectFactory" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
+        <property name="targetBeanName" value="user" />
+    </bean>
+
+</beans>

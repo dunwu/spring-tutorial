@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Bean declarations go here -->
+
+    <bean id="piano" class="example.spring.core.bean.entity.job.Piano" />
+    <bean id="guitar" class="example.spring.core.bean.entity.job.Guitar" />
+    <bean id="violin" class="example.spring.core.bean.entity.job.Violin" />
+
+    <!-- 装配Collection/List -->
+    <bean id="band" class="example.spring.core.bean.entity.job.Band">
+        <!-- 装配list -->
+        <property name="collections">
+            <list>
+                <ref bean="piano" />
+                <ref bean="guitar" />
+                <ref bean="violin" />
+            </list>
+        </property>
+        <property name="list">
+            <list>
+                <ref bean="piano" />
+                <ref bean="guitar" />
+                <ref bean="violin" />
+            </list>
+        </property>
+        <!-- 装配set -->
+        <property name="set">
+            <set>
+                <ref bean="piano" />
+                <ref bean="guitar" />
+                <ref bean="violin" />
+                <ref bean="piano" />
+            </set>
+        </property>
+        <!-- 装配map -->
+        <property name="map">
+            <map>
+                <entry key="PIANO" value-ref="piano" />
+                <entry key="GUITAR" value-ref="guitar" />
+                <entry key="VIOLIN" value-ref="violin" />
+            </map>
+        </property>
+    </bean>
+</beans>

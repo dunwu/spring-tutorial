@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 通过构造器实例化 Bean -->
+    <bean id="user" class="example.spring.core.bean.entity.person.User" />
+
+    <!-- 通过静态方法实例化 Bean -->
+    <bean id="user-by-static-method" class="example.spring.core.bean.entity.person.User"
+        factory-method="createUser" />
+
+    <!-- 通过 Bean 工厂方法实例化 Bean -->
+    <bean id="userFactory" class="example.spring.core.bean.life.DefaultUserFactory" />
+    <bean id="user-by-bean-factory-method" factory-bean="userFactory" factory-method="createUser" />
+
+    <!-- 通过 FactoryBean 实例化 Bean -->
+    <bean id="user-by-factory-bean" class="example.spring.core.bean.life.UserFactoryBean" />
+
+</beans>
