@@ -1,4 +1,4 @@
-package io.github.dunwu.springboot.data.mongodb.person;
+package io.github.dunwu.springboot.data.mongodb.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +10,7 @@ import org.springframework.data.annotation.Id;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class Person {
+public class Customer {
 
     @Id
     public String id;
@@ -19,9 +19,16 @@ public class Person {
 
     public String lastName;
 
-    public Person(String firstName, String lastName) {
+    public Customer(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+            "Customer[id=%s, firstName='%s', lastName='%s']",
+            id, firstName, lastName);
     }
 
 }

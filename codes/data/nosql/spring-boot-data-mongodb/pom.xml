@@ -31,7 +31,12 @@
     <dependency>
       <groupId>cn.hutool</groupId>
       <artifactId>hutool-all</artifactId>
-      <version>5.8.7</version>
+      <version>5.5.9</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.dunwu.tool</groupId>
+      <artifactId>dunwu-tool-data</artifactId>
+      <version>1.1.0</version>
     </dependency>
     <dependency>
       <groupId>com.querydsl</groupId>

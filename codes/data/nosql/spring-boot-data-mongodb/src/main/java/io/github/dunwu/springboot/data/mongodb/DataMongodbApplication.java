@@ -1,5 +1,7 @@
 package io.github.dunwu.springboot.data.mongodb;
 
+import io.github.dunwu.springboot.data.mongodb.entity.Customer;
+import io.github.dunwu.springboot.data.mongodb.repository.CustomerRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +21,9 @@ public class DataMongodbApplication implements CommandLineRunner {
 
     @Autowired
     private MongoOperations operations;
-    // @Autowired
-    // private PersonRepository repository;
+
+    @Autowired
+    private CustomerRepository repository;
 
     public static void main(String[] args) {
         SpringApplication.run(DataMongodbApplication.class, args);
@@ -29,29 +32,30 @@ public class DataMongodbApplication implements CommandLineRunner {
     @Override
     public void run(String... args) {
 
-        // repository.deleteAll();
-        //
-        // // save a couple of customers
-        // repository.save(new Person("Alice", "Smith"));
-        // repository.save(new Person("Bob", "Smith"));
-        //
-        // // fetch all customers
-        // log.info("Customers found with findAll():");
-        // log.info("-------------------------------");
-        // for (Person person : repository.findAll()) {
-        //     log.info(person.toString());
-        // }
-        //
-        // // fetch an individual customer
-        // log.info("Customer found with findByFirstName('Alice'):");
-        // log.info("--------------------------------");
-        // log.info(repository.findByFirstName("Alice").toString());
-        //
-        // log.info("Customers found with findByLastName('Smith'):");
-        // log.info("--------------------------------");
-        // for (Person person : repository.findByLastName("Smith")) {
-        //     log.info(person.toString());
-        // }
+        repository.deleteAll();
+
+        // save a couple of customers
+        repository.save(new Customer("Alice", "Smith"));
+        repository.save(new Customer("Bob", "Smith"));
+
+        // fetch all customers
+        System.out.println("Customers found with findAll():");
+        System.out.println("-------------------------------");
+        for (Customer customer : repository.findAll()) {
+            System.out.println(customer);
+        }
+        System.out.println();
+
+        // fetch an individual customer
+        System.out.println("Customer found with findByFirstName('Alice'):");
+        System.out.println("--------------------------------");
+        System.out.println(repository.findByFirstName("Alice"));
+
+        System.out.println("Customers found with findByLastName('Smith'):");
+        System.out.println("--------------------------------");
+        for (Customer customer : repository.findByLastName("Smith")) {
+            System.out.println(customer);
+        }
     }
 
     /**
@@ -100,5 +104,4 @@ public class DataMongodbApplication implements CommandLineRunner {
     //         return immutablePerson.withRandomNumber(randomNumber);
     //     };
     // }
-
 }

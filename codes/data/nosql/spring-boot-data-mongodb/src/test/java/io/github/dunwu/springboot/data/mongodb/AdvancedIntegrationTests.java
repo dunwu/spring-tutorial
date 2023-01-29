@@ -1,9 +1,9 @@
-package io.github.dunwu.springboot.data.mongodb.advanced;
+package io.github.dunwu.springboot.data.mongodb;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
-import io.github.dunwu.springboot.data.mongodb.DataMongodbApplication;
-import io.github.dunwu.springboot.data.mongodb.customer.Customer;
+import io.github.dunwu.springboot.data.mongodb.entity.Customer3;
+import io.github.dunwu.springboot.data.mongodb.repository.AdvancedRepository;
 import org.bson.Document;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -27,21 +27,21 @@ public class AdvancedIntegrationTests {
     @Autowired
     MongoOperations operations;
 
-    Customer dave, oliver, carter;
+    Customer3 dave, oliver, carter;
 
     @BeforeEach
     public void setUp() {
 
         repository.deleteAll();
 
-        dave = repository.save(new Customer("Dave", "Matthews"));
-        oliver = repository.save(new Customer("Oliver August", "Matthews"));
-        carter = repository.save(new Customer("Carter", "Beauford"));
+        dave = repository.save(new Customer3("Dave", "Matthews"));
+        oliver = repository.save(new Customer3("Oliver August", "Matthews"));
+        carter = repository.save(new Customer3("Carter", "Beauford"));
     }
 
     /**
-     * This test demonstrates usage of {@code $comment} {@link Meta} usage. One can also enable profiling using {@code
-     * --profile=2} when starting {@literal mongod}.
+     * This test demonstrates usage of {@code $comment} {@link Meta} usage. One can also enable profiling using
+     * {@code --profile=2} when starting {@literal mongod}.
      * <p>
      * <strong>NOTE</strong>: Requires MongoDB v. 2.6.4+
      */
@@ -49,10 +49,10 @@ public class AdvancedIntegrationTests {
     public void findByFirstnameUsingMetaAttributes() {
 
         // execute derived finder method just to get the comment in the profile log
-        repository.findByFirstname(dave.getFirstname());
+        repository.findByFirstName(dave.getFirstName());
 
         // execute another finder without meta attributes that should not be picked up
-        repository.findByLastname(dave.getLastname(), Sort.by("firstname"));
+        repository.findByLastName(dave.getLastName(), Sort.by("firstName"));
 
         FindIterable<Document> cursor = operations.getCollection(DataMongodbApplication.SYSTEM_PROFILE_DB)
                                                   .find(new BasicDBObject("query.$comment",

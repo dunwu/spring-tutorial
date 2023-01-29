@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2018 the original author or authors.
+ * Copyright 2015-2018 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,22 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.dunwu.springboot.data.mongodb.customer;
-
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import org.springframework.data.geo.Point;
+package io.github.dunwu.springboot.data.mongodb.repository;
 
 /**
- * A domain object to capture addresses.
+ * An example projection interface containing only the firstName.
+ *
  * @author Oliver Gierke
  */
-@Getter
-@RequiredArgsConstructor
-public class Address {
+public interface CustomerProjection {
 
-    private final Point location;
-    private String street;
-    private String zipCode;
+    String getFirstName();
 
 }

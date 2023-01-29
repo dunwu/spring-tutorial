@@ -13,21 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.dunwu.springboot.data.mongodb.advanced;
+package io.github.dunwu.springboot.data.mongodb.repository;
 
-import io.github.dunwu.springboot.data.mongodb.customer.Customer;
-import io.github.dunwu.springboot.data.mongodb.customer.CustomerRepository;
+import io.github.dunwu.springboot.data.mongodb.entity.Customer3;
 import org.springframework.data.mongodb.repository.Meta;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
- * Repository interface to manage {@link Customer} instances.
+ * Repository interface to manage {@link Customer3} instances.
  * @author Christoph Strobl
  */
 @Repository("advancedRepository")
-public interface AdvancedRepository extends CustomerRepository {
+public interface AdvancedRepository extends CustomerRepository3 {
 
     String META_COMMENT = "s2gx-2014-rocks!";
 
@@ -40,10 +39,10 @@ public interface AdvancedRepository extends CustomerRepository {
      *  db['system.profile'].find({'query.$comment':'s2gx-2014-rocks!'})
      * </code>
      * </pre>
-     * @param firstname
+     * @param firstName
      * @return
      */
     @Meta(comment = META_COMMENT)
-    List<Customer> findByFirstname(String firstname);
+    List<Customer3> findByFirstName(String firstName);
 
 }

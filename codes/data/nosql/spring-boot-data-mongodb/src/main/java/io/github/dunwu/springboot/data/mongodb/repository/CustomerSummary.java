@@ -13,16 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.dunwu.springboot.data.mongodb.projections;
+package io.github.dunwu.springboot.data.mongodb.repository;
 
 import org.springframework.beans.factory.annotation.Value;
 
 /**
  * @author Oliver Gierke
  */
-interface CustomerSummary {
+public interface CustomerSummary {
 
-    @Value("#{target.firstname + ' ' + target.lastname}")
+    @Value("#{target.firstName + ' ' + target.lastName}")
     String getFullName();
 
 }
