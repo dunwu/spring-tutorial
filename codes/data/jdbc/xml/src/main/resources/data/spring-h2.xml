@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+  xmlns="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/jdbc
+            http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+
+  <!-- 引入配置文件 -->
+  <context:property-placeholder location="classpath:properties/h2.properties" />
+
+  <!--配置数据源-->
+  <bean id="h2DataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <property name="driverClassName" value="${jdbc.driver}" />
+    <property name="url" value="${jdbc.url}" />
+    <property name="username" value="${jdbc.username}" />
+    <property name="password" value="${jdbc.password}" />
+  </bean>
+
+  <!-- JDBC模板 -->
+  <bean id="h2JdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+    <constructor-arg ref="h2DataSource" />
+  </bean>
+  <bean id="h2UserDao" class="example.spring.data.jdbc.H2UserDaoImpl">
+    <constructor-arg ref="h2JdbcTemplate" />
+  </bean>
+
+  <!-- 初始化数据表结构 -->
+  <jdbc:initialize-database data-source="h2DataSource" ignore-failures="ALL">
+    <jdbc:script location="classpath:sql/schema-h2.sql" />
+    <jdbc:script location="classpath:sql/data.sql" />
+  </jdbc:initialize-database>
+</beans>

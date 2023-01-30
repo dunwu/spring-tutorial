@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+
+<!--
+  ~ @author Zhang Peng
+  ~ @see http://www.mybatis.org/generator/configreference/xmlconfig.html
+  -->
+
+<generatorConfiguration>
+
+  <!--属性文件-->
+  <properties resource="properties/db.properties" />
+
+  <!-- 数据库驱动-->
+  <classPathEntry location="C:\Program Files (x86)\MySQL\Connector.J 5.1\mysql-connector-java-5.1.39-bin.jar" />
+
+  <!--需要注意context的子标签的顺序，如果顺序不对会抛出异常-->
+  <context id="DB2Tables" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+
+    <property name="beginningDelimiter" value="`" />
+    <property name="endingDelimiter" value="`" />
+
+    <commentGenerator>
+      <property name="suppressDate" value="true" />
+      <property name="suppressAllComments" value="true" />
+    </commentGenerator>
+
+    <!--数据库连接配置-->
+    <jdbcConnection driverClass="${jdbc.driver}"
+      connectionURL="${jdbc.url}"
+      userId="${jdbc.username}"
+      password="${jdbc.password}">
+    </jdbcConnection>
+
+    <javaTypeResolver>
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <!-- 生成模型的包名和位置-->
+    <javaModelGenerator targetPackage="example.spring.data.orm.mybatis.entity"
+      targetProject="D:\Codes\zp\ztutorial\zp-spring\spring-tutorial\codes\data\spring-data-mybatis\src\main\java">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <!-- 生成映射文件的包名和位置-->
+    <sqlMapGenerator targetPackage="mybatis/mapper"
+      targetProject="D:\Codes\zp\ztutorial\zp-spring\spring-tutorial\codes\data\spring-data-mybatis\src\main\resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <!-- 生成DAO的包名和位置-->
+    <javaClientGenerator targetPackage="example.spring.data.orm.mybatis.mapper"
+      targetProject="D:\Codes\zp\ztutorial\zp-spring\spring-tutorial\codes\data\spring-data-mybatis\src\main\java"
+      type="XMLMAPPER">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+    <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
+    <table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false"
+      enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+    </table>
+    <table tableName="product" domainObjectName="Product" enableCountByExample="false" enableUpdateByExample="false"
+      enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+    </table>
+    <table tableName="order" domainObjectName="Order" enableCountByExample="false" enableUpdateByExample="false"
+      enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+    </table>
+
+  </context>
+</generatorConfiguration>

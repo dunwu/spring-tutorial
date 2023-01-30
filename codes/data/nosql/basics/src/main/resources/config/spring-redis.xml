@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+  xmlns="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <context:property-placeholder location="classpath:properties/redis.properties" />
+
+  <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+    <property name="maxIdle" value="${redis.maxIdle}" />
+    <property name="testOnBorrow" value="${redis.testOnBorrow}" />
+  </bean>
+
+  <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+    p:host-name="${redis.host}" p:port="${redis.port}" p:pool-config-ref="poolConfig" />
+
+  <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate"
+    p:connection-factory-ref="connectionFactory" />
+
+  <bean id="userDao" class="example.spring.data.nosql.redis.UserDao" />
+</beans>

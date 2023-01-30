@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="example.spring.data.orm.mybatis.mapper.OrderMapper">
+    <resultMap id="BaseResultMap" type="example.spring.data.orm.mybatis.entity.Order">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="user_id" jdbcType="INTEGER" property="userId" />
+        <result column="product_id" jdbcType="INTEGER" property="productId" />
+        <result column="num" jdbcType="INTEGER" property="num" />
+        <result column="statu" jdbcType="INTEGER" property="statu" />
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from order
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="example.spring.data.orm.mybatis.entity.Order">
+        insert into order (id, user_id, product_id,
+        num, statu)
+        values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER},
+        #{num,jdbcType=INTEGER}, #{statu,jdbcType=INTEGER})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="example.spring.data.orm.mybatis.entity.Order">
+        update order
+        set user_id = #{userId,jdbcType=INTEGER},
+        product_id = #{productId,jdbcType=INTEGER},
+        num = #{num,jdbcType=INTEGER},
+        statu = #{statu,jdbcType=INTEGER}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select id, user_id, product_id, num, statu
+        from order
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select id, user_id, product_id, num, statu
+        from order
+    </select>
+</mapper>

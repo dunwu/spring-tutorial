@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration = \
+example.spring.data.cache.config.J2CacheAutoConfiguration,\
+example.spring.data.cache.config.J2CacheSpringCacheAutoConfiguration,\
+example.spring.data.cache.config.J2CacheSpringRedisAutoConfiguration
