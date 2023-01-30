@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+  xmlns="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/jdbc
+            http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+
+  <!-- 引入配置文件 -->
+  <context:property-placeholder location="classpath:properties/mysql.properties" />
+
+  <!-- 使用 druid 绑定JDBC -->
+  <bean id="mysqlDataSource" class="com.alibaba.druid.pool.DruidDataSource">
+    <property name="driverClassName" value="${jdbc.driver}" />
+    <property name="url" value="${jdbc.url}" />
+    <property name="username" value="${jdbc.username}" />
+    <property name="password" value="${jdbc.password}" />
+  </bean>
+
+  <!-- JDBC模板 -->
+  <bean id="mysqlJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+    <constructor-arg ref="mysqlDataSource" />
+  </bean>
+  <bean id="mysqlUserDao" class="example.spring.data.jdbc.MysqlUserDaoImpl">
+    <constructor-arg ref="mysqlJdbcTemplate" />
+  </bean>
+
+  <!-- 初始化数据表结构 -->
+  <jdbc:initialize-database data-source="mysqlDataSource" ignore-failures="ALL">
+    <jdbc:script location="classpath:sql/schema.sql" />
+    <jdbc:script location="classpath:sql/data.sql" />
+  </jdbc:initialize-database>
+</beans>

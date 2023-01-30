@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/mvc
+            http://www.springframework.org/schema/mvc/spring-mvc.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <!-- 启用注解 -->
+  <mvc:annotation-driven />
+
+  <!-- 设置后，将查找使用@Component(@Controller是它的一种具体化)注解的类并将其注册为Bean -->
+  <context:component-scan base-package="example.spring.data.nosql" />
+
+  <!-- 引入所有properties配置文件 -->
+  <context:annotation-config />
+  <bean id="propertyConfigurer" class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+    <property name="locations">
+      <list>
+        <value>classpath:properties/*.properties</value>
+        <!--要是有多个配置文件，只需在这里继续添加即可 -->
+      </list>
+    </property>
+  </bean>
+
+  <import resource="config/spring-redis.xml" />
+  <import resource="config/spring-elasticsearch.xml" />
+</beans>

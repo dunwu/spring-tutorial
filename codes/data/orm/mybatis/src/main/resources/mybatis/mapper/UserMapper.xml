@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="example.spring.data.orm.mybatis.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="example.spring.data.orm.mybatis.entity.User">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="age" jdbcType="INTEGER" property="age" />
+        <result column="address" jdbcType="VARCHAR" property="address" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from user
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="example.spring.data.orm.mybatis.entity.User">
+        insert into user (id, name, age,
+        address, email)
+        values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER},
+        #{address,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="example.spring.data.orm.mybatis.entity.User">
+        update user
+        set name = #{name,jdbcType=VARCHAR},
+        age = #{age,jdbcType=INTEGER},
+        address = #{address,jdbcType=VARCHAR},
+        email = #{email,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select id, name, age, address, email
+        from user
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select id, name, age, address, email
+        from user
+    </select>
+</mapper>

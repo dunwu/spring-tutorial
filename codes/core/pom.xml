@@ -7,6 +7,7 @@
   <artifactId>spring-core</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
+  <name>Spring::核心</name>
 
   <properties>
     <java.version>1.8</java.version>
@@ -18,46 +19,19 @@
   </properties>
 
   <modules>
-    <module>spring-core-aop</module>
-    <module>spring-core-ioc</module>
-    <module>spring-core-resource</module>
-    <module>spring-validation</module>
-    <module>spring-conversion</module>
-    <module>spring-data-binding</module>
+    <module>aop</module>
+    <module>bean</module>
+    <module>ioc</module>
 
-    <module>spring-boot-aop</module>
-    <module>spring-boot-async</module>
-    <module>spring-boot-banner</module>
-    <module>spring-boot-bean</module>
-    <module>spring-boot-property</module>
-    <module>spring-boot-profile</module>
-    <module>spring-boot-actuator</module>
-    <module>spring-core-i18n</module>
+    <module>resource</module>
+    <module>validation</module>
+    <module>conversion</module>
+    <module>data-binding</module>
+    <module>async</module>
+
+    <module>profile</module>
+    <module>property</module>
+    <module>actuator</module>
+    <module>banner</module>
   </modules>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>2.7.4</version>
-        <scope>import</scope>
-        <type>pom</type>
-      </dependency>
-      <dependency>
-        <groupId>io.github.dunwu</groupId>
-        <artifactId>dunwu-dependencies</artifactId>
-        <version>1.1.0</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>io.github.dunwu.tool</groupId>
-        <artifactId>dunwu-tool</artifactId>
-        <version>1.1.0</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
 </project>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 导入其他 Spring XML 配置文件 -->
+    <import resource="classpath:/META-INF/ioc/DependencyLookup.xml" />
+
+    <bean id="userByConstructor" class="example.spring.core.ioc.inject.UserHolder" primary="true">
+        <constructor-arg name="user" ref="superUser" />
+    </bean>
+
+    <bean id="userBySetter" class="example.spring.core.ioc.inject.UserHolder">
+        <property name="user" ref="superUser" />
+    </bean>
+
+    <bean id="userByConstructorAutowiring" class="example.spring.core.ioc.inject.UserHolder"
+        autowire="constructor">
+        <!--        <property name="user" ref="superUser" /> 替换成 autowiring 模式 -->
+    </bean>
+
+    <bean id="userBySetterAutowiring" class="example.spring.core.ioc.inject.UserHolder"
+        autowire="byName"
+    >
+        <!--        <property name="user" ref="superUser" /> 替换成 autowiring 模式 -->
+    </bean>
+
+    <!--构造器注入——类型匹配-->
+    <bean id="personA" class="example.spring.core.ioc.Person">
+        <constructor-arg type="int" value="18" />
+        <constructor-arg type="java.lang.String" value="张三" />
+    </bean>
+
+    <!--构造器注入——索引匹配-->
+    <bean id="personB" class="example.spring.core.ioc.Person">
+        <constructor-arg index="0" value="李四" />
+        <constructor-arg index="1" value="19" />
+    </bean>
+
+    <!--构造器注入——参数名称匹配-->
+    <bean id="personC" class="example.spring.core.ioc.Person">
+        <constructor-arg name="name" value="王五" />
+        <constructor-arg name="age" value="25" />
+    </bean>
+
+    <!-- 构造注入 -->
+    <bean id="poetry" class="example.spring.core.bean.entity.job.Poetry">
+        <constructor-arg value="将进酒" />
+    </bean>
+    <bean id="libai" class="example.spring.core.bean.entity.job.Poet">
+        <constructor-arg value="李白" />
+        <constructor-arg ref="poetry" />
+    </bean>
+
+    <!-- setter注入 -->
+    <bean id="piano" class="example.spring.core.bean.entity.job.Piano" />
+    <bean id="chopin" class="example.spring.core.bean.entity.job.Musician">
+        <property name="song" value="夜曲" />
+        <property name="name" value="肖邦" />
+        <property name="instrument" ref="piano" />
+    </bean>
+
+    <!-- 工厂方法创建Bean -->
+    <bean id="beanFactory" class="example.spring.core.bean.annotation.factory.BeanFactory"
+        factory-method="getInstance" />
+</beans>
