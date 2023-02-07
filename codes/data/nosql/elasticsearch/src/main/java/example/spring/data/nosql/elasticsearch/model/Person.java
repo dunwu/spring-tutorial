@@ -6,8 +6,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 @Data
-@Document(indexName = "spring_tutorial_customer")
-public class Customer {
+@Document(indexName = "person")
+public class Person {
 
     @Id
     private String id;
@@ -18,9 +18,9 @@ public class Customer {
 
     private int age;
 
-    public Customer() { }
+    public Person() { }
 
-    public Customer(String name, String address, int age) {
+    public Person(String name, String address, int age) {
         this.name = name;
         this.address = address;
         this.age = age;
