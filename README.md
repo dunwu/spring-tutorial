@@ -63,7 +63,7 @@
 - [Spring 集成 Mybatis](docs/01.Java/13.框架/01.Spring/02.Spring数据/10.Spring集成Mybatis.md)
 - [Spring 访问 Redis](docs/01.Java/13.框架/01.Spring/02.Spring数据/21.Spring访问Redis.md)
 - [Spring 访问 MongoDB](docs/01.Java/13.框架/01.Spring/02.Spring数据/22.Spring访问MongoDB.md)
-- [SpringBoot 之 Elasticsearch](docs/01.Java/13.框架/01.Spring/02.Spring数据/24.SpringBoot之Elasticsearch.md)
+- [Spring 访问 Elasticsearch](docs/01.Java/13.框架/01.Spring/02.Spring数据/23.Spring访问Elasticsearch.md)
 
 ### Web
 

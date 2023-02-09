@@ -27,7 +27,7 @@ hidden: true
 - [Spring 集成 Mybatis](10.Spring集成Mybatis.md)
 - [Spring 访问 Redis](21.Spring访问Redis.md)
 - [Spring 访问 MongoDB](22.Spring访问MongoDB.md)
-- [SpringBoot 之 Elasticsearch](24.SpringBoot之Elasticsearch.md)
+- [Spring 访问 Elasticsearch](23.Spring访问Elasticsearch.md)
 
 ## 💻 示例
 

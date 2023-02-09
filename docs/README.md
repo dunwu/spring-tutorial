@@ -59,7 +59,7 @@ footer: CC-BY-SA-4.0 Licensed | Copyright © 2018-Now Dunwu
 - [Spring 集成 Mybatis](01.Java/13.框架/01.Spring/02.Spring数据/10.Spring集成Mybatis.md)
 - [Spring 访问 Redis](01.Java/13.框架/01.Spring/02.Spring数据/21.Spring访问Redis.md)
 - [Spring 访问 MongoDB](01.Java/13.框架/01.Spring/02.Spring数据/22.Spring访问MongoDB.md)
-- [SpringBoot 之 Elasticsearch](01.Java/13.框架/01.Spring/02.Spring数据/24.SpringBoot之Elasticsearch.md)
+- [Spring 访问 Elasticsearch](01.Java/13.框架/01.Spring/02.Spring数据/23.Spring访问Elasticsearch.md)
 
 ### Web
 
