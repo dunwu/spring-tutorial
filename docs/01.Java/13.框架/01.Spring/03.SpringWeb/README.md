@@ -1,5 +1,5 @@
 ---
-title: Spring Web
+title: Spring Web 篇
 date: 2020-02-26 23:48:06
 categories:
   - Java
@@ -16,7 +16,7 @@ permalink: /pages/e2586a/
 hidden: true
 ---
 
-# Spring Web
+# Spring Web 篇
 
 > 章节主要针对：Spring 在 web 领域的应用。如：Spring MVC、WebSocket 等。
 
@@ -24,8 +24,11 @@ hidden: true
 
 - [Spring WebMvc](01.SpringWebMvc.md)
 - [DispatcherServlet](02.DispatcherServlet.md)
-- [Filter](03.Filter.md)
+- [过滤器](03.Spring过滤器.md)
 - [Controller](04.Controller.md)
+- [跨域](05.Spring跨域.md)
+- 视图技术
+- Spring MVC 配置
 - [SpringBoot 之应用 EasyUI](21.SpringBoot之应用EasyUI.md)
 
 ## 📚 资料
