@@ -25,7 +25,7 @@ hidden: true
 - [Spring WebMvc](01.SpringWebMvc.md)
 - [DispatcherServlet](02.DispatcherServlet.md)
 - [过滤器](03.Spring过滤器.md)
-- [Controller](04.Controller.md)
+- [SprngWeb 组件](04.SprngWeb组件.md)
 - [跨域](05.Spring跨域.md)
 - 视图技术
 - Spring MVC 配置
