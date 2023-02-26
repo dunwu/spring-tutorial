@@ -1,6 +1,6 @@
-package example.spring.web.helloworld;
+package example.spring.web.client;
 
-import example.spring.web.helloworld.entity.Weather;
+import example.spring.web.client.entity.Weather;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

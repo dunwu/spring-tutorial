@@ -1,4 +1,4 @@
-package example.spring.web.helloworld.entity;
+package example.spring.web.client.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;

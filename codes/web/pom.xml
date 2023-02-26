@@ -28,5 +28,6 @@
     <module>websocket</module>
     <module>fastjson</module>
     <module>view</module>
+    <module>client</module>
   </modules>
 </project>
