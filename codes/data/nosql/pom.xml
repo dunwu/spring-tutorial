@@ -24,5 +24,6 @@
     <module>mongodb</module>
     <module>elasticsearch</module>
     <module>hdfs</module>
+    <module>hbase</module>
   </modules>
 </project>
