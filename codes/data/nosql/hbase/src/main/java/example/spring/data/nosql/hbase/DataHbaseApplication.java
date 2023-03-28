@@ -2,7 +2,6 @@ package example.spring.data.nosql.hbase;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.hadoop.hbase.TableName;
-import org.apache.hadoop.hbase.client.Table;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -31,13 +30,11 @@ public class DataHbaseApplication implements CommandLineRunner {
             hbaseAdminHelper.createTable(tableName, "c1");
         }
 
-        Table table = hbaseAdminHelper.getTable(tableName);
-        HBaseHelper hbaseHelper = HBaseHelper.newInstance(table);
-        hbaseHelper.put("row1", "c1", "name", "tom");
-        String value = hbaseHelper.get("row1", "c1", "name");
+        HBaseHelper hbaseHelper = HBaseHelper.newInstance(hbaseAdminHelper.getConnection());
+        hbaseHelper.put(tableName, "row1", "c1", "name", "tom");
+        String value = hbaseHelper.get(tableName, "row1", "c1", "name");
         System.out.println("value = " + value);
 
-        hbaseHelper.close();
         hbaseAdminHelper.close();
     }
 

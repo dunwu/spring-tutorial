@@ -18,6 +18,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * HBase admin 工具类
+ *
+ * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
+ * @date 2023-03-27
+ */
 public class HBaseAdminHelper implements Closeable {
 
     private Configuration configuration = null;
@@ -30,15 +36,12 @@ public class HBaseAdminHelper implements Closeable {
         this.admin = connection.getAdmin();
     }
 
-    public static HBaseAdminHelper newInstance(Configuration configuration) throws IOException {
+    public synchronized static HBaseAdminHelper newInstance(Configuration configuration) throws IOException {
         return new HBaseAdminHelper(configuration);
     }
 
-    /**
-     * 关闭连接
-     */
     @Override
-    public void close() {
+    public synchronized void close() {
         if (null == connection || connection.isClosed()) {
             return;
         }
@@ -56,132 +59,87 @@ public class HBaseAdminHelper implements Closeable {
         return configuration;
     }
 
-    public void createNamespace(String namespace) {
-        try {
-            NamespaceDescriptor nd = NamespaceDescriptor.create(namespace).build();
-            admin.createNamespace(nd);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void createNamespace(String namespace) throws IOException {
+        NamespaceDescriptor nd = NamespaceDescriptor.create(namespace).build();
+        admin.createNamespace(nd);
     }
 
-    public void dropNamespace(String namespace) {
+    public void dropNamespace(String namespace) throws IOException {
         dropNamespace(namespace, false);
     }
 
-    public void dropNamespace(String namespace, boolean force) {
-        try {
-            if (force) {
-                TableName[] tableNames = admin.listTableNamesByNamespace(namespace);
-                for (TableName name : tableNames) {
-                    admin.disableTable(name);
-                    admin.deleteTable(name);
-                }
+    public void dropNamespace(String namespace, boolean force) throws IOException {
+        if (force) {
+            TableName[] tableNames = admin.listTableNamesByNamespace(namespace);
+            for (TableName name : tableNames) {
+                admin.disableTable(name);
+                admin.deleteTable(name);
             }
-            admin.deleteNamespace(namespace);
-        } catch (Exception e) {
-            e.printStackTrace();
         }
+        admin.deleteNamespace(namespace);
     }
 
-    public boolean existsTable(String tableName) {
+    public boolean existsTable(String tableName) throws IOException {
         return existsTable(TableName.valueOf(tableName));
     }
 
-    public boolean existsTable(TableName tableName) {
-        try {
-            return admin.tableExists(tableName);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return false;
+    public boolean existsTable(TableName tableName) throws IOException {
+        return admin.tableExists(tableName);
     }
 
-    public void createTable(String tableName, String... cfs) {
-        createTable(TableName.valueOf(tableName), 1, null, cfs);
+    public void createTable(String tableName, String... families) throws IOException {
+        createTable(TableName.valueOf(tableName), null, families);
     }
 
-    public void createTable(TableName tableName, String... cfs) {
-        createTable(tableName, 1, null, cfs);
+    public void createTable(TableName tableName, String... families) throws IOException {
+        createTable(tableName, null, families);
     }
 
-    public void createTable(String tableName, int maxVersions, String... cfs) {
-        createTable(TableName.valueOf(tableName), maxVersions, null, cfs);
+    public void createTable(String tableName, byte[][] splitKeys, String... families) throws IOException {
+        createTable(TableName.valueOf(tableName), splitKeys, families);
     }
 
-    public void createTable(TableName tableName, int maxVersions, String... cfs) {
-        createTable(tableName, maxVersions, null, cfs);
-    }
-
-    public void createTable(String tableName, byte[][] splitKeys, String... cfs) {
-        createTable(TableName.valueOf(tableName), 1, splitKeys, cfs);
-    }
-
-    public void createTable(TableName tableName, int maxVersions, byte[][] splitKeys, String... cfs) {
+    public void createTable(TableName tableName, byte[][] splitKeys, String... families) throws IOException {
 
         List<ColumnFamilyDescriptor> columnFamilyDescriptorList = new ArrayList<>();
         TableDescriptorBuilder builder = TableDescriptorBuilder.newBuilder(tableName);
-        for (String cf : cfs) {
+        for (String cf : families) {
             ColumnFamilyDescriptor columnFamilyDescriptor = ColumnFamilyDescriptorBuilder.of(cf);
             columnFamilyDescriptorList.add(columnFamilyDescriptor);
         }
         builder.setColumnFamilies(columnFamilyDescriptorList);
 
-        try {
-            TableDescriptor td = builder.build();
-            if (splitKeys != null) {
-                admin.createTable(td, splitKeys);
-            } else {
-                admin.createTable(td);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        TableDescriptor td = builder.build();
+        if (splitKeys != null) {
+            admin.createTable(td, splitKeys);
+        } else {
+            admin.createTable(td);
         }
     }
 
-    public void disableTable(String tableName) {
+    public void disableTable(String tableName) throws IOException {
         disableTable(TableName.valueOf(tableName));
     }
 
-    public void disableTable(TableName tableName) {
-        try {
-            admin.disableTable(tableName);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void disableTable(TableName tableName) throws IOException {
+        admin.disableTable(tableName);
     }
 
-    public void dropTable(String tableName) {
+    public void dropTable(String tableName) throws IOException {
         dropTable(TableName.valueOf(tableName));
     }
 
-    public void dropTable(TableName tableName) {
-        try {
-            if (existsTable(tableName)) {
-                if (admin.isTableEnabled(tableName)) disableTable(tableName);
-                admin.deleteTable(tableName);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+    public void dropTable(TableName tableName) throws IOException {
+        if (existsTable(tableName)) {
+            if (admin.isTableEnabled(tableName)) disableTable(tableName);
+            admin.deleteTable(tableName);
         }
     }
 
-    /**
-     * 获取 table
-     *
-     * @param tableName 表名
-     * @return /
-     */
     public Table getTable(String tableName) throws IOException {
         return getTable(TableName.valueOf(tableName));
     }
 
-    /**
-     * 获取 table
-     *
-     * @param tableName 表名对象
-     * @return /
-     */
     public Table getTable(TableName tableName) throws IOException {
         return getConnection().getTable(tableName);
     }
