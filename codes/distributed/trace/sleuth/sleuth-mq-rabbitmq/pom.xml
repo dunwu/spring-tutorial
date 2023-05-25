@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.github.dunwu.springcloud</groupId>
+  <artifactId>spring-cloud-sleuth-mq-rabbitmq</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <name>Spring::分布式::链路追踪::Sleuth::RabbitMQ</name>
+  <description>Spring Distributed Trace Sleuth + RabbitMQ 链路追踪的示例，数据会被上报到指定的 Zipkin 服务器</description>
+
+  <modules>
+    <module>consumer</module>
+    <module>producer</module>
+  </modules>
+
+</project>

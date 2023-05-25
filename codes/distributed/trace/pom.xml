@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.github.dunwu.spring</groupId>
+  <artifactId>spring-distributed-trace</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <name>Spring::分布式::链路追踪</name>
+  <description>Spring/Spring Boot/Spring Cloud 项目中使用链路追踪的示例合集</description>
+
+  <modules>
+    <module>sleuth</module>
+    <module>opentelemetry</module>
+  </modules>
+</project>

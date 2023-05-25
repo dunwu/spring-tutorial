@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.7.7</version>
+    <relativePath />
+  </parent>
+
+  <groupId>io.github.dunwu.springcloud</groupId>
+  <artifactId>spring-cloud-sleuth-opentracing</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+  <name>Spring::分布式::链路追踪::Sleuth::OpenTracing</name>
+  <description>Spring Distributed Trace Sleuth + OpenTracing 链路追踪的示例，数据会被上报到指定的 Zipkin 服务器</description>
+
+  <properties>
+    <spring-cloud-sleuth.version>3.1.7</spring-cloud-sleuth.version>
+  </properties>
+
+  <dependencies>
+    <!-- Spring Web 的 Spring Boot 启动包，完成 Web 相关的自动化配置 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <!-- Sleuth 的 Spring Cloud 启动包，完成 Sleuth 的自动化配置，以支持分布式链路追踪 -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-sleuth</artifactId>
+    </dependency>
+    <!-- Sleuth 的可选包，引入此包，Sleuth 会完成 zipkin 的自动化配置 -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+    </dependency>
+    <!-- Sleuth 的可选包，引入此包，Sleuth  -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-sleuth-brave</artifactId>
+    </dependency>
+
+    <!--  Brave 对 Opentracing 的实现 -->
+    <dependency>
+      <groupId>io.opentracing.brave</groupId>
+      <artifactId>brave-opentracing</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <!--流行的工具包集-->
+    <dependency>
+      <groupId>cn.hutool</groupId>
+      <artifactId>hutool-all</artifactId>
+      <version>5.5.9</version>
+    </dependency>
+  </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-sleuth-dependencies</artifactId>
+        <version>${spring-cloud-sleuth.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>
