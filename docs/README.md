@@ -145,3 +145,27 @@ footer: CC-BY-SA-4.0 Licensed | Copyright © 2018-Now Dunwu
 ## 🚪 传送
 
 ◾ 💧 [钝悟的 IT 知识图谱](https://dunwu.github.io/waterdrop/) ◾ 🎯 [钝悟的博客](https://dunwu.github.io/blog/) ◾
+
+<!-- AD -->
+<div class="wwads-cn wwads-horizontal page-wwads" data-id="136"></div>
+<style>
+  .page-wwads{
+    width:100%!important;
+    min-height: 0;
+    margin: 0;
+  }
+  .page-wwads .wwads-img img{
+    width:80px!important;
+  }
+  .page-wwads .wwads-poweredby{
+    width: 40px;
+    position: absolute;
+    right: 25px;
+    bottom: 3px;
+  }
+  .wwads-content .wwads-text, .page-wwads .wwads-text{
+    height: 100%;
+    padding-top: 5px;
+    display: block;
+  }
+</style>

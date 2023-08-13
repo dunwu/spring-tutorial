@@ -1,6 +1,6 @@
 export default () => {
   if (typeof window !== 'undefined') {
-    ;(function(e, t, a) {
+    ;(function (e, t, a) {
       function r() {
         for (var e = 0; e < s.length; e++)
           s[e].alpha <= 0
@@ -27,12 +27,12 @@ export default () => {
       function n() {
         var t = 'function' == typeof e.onclick && e.onclick
 
-        e.onclick = function(e) {
+        e.onclick = function (e) {
           // 过滤指定元素
           let mark = true
           EXCLUDECLASS &&
             e.path &&
-            e.path.forEach(item => {
+            e.path.forEach((item) => {
               if (item.nodeType === 1) {
                 typeof item.className === 'string' && item.className.indexOf(EXCLUDECLASS) > -1 ? (mark = false) : ''
               }
@@ -76,7 +76,7 @@ export default () => {
         e.mozRequestAnimationFrame ||
         e.oRequestAnimationFrame ||
         e.msRequestAnimationFrame ||
-        function(e) {
+        function (e) {
           setTimeout(e, 1e3 / 60)
         }),
         i(

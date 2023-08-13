@@ -12,7 +12,10 @@ module.exports = {
     // 注入到页面<head> 中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
     ['link', { rel: 'icon', href: '/img/favicon.ico' }], //favicons，资源放在public文件夹
     ['meta', { name: 'keywords', content: 'vuepress,theme,blog,vdoing' }],
-    ['meta', { name: 'theme-color', content: '#11a8cd' }] // 移动浏览器主题颜色
+    ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
+
+    ['meta', { name: 'wwads-cn-verify', content: 'mxqWx62nfQQ9ocT4e5DzISHzOWyF4s' }], // 广告相关，你可以去掉
+    ['script', { src: 'https://cdn.wwads.cn/js/makemoney.js', type: 'text/javascript' }], // 广告相关，你可以去掉
   ],
   markdown: {
     // lineNumbers: true,

@@ -53,6 +53,7 @@ bundle*.js
 Thumbs.db
 db.json
 book.pdf
+package-lock.json
 
 
 # ------------------------------- intellij -------------------------------
