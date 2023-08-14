@@ -2,6 +2,7 @@ package example.spring.data.jdbc;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import org.springframework.test.annotation.Rollback;
  */
 @Slf4j
 @Rollback
+@DisplayName("Spring 事务示例")
 @SpringBootTest(classes = { DataJdbcApplication.class })
 public class DataTxTests {
 
@@ -25,34 +27,51 @@ public class DataTxTests {
     @Autowired
     private UserDaoTxService userDaoTxService;
 
-    @Test
-    @DisplayName("没有事务的例子")
-    public void noTransaction() {
-        Integer oldNum = userDao.count();
-
-        try {
-            userDaoTxService.noTransaction();
-        } catch (Exception e) {
-            // do nothing
-        }
-
-        Integer newNum = userDao.count();
-        Assertions.assertNotEquals(oldNum, newNum);
+    @BeforeEach
+    public void before() {
+        userDao.truncate();
     }
 
     @Test
-    @DisplayName("有事务的例子")
-    public void withTransaction() {
-        Integer oldNum = userDao.count();
-
+    @DisplayName("无事务示例")
+    public void noTransaction() {
+        User entity = new User("王五", 18, "深圳", "wangwu@163.com");
         try {
-            userDaoTxService.withTransaction();
+            userDaoTxService.noTransaction(entity);
         } catch (Exception e) {
             // do nothing
         }
 
-        Integer newNum = userDao.count();
-        Assertions.assertEquals(oldNum, newNum);
+        User record = userDao.queryByName("王五");
+        Assertions.assertNotNull(record);
+    }
+
+    @Test
+    @DisplayName("声明式事务示例")
+    public void withTransaction() {
+        User entity = new User("赵六", 18, "深圳", "zhaoliu@163.com");
+        try {
+            userDaoTxService.withTransaction(entity);
+        } catch (Exception e) {
+            // do nothing
+        }
+
+        User record = userDao.queryByName("赵六");
+        Assertions.assertNull(record);
+    }
+
+    @Test
+    @DisplayName("编程式事务示例")
+    public void withTransaction2() {
+        User entity = new User("钱七", 20, "南京", "qianqi@163.com");
+        try {
+            userDaoTxService.withTransaction2(entity);
+        } catch (Exception e) {
+            // do nothing
+        }
+
+        User record = userDao.queryByName("钱七");
+        Assertions.assertNull(record);
     }
 
 }

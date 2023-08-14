@@ -30,7 +30,7 @@ public class MybatisDemo {
         // 3. 使用SqlSession查询
         Long params = 1L;
         List<User> list =
-            sqlSession.selectList("io.github.dunwu.spring.orm.mapper.UserMapper.selectByPrimaryKey", params);
+            sqlSession.selectList("example.spring.data.orm.mybatis.mapper.UserMapper.selectByPrimaryKey", params);
         for (User user : list) {
             System.out.println("user name: " + user.getName());
         }

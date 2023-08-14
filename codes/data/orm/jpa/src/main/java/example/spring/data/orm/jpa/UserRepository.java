@@ -30,7 +30,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
      * @param name 用户名
      * @return {@link User}
      */
-    User findUserByName(@Param("name") String name);
+    User findByName(@Param("name") String name);
 
     /**
      * 根据邮箱查找用户

@@ -2,6 +2,7 @@ package example.spring.data.orm.mybatis.entity;
 
 import com.baomidou.mybatisplus.annotation.SqlCondition;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.experimental.Accessors;
 import org.apache.ibatis.type.JdbcType;
@@ -16,6 +17,7 @@ import org.apache.ibatis.type.JdbcType;
  */
 @Data
 @Accessors(chain = true)
+@TableName("`t_user2`")
 public class User2 {
 
     private Long id;

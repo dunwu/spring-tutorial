@@ -92,7 +92,8 @@ public class UserService {
             log.error("create user failed", ex);
             TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
         }
-        log.info("result {} ", userRepository.findUserByName(entity.getName()));
+        log.info("result {} ", userRepository.findByName(entity.getName()));
+        log.info("result {} ", userRepository.findByEmail(entity.getEmail()));
     }
 
     /**

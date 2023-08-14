@@ -5,7 +5,6 @@ import example.spring.data.nosql.mongodb.entity.Role;
 import example.spring.data.nosql.mongodb.entity.User;
 import example.spring.data.nosql.mongodb.repository.RoleRepository;
 import example.spring.data.nosql.mongodb.repository.UserRepository;
-import io.github.dunwu.tool.util.RandomUtil;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

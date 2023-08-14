@@ -47,9 +47,9 @@ public class DataJpaTests {
     public void batchInsert() {
         List<User> users = new ArrayList<>();
         users.add(new User("张三", 18, "北京", "user1@163.com"));
-        users.add(new User("李四", 19, "上海", "user1@163.com"));
-        users.add(new User("王五", 18, "南京", "user1@163.com"));
-        users.add(new User("赵六", 20, "武汉", "user1@163.com"));
+        users.add(new User("李四", 19, "上海", "user2@163.com"));
+        users.add(new User("王五", 18, "南京", "user3@163.com"));
+        users.add(new User("赵六", 20, "武汉", "user4@163.com"));
         repository.saveAll(users);
 
         long count = repository.count();
@@ -66,13 +66,13 @@ public class DataJpaTests {
     public void delete() {
         List<User> users = new ArrayList<>();
         users.add(new User("张三", 18, "北京", "user1@163.com"));
-        users.add(new User("李四", 19, "上海", "user1@163.com"));
-        users.add(new User("王五", 18, "南京", "user1@163.com"));
-        users.add(new User("赵六", 20, "武汉", "user1@163.com"));
+        users.add(new User("李四", 19, "上海", "user2@163.com"));
+        users.add(new User("王五", 18, "南京", "user3@163.com"));
+        users.add(new User("赵六", 20, "武汉", "user4@163.com"));
         repository.saveAll(users);
 
         repository.deleteByName("张三");
-        assertThat(repository.findUserByName("张三")).isNull();
+        assertThat(repository.findByName("张三")).isNull();
 
         repository.deleteAll();
         List<User> list = repository.findAll();
@@ -83,9 +83,9 @@ public class DataJpaTests {
     public void findAllInPage() {
         List<User> users = new ArrayList<>();
         users.add(new User("张三", 18, "北京", "user1@163.com"));
-        users.add(new User("李四", 19, "上海", "user1@163.com"));
-        users.add(new User("王五", 18, "南京", "user1@163.com"));
-        users.add(new User("赵六", 20, "武汉", "user1@163.com"));
+        users.add(new User("李四", 19, "上海", "user2@163.com"));
+        users.add(new User("王五", 18, "南京", "user3@163.com"));
+        users.add(new User("赵六", 20, "武汉", "user4@163.com"));
         repository.saveAll(users);
 
         PageRequest pageRequest = PageRequest.of(1, 2);
@@ -106,7 +106,7 @@ public class DataJpaTests {
         oldUser.setName("张三丰");
         repository.save(oldUser);
 
-        User newUser = repository.findUserByName("张三丰");
+        User newUser = repository.findByName("张三丰");
         assertThat(newUser).isNotNull();
     }
 

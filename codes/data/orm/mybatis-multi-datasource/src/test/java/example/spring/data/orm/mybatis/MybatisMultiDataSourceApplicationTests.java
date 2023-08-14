@@ -33,8 +33,8 @@ public class MybatisMultiDataSourceApplicationTests {
         Long count = db1UserMapper.selectCount(null);
         Assertions.assertEquals(0, count.intValue());
 
-        db1UserMapper.insert(new User("张三", 21, "南京", "xxx@163.com"));
-        db1UserMapper.insert(new User("李四", 28, "上海", "xxx@163.com"));
+        db1UserMapper.insert(new User("王五", 21, "南京", "xxx@163.com"));
+        db1UserMapper.insert(new User("赵六", 28, "上海", "xxx@163.com"));
 
         System.out.println(("----- selectAll method test ------"));
         List<User> userList = db1UserMapper.selectList(null);

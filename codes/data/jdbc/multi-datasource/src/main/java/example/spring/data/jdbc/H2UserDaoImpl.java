@@ -27,14 +27,14 @@ public class H2UserDaoImpl implements UserDao {
 
     @Override
     public void insert(User user) {
-        jdbcTemplate.update("INSERT INTO `user`(`name`, `age`, `address`, `email`) VALUES(?, ?, ?, ?)",
+        jdbcTemplate.update("INSERT INTO `t_user`(`name`, `age`, `address`, `email`) VALUES(?, ?, ?, ?)",
             user.getName(), user.getAge(), user.getAddress(), user.getEmail());
     }
 
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void batchInsert(List<User> users) {
-        String sql = "INSERT INTO `user`(`name`, `age`, `address`, `email`) VALUES(?, ?, ?, ?)";
+        String sql = "INSERT INTO `t_user`(`name`, `age`, `address`, `email`) VALUES(?, ?, ?, ?)";
 
         List<Object[]> params = new ArrayList<>();
 
@@ -46,25 +46,25 @@ public class H2UserDaoImpl implements UserDao {
 
     @Override
     public void deleteByName(String name) {
-        jdbcTemplate.update("DELETE FROM `user` WHERE name = ?", name);
+        jdbcTemplate.update("DELETE FROM `t_user` WHERE `name` = ?", name);
     }
 
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void deleteAll() {
-        jdbcTemplate.execute("DELETE FROM `user`");
+        jdbcTemplate.execute("DELETE FROM `t_user`");
     }
 
     @Override
     public void update(User user) {
-        jdbcTemplate.update("UPDATE `user` SET name=?, age=?, address=?, email=? WHERE id=?",
+        jdbcTemplate.update("UPDATE `t_user` SET `name`=?, `age`=?, `address`=?, `email`=? WHERE `id`=?",
             user.getName(), user.getAge(), user.getAddress(), user.getEmail(), user.getId());
     }
 
     @Override
     public Integer count() {
         try {
-            return jdbcTemplate.queryForObject("SELECT COUNT(*) FROM `user`", Integer.class);
+            return jdbcTemplate.queryForObject("SELECT COUNT(*) FROM `t_user`", Integer.class);
         } catch (EmptyResultDataAccessException e) {
             return null;
         }
@@ -72,13 +72,13 @@ public class H2UserDaoImpl implements UserDao {
 
     @Override
     public List<User> list() {
-        return jdbcTemplate.query("SELECT * FROM `user`", new BeanPropertyRowMapper<>(User.class));
+        return jdbcTemplate.query("SELECT * FROM `t_user`", new BeanPropertyRowMapper<>(User.class));
     }
 
     @Override
     public User queryByName(String name) {
         try {
-            return jdbcTemplate.queryForObject("SELECT * FROM `user` WHERE name = ?",
+            return jdbcTemplate.queryForObject("SELECT * FROM `t_user` WHERE `name` = ?",
                 new BeanPropertyRowMapper<>(User.class), name);
         } catch (EmptyResultDataAccessException e) {
             return null;
@@ -92,15 +92,15 @@ public class H2UserDaoImpl implements UserDao {
 
     @Override
     public void truncate() {
-        jdbcTemplate.execute("TRUNCATE TABLE `user`");
+        jdbcTemplate.execute("TRUNCATE TABLE `t_user`");
     }
 
     @Override
     public void recreateTable() {
-        jdbcTemplate.execute("DROP TABLE IF EXISTS `user`;");
+        jdbcTemplate.execute("DROP TABLE IF EXISTS `t_user`;");
 
         String sqlStatement =
-            "CREATE TABLE `user` (\n"
+            "CREATE TABLE `t_user` (\n"
                 + "  `id`      INT AUTO_INCREMENT NOT NULL COMMENT 'ID',\n"
                 + "  `name`    VARCHAR(255)       NOT NULL DEFAULT '' COMMENT '用户名',\n"
                 + "  `age`     INT                NOT NULL DEFAULT 0 COMMENT '年龄',\n"

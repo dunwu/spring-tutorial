@@ -5,8 +5,8 @@
 -- -------------------------------------------------------------------
 
 -- 创建用户表
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user` (
+DROP TABLE IF EXISTS `t_user`;
+CREATE TABLE `t_user` (
   `id`      INT AUTO_INCREMENT NOT NULL COMMENT 'ID',
   `name`    VARCHAR(255)       NOT NULL DEFAULT '' COMMENT '用户名',
   `age`     INT                NOT NULL DEFAULT 0 COMMENT '年龄',

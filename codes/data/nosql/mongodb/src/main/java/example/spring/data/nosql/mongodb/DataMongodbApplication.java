@@ -2,9 +2,9 @@ package example.spring.data.nosql.mongodb;
 
 import example.spring.data.nosql.mongodb.entity.Customer;
 import example.spring.data.nosql.mongodb.repository.CustomerRepository;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.Document;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,16 +14,15 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 @Slf4j
+@RequiredArgsConstructor
 @SpringBootApplication
 public class DataMongodbApplication implements CommandLineRunner {
 
     public static final String SYSTEM_PROFILE_DB = "system.profile";
 
-    @Autowired
-    private MongoOperations operations;
+    private final MongoOperations operations;
 
-    @Autowired
-    private CustomerRepository repository;
+    private final CustomerRepository repository;
 
     public static void main(String[] args) {
         SpringApplication.run(DataMongodbApplication.class, args);
@@ -86,22 +85,4 @@ public class DataMongodbApplication implements CommandLineRunner {
         operations.executeCommand(new Document("profile", level));
     }
 
-    // /**
-    //  * Register the {@link BeforeConvertCallback} used to update an {@link ImmutablePerson} before handing over the
-    //  * newly created instance to the actual mapping layer performing the conversion into the store native {@link
-    //  * org.bson.Document} representation.
-    //  *
-    //  * @return a {@link BeforeConvertCallback} for {@link ImmutablePerson}.
-    //  */
-    // @Bean
-    // BeforeConvertCallback<ImmutablePerson> beforeConvertCallback() {
-    //
-    //     return (immutablePerson, collection) -> {
-    //
-    //         int randomNumber = ThreadLocalRandom.current().nextInt(1, 100);
-    //
-    //         // withRandomNumber is a so called wither method returning a new instance of the entity with a new value assigned
-    //         return immutablePerson.withRandomNumber(randomNumber);
-    //     };
-    // }
 }

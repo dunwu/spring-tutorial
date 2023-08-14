@@ -1,6 +1,6 @@
 # spring-boot-data-jdbc
 
-[//]: # '> **本项目演示 Spring Boot 以 JDBC 方式访问关系型数据库，通过 `JdbcTemplate` 执行基本的 CRUD 操作。**'
+> **本项目演示 Spring Boot 以 JDBC 方式访问关系型数据库，通过 `JdbcTemplate` 执行基本的 CRUD 操作。**
 
 ## 使用说明
 

@@ -34,6 +34,7 @@ public class MybatisPlusApplicationTest {
         user.setName("小羊");
         user.setAge(3);
         user.setEmail("abc@mp.com");
+        user.setAddress("内蒙古");
         assertThat(mapper.insert(user)).isGreaterThan(0);
         // 成功直接拿回写的 ID
         assertThat(user.getId()).isNotNull();

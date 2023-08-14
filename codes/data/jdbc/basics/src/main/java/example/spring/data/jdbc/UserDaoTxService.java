@@ -8,8 +8,19 @@ package example.spring.data.jdbc;
  */
 public interface UserDaoTxService {
 
-    void noTransaction();
+    /**
+     * 无事务示例
+     */
+    void noTransaction(User entity);
 
-    void withTransaction();
+    /**
+     * 声明式事务示例
+     */
+    void withTransaction(User entity);
+
+    /**
+     * 编程式事务示例
+     */
+    void withTransaction2(User entity);
 
 }
