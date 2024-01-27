@@ -8,11 +8,11 @@
 
 （2）访问 http://localhost:8080/greeting，可以看到一个简单的表单提交页面。
 
-![](https://raw.githubusercontent.com/dunwu/images/dev/snap/20221010120631.png)
+![](https://raw.githubusercontent.com/dunwu/images/master/snap/20221010120631.png)
 
 （3）访问 http://localhost:8080/，可以看到另一个简单的表单提交页面，该页面支持对输入项进行校验。
 
-![](https://raw.githubusercontent.com/dunwu/images/dev/snap/20221010120831.png)
+![](https://raw.githubusercontent.com/dunwu/images/master/snap/20221010120831.png)
 
 （4）也可以直接执行以下测试集，观察测试结果
 

@@ -10,7 +10,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 50%;
-  background-image: url("https://raw.githubusercontent.com/dunwu/images/dev/common/wallpaper/wallhaven-4lwj9l.jpg");
+  background-image: url("https://raw.githubusercontent.com/dunwu/images/master/common/wallpaper/wallhaven-4lwj9l.jpg");
   transition: All 2s ease;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -199,7 +199,7 @@ body.one-column #content #alpha {
 }
 
 #img_placer span {
-  background-image: url(https://raw.githubusercontent.com/dunwu/images/dev/common/wallpaper/wallhaven-4lwj9l.jpg);
+  background-image: url(https://raw.githubusercontent.com/dunwu/images/master/common/wallpaper/wallhaven-4lwj9l.jpg);
   width: 0;
   height: 0;
   display: inline;

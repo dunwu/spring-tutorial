@@ -8,7 +8,7 @@
 
 （2）当看到下图中相似内容，表明应用启动成功
 
-![](https://raw.githubusercontent.com/dunwu/images/dev/snap/20221010201123.png)
+![](https://raw.githubusercontent.com/dunwu/images/master/snap/20221010201123.png)
 
 此处打印的天气信息，来自于发起 HTTP 请求外部 API 站点。其相应代码如下：
 

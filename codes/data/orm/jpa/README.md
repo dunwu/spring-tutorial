@@ -64,7 +64,7 @@ java -jar spring-boot-data-jpa-1.0.0.jar
 
 打开浏览器，访问 http://localhost:8080/user 可以看到，JPA 帮我们自动生成了 REST 应答内容。
 
-![image-20191118203305320](https://raw.githubusercontent.com/dunwu/images/dev/snap/image-20191118203305320.png)
+![image-20191118203305320](https://raw.githubusercontent.com/dunwu/images/master/snap/image-20191118203305320.png)
 
 这个
 REST

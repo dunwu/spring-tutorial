@@ -156,7 +156,7 @@ java -jar spring-boot-swagger-1.0.0.jar
 
 打开浏览器，访问  http://localhost:8080/swagger-ui.html 可以看到自动生成的 REST API 文档。
 
-![image-20191119172610814](https://raw.githubusercontent.com/dunwu/images/dev/snap/image-20191119172610814.png)
+![image-20191119172610814](https://raw.githubusercontent.com/dunwu/images/master/snap/image-20191119172610814.png)
 
 ## 参考资料
 

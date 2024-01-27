@@ -66,7 +66,7 @@ server.ssl.key-store-password = 123456
 
 配置完成后，就可以启动 Spring Boot 项目了，此时如果我们直接使用 Http 协议来访问接口，就会看到如下错误：
 
-![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200306101148.png)
+![img](https://raw.githubusercontent.com/dunwu/images/master/snap/20200306101148.png)
 
 改用 https 来访问 ，浏览器会提示：**您的链接不是私密连接**。这是因为使用的证书不被浏览器认可，不过没关系，继续访问即可。
 
