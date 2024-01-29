@@ -12,6 +12,7 @@ tags:
   - SpringBoot
 permalink: /pages/a1a3d3/
 hidden: true
+index: false
 ---
 
 # SPRING-TUTORIAL
@@ -52,6 +53,8 @@ hidden: true
 - [Spring 事件](01.Spring核心/25.Spring事件.md)
 - [Spring 国际化](01.Spring核心/26.Spring国际化.md)
 - [Spring 泛型处理](01.Spring核心/27.Spring泛型处理.md)
+- [Spring 注解](01.Spring核心/28.Spring注解.md)
+- [Spring Environment 抽象](01.Spring核心/29.SpringEnvironment抽象.md)
 - [SpringBoot 教程之快速入门](01.Spring核心/31.SpringBoot之快速入门.md)
 - [SpringBoot 之属性加载](01.Spring核心/32.SpringBoot之属性加载.md)
 - [SpringBoot 之 Profile](01.Spring核心/33.SpringBoot之Profile.md)
@@ -150,4 +153,4 @@ hidden: true
 
 ## 🚪 传送
 
-◾ 💧 [钝悟的 IT 知识图谱](https://dunwu.github.io/waterdrop/) ◾ 🎯 [钝悟的博客](https://dunwu.github.io/blog/) ◾
+◾ 💧 [钝悟的 IT 知识图谱](https://dunwu.github.io/waterdrop/) ◾

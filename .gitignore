@@ -7,7 +7,8 @@
 classes
 target
 logs
-.mtj.tmp/
+.mtj
+.tmp
 
 # compiled files
 *.class
@@ -41,6 +42,7 @@ dist
 _book
 _jsdoc
 .temp
+.cache
 .deploy*/
 
 # temp files
