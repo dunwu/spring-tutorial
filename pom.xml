@@ -16,5 +16,6 @@
     <module>codes/web</module>
     <module>codes/integration</module>
     <module>codes/security</module>
+    <module>codes/distributed</module>
   </modules>
 </project>

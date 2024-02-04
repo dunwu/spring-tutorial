@@ -4,13 +4,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.github.dunwu.spring</groupId>
-  <artifactId>spring-distributed</artifactId>
+  <artifactId>spring-distributed-ratelimit</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
-  <name>Spring::分布式</name>
+  <name>Spring::分布式::流量控制</name>
 
   <modules>
-    <module>trace</module>
-    <module>ratelimit</module>
+    <module>sentinel</module>
   </modules>
 </project>
