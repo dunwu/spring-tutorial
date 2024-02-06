@@ -1,34 +1,42 @@
-package example.spring.ratelimit.sentinel;
+# Sentinel 示例说明
 
-import com.alibaba.csp.sentinel.Entry;
-import com.alibaba.csp.sentinel.SphO;
-import com.alibaba.csp.sentinel.SphU;
-import com.alibaba.csp.sentinel.annotation.SentinelResource;
-import com.alibaba.csp.sentinel.slots.block.BlockException;
-import com.alibaba.csp.sentinel.slots.block.RuleConstant;
-import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
-import com.alibaba.csp.sentinel.slots.block.flow.FlowRuleManager;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+## 测试环境
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.annotation.PostConstruct;
+### 启动 Sentinel 控制台
 
-/**
- * 限流示例 Http 接口
- *
- * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
- * @date 2024-01-30
- */
-@Slf4j
-@RestController
-public class RateLimitController {
+> 详见：[启动 Sentinel 控制台](https://sentinelguard.io/zh-cn/docs/dashboard.html)
 
-    /**
-     * 抛出异常的方式定义资源并限流
-     */
+（1）下载
+
+从 [release 页面](https://github.com/alibaba/Sentinel/releases) 下载最新版本的控制台 jar 包
+
+（2）启动
+
+```shell
+java -jar sentinel-dashboard.jar -Dproject.name=sentinel-dashboard --server.port=18080
+```
+
+### 启动 Provider 服务
+
+（1）执行 `example.spring.ratelimit.sentinel.SentinelProviderApplication` 类 main 方法
+
+（2）启动时，设置 VM 参数：`-Dcsp.sentinel.dashboard.server=127.0.0.1:18080 -Dproject.name=provider`
+
+### 启动 Consumer 服务
+
+（1）执行 `example.spring.ratelimit.sentinel.SentinelConsumerApplication` 类 main 方法
+
+（2）启动时，设置 VM 参数：`-Dcsp.sentinel.dashboard.server=127.0.0.1:18080 -Dproject.name=consumer`
+
+## 抛出异常的方式定义资源示例
+
+项目：provider
+
+代码：example.spring.ratelimit.sentinel.RateLimitController
+
+示例代码：
+
+```java
     @GetMapping("/limit1")
     public String limit1() {
         // 1.5.0 版本开始可以利用 try-with-resources 特性
@@ -44,10 +52,17 @@ public class RateLimitController {
             return "failed";
         }
     }
+```
 
-    /**
-     * 返回布尔值方式定义资源并限流
-     */
+## 返回布尔值方式定义资源并限流示例
+
+项目：provider
+
+代码：example.spring.ratelimit.sentinel.RateLimitController
+
+示例代码：
+
+```java
     @GetMapping("/limit2")
     public String limit2() {
         // 资源名可使用任意有业务语义的字符串
@@ -67,10 +82,17 @@ public class RateLimitController {
             return "failed";
         }
     }
+```
 
-    /**
-     * 注解方式定义资源并限流
-     */
+## 注解方式定义资源
+
+项目：provider
+
+代码：example.spring.ratelimit.sentinel.RateLimitController
+
+示例代码：
+
+```java
     @GetMapping("/limit3")
     @SentinelResource(value = "limit3")
     public String limit3() {
@@ -82,21 +104,5 @@ public class RateLimitController {
             return "failed";
         }
     }
+```
 
-    /**
-     * 初始化流控规则
-     */
-    @PostConstruct
-    public void initFlowRules() {
-        List<FlowRule> rules = new ArrayList<>();
-        FlowRule rule = new FlowRule();
-        rule.setGrade(RuleConstant.FLOW_GRADE_QPS);
-        // 设置限流资源
-        rule.setResource("limit1");
-        // 设置 QPS
-        rule.setCount(2);
-        rules.add(rule);
-        FlowRuleManager.loadRules(rules);
-    }
-
-}
