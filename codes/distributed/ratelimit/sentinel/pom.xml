@@ -16,6 +16,7 @@
   <name>Spring::分布式::流量控制::Sentinel</name>
 
   <modules>
+    <module>basic</module>
     <module>api</module>
     <module>provider</module>
     <module>consumer</module>

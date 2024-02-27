@@ -13,7 +13,7 @@
 （2）启动
 
 ```shell
-java -jar sentinel-dashboard.jar -Dproject.name=sentinel-dashboard --server.port=18080
+java -jar sentinel-dashboard2.jar -Dproject.name=sentinel-dashboard --server.port=18080
 ```
 
 ### 启动 Provider 服务
@@ -105,4 +105,3 @@ java -jar sentinel-dashboard.jar -Dproject.name=sentinel-dashboard --server.port
         }
     }
 ```
-

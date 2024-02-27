@@ -61,22 +61,22 @@
     <dependency>
       <groupId>com.alibaba.csp</groupId>
       <artifactId>sentinel-core</artifactId>
-      <version>1.8.7</version>
+      <version>2.0.0-alpha</version>
     </dependency>
     <dependency>
       <groupId>com.alibaba.csp</groupId>
       <artifactId>sentinel-transport-simple-http</artifactId>
-      <version>1.8.7</version>
+      <version>2.0.0-alpha</version>
     </dependency>
     <dependency>
       <groupId>com.alibaba.csp</groupId>
       <artifactId>sentinel-annotation-aspectj</artifactId>
-      <version>1.8.7</version>
+      <version>2.0.0-alpha</version>
     </dependency>
     <dependency>
       <groupId>com.alibaba.csp</groupId>
       <artifactId>sentinel-parameter-flow-control</artifactId>
-      <version>1.8.7</version>
+      <version>2.0.0-alpha</version>
     </dependency>
 
     <dependency>
