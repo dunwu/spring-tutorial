@@ -26,6 +26,7 @@
     <module>https</module>
     <module>connections</module>
     <module>websocket</module>
+    <module>sse</module>
     <module>fastjson</module>
     <module>view</module>
     <module>client</module>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <title>SSE 示例</title>
+  <meta charset='UTF-8'>
+</head>
+
+<body>
+<h1>SSE 示例</h1>
+<div>
+  userId: <input type='text' id='userId' value=''>
+  <button id='connectBtn' onclick='connect()'>connect</button>
+  <br />
+  msg: <input type='text' id='msg'> <br />
+  <button id='sendBtn' onclick='send()'>send</button>
+  <button id='closeBtn' onclick='disconnect()'>close</button>
+</div>
+<div id='result'></div>
+</body>
+
+<script>
+
+  let eventSource
+
+  const connect = () => {
+
+    let userId = document.getElementById('userId').value
+    eventSource = new EventSource(`/sse/connect/${userId}`)
+
+    eventSource.onmessage = function(event) {
+      console.log('msg', event.data)
+      document.getElementById('result').innerHTML += '<span>' + event.data + '</span><br />'
+    }
+
+    eventSource.onopen = function(event) {
+      console.log('onopen', eventSource.readyState)
+      document.getElementById('result').innerHTML = ''
+    }
+
+    eventSource.onerror = function(error) {
+      console.error('onerror', error)
+    }
+  }
+
+  const send = async () => {
+    let userId = document.getElementById('userId').value
+    let msg = document.getElementById('msg').value
+    const response = await fetch(`/sse/send/${userId}?msg=${msg}`)
+    response.text().then((data) => {
+      if (data !== 'true') {
+        console.error('发送失败')
+      }
+    })
+  }
+
+  const disconnect = () => {
+    eventSource.close()
+    console.log('连接关闭')
+  }
+</script>
+</html>
+
+
+
+
